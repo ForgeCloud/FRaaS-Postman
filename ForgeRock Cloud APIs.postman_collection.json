@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "77bc53c0-b729-4557-b1ce-ee1663f11aaa",
-		"name": "ForgeRock Cloud APIs",
+		"name": "ForgeRock Cloud APIs (Feb 2019)",
 		"description": "There are two main APIs for the ForgeRock Identity Cloud: the [Authentication API](#45dc632b-91f2-4ea5-a9da-d4d9f395cfd5)  and the [Management API](#6af844f9-ecea-422e-8508-b1017b4cb6bc). The Authentication API allows you to authenticate users into your apps and the management API allows you to manage objects in the system.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -418,7 +418,7 @@
 									"key": "iPlanetDirectoryPro"
 								}
 							],
-							"body": "{\"active\":true,\"scope\":\"api.forgecloud.com:app.read api.forgecloud.com:user.write api.forgecloud.com:password-policy.write api.forgecloud.com:user.read api.forgecloud.com:app.write api.forgecloud.com:password-policy.read\",\"client_id\":\"917949b11c44159f0e69fc69f1702eab\",\"user_id\":\"917949b11c44159f0e69fc69f1702eab\",\"token_type\":\"access_token\",\"exp\":1538776777,\"sub\":\"917949b11c44159f0e69fc69f1702eab\",\"iss\":\"https://openam-spark20.forgeblocks.com/openam/oauth2\"}"
+							"body": "{\"active\":true,\"scope\":\"app.read user.write password-policy.write user.read app.write password-policy.read\",\"client_id\":\"917949b11c44159f0e69fc69f1702eab\",\"user_id\":\"917949b11c44159f0e69fc69f1702eab\",\"token_type\":\"access_token\",\"exp\":1538776777,\"sub\":\"917949b11c44159f0e69fc69f1702eab\",\"iss\":\"https://openam-spark20.forgeblocks.com/openam/oauth2\"}"
 						}
 					]
 				},
@@ -740,7 +740,7 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{oauth2Url}}/authorize?client_id={{webAppClientId}}&response_type=code&redirect_uri=http://localhost:9080/callback&scope=api.forgecloud.com:user.read openid?client_id={{webAppClientId}}&response_type=code&redirect_uri=http://localhost:9080/callback&scope=api.forgecloud.com:user.read openid",
+							"raw": "{{oauth2Url}}/authorize?client_id={{webAppClientId}}&response_type=code&redirect_uri=http://localhost:9080/callback&scope=user.read openid?client_id={{webAppClientId}}&response_type=code&redirect_uri=http://localhost:9080/callback&scope=user.read openid",
 							"host": [
 								"{{oauth2Url}}"
 							],
@@ -763,7 +763,7 @@
 								},
 								{
 									"key": "scope",
-									"value": "api.forgecloud.com:user.read openid"
+									"value": "user.read openid"
 								}
 							]
 						}
@@ -784,7 +784,7 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{oauth2Url}}/authorize?client_id={{webAppClientId}}&response_type=code&redirect_uri=http://localhost:9080/callback&scope=api.forgecloud.com:user.read openid?client_id={{webAppClientId}}&response_type=code&redirect_uri=http://localhost:9080/callback&scope=api.forgecloud.com:user.read openid",
+									"raw": "{{oauth2Url}}/authorize?client_id={{webAppClientId}}&response_type=code&redirect_uri=http://localhost:9080/callback&scope=user.read openid?client_id={{webAppClientId}}&response_type=code&redirect_uri=http://localhost:9080/callback&scope=user.read openid",
 									"host": [
 										"{{oauth2Url}}"
 									],
@@ -807,7 +807,7 @@
 										},
 										{
 											"key": "scope",
-											"value": "api.forgecloud.com:user.read openid"
+											"value": "user.read openid"
 										}
 									]
 								}
@@ -986,7 +986,7 @@
 							"urlencoded": [
 								{
 									"key": "scope",
-									"value": "api.forgecloud.com:user.read api.forgecloud.com:user.write api.forgecloud.com:app.read api.forgecloud.com:app.write api.forgecloud.com:password-policy.read api.forgecloud.com:password-policy.write",
+									"value": "user.read user.write app.read app.write password-policy.read password-policy.write",
 									"type": "text"
 								},
 								{
@@ -1027,7 +1027,7 @@
 									"urlencoded": [
 										{
 											"key": "scope",
-											"value": "api.forgecloud.com:user.read api.forgecloud.com:user.write api.forgecloud.com:app.read api.forgecloud.com:app.write api.forgecloud.com:password-policy.read api.forgecloud.com:password-policy.write",
+											"value": "user.read user.write app.read app.write password-policy.read password-policy.write",
 											"type": "text"
 										},
 										{
@@ -1113,7 +1113,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\"access_token\":\"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiIwZjY1ZDE4OS1mNGFlLTQ2Y2ItOTM5My01ZDY0MTg4M2NhMDYtMjg4MyIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJ2bGNfUzRmYW96YW53NXRhZGxtc1NNOHA2aWsiLCJhdWQiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsIm5iZiI6MTUzODYxOTIzOCwiZ3JhbnRfdHlwZSI6ImNsaWVudF9jcmVkZW50aWFscyIsInNjb3BlIjpbImFwaS5mb3JnZWNsb3VkLmNvbTphcHAucmVhZCIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLndyaXRlIiwiYXBpLmZvcmdlY2xvdWQuY29tOnBhc3N3b3JkLXBvbGljeS53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLnJlYWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206YXBwLndyaXRlIiwiYXBpLmZvcmdlY2xvdWQuY29tOnBhc3N3b3JkLXBvbGljeS5yZWFkIl0sImF1dGhfdGltZSI6MTUzODYxOTIzOCwicmVhbG0iOiIvIiwiZXhwIjoxNTM4NjIyODM4LCJpYXQiOjE1Mzg2MTkyMzgsImV4cGlyZXNfaW4iOjM2MDAsImp0aSI6ImFEb3l5bDBCNjVudUJUSHFSY0piT0hwekIzcyJ9.qsVN9pZ-rtxvd1ZEYgNsYSHdbRlu91KpHV9s9gmh0CE\",\"scope\":\"api.forgecloud.com:app.read api.forgecloud.com:user.write api.forgecloud.com:password-policy.write api.forgecloud.com:user.read api.forgecloud.com:app.write api.forgecloud.com:password-policy.read\",\"token_type\":\"Bearer\",\"expires_in\":3599}"
+							"body": "{\"access_token\":\"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiIwZjY1ZDE4OS1mNGFlLTQ2Y2ItOTM5My01ZDY0MTg4M2NhMDYtMjg4MyIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJ2bGNfUzRmYW96YW53NXRhZGxtc1NNOHA2aWsiLCJhdWQiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsIm5iZiI6MTUzODYxOTIzOCwiZ3JhbnRfdHlwZSI6ImNsaWVudF9jcmVkZW50aWFscyIsInNjb3BlIjpbImFwaS5mb3JnZWNsb3VkLmNvbTphcHAucmVhZCIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLndyaXRlIiwiYXBpLmZvcmdlY2xvdWQuY29tOnBhc3N3b3JkLXBvbGljeS53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLnJlYWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206YXBwLndyaXRlIiwiYXBpLmZvcmdlY2xvdWQuY29tOnBhc3N3b3JkLXBvbGljeS5yZWFkIl0sImF1dGhfdGltZSI6MTUzODYxOTIzOCwicmVhbG0iOiIvIiwiZXhwIjoxNTM4NjIyODM4LCJpYXQiOjE1Mzg2MTkyMzgsImV4cGlyZXNfaW4iOjM2MDAsImp0aSI6ImFEb3l5bDBCNjVudUJUSHFSY0piT0hwekIzcyJ9.qsVN9pZ-rtxvd1ZEYgNsYSHdbRlu91KpHV9s9gmh0CE\",\"scope\":\"app.read user.write password-policy.write user.read app.write password-policy.read\",\"token_type\":\"Bearer\",\"expires_in\":3599}"
 						}
 					]
 				},
@@ -1165,7 +1165,7 @@
 								{
 									"key": "code",
 									"value": "xxxxxxxxx",
-									"description": "This is the authorization that is returned from the authorize end point",
+									"description": "Returned from the /authorize endpoint",
 									"type": "text"
 								},
 								{
@@ -1368,7 +1368,7 @@
 								},
 								{
 									"key": "scope",
-									"value": "api.forgecloud.com:user.read api.forgecloud.com:user.write openid profile address phone",
+									"value": "user.read user.write openid profile address phone",
 									"type": "text"
 								}
 							]
@@ -1421,7 +1421,7 @@
 										},
 										{
 											"key": "scope",
-											"value": "api.forgecloud.com:user.read api.forgecloud.com:user.write openid profile address phone",
+											"value": "user.read user.write openid profile address phone",
 											"type": "text"
 										}
 									]
@@ -1502,7 +1502,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\"access_token\":\"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJkZW1vdXNlciIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjowLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtODQ3MyIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJGYzlnd1pJNXF0blh3b1FNUGVyaEhfMk9kejgiLCJhdWQiOiIwNzA0NjJhZTEyZWM5OGExZTA1ZTY1ZThjMjE0ODgwMiIsIm5iZiI6MTUzODcxMTA2OSwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIiwic2NvcGUiOlsiYWRkcmVzcyIsIm9wZW5pZCIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLndyaXRlIiwicHJvZmlsZSIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLnJlYWQiLCJwaG9uZSJdLCJhdXRoX3RpbWUiOjE1Mzg3MTEwNjksInJlYWxtIjoiLyIsImV4cCI6MTUzODcxNDY2OSwiaWF0IjoxNTM4NzExMDY5LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJOUTMwQmdESWVpLU9VT0M3dzJkOUNHUG5PU1kifQ.cQv_BAnYrK5g0hKhHaydObGo6YNKlzDsgQf1W26agZg\",\"refresh_token\":\"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJkZW1vdXNlciIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjowLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtODQ3MiIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJyZWZyZXNoX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiRmM5Z3daSTVxdG5Yd29RTVBlcmhIXzJPZHo4IiwiYXVkIjoiMDcwNDYyYWUxMmVjOThhMWUwNWU2NWU4YzIxNDg4MDIiLCJuYmYiOjE1Mzg3MTEwNjksImdyYW50X3R5cGUiOiJwYXNzd29yZCIsInNjb3BlIjpbImFkZHJlc3MiLCJvcGVuaWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci53cml0ZSIsInByb2ZpbGUiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci5yZWFkIiwicGhvbmUiXSwiYXV0aF90aW1lIjoxNTM4NzExMDY5LCJyZWFsbSI6Ii8iLCJleHAiOjE1MzkzMTU4NjksImlhdCI6MTUzODcxMTA2OSwiZXhwaXJlc19pbiI6NjA0ODAwLCJqdGkiOiJCTU5oRWRNc1IyQjhTX1FwREJfTVc0aWVKQkkifQ.Qv2DUqSPM4r2TN0_UGOm8z6BnZa8T1Bh23C49HAwt6U\",\"scope\":\"address openid api.forgecloud.com:user.write profile api.forgecloud.com:user.read phone\",\"id_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdF9oYXNoIjoiUU9oYV8yazNtT2NDYndmSVlwbzZBUSIsInN1YiI6ImRlbW91c2VyIiwiZm9ybWF0dGVkIjp7fSwiYXVkaXRUcmFja2luZ0lkIjoiNzQ5NjM4ZmEtM2FhMi00Y2RlLTg4MTQtZDE1YmQ2ZGY2MDAwLTg0NzUiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazIwLmZvcmdlYmxvY2tzLmNvbS9vcGVuYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiaWRfdG9rZW4iLCJnaXZlbl9uYW1lIjoiRGVtbyIsImF1ZCI6IjA3MDQ2MmFlMTJlYzk4YTFlMDVlNjVlOGMyMTQ4ODAyIiwiYXpwIjoiMDcwNDYyYWUxMmVjOThhMWUwNWU2NWU4YzIxNDg4MDIiLCJhdXRoX3RpbWUiOjE1Mzg3MTEwNjksIm5hbWUiOiJEZW1vIFVzZXIiLCJyZWFsbSI6Ii8iLCJleHAiOjE1Mzg3MTQ2NjksInRva2VuVHlwZSI6IkpXVFRva2VuIiwiZmFtaWx5X25hbWUiOiJVc2VyIiwiaWF0IjoxNTM4NzExMDY5LCJmb3JnZXJvY2siOnsic2lnIjoiJj8pLyZWUz5oUC1WeUQoTF17YSleOGo0RGpPcVZ6KHtOSj5eQ1tVLyJ9fQ.oFTmUyNzgL4zysy0akmOkLlpKYV4aiy4mFaWi-XrhTY\",\"token_type\":\"Bearer\",\"expires_in\":3599}"
+							"body": "{\"access_token\":\"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJkZW1vdXNlciIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjowLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtODQ3MyIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJGYzlnd1pJNXF0blh3b1FNUGVyaEhfMk9kejgiLCJhdWQiOiIwNzA0NjJhZTEyZWM5OGExZTA1ZTY1ZThjMjE0ODgwMiIsIm5iZiI6MTUzODcxMTA2OSwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIiwic2NvcGUiOlsiYWRkcmVzcyIsIm9wZW5pZCIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLndyaXRlIiwicHJvZmlsZSIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLnJlYWQiLCJwaG9uZSJdLCJhdXRoX3RpbWUiOjE1Mzg3MTEwNjksInJlYWxtIjoiLyIsImV4cCI6MTUzODcxNDY2OSwiaWF0IjoxNTM4NzExMDY5LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJOUTMwQmdESWVpLU9VT0M3dzJkOUNHUG5PU1kifQ.cQv_BAnYrK5g0hKhHaydObGo6YNKlzDsgQf1W26agZg\",\"refresh_token\":\"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJkZW1vdXNlciIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjowLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtODQ3MiIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJyZWZyZXNoX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiRmM5Z3daSTVxdG5Yd29RTVBlcmhIXzJPZHo4IiwiYXVkIjoiMDcwNDYyYWUxMmVjOThhMWUwNWU2NWU4YzIxNDg4MDIiLCJuYmYiOjE1Mzg3MTEwNjksImdyYW50X3R5cGUiOiJwYXNzd29yZCIsInNjb3BlIjpbImFkZHJlc3MiLCJvcGVuaWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci53cml0ZSIsInByb2ZpbGUiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci5yZWFkIiwicGhvbmUiXSwiYXV0aF90aW1lIjoxNTM4NzExMDY5LCJyZWFsbSI6Ii8iLCJleHAiOjE1MzkzMTU4NjksImlhdCI6MTUzODcxMTA2OSwiZXhwaXJlc19pbiI6NjA0ODAwLCJqdGkiOiJCTU5oRWRNc1IyQjhTX1FwREJfTVc0aWVKQkkifQ.Qv2DUqSPM4r2TN0_UGOm8z6BnZa8T1Bh23C49HAwt6U\",\"scope\":\"address openid user.write profile user.read phone\",\"id_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdF9oYXNoIjoiUU9oYV8yazNtT2NDYndmSVlwbzZBUSIsInN1YiI6ImRlbW91c2VyIiwiZm9ybWF0dGVkIjp7fSwiYXVkaXRUcmFja2luZ0lkIjoiNzQ5NjM4ZmEtM2FhMi00Y2RlLTg4MTQtZDE1YmQ2ZGY2MDAwLTg0NzUiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazIwLmZvcmdlYmxvY2tzLmNvbS9vcGVuYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiaWRfdG9rZW4iLCJnaXZlbl9uYW1lIjoiRGVtbyIsImF1ZCI6IjA3MDQ2MmFlMTJlYzk4YTFlMDVlNjVlOGMyMTQ4ODAyIiwiYXpwIjoiMDcwNDYyYWUxMmVjOThhMWUwNWU2NWU4YzIxNDg4MDIiLCJhdXRoX3RpbWUiOjE1Mzg3MTEwNjksIm5hbWUiOiJEZW1vIFVzZXIiLCJyZWFsbSI6Ii8iLCJleHAiOjE1Mzg3MTQ2NjksInRva2VuVHlwZSI6IkpXVFRva2VuIiwiZmFtaWx5X25hbWUiOiJVc2VyIiwiaWF0IjoxNTM4NzExMDY5LCJmb3JnZXJvY2siOnsic2lnIjoiJj8pLyZWUz5oUC1WeUQoTF17YSleOGo0RGpPcVZ6KHtOSj5eQ1tVLyJ9fQ.oFTmUyNzgL4zysy0akmOkLlpKYV4aiy4mFaWi-XrhTY\",\"token_type\":\"Bearer\",\"expires_in\":3599}"
 						}
 					]
 				},
@@ -1612,7 +1612,7 @@
 										},
 										{
 											"key": "scope",
-											"value": "api.forgecloud.com:user.read api.forgecloud.com:user.write openid profile address phone",
+											"value": "user.read user.write openid profile address phone",
 											"type": "text"
 										}
 									]
@@ -1693,7 +1693,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\"access_token\":\"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJkZW1vdXNlciIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjowLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtODQ3MyIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJGYzlnd1pJNXF0blh3b1FNUGVyaEhfMk9kejgiLCJhdWQiOiIwNzA0NjJhZTEyZWM5OGExZTA1ZTY1ZThjMjE0ODgwMiIsIm5iZiI6MTUzODcxMTA2OSwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIiwic2NvcGUiOlsiYWRkcmVzcyIsIm9wZW5pZCIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLndyaXRlIiwicHJvZmlsZSIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLnJlYWQiLCJwaG9uZSJdLCJhdXRoX3RpbWUiOjE1Mzg3MTEwNjksInJlYWxtIjoiLyIsImV4cCI6MTUzODcxNDY2OSwiaWF0IjoxNTM4NzExMDY5LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJOUTMwQmdESWVpLU9VT0M3dzJkOUNHUG5PU1kifQ.cQv_BAnYrK5g0hKhHaydObGo6YNKlzDsgQf1W26agZg\",\"refresh_token\":\"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJkZW1vdXNlciIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjowLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtODQ3MiIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJyZWZyZXNoX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiRmM5Z3daSTVxdG5Yd29RTVBlcmhIXzJPZHo4IiwiYXVkIjoiMDcwNDYyYWUxMmVjOThhMWUwNWU2NWU4YzIxNDg4MDIiLCJuYmYiOjE1Mzg3MTEwNjksImdyYW50X3R5cGUiOiJwYXNzd29yZCIsInNjb3BlIjpbImFkZHJlc3MiLCJvcGVuaWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci53cml0ZSIsInByb2ZpbGUiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci5yZWFkIiwicGhvbmUiXSwiYXV0aF90aW1lIjoxNTM4NzExMDY5LCJyZWFsbSI6Ii8iLCJleHAiOjE1MzkzMTU4NjksImlhdCI6MTUzODcxMTA2OSwiZXhwaXJlc19pbiI6NjA0ODAwLCJqdGkiOiJCTU5oRWRNc1IyQjhTX1FwREJfTVc0aWVKQkkifQ.Qv2DUqSPM4r2TN0_UGOm8z6BnZa8T1Bh23C49HAwt6U\",\"scope\":\"address openid api.forgecloud.com:user.write profile api.forgecloud.com:user.read phone\",\"id_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdF9oYXNoIjoiUU9oYV8yazNtT2NDYndmSVlwbzZBUSIsInN1YiI6ImRlbW91c2VyIiwiZm9ybWF0dGVkIjp7fSwiYXVkaXRUcmFja2luZ0lkIjoiNzQ5NjM4ZmEtM2FhMi00Y2RlLTg4MTQtZDE1YmQ2ZGY2MDAwLTg0NzUiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazIwLmZvcmdlYmxvY2tzLmNvbS9vcGVuYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiaWRfdG9rZW4iLCJnaXZlbl9uYW1lIjoiRGVtbyIsImF1ZCI6IjA3MDQ2MmFlMTJlYzk4YTFlMDVlNjVlOGMyMTQ4ODAyIiwiYXpwIjoiMDcwNDYyYWUxMmVjOThhMWUwNWU2NWU4YzIxNDg4MDIiLCJhdXRoX3RpbWUiOjE1Mzg3MTEwNjksIm5hbWUiOiJEZW1vIFVzZXIiLCJyZWFsbSI6Ii8iLCJleHAiOjE1Mzg3MTQ2NjksInRva2VuVHlwZSI6IkpXVFRva2VuIiwiZmFtaWx5X25hbWUiOiJVc2VyIiwiaWF0IjoxNTM4NzExMDY5LCJmb3JnZXJvY2siOnsic2lnIjoiJj8pLyZWUz5oUC1WeUQoTF17YSleOGo0RGpPcVZ6KHtOSj5eQ1tVLyJ9fQ.oFTmUyNzgL4zysy0akmOkLlpKYV4aiy4mFaWi-XrhTY\",\"token_type\":\"Bearer\",\"expires_in\":3599}"
+							"body": "{\"access_token\":\"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJkZW1vdXNlciIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjowLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtODQ3MyIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJGYzlnd1pJNXF0blh3b1FNUGVyaEhfMk9kejgiLCJhdWQiOiIwNzA0NjJhZTEyZWM5OGExZTA1ZTY1ZThjMjE0ODgwMiIsIm5iZiI6MTUzODcxMTA2OSwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIiwic2NvcGUiOlsiYWRkcmVzcyIsIm9wZW5pZCIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLndyaXRlIiwicHJvZmlsZSIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLnJlYWQiLCJwaG9uZSJdLCJhdXRoX3RpbWUiOjE1Mzg3MTEwNjksInJlYWxtIjoiLyIsImV4cCI6MTUzODcxNDY2OSwiaWF0IjoxNTM4NzExMDY5LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJOUTMwQmdESWVpLU9VT0M3dzJkOUNHUG5PU1kifQ.cQv_BAnYrK5g0hKhHaydObGo6YNKlzDsgQf1W26agZg\",\"refresh_token\":\"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiJkZW1vdXNlciIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdXRoX2xldmVsIjowLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtODQ3MiIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJyZWZyZXNoX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiRmM5Z3daSTVxdG5Yd29RTVBlcmhIXzJPZHo4IiwiYXVkIjoiMDcwNDYyYWUxMmVjOThhMWUwNWU2NWU4YzIxNDg4MDIiLCJuYmYiOjE1Mzg3MTEwNjksImdyYW50X3R5cGUiOiJwYXNzd29yZCIsInNjb3BlIjpbImFkZHJlc3MiLCJvcGVuaWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci53cml0ZSIsInByb2ZpbGUiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci5yZWFkIiwicGhvbmUiXSwiYXV0aF90aW1lIjoxNTM4NzExMDY5LCJyZWFsbSI6Ii8iLCJleHAiOjE1MzkzMTU4NjksImlhdCI6MTUzODcxMTA2OSwiZXhwaXJlc19pbiI6NjA0ODAwLCJqdGkiOiJCTU5oRWRNc1IyQjhTX1FwREJfTVc0aWVKQkkifQ.Qv2DUqSPM4r2TN0_UGOm8z6BnZa8T1Bh23C49HAwt6U\",\"scope\":\"address openid user.write profile user.read phone\",\"id_token\":\"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdF9oYXNoIjoiUU9oYV8yazNtT2NDYndmSVlwbzZBUSIsInN1YiI6ImRlbW91c2VyIiwiZm9ybWF0dGVkIjp7fSwiYXVkaXRUcmFja2luZ0lkIjoiNzQ5NjM4ZmEtM2FhMi00Y2RlLTg4MTQtZDE1YmQ2ZGY2MDAwLTg0NzUiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazIwLmZvcmdlYmxvY2tzLmNvbS9vcGVuYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiaWRfdG9rZW4iLCJnaXZlbl9uYW1lIjoiRGVtbyIsImF1ZCI6IjA3MDQ2MmFlMTJlYzk4YTFlMDVlNjVlOGMyMTQ4ODAyIiwiYXpwIjoiMDcwNDYyYWUxMmVjOThhMWUwNWU2NWU4YzIxNDg4MDIiLCJhdXRoX3RpbWUiOjE1Mzg3MTEwNjksIm5hbWUiOiJEZW1vIFVzZXIiLCJyZWFsbSI6Ii8iLCJleHAiOjE1Mzg3MTQ2NjksInRva2VuVHlwZSI6IkpXVFRva2VuIiwiZmFtaWx5X25hbWUiOiJVc2VyIiwiaWF0IjoxNTM4NzExMDY5LCJmb3JnZXJvY2siOnsic2lnIjoiJj8pLyZWUz5oUC1WeUQoTF17YSleOGo0RGpPcVZ6KHtOSj5eQ1tVLyJ9fQ.oFTmUyNzgL4zysy0akmOkLlpKYV4aiy4mFaWi-XrhTY\",\"token_type\":\"Bearer\",\"expires_in\":3599}"
 						}
 					]
 				}
@@ -1729,7 +1729,7 @@
 					"name": "Apps",
 					"item": [
 						{
-							"name": "Get apps",
+							"name": "Get Apps",
 							"request": {
 								"auth": {
 									"type": "noauth"
@@ -1738,7 +1738,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiIwZjY1ZDE4OS1mNGFlLTQ2Y2ItOTM5My01ZDY0MTg4M2NhMDYtNTIyNiIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJZb0xiVU9zV0E2SzIzZWVmMHFheVpua0NDcG8iLCJhdWQiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsIm5iZiI6MTUzODYyMTQyMCwiZ3JhbnRfdHlwZSI6ImNsaWVudF9jcmVkZW50aWFscyIsInNjb3BlIjpbImFwaS5mb3JnZWNsb3VkLmNvbTphcHAucmVhZCIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLndyaXRlIiwiYXBpLmZvcmdlY2xvdWQuY29tOnBhc3N3b3JkLXBvbGljeS53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLnJlYWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206YXBwLndyaXRlIiwiYXBpLmZvcmdlY2xvdWQuY29tOnBhc3N3b3JkLXBvbGljeS5yZWFkIl0sImF1dGhfdGltZSI6MTUzODYyMTQyMCwicmVhbG0iOiIvIiwiZXhwIjoxNTM4NjI1MDIwLCJpYXQiOjE1Mzg2MjE0MjAsImV4cGlyZXNfaW4iOjM2MDAsImp0aSI6IjNFd2xKc1ZDd2xjZjFoZjljZWNsT0xGZXNnNCJ9.I4fejOzXsmGtYGgdArswDHi17cIjYrnqpwwgoY3A-1g",
+										"value": "Bearer {{accessToken}}",
 										"description": "The access_token from a registered client",
 										"disabled": true
 									},
@@ -1761,11 +1761,11 @@
 										"apps"
 									]
 								},
-								"description": "Retreives the configuration details of all apps configured\n\n"
+								"description": "Retreives details for all configured apps."
 							},
 							"response": [
 								{
-									"name": "Get apps",
+									"name": "Get Apps",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
@@ -1837,12 +1837,12 @@
 										}
 									],
 									"cookie": [],
-									"body": "[{\"accessTokenLifetime\":3600,\"apiScopes\":[\"api.forgecloud.com:app.read\",\"api.forgecloud.com:app.write\",\"api.forgecloud.com:hosted-page-config.read\",\"api.forgecloud.com:hosted-page-config.write\",\"api.forgecloud.com:password-policy.read\",\"api.forgecloud.com:password-policy.write\",\"api.forgecloud.com:team-member.read\",\"api.forgecloud.com:team-member.write\",\"api.forgecloud.com:user.read\",\"api.forgecloud.com:user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"31d0af520b96169dee8190701a5f1754\",\"customClaims\":{},\"description\":\"service\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":36000,\"loginRedirectUris\":[],\"logoUrl\":\"\",\"logoutRedirectUris\":[],\"name\":\"Service\",\"refreshTokenLifetime\":604800,\"secret\":null,\"type\":\"m2m\"},{\"accessTokenLifetime\":3600,\"apiScopes\":[\"api.forgecloud.com:app.read\",\"api.forgecloud.com:app.write\",\"api.forgecloud.com:hosted-page-config.read\",\"api.forgecloud.com:hosted-page-config.write\",\"api.forgecloud.com:password-policy.read\",\"api.forgecloud.com:password-policy.write\",\"api.forgecloud.com:team-member.read\",\"api.forgecloud.com:team-member.write\",\"api.forgecloud.com:user.read\",\"api.forgecloud.com:user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"92b80dc81dd126e7b3d1c87dfe6d0064\",\"customClaims\":{},\"description\":\"My great food app\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":3600,\"loginRedirectUris\":[\"http://localhost:9080/callback\"],\"logoUrl\":\"\",\"logoutRedirectUris\":[\"http://localhost:9080/\"],\"name\":\"Top Foods\",\"refreshTokenLifetime\":604800,\"secret\":null,\"type\":\"web\"}]"
+									"body": "[{\"accessTokenLifetime\":3600,\"apiScopes\":[\"app.read\",\"app.write\",\"hosted-page-config.read\",\"hosted-page-config.write\",\"password-policy.read\",\"password-policy.write\",\"team-member.read\",\"team-member.write\",\"user.read\",\"user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"31d0af520b96169dee8190701a5f1754\",\"customClaims\":{},\"description\":\"service\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":36000,\"loginRedirectUris\":[],\"logoUrl\":\"\",\"logoutRedirectUris\":[],\"name\":\"Service\",\"refreshTokenLifetime\":604800,\"secret\":null,\"type\":\"m2m\"},{\"accessTokenLifetime\":3600,\"apiScopes\":[\"app.read\",\"app.write\",\"hosted-page-config.read\",\"hosted-page-config.write\",\"password-policy.read\",\"password-policy.write\",\"team-member.read\",\"team-member.write\",\"user.read\",\"user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"92b80dc81dd126e7b3d1c87dfe6d0064\",\"customClaims\":{},\"description\":\"My great food app\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":3600,\"loginRedirectUris\":[\"http://localhost:9080/callback\"],\"logoUrl\":\"\",\"logoutRedirectUris\":[\"http://localhost:9080/\"],\"name\":\"Top Foods\",\"refreshTokenLifetime\":604800,\"secret\":null,\"type\":\"web\"}]"
 								}
 							]
 						},
 						{
-							"name": "Get app",
+							"name": "Get App",
 							"request": {
 								"method": "GET",
 								"header": [
@@ -1865,11 +1865,11 @@
 										"{id}"
 									]
 								},
-								"description": "Retreives the configuration details of the app specified by  {{clientId}} \n\n"
+								"description": "Retreives configuration details of the specified app, identified by the Client ID ({{clientId}}). Requires an access_token for the app."
 							},
 							"response": [
 								{
-									"name": "Get app",
+									"name": "Get App",
 									"originalRequest": {
 										"method": "GET",
 										"header": [
@@ -1942,12 +1942,12 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\"accessTokenLifetime\":3600,\"apiScopes\":[\"api.forgecloud.com:app.read\",\"api.forgecloud.com:app.write\",\"api.forgecloud.com:hosted-page-config.read\",\"api.forgecloud.com:hosted-page-config.write\",\"api.forgecloud.com:password-policy.read\",\"api.forgecloud.com:password-policy.write\",\"api.forgecloud.com:team-member.read\",\"api.forgecloud.com:team-member.write\",\"api.forgecloud.com:user.read\",\"api.forgecloud.com:user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"31d0af520b96169dee8190701a5f1754\",\"customClaims\":{},\"description\":\"service\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":36000,\"loginRedirectUris\":[],\"logoUrl\":\"\",\"logoutRedirectUris\":[],\"name\":\"Service\",\"refreshTokenLifetime\":604800,\"secret\":null,\"type\":\"m2m\"}"
+									"body": "{\"accessTokenLifetime\":3600,\"apiScopes\":[\"app.read\",\"app.write\",\"hosted-page-config.read\",\"hosted-page-config.write\",\"password-policy.read\",\"password-policy.write\",\"team-member.read\",\"team-member.write\",\"user.read\",\"user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"31d0af520b96169dee8190701a5f1754\",\"customClaims\":{},\"description\":\"service\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":36000,\"loginRedirectUris\":[],\"logoUrl\":\"\",\"logoutRedirectUris\":[],\"name\":\"Service\",\"refreshTokenLifetime\":604800,\"secret\":null,\"type\":\"m2m\"}"
 								}
 							]
 						},
 						{
-							"name": "Regenerate app secret",
+							"name": "Regenerate App Secret",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -1981,11 +1981,11 @@
 										"{id}"
 									]
 								},
-								"description": "Generates a new secret for the application.  "
+								"description": "Generates a new client_secret for the app."
 							},
 							"response": [
 								{
-									"name": "Regenerate app secret",
+									"name": "Regenerate App Secret",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -2069,12 +2069,12 @@
 											"key": "iPlanetDirectoryPro"
 										}
 									],
-									"body": "{\"accessTokenLifetime\":3600,\"apiScopes\":[\"api.forgecloud.com:app.read\",\"api.forgecloud.com:app.write\",\"api.forgecloud.com:hosted-page-config.read\",\"api.forgecloud.com:hosted-page-config.write\",\"api.forgecloud.com:password-policy.read\",\"api.forgecloud.com:password-policy.write\",\"api.forgecloud.com:team-member.read\",\"api.forgecloud.com:team-member.write\",\"api.forgecloud.com:user.read\",\"api.forgecloud.com:user.write\",\"api.forgecloud.com:app.read\",\"api.forgecloud.com:app.write\",\"api.forgecloud.com:hosted-page-config.read\",\"api.forgecloud.com:hosted-page-config.write\",\"api.forgecloud.com:password-policy.read\",\"api.forgecloud.com:password-policy.write\",\"api.forgecloud.com:team-member.read\",\"api.forgecloud.com:team-member.write\",\"api.forgecloud.com:user.read\",\"api.forgecloud.com:user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"070462ae12ec98a1e05e65e8c2148802\",\"customClaims\":{},\"description\":\"My great food app\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":3600,\"loginRedirectUris\":[\"http://localhost:9080/callback\"],\"logoUrl\":\"\",\"logoutRedirectUris\":[\"http://localhost:9080/\"],\"name\":\"New Top Foods\",\"refreshTokenLifetime\":604800,\"secret\":\"4fs3vvI1jmCyH2ExK2P9b1iqHt+DJFSCpgyL0FBukZs=\",\"type\":\"web\"}"
+									"body": "{\"accessTokenLifetime\":3600,\"apiScopes\":[\"apps.read\",\"apps.write\",\"hosted-page-config.read\",\"hosted-page-config.write\",\"password-policy.read\",\"password-policy.write\",\"team-member.read\",\"team-member.write\",\"user.read\",\"user.write\",\"apps.read\",\"apps.write\",\"hosted-page-config.read\",\"hosted-page-config.write\",\"password-policy.read\",\"password-policy.write\",\"team-member.read\",\"team-member.write\",\"user.read\",\"user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"070462ae12ec98a1e05e65e8c2148802\",\"customClaims\":{},\"description\":\"My great food app\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":3600,\"loginRedirectUris\":[\"http://localhost:9080/callback\"],\"logoUrl\":\"\",\"logoutRedirectUris\":[\"http://localhost:9080/\"],\"name\":\"New Top Foods\",\"refreshTokenLifetime\":604800,\"secret\":\"4fs3vvI1jmCyH2ExK2P9b1iqHt+DJFSCpgyL0FBukZs=\",\"type\":\"web\"}"
 								}
 							]
 						},
 						{
-							"name": "Create Application Client Web",
+							"name": "Create a New Web App",
 							"event": [
 								{
 									"listen": "test",
@@ -2092,7 +2092,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiIwZjY1ZDE4OS1mNGFlLTQ2Y2ItOTM5My01ZDY0MTg4M2NhMDYtODc4MzEiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazIwLmZvcmdlYmxvY2tzLmNvbS9vcGVuYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiUkNoUW5BWUxhZGVRY01RWTYxd1U3QU53RGVNIiwiYXVkIjoiMzFkMGFmNTIwYjk2MTY5ZGVlODE5MDcwMWE1ZjE3NTQiLCJuYmYiOjE1Mzg3MDExNTEsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJzY29wZSI6WyJhcGkuZm9yZ2VjbG91ZC5jb206YXBwLnJlYWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kud3JpdGUiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci5yZWFkIiwiYXBpLmZvcmdlY2xvdWQuY29tOmFwcC53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kucmVhZCJdLCJhdXRoX3RpbWUiOjE1Mzg3MDExNTEsInJlYWxtIjoiLyIsImV4cCI6MTUzODcwNDc1MSwiaWF0IjoxNTM4NzAxMTUxLCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJQZko1MnFCMFBCaUxsZ0RXWjBKUWt4cEc3MjgifQ.ZtCewe-TjRVLdqcJazlkXzD6rL6CYyWy3QgPbIktURU",
+										"value": "Bearer {{access_token}}",
 										"disabled": true
 									},
 									{
@@ -2106,7 +2106,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"accessTokenLifetime\": 3600,\n  \"authorizationCodeLifetime\": 120,\n  \"customClaims\": {},\n  \"description\": \"My great food app\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"HS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\"http://localhost:9080/callback\"],\n  \"logoutRedirectUris\": [\"http://localhost:9080/\"],\n  \"name\": \"Top Foods\",\n  \"refreshTokenLifetime\": 604800,\n  \"type\": \"web\"\n}"
+									"raw": ""
 								},
 								"url": {
 									"raw": "{{tenantApiV1Url}}/apps",
@@ -2117,17 +2117,17 @@
 										"apps"
 									]
 								},
-								"description": "\nCreates an OAuth2.0 Client application. Returns the configured web application on success.\n\nthe body must contian \"type\" : \"web\" for web application clients "
+								"description": "\nCreates an OAuth 2.0 client web app. Returns the web app configururation.\n\nRequirement: include: \"type\" : \"web\" in the --data."
 							},
 							"response": [
 								{
-									"name": "Create Application Client Web",
+									"name": "Create Client Web App",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
 											{
 												"key": "Authorization",
-												"value": "Bearer eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiIwZjY1ZDE4OS1mNGFlLTQ2Y2ItOTM5My01ZDY0MTg4M2NhMDYtODc4MzEiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazIwLmZvcmdlYmxvY2tzLmNvbS9vcGVuYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiUkNoUW5BWUxhZGVRY01RWTYxd1U3QU53RGVNIiwiYXVkIjoiMzFkMGFmNTIwYjk2MTY5ZGVlODE5MDcwMWE1ZjE3NTQiLCJuYmYiOjE1Mzg3MDExNTEsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJzY29wZSI6WyJhcGkuZm9yZ2VjbG91ZC5jb206YXBwLnJlYWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kud3JpdGUiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci5yZWFkIiwiYXBpLmZvcmdlY2xvdWQuY29tOmFwcC53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kucmVhZCJdLCJhdXRoX3RpbWUiOjE1Mzg3MDExNTEsInJlYWxtIjoiLyIsImV4cCI6MTUzODcwNDc1MSwiaWF0IjoxNTM4NzAxMTUxLCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJQZko1MnFCMFBCaUxsZ0RXWjBKUWt4cEc3MjgifQ.ZtCewe-TjRVLdqcJazlkXzD6rL6CYyWy3QgPbIktURU",
+												"value": "Bearer {{access_token}}",
 												"disabled": true
 											},
 											{
@@ -2201,12 +2201,12 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\"accessTokenLifetime\":3600,\"apiScopes\":[\"api.forgecloud.com:app.read\",\"api.forgecloud.com:app.write\",\"api.forgecloud.com:hosted-page-config.read\",\"api.forgecloud.com:hosted-page-config.write\",\"api.forgecloud.com:password-policy.read\",\"api.forgecloud.com:password-policy.write\",\"api.forgecloud.com:team-member.read\",\"api.forgecloud.com:team-member.write\",\"api.forgecloud.com:user.read\",\"api.forgecloud.com:user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"4718082d880be9f5c1c1e18b5fe87036\",\"customClaims\":{},\"description\":\"My great food app\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":3600,\"loginRedirectUris\":[\"http://localhost:9080/callback\"],\"logoUrl\":\"\",\"logoutRedirectUris\":[\"http://localhost:9080/\"],\"name\":\"Top Foods\",\"refreshTokenLifetime\":604800,\"secret\":\"ODVbJ8P7GbYYXzyh4XHC62GllCP9N/HYMlo0aNT/YHM=\",\"type\":\"web\"}"
+									"body": "{\"accessTokenLifetime\":3600,\"apiScopes\":[\"app.read\",\"app.write\",\"hosted-page-config.read\",\"hosted-page-config.write\",\"password-policy.read\",\"password-policy.write\",\"team-member.read\",\"team-member.write\",\"user.read\",\"user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"4718082d880be9f5c1c1e18b5fe87036\",\"customClaims\":{},\"description\":\"My great food app\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":3600,\"loginRedirectUris\":[\"http://localhost:9080/callback\"],\"logoUrl\":\"\",\"logoutRedirectUris\":[\"http://localhost:9080/\"],\"name\":\"Top Foods\",\"refreshTokenLifetime\":604800,\"secret\":\"ODVbJ8P7GbYYXzyh4XHC62GllCP9N/HYMlo0aNT/YHM=\",\"type\":\"web\"}"
 								}
 							]
 						},
 						{
-							"name": "Create Application Client Machine 2 Machine",
+							"name": "Create a New Service (M2M) App",
 							"event": [
 								{
 									"listen": "test",
@@ -2238,7 +2238,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n        \"api.forgecloud.com:app.read\",\n        \"api.forgecloud.com:app.write\",\n        \"api.forgecloud.com:hosted-page-config.read\",\n        \"api.forgecloud.com:hosted-page-config.write\",\n        \"api.forgecloud.com:password-policy.read\",\n        \"api.forgecloud.com:password-policy.write\",\n        \"api.forgecloud.com:team-member.read\",\n        \"api.forgecloud.com:team-member.write\",\n        \"api.forgecloud.com:user.read\",\n        \"api.forgecloud.com:user.write\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"customClaims\": {},\n    \"description\": \"M2Mx\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"clientCredentials\": true\n    },\n    \"jwtSigningAlgorithm\": \"HS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [],\n    \"name\": \"M2M\",\n    \"refreshTokenLifetime\": 604800,\n    \"type\" : \"m2m\"\n}\n\n   \n\n   "
+									"raw": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n        \"app.read\",\n        \"app.write\",\n        \"hosted-page-config.read\",\n        \"hosted-page-config.write\",\n        \"password-policy.read\",\n        \"password-policy.write\",\n        \"team-member.read\",\n        \"team-member.write\",\n        \"user.read\",\n        \"user.write\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"customClaims\": {},\n    \"description\": \"M2Mx\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"clientCredentials\": true\n    },\n    \"jwtSigningAlgorithm\": \"HS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [],\n    \"name\": \"M2M\",\n    \"refreshTokenLifetime\": 604800,\n    \"type\" : \"m2m\"\n}\n\n   \n\n   "
 								},
 								"url": {
 									"raw": "{{tenantApiV1Url}}/apps",
@@ -2249,31 +2249,26 @@
 										"apps"
 									]
 								},
-								"description": "\nCreates an OAuth2.0 Client application for a machine 2 machine application. Returns the configuration of the configured application on success.\n\nthe body must contian \"type\" : \"m2m\" for a machine 2 machine applications.  In addition the grant types must be set to client credentials as follows   \n\n\"grantTypes\": {\n  \t\"clientCredendials\": true\n  }"
+								"description": "\nCreates an OAuth2.0 Service Machine to Machine (M2M) App.. Returns the service app configuration.\n\nRequirements:\n\n* Include \"type\" : \"m2m\".\n\n* Set the client credential grant type:   \"grantTypes\": {\n  \t\"clientCredendials\": true\n  }"
 							},
 							"response": [
 								{
-									"name": "Create Application Client Machine 2 Machine",
+									"name": "Create a New Service (M2M) App",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
 											{
 												"key": "Authorization",
-												"value": "Bearer eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiIwZjY1ZDE4OS1mNGFlLTQ2Y2ItOTM5My01ZDY0MTg4M2NhMDYtODc4MzEiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazIwLmZvcmdlYmxvY2tzLmNvbS9vcGVuYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiUkNoUW5BWUxhZGVRY01RWTYxd1U3QU53RGVNIiwiYXVkIjoiMzFkMGFmNTIwYjk2MTY5ZGVlODE5MDcwMWE1ZjE3NTQiLCJuYmYiOjE1Mzg3MDExNTEsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJzY29wZSI6WyJhcGkuZm9yZ2VjbG91ZC5jb206YXBwLnJlYWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kud3JpdGUiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci5yZWFkIiwiYXBpLmZvcmdlY2xvdWQuY29tOmFwcC53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kucmVhZCJdLCJhdXRoX3RpbWUiOjE1Mzg3MDExNTEsInJlYWxtIjoiLyIsImV4cCI6MTUzODcwNDc1MSwiaWF0IjoxNTM4NzAxMTUxLCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJQZko1MnFCMFBCaUxsZ0RXWjBKUWt4cEc3MjgifQ.ZtCewe-TjRVLdqcJazlkXzD6rL6CYyWy3QgPbIktURU",
-												"disabled": true
+												"value": "Bearer {{access_token}}"
 											},
 											{
 												"key": "Content-Type",
 												"value": "application/json"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer {{accessToken}}"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n        \"api.forgecloud.com:app.read\",\n        \"api.forgecloud.com:app.write\",\n        \"api.forgecloud.com:hosted-page-config.read\",\n        \"api.forgecloud.com:hosted-page-config.write\",\n        \"api.forgecloud.com:password-policy.read\",\n        \"api.forgecloud.com:password-policy.write\",\n        \"api.forgecloud.com:team-member.read\",\n        \"api.forgecloud.com:team-member.write\",\n        \"api.forgecloud.com:user.read\",\n        \"api.forgecloud.com:user.write\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"customClaims\": {},\n    \"description\": \"M2Mx\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"clientCredentials\": true\n    },\n    \"jwtSigningAlgorithm\": \"HS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [],\n    \"name\": \"M2M\",\n    \"refreshTokenLifetime\": 604800,\n    \"type\" : \"m2m\"\n}\n\n   \n\n   "
+											"raw": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n        \"app.read\",\n        \"app.write\",\n        \"hosted-page-config.read\",\n        \"hosted-page-config.write\",\n        \"password-policy.read\",\n        \"password-policy.write\",\n        \"team-member.read\",\n        \"team-member.write\",\n        \"user.read\",\n        \"user.write\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"customClaims\": {},\n    \"description\": \"M2Mx\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"clientCredentials\": true\n    },\n    \"jwtSigningAlgorithm\": \"HS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [],\n    \"name\": \"M2M\",\n    \"refreshTokenLifetime\": 604800,\n    \"type\" : \"m2m\"\n}\n\n   \n\n   "
 										},
 										"url": {
 											"raw": "{{tenantApiV1Url}}/apps",
@@ -2333,12 +2328,12 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\"accessTokenLifetime\":3600,\"apiScopes\":[\"api.forgecloud.com:app.read\",\"api.forgecloud.com:app.write\",\"api.forgecloud.com:hosted-page-config.read\",\"api.forgecloud.com:hosted-page-config.write\",\"api.forgecloud.com:password-policy.read\",\"api.forgecloud.com:password-policy.write\",\"api.forgecloud.com:team-member.read\",\"api.forgecloud.com:team-member.write\",\"api.forgecloud.com:user.read\",\"api.forgecloud.com:user.write\",\"api.forgecloud.com:app.read\",\"api.forgecloud.com:app.write\",\"api.forgecloud.com:hosted-page-config.read\",\"api.forgecloud.com:hosted-page-config.write\",\"api.forgecloud.com:password-policy.read\",\"api.forgecloud.com:password-policy.write\",\"api.forgecloud.com:team-member.read\",\"api.forgecloud.com:team-member.write\",\"api.forgecloud.com:user.read\",\"api.forgecloud.com:user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"cc4c8d1e7521e17663a29d8448b238f6\",\"customClaims\":{},\"description\":\"M2Mx\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":3600,\"loginRedirectUris\":[],\"logoUrl\":\"\",\"logoutRedirectUris\":[],\"name\":\"M2M\",\"refreshTokenLifetime\":604800,\"secret\":\"1UhudVd5bgNXn2fZHTorUuzXdzyWeGNfcU2ZJv6c6Yk=\",\"type\":\"m2m\"}"
+									"body": ""
 								}
 							]
 						},
 						{
-							"name": "Update Application Client - Web",
+							"name": "Update Web App",
 							"event": [
 								{
 									"listen": "test",
@@ -2370,21 +2365,17 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI5MTc5NDliMTFjNDQxNTlmMGU2OWZjNjlmMTcwMmVhYiIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtNjE4OTgiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazIwLmZvcmdlYmxvY2tzLmNvbS9vcGVuYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiTW9BR0ZDMkFodHZDS1Vtc01ZdkZMTFdGOXNzIiwiYXVkIjoiOTE3OTQ5YjExYzQ0MTU5ZjBlNjlmYzY5ZjE3MDJlYWIiLCJuYmYiOjE1Mzg3NjI4MjYsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJzY29wZSI6WyJhcGkuZm9yZ2VjbG91ZC5jb206YXBwLnJlYWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kud3JpdGUiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci5yZWFkIiwiYXBpLmZvcmdlY2xvdWQuY29tOmFwcC53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kucmVhZCJdLCJhdXRoX3RpbWUiOjE1Mzg3NjI4MjYsInJlYWxtIjoiLyIsImV4cCI6MTUzODc2NjQyNiwiaWF0IjoxNTM4NzYyODI2LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJpSTFyempVSzJpbHQyUU9JNWZqbkVGaUJjMVEifQ._opNpgqBBTI_e3NEfAv1RxruJWg2KfRNjdU9K7Bv4EE",
+										"value": "Bearer {{access_token}}",
 										"disabled": true
 									},
 									{
 										"key": "Content-Type",
 										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{accessToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "    {\n    \t\"authorizationCodeLifetime\": 120,\n        \"accessTokenLifetime\": 3600,\n        \"apiScopes\": [\n            \"api.forgecloud.com:app.read\",\n            \"api.forgecloud.com:app.write\",\n            \"api.forgecloud.com:hosted-page-config.read\",\n            \"api.forgecloud.com:hosted-page-config.write\",\n            \"api.forgecloud.com:password-policy.read\",\n            \"api.forgecloud.com:password-policy.write\",\n            \"api.forgecloud.com:team-member.read\",\n            \"api.forgecloud.com:team-member.write\",\n            \"api.forgecloud.com:user.read\",\n            \"api.forgecloud.com:user.write\"\n        ],\n\n        \"customClaims\": {},\n        \"description\": \"My great food app\",\n        \"domain\": \"\",\n        \"enabled\": true,\n        \"grantTypes\": {\n            \"authorizationCode\": true,\n            \"refreshToken\": true\n        },\n        \"jwtSigningAlgorithm\": \"HS256\",\n        \"jwtTokenLifetime\": 3600,\n        \"loginRedirectUris\": [\n            \"http://localhost:9080/callback\"\n        ],\n        \"logoUrl\": \"\",\n        \"logoutRedirectUris\": [\n            \"http://localhost:9080/\"\n        ],\n        \"name\": \"New Top Foods\",\n        \"clientId\": \"070462ae12ec98a1e05e65e8c2148802\",\n        \"refreshTokenLifetime\": 604800,\n        \"type\": \"web\"\n        \n    }"
+									"raw": ""
 								},
 								"url": {
 									"raw": "{{tenantApiV1Url}}/apps/{id}",
@@ -2406,8 +2397,7 @@
 										"header": [
 											{
 												"key": "Authorization",
-												"value": "Bearer eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI5MTc5NDliMTFjNDQxNTlmMGU2OWZjNjlmMTcwMmVhYiIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtNjE4OTgiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazIwLmZvcmdlYmxvY2tzLmNvbS9vcGVuYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiTW9BR0ZDMkFodHZDS1Vtc01ZdkZMTFdGOXNzIiwiYXVkIjoiOTE3OTQ5YjExYzQ0MTU5ZjBlNjlmYzY5ZjE3MDJlYWIiLCJuYmYiOjE1Mzg3NjI4MjYsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJzY29wZSI6WyJhcGkuZm9yZ2VjbG91ZC5jb206YXBwLnJlYWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kud3JpdGUiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci5yZWFkIiwiYXBpLmZvcmdlY2xvdWQuY29tOmFwcC53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kucmVhZCJdLCJhdXRoX3RpbWUiOjE1Mzg3NjI4MjYsInJlYWxtIjoiLyIsImV4cCI6MTUzODc2NjQyNiwiaWF0IjoxNTM4NzYyODI2LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJpSTFyempVSzJpbHQyUU9JNWZqbkVGaUJjMVEifQ._opNpgqBBTI_e3NEfAv1RxruJWg2KfRNjdU9K7Bv4EE",
-												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"value": "Bearer {{access_token}}",
 												"disabled": true
 											},
 											{
@@ -2423,7 +2413,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "    {\n    \t\"authorizationCodeLifetime\": 120,\n        \"accessTokenLifetime\": 3600,\n        \"apiScopes\": [\n            \"api.forgecloud.com:app.read\",\n            \"api.forgecloud.com:app.write\",\n            \"api.forgecloud.com:hosted-page-config.read\",\n            \"api.forgecloud.com:hosted-page-config.write\",\n            \"api.forgecloud.com:password-policy.read\",\n            \"api.forgecloud.com:password-policy.write\",\n            \"api.forgecloud.com:team-member.read\",\n            \"api.forgecloud.com:team-member.write\",\n            \"api.forgecloud.com:user.read\",\n            \"api.forgecloud.com:user.write\"\n        ],\n\n        \"customClaims\": {},\n        \"description\": \"My great food app\",\n        \"domain\": \"\",\n        \"enabled\": true,\n        \"grantTypes\": {\n            \"authorizationCode\": true,\n            \"refreshToken\": true\n        },\n        \"jwtSigningAlgorithm\": \"HS256\",\n        \"jwtTokenLifetime\": 3600,\n        \"loginRedirectUris\": [\n            \"http://localhost:9080/callback\"\n        ],\n        \"logoUrl\": \"\",\n        \"logoutRedirectUris\": [\n            \"http://localhost:9080/\"\n        ],\n        \"name\": \"New Top Foods\",\n        \"clientId\": \"070462ae12ec98a1e05e65e8c2148802\",\n        \"refreshTokenLifetime\": 604800,\n        \"type\": \"web\"\n        \n    }"
+											"raw": "    {\n    \t\"authorizationCodeLifetime\": 120,\n        \"accessTokenLifetime\": 3600,\n        \"apiScopes\": [\n            \"app.read\",\n            \"app.write\",\n            \"hosted-page-config.read\",\n            \"hosted-page-config.write\",\n            \"password-policy.read\",\n            \"password-policy.write\",\n            \"team-member.read\",\n            \"team-member.write\",\n            \"user.read\",\n            \"user.write\"\n        ],\n\n        \"customClaims\": {},\n        \"description\": \"My great food app\",\n        \"domain\": \"\",\n        \"enabled\": true,\n        \"grantTypes\": {\n            \"authorizationCode\": true,\n            \"refreshToken\": true\n        },\n        \"jwtSigningAlgorithm\": \"HS256\",\n        \"jwtTokenLifetime\": 3600,\n        \"loginRedirectUris\": [\n            \"http://localhost:9080/callback\"\n        ],\n        \"logoUrl\": \"\",\n        \"logoutRedirectUris\": [\n            \"http://localhost:9080/\"\n        ],\n        \"name\": \"New Top Foods\",\n        \"clientId\": \"070462ae12ec98a1e05e65e8c2148802\",\n        \"refreshTokenLifetime\": 604800,\n        \"type\": \"web\"\n        \n    }"
 										},
 										"url": {
 											"raw": "{{tenantApiV1Url}}/apps/55c52e21-f720-4c4c-9cd3-13682900a10a",
@@ -2494,7 +2484,7 @@
 											"key": "iPlanetDirectoryPro"
 										}
 									],
-									"body": "{\"accessTokenLifetime\":3600,\"apiScopes\":[\"api.forgecloud.com:app.read\",\"api.forgecloud.com:app.write\",\"api.forgecloud.com:hosted-page-config.read\",\"api.forgecloud.com:hosted-page-config.write\",\"api.forgecloud.com:password-policy.read\",\"api.forgecloud.com:password-policy.write\",\"api.forgecloud.com:team-member.read\",\"api.forgecloud.com:team-member.write\",\"api.forgecloud.com:user.read\",\"api.forgecloud.com:user.write\",\"api.forgecloud.com:app.read\",\"api.forgecloud.com:app.write\",\"api.forgecloud.com:hosted-page-config.read\",\"api.forgecloud.com:hosted-page-config.write\",\"api.forgecloud.com:password-policy.read\",\"api.forgecloud.com:password-policy.write\",\"api.forgecloud.com:team-member.read\",\"api.forgecloud.com:team-member.write\",\"api.forgecloud.com:user.read\",\"api.forgecloud.com:user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"070462ae12ec98a1e05e65e8c2148802\",\"customClaims\":{},\"description\":\"My great food app\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":3600,\"loginRedirectUris\":[\"http://localhost:9080/callback\"],\"logoUrl\":\"\",\"logoutRedirectUris\":[\"http://localhost:9080/\"],\"name\":\"New Top Foods\",\"refreshTokenLifetime\":604800,\"secret\":null,\"type\":\"web\"}"
+									"body": "{\"accessTokenLifetime\":3600,\"apiScopes\":[\"app.read\",\"app.write\",\"hosted-page-config.read\",\"hosted-page-config.write\",\"password-policy.read\",\"password-policy.write\",\"team-member.read\",\"team-member.write\",\"user.read\",\"user.write\",\"app.read\",\"app.write\",\"hosted-page-config.read\",\"hosted-page-config.write\",\"password-policy.read\",\"password-policy.write\",\"team-member.read\",\"team-member.write\",\"user.read\",\"user.write\"],\"authorizationCodeLifetime\":120,\"clientId\":\"070462ae12ec98a1e05e65e8c2148802\",\"customClaims\":{},\"description\":\"My great food app\",\"domain\":\"\",\"enabled\":true,\"grantTypes\":{\"authorizationCode\":true,\"clientCredentials\":true,\"refreshToken\":true},\"jwtSigningAlgorithm\":\"HS256\",\"jwtTokenLifetime\":3600,\"loginRedirectUris\":[\"http://localhost:9080/callback\"],\"logoUrl\":\"\",\"logoutRedirectUris\":[\"http://localhost:9080/\"],\"name\":\"New Top Foods\",\"refreshTokenLifetime\":604800,\"secret\":null,\"type\":\"web\"}"
 								}
 							]
 						},
@@ -2522,7 +2512,7 @@
 										"{id}"
 									]
 								},
-								"description": "Deletes an app as specified by clientid\n"
+								"description": "Deletes an app as specified by its Client ID\n"
 							},
 							"response": [
 								{
@@ -2599,12 +2589,12 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\"_id\":\"72044a593ba85ad8da41fe5e962168dc\",\"_rev\":\"-1586076853\",\"advancedOAuth2ClientConfig\":{\"descriptions\":{\"inherited\":false,\"value\":[\"My great food app\"]},\"requestUris\":{\"inherited\":false,\"value\":[]},\"subjectType\":{\"inherited\":false,\"value\":\"Public\"},\"name\":{\"inherited\":false,\"value\":[\"Top Foods\"]},\"contacts\":{\"inherited\":false,\"value\":[]},\"responseTypes\":{\"inherited\":false,\"value\":[\"code id_token\",\"code token id_token\",\"code token\",\"code\",\"id_token\",\"token id_token\",\"token\"]},\"updateAccessToken\":{\"inherited\":false,\"value\":null},\"mixUpMitigation\":{\"inherited\":false,\"value\":false},\"sectorIdentifierUri\":{\"inherited\":false,\"value\":null},\"tokenEndpointAuthMethod\":{\"inherited\":false,\"value\":\"client_secret_basic\"},\"isConsentImplied\":{\"inherited\":false,\"value\":true}},\"signEncOAuth2ClientConfig\":{\"tokenEndpointAuthSigningAlgorithm\":{\"inherited\":false,\"value\":\"RS256\"},\"idTokenEncryptionEnabled\":{\"inherited\":false,\"value\":false},\"requestParameterSignedAlg\":{\"inherited\":false,\"value\":null},\"clientJwtPublicKey\":{\"inherited\":false,\"value\":null},\"idTokenPublicEncryptionKey\":{\"inherited\":false,\"value\":null},\"userinfoResponseFormat\":{\"inherited\":false,\"value\":\"JSON\"},\"publicKeyLocation\":{\"inherited\":false,\"value\":\"jwks_uri\"},\"jwkStoreCacheMissCacheTime\":{\"inherited\":false,\"value\":60000},\"requestParameterEncryptedEncryptionAlgorithm\":{\"inherited\":false,\"value\":\"A128CBC-HS256\"},\"userinfoSignedResponseAlg\":{\"inherited\":false,\"value\":null},\"idTokenEncryptionAlgorithm\":{\"inherited\":false,\"value\":\"RSA-OAEP-256\"},\"requestParameterEncryptedAlg\":{\"inherited\":false,\"value\":null},\"jwkSet\":{\"inherited\":false,\"value\":null},\"idTokenEncryptionMethod\":{\"inherited\":false,\"value\":\"A128CBC-HS256\"},\"jwksCacheTimeout\":{\"inherited\":false,\"value\":3600000},\"userinfoEncryptedResponseAlg\":{\"inherited\":false,\"value\":null},\"idTokenSignedResponseAlg\":{\"inherited\":false,\"value\":\"HS256\"},\"jwksUri\":{\"inherited\":false,\"value\":\"http://openam:80/openam/oauth2/connect/jwk_uri\"},\"userinfoEncryptedResponseEncryptionAlgorithm\":{\"inherited\":false,\"value\":\"A128CBC-HS256\"}},\"coreOpenIDClientConfig\":{\"claims\":{\"inherited\":false,\"value\":[]},\"clientSessionUri\":{\"inherited\":false,\"value\":null},\"defaultAcrValues\":{\"inherited\":false,\"value\":[]},\"jwtTokenLifetime\":{\"inherited\":false,\"value\":3600},\"defaultMaxAgeEnabled\":{\"inherited\":false,\"value\":false},\"defaultMaxAge\":{\"inherited\":false,\"value\":600},\"postLogoutRedirectUri\":{\"inherited\":false,\"value\":[\"http://localhost:9080/\"]}},\"coreOAuth2ClientConfig\":{\"agentgroup\":null,\"userpassword\":null,\"userpassword-encrypted\":\"AAAAA0FFUwIQTdw2QDUlHe7OE3ibRFFZcfBf51MqlgekEow7HtiRAOwCAjf7uyKlRO9NYjAJlHGM1OnjGeUlwPt0rmFhg1e2+ZNmAfrJ2Heu\",\"defaultScopes\":{\"inherited\":false,\"value\":[\"openid\"]},\"refreshTokenLifetime\":{\"inherited\":false,\"value\":604800},\"scopes\":{\"inherited\":false,\"value\":[\"address\",\"phone\",\"profile\",\"email\",\"api.forgecloud.com:app.read\",\"api.forgecloud.com:app.write\",\"api.forgecloud.com:hosted-page-config.read\",\"api.forgecloud.com:hosted-page-config.write\",\"api.forgecloud.com:password-policy.read\",\"api.forgecloud.com:password-policy.write\",\"api.forgecloud.com:team-member.read\",\"api.forgecloud.com:team-member.write\",\"api.forgecloud.com:user.read\",\"api.forgecloud.com:user.write\"]},\"status\":{\"inherited\":false,\"value\":\"Active\"},\"accessTokenLifetime\":{\"inherited\":false,\"value\":3600},\"redirectionUris\":{\"inherited\":false,\"value\":[\"http://localhost:9080/callback\"]},\"clientName\":{\"inherited\":false,\"value\":[\"Top Foods\"]},\"clientType\":{\"inherited\":false,\"value\":\"Confidential\"},\"authorizationCodeLifetime\":{\"inherited\":false,\"value\":120}},\"coreUmaClientConfig\":{\"claimsRedirectionUris\":{\"inherited\":false,\"value\":[]}},\"_type\":{\"_id\":\"OAuth2Client\",\"name\":\"OAuth2 Clients\",\"collection\":true}}"
+									"body": "{\"_id\":\"72044a593ba85ad8da41fe5e962168dc\",\"_rev\":\"-1586076853\",\"advancedOAuth2ClientConfig\":{\"descriptions\":{\"inherited\":false,\"value\":[\"My great food app\"]},\"requestUris\":{\"inherited\":false,\"value\":[]},\"subjectType\":{\"inherited\":false,\"value\":\"Public\"},\"name\":{\"inherited\":false,\"value\":[\"Top Foods\"]},\"contacts\":{\"inherited\":false,\"value\":[]},\"responseTypes\":{\"inherited\":false,\"value\":[\"code id_token\",\"code token id_token\",\"code token\",\"code\",\"id_token\",\"token id_token\",\"token\"]},\"updateAccessToken\":{\"inherited\":false,\"value\":null},\"mixUpMitigation\":{\"inherited\":false,\"value\":false},\"sectorIdentifierUri\":{\"inherited\":false,\"value\":null},\"tokenEndpointAuthMethod\":{\"inherited\":false,\"value\":\"client_secret_basic\"},\"isConsentImplied\":{\"inherited\":false,\"value\":true}},\"signEncOAuth2ClientConfig\":{\"tokenEndpointAuthSigningAlgorithm\":{\"inherited\":false,\"value\":\"RS256\"},\"idTokenEncryptionEnabled\":{\"inherited\":false,\"value\":false},\"requestParameterSignedAlg\":{\"inherited\":false,\"value\":null},\"clientJwtPublicKey\":{\"inherited\":false,\"value\":null},\"idTokenPublicEncryptionKey\":{\"inherited\":false,\"value\":null},\"userinfoResponseFormat\":{\"inherited\":false,\"value\":\"JSON\"},\"publicKeyLocation\":{\"inherited\":false,\"value\":\"jwks_uri\"},\"jwkStoreCacheMissCacheTime\":{\"inherited\":false,\"value\":60000},\"requestParameterEncryptedEncryptionAlgorithm\":{\"inherited\":false,\"value\":\"A128CBC-HS256\"},\"userinfoSignedResponseAlg\":{\"inherited\":false,\"value\":null},\"idTokenEncryptionAlgorithm\":{\"inherited\":false,\"value\":\"RSA-OAEP-256\"},\"requestParameterEncryptedAlg\":{\"inherited\":false,\"value\":null},\"jwkSet\":{\"inherited\":false,\"value\":null},\"idTokenEncryptionMethod\":{\"inherited\":false,\"value\":\"A128CBC-HS256\"},\"jwksCacheTimeout\":{\"inherited\":false,\"value\":3600000},\"userinfoEncryptedResponseAlg\":{\"inherited\":false,\"value\":null},\"idTokenSignedResponseAlg\":{\"inherited\":false,\"value\":\"HS256\"},\"jwksUri\":{\"inherited\":false,\"value\":\"http://openam:80/openam/oauth2/connect/jwk_uri\"},\"userinfoEncryptedResponseEncryptionAlgorithm\":{\"inherited\":false,\"value\":\"A128CBC-HS256\"}},\"coreOpenIDClientConfig\":{\"claims\":{\"inherited\":false,\"value\":[]},\"clientSessionUri\":{\"inherited\":false,\"value\":null},\"defaultAcrValues\":{\"inherited\":false,\"value\":[]},\"jwtTokenLifetime\":{\"inherited\":false,\"value\":3600},\"defaultMaxAgeEnabled\":{\"inherited\":false,\"value\":false},\"defaultMaxAge\":{\"inherited\":false,\"value\":600},\"postLogoutRedirectUri\":{\"inherited\":false,\"value\":[\"http://localhost:9080/\"]}},\"coreOAuth2ClientConfig\":{\"agentgroup\":null,\"userpassword\":null,\"userpassword-encrypted\":\"AAAAA0FFUwIQTdw2QDUlHe7OE3ibRFFZcfBf51MqlgekEow7HtiRAOwCAjf7uyKlRO9NYjAJlHGM1OnjGeUlwPt0rmFhg1e2+ZNmAfrJ2Heu\",\"defaultScopes\":{\"inherited\":false,\"value\":[\"openid\"]},\"refreshTokenLifetime\":{\"inherited\":false,\"value\":604800},\"scopes\":{\"inherited\":false,\"value\":[\"address\",\"phone\",\"profile\",\"email\",\"app.read\",\"app.write\",\"hosted-page-config.read\",\"hosted-page-config.write\",\"password-policy.read\",\"password-policy.write\",\"team-member.read\",\"team-member.write\",\"user.read\",\"user.write\"]},\"status\":{\"inherited\":false,\"value\":\"Active\"},\"accessTokenLifetime\":{\"inherited\":false,\"value\":3600},\"redirectionUris\":{\"inherited\":false,\"value\":[\"http://localhost:9080/callback\"]},\"clientName\":{\"inherited\":false,\"value\":[\"Top Foods\"]},\"clientType\":{\"inherited\":false,\"value\":\"Confidential\"},\"authorizationCodeLifetime\":{\"inherited\":false,\"value\":120}},\"coreUmaClientConfig\":{\"claimsRedirectionUris\":{\"inherited\":false,\"value\":[]}},\"_type\":{\"_id\":\"OAuth2Client\",\"name\":\"OAuth2 Clients\",\"collection\":true}}"
 								}
 							]
 						}
 					],
-					"description": "Configure applications in the tenant.",
+					"description": "Configure, create, and manage applications.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -2633,7 +2623,19 @@
 					"name": "Users",
 					"item": [
 						{
-							"name": "Get user",
+							"name": "Create user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4fd89a1d-1a41-4692-9c2a-a09ac9c2cbed",
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -2645,126 +2647,16 @@
 										}
 									]
 								},
-								"method": "GET",
+								"method": "POST",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer {{accessToken}}"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{tenantApiV1Url}}/users/{Id}",
-									"host": [
-										"{{tenantApiV1Url}}"
-									],
-									"path": [
-										"users",
-										"{Id}"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Get user",
-									"originalRequest": {
-										"method": "GET",
-										"header": [
-											{
-												"key": "Authorization",
-												"value": "Bearer {{accessToken}}",
-												"type": "text"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
-										"url": {
-											"raw": "{{tenantApiV1Url}}/users/50c52e21-f720-4c4c-9cd3-13682900a10f",
-											"host": [
-												"{{tenantApiV1Url}}"
-											],
-											"path": [
-												"users",
-												"50c52e21-f720-4c4c-9cd3-13682900a10f"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*",
-											"name": "Access-Control-Allow-Origin",
-											"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
-										},
-										{
-											"key": "Content-Length",
-											"value": "241",
-											"name": "Content-Length",
-											"description": "The length of the response body in octets (8-bit bytes)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8",
-											"name": "Content-Type",
-											"description": "The mime type of this content"
-										},
-										{
-											"key": "Date",
-											"value": "Fri, 05 Oct 2018 03:01:16 GMT",
-											"name": "Date",
-											"description": "The date and time that the message was sent"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"f1-3U83ne+mNCyPWewpKNksgRvNnQ8\"",
-											"name": "ETag",
-											"description": "An identifier for a specific version of a resource, often a message digest"
-										},
-										{
-											"key": "Via",
-											"value": "1.1 google",
-											"name": "Via",
-											"description": "Informs the client of proxies through which the response was sent."
-										},
-										{
-											"key": "X-Powered-By",
-											"value": "Express",
-											"name": "X-Powered-By",
-											"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"active\": true,\n    \"addresses\": [],\n    \"emails\": [\n        {\n            \"value\": \"test@test.com\"\n        }\n    ],\n    \"id\": \"eede24ec-e286-4007-a464-09021b0bfaa2\",\n    \"name\": {\n        \"familyName\": \"lastName\",\n        \"givenName\": \"firstName\"\n    },\n    \"phoneNumbers\": [],\n    \"userName\": \"test@test.com\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Get self",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{userAccessToken}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer {{userAccessToken}}",
+										"value": "Bearer {{access_token}}",
 										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -2772,43 +2664,48 @@
 									"raw": ""
 								},
 								"url": {
-									"raw": "{{tenantApiV1Url}}/me",
+									"raw": "{{tenantApiV1Url}}/users",
 									"host": [
 										"{{tenantApiV1Url}}"
 									],
 									"path": [
-										"me"
+										"users"
 									]
 								},
-								"description": "Retreives the user data for the user of the user holding an authenticated OAuth access token"
+								"description": "Creates a new end user. Returns the profile of the created user.\n"
 							},
 							"response": [
 								{
-									"name": "Get self",
+									"name": "Create user",
 									"originalRequest": {
-										"method": "GET",
+										"method": "POST",
 										"header": [
 											{
 												"key": "Authorization",
-												"value": "Bearer {{userAccessToken}}"
+												"value": "Bearer {{access_token}}",
+												"disabled": true
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": ""
+											"raw": "  {\n    \"externalId\": \"701985\",\n    \"userName\": \"bjensen@example.com\",\n    \"accountVerified\": true,\n    \"name\": {\n      \"formatted\": \"Ms. Barbara J Jensen, III\",\n      \"familyName\": \"Jensen\",\n      \"givenName\": \"Barbara\",\n      \"middleName\": \"Jane\",\n      \"honorificPrefix\": \"Ms.\",\n      \"honorificSuffix\": \"III\"\n    },\n    \"displayName\": \"Babs Jensen\",\n    \"nickName\": \"Babs\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"emails\": [\n      {\n        \"value\": \"bjensen@example.com\",\n        \"type\": \"work\",\n        \"primary\": true,\n        \"verified\": true\n      },\n      {\n        \"value\": \"babs@jensen.org\",\n        \"type\": \"home\",\n        \"verified\": false\n      }\n    ],\n    \"addresses\": [\n      {\n        \"type\": \"work\",\n        \"streetAddress\": \"6925 Hollywood Blvd\",\n        \"locality\": \"Hollywood\",\n        \"region\": \"CA\",\n        \"postalCode\": \"90028\",\n        \"country\": \"US\",\n        \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n        \"primary\": true\n      },\n      {\n        \"type\": \"home\",\n        \"streetAddress\": \"2800 E Observatory Rd\",\n        \"locality\": \"Los Angeles\",\n        \"region\": \"CA\",\n        \"postalCode\": \"90027\",\n        \"country\": \"US\",\n        \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n      }\n    ],\n    \"phoneNumbers\": [\n      {\n        \"value\": \"555-555-5555\",\n        \"type\": \"work\"\n      },\n      {\n        \"value\": \"555-555-4444\",\n        \"type\": \"mobile\"\n      }\n    ],\n    \"userType\": \"Customer\",\n    \"title\": \"Master Carpenter\",\n    \"preferredLanguage\": \"en-US\",\n    \"locale\": \"en-US\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"active\": true,\n    \"password\": \"Passwordy1!\"\n  }\n"
 										},
 										"url": {
-											"raw": "{{tenantApiV1Url}}/me",
+											"raw": "{{tenantApiV1Url}}/users",
 											"host": [
 												"{{tenantApiV1Url}}"
 											],
 											"path": [
-												"me"
+												"users"
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
+									"status": "Created",
+									"code": 201,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -2831,13 +2728,13 @@
 										},
 										{
 											"key": "Date",
-											"value": "Fri, 05 Oct 2018 04:02:06 GMT",
+											"value": "Fri, 05 Oct 2018 13:47:54 GMT",
 											"name": "Date",
 											"description": "The date and time that the message was sent"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"d2-t2ukhdRIOLSIT0WoffhlTST3Wmc\"",
+											"value": "W/\"d2-sFXfFvJ/8ewySlXh/2tPO7KYIKI\"",
 											"name": "ETag",
 											"description": "An identifier for a specific version of a resource, often a message digest"
 										},
@@ -2855,7 +2752,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"active\": true,\n    \"addresses\": [],\n    \"emails\": [\n        {\n            \"value\": \"test@test.com\"\n        }\n    ],\n    \"id\": \"231b18cb-34f7-4c6e-a477-fefb898d40dd\",\n    \"name\": {\n        \"familyName\": \"User\",\n        \"givenName\": \"Demo\"\n    },\n    \"phoneNumbers\": [],\n    \"userName\": \"demouser\"\n}"
+									"body": "{\n    \"active\": true,\n    \"addresses\": [\n        {\n            \"type\": \"work\",\n            \"streetAddress\": \"6925 Hollywood Blvd\",\n            \"locality\": \"Hollywood\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90028\",\n            \"country\": \"US\",\n            \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n            \"primary\": true\n        },\n        {\n            \"type\": \"home\",\n            \"streetAddress\": \"2800 E Observatory Rd\",\n            \"locality\": \"Los Angeles\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90027\",\n            \"country\": \"US\",\n            \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n        }\n    ],\n    \"displayName\": \"Babs Jensen\",\n    \"emails\": [\n        {\n            \"value\": \"bjensen@example.com\",\n            \"type\": \"work\",\n            \"primary\": true,\n            \"verified\": true\n        },\n        {\n            \"value\": \"babs@jensen.org\",\n            \"type\": \"home\",\n            \"verified\": false\n        }\n    ],\n    \"id\": \"8f2c51aa-a494-4c3b-b985-29b2a2589a8f\",\n    \"ims\": [],\n    \"locale\": \"en-US\",\n    \"name\": {\n        \"formatted\": \"Ms. Barbara J Jensen, III\",\n        \"familyName\": \"Jensen\",\n        \"givenName\": \"Barbara\",\n        \"middleName\": \"Jane\",\n        \"honorificPrefix\": \"Ms.\",\n        \"honorificSuffix\": \"III\"\n    },\n    \"nickName\": \"Babs\",\n    \"phoneNumbers\": [\n        {\n            \"value\": \"555-555-5555\",\n            \"type\": \"work\"\n        },\n        {\n            \"value\": \"555-555-4444\",\n            \"type\": \"mobile\"\n        }\n    ],\n    \"preferences\": {},\n    \"preferredLanguage\": \"en-US\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"title\": \"Master Carpenter\",\n    \"userName\": \"bjensen@example.com\",\n    \"userType\": \"Customer\",\n    \"x509Certificates\": [],\n    \"meta\": {\n        \"created\": \"2018-11-29T21:17:05.939Z\",\n        \"lastModified\": \"2018-11-29T21:17:05.939Z\"\n    }\n}"
 								}
 							]
 						},
@@ -2972,19 +2869,7 @@
 							]
 						},
 						{
-							"name": "Create user",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "4fd89a1d-1a41-4692-9c2a-a09ac9c2cbed",
-										"exec": [
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
+							"name": "Get user",
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -2996,17 +2881,8 @@
 										}
 									]
 								},
-								"method": "POST",
+								"method": "GET",
 								"header": [
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtNDExNyIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJOUG93bWc5WHdya0NqMlRGa2F6dWNvZm0xOFEiLCJhdWQiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsIm5iZiI6MTUzODcwNzM1MCwiZ3JhbnRfdHlwZSI6ImNsaWVudF9jcmVkZW50aWFscyIsInNjb3BlIjpbImFwaS5mb3JnZWNsb3VkLmNvbTphcHAucmVhZCIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLndyaXRlIiwiYXBpLmZvcmdlY2xvdWQuY29tOnBhc3N3b3JkLXBvbGljeS53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLnJlYWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206YXBwLndyaXRlIiwiYXBpLmZvcmdlY2xvdWQuY29tOnBhc3N3b3JkLXBvbGljeS5yZWFkIl0sImF1dGhfdGltZSI6MTUzODcwNzM1MCwicmVhbG0iOiIvIiwiZXhwIjoxNTM4NzEwOTUwLCJpYXQiOjE1Mzg3MDczNTAsImV4cGlyZXNfaW4iOjM2MDAsImp0aSI6IkJVaFozLTRUalpYMWtJYW8xM2RCRWE3QkdYbyJ9.TUbFOl3WYR-2iNYUzGGrl7QyHlOVqop2dkzu1ZMQP-c",
-										"disabled": true
-									},
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									},
 									{
 										"key": "Authorization",
 										"value": "Bearer {{accessToken}}"
@@ -3014,55 +2890,162 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "  {\n    \"externalId\": \"701985\",\n    \"userName\": \"bjensen@example.com\",\n    \"accountVerified\": true,\n    \"name\": {\n      \"formatted\": \"Ms. Barbara J Jensen, III\",\n      \"familyName\": \"Jensen\",\n      \"givenName\": \"Barbara\",\n      \"middleName\": \"Jane\",\n      \"honorificPrefix\": \"Ms.\",\n      \"honorificSuffix\": \"III\"\n    },\n    \"displayName\": \"Babs Jensen\",\n    \"nickName\": \"Babs\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"emails\": [\n      {\n        \"value\": \"bjensen@example.com\",\n        \"type\": \"work\",\n        \"primary\": true,\n        \"verified\": true\n      },\n      {\n        \"value\": \"babs@jensen.org\",\n        \"type\": \"home\",\n        \"verified\": false\n      }\n    ],\n    \"addresses\": [\n      {\n        \"type\": \"work\",\n        \"streetAddress\": \"6925 Hollywood Blvd\",\n        \"locality\": \"Hollywood\",\n        \"region\": \"CA\",\n        \"postalCode\": \"90028\",\n        \"country\": \"US\",\n        \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n        \"primary\": true\n      },\n      {\n        \"type\": \"home\",\n        \"streetAddress\": \"2800 E Observatory Rd\",\n        \"locality\": \"Los Angeles\",\n        \"region\": \"CA\",\n        \"postalCode\": \"90027\",\n        \"country\": \"US\",\n        \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n      }\n    ],\n    \"phoneNumbers\": [\n      {\n        \"value\": \"555-555-5555\",\n        \"type\": \"work\"\n      },\n      {\n        \"value\": \"555-555-4444\",\n        \"type\": \"mobile\"\n      }\n    ],\n    \"userType\": \"Customer\",\n    \"title\": \"Master Carpenter\",\n    \"preferredLanguage\": \"en-US\",\n    \"locale\": \"en-US\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"active\": true,\n    \"password\": \"Passwordy1!\"\n  }\n"
+									"raw": ""
 								},
 								"url": {
-									"raw": "{{tenantApiV1Url}}/users",
+									"raw": "{{tenantApiV1Url}}/users/{Id}",
 									"host": [
 										"{{tenantApiV1Url}}"
 									],
 									"path": [
-										"users"
+										"users",
+										"{Id}"
 									]
 								},
-								"description": "Creates a new end user. Returns the profile of the created user.\n"
+								"description": "Retreives data for the user as specified by the **id**, as shown in the output from the Get Users REST call."
 							},
 							"response": [
 								{
-									"name": "Create user",
+									"name": "Get user",
 									"originalRequest": {
-										"method": "POST",
+										"method": "GET",
 										"header": [
 											{
 												"key": "Authorization",
-												"value": "Bearer eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtNDExNyIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMjAuZm9yZ2VibG9ja3MuY29tL29wZW5hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJOUG93bWc5WHdya0NqMlRGa2F6dWNvZm0xOFEiLCJhdWQiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsIm5iZiI6MTUzODcwNzM1MCwiZ3JhbnRfdHlwZSI6ImNsaWVudF9jcmVkZW50aWFscyIsInNjb3BlIjpbImFwaS5mb3JnZWNsb3VkLmNvbTphcHAucmVhZCIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLndyaXRlIiwiYXBpLmZvcmdlY2xvdWQuY29tOnBhc3N3b3JkLXBvbGljeS53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTp1c2VyLnJlYWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206YXBwLndyaXRlIiwiYXBpLmZvcmdlY2xvdWQuY29tOnBhc3N3b3JkLXBvbGljeS5yZWFkIl0sImF1dGhfdGltZSI6MTUzODcwNzM1MCwicmVhbG0iOiIvIiwiZXhwIjoxNTM4NzEwOTUwLCJpYXQiOjE1Mzg3MDczNTAsImV4cGlyZXNfaW4iOjM2MDAsImp0aSI6IkJVaFozLTRUalpYMWtJYW8xM2RCRWE3QkdYbyJ9.TUbFOl3WYR-2iNYUzGGrl7QyHlOVqop2dkzu1ZMQP-c",
-												"disabled": true
-											},
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer {{accessToken}}"
+												"value": "Bearer {{accessToken}}",
+												"type": "text"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "  {\n    \"externalId\": \"701985\",\n    \"userName\": \"bjensen@example.com\",\n    \"accountVerified\": true,\n    \"name\": {\n      \"formatted\": \"Ms. Barbara J Jensen, III\",\n      \"familyName\": \"Jensen\",\n      \"givenName\": \"Barbara\",\n      \"middleName\": \"Jane\",\n      \"honorificPrefix\": \"Ms.\",\n      \"honorificSuffix\": \"III\"\n    },\n    \"displayName\": \"Babs Jensen\",\n    \"nickName\": \"Babs\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"emails\": [\n      {\n        \"value\": \"bjensen@example.com\",\n        \"type\": \"work\",\n        \"primary\": true,\n        \"verified\": true\n      },\n      {\n        \"value\": \"babs@jensen.org\",\n        \"type\": \"home\",\n        \"verified\": false\n      }\n    ],\n    \"addresses\": [\n      {\n        \"type\": \"work\",\n        \"streetAddress\": \"6925 Hollywood Blvd\",\n        \"locality\": \"Hollywood\",\n        \"region\": \"CA\",\n        \"postalCode\": \"90028\",\n        \"country\": \"US\",\n        \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n        \"primary\": true\n      },\n      {\n        \"type\": \"home\",\n        \"streetAddress\": \"2800 E Observatory Rd\",\n        \"locality\": \"Los Angeles\",\n        \"region\": \"CA\",\n        \"postalCode\": \"90027\",\n        \"country\": \"US\",\n        \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n      }\n    ],\n    \"phoneNumbers\": [\n      {\n        \"value\": \"555-555-5555\",\n        \"type\": \"work\"\n      },\n      {\n        \"value\": \"555-555-4444\",\n        \"type\": \"mobile\"\n      }\n    ],\n    \"userType\": \"Customer\",\n    \"title\": \"Master Carpenter\",\n    \"preferredLanguage\": \"en-US\",\n    \"locale\": \"en-US\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"active\": true,\n    \"password\": \"Passwordy1!\"\n  }\n"
+											"raw": ""
 										},
 										"url": {
-											"raw": "{{tenantApiV1Url}}/users",
+											"raw": "{{tenantApiV1Url}}/users/50c52e21-f720-4c4c-9cd3-13682900a10f",
 											"host": [
 												"{{tenantApiV1Url}}"
 											],
 											"path": [
-												"users"
+												"users",
+												"50c52e21-f720-4c4c-9cd3-13682900a10f"
 											]
 										}
 									},
-									"status": "Created",
-									"code": 201,
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*",
+											"name": "Access-Control-Allow-Origin",
+											"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+										},
+										{
+											"key": "Content-Length",
+											"value": "241",
+											"name": "Content-Length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8",
+											"name": "Content-Type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Oct 2018 03:01:16 GMT",
+											"name": "Date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"f1-3U83ne+mNCyPWewpKNksgRvNnQ8\"",
+											"name": "ETag",
+											"description": "An identifier for a specific version of a resource, often a message digest"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google",
+											"name": "Via",
+											"description": "Informs the client of proxies through which the response was sent."
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express",
+											"name": "X-Powered-By",
+											"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"active\": true,\n    \"addresses\": [],\n    \"emails\": [\n        {\n            \"value\": \"test@test.com\"\n        }\n    ],\n    \"id\": \"eede24ec-e286-4007-a464-09021b0bfaa2\",\n    \"name\": {\n        \"familyName\": \"lastName\",\n        \"givenName\": \"firstName\"\n    },\n    \"phoneNumbers\": [],\n    \"userName\": \"test@test.com\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get self",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{userAccessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{userAccessToken}}",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/me",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"me"
+									]
+								},
+								"description": "Retreives data for the user who is currently logged in."
+							},
+							"response": [
+								{
+									"name": "Get self",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{userAccessToken}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/me",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"me"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
@@ -3085,13 +3068,13 @@
 										},
 										{
 											"key": "Date",
-											"value": "Fri, 05 Oct 2018 13:47:54 GMT",
+											"value": "Fri, 05 Oct 2018 04:02:06 GMT",
 											"name": "Date",
 											"description": "The date and time that the message was sent"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"d2-sFXfFvJ/8ewySlXh/2tPO7KYIKI\"",
+											"value": "W/\"d2-t2ukhdRIOLSIT0WoffhlTST3Wmc\"",
 											"name": "ETag",
 											"description": "An identifier for a specific version of a resource, often a message digest"
 										},
@@ -3109,7 +3092,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"active\": true,\n    \"addresses\": [\n        {\n            \"type\": \"work\",\n            \"streetAddress\": \"6925 Hollywood Blvd\",\n            \"locality\": \"Hollywood\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90028\",\n            \"country\": \"US\",\n            \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n            \"primary\": true\n        },\n        {\n            \"type\": \"home\",\n            \"streetAddress\": \"2800 E Observatory Rd\",\n            \"locality\": \"Los Angeles\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90027\",\n            \"country\": \"US\",\n            \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n        }\n    ],\n    \"displayName\": \"Babs Jensen\",\n    \"emails\": [\n        {\n            \"value\": \"bjensen@example.com\",\n            \"type\": \"work\",\n            \"primary\": true,\n            \"verified\": true\n        },\n        {\n            \"value\": \"babs@jensen.org\",\n            \"type\": \"home\",\n            \"verified\": false\n        }\n    ],\n    \"id\": \"8f2c51aa-a494-4c3b-b985-29b2a2589a8f\",\n    \"ims\": [],\n    \"locale\": \"en-US\",\n    \"name\": {\n        \"formatted\": \"Ms. Barbara J Jensen, III\",\n        \"familyName\": \"Jensen\",\n        \"givenName\": \"Barbara\",\n        \"middleName\": \"Jane\",\n        \"honorificPrefix\": \"Ms.\",\n        \"honorificSuffix\": \"III\"\n    },\n    \"nickName\": \"Babs\",\n    \"phoneNumbers\": [\n        {\n            \"value\": \"555-555-5555\",\n            \"type\": \"work\"\n        },\n        {\n            \"value\": \"555-555-4444\",\n            \"type\": \"mobile\"\n        }\n    ],\n    \"preferences\": {},\n    \"preferredLanguage\": \"en-US\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"title\": \"Master Carpenter\",\n    \"userName\": \"bjensen@example.com\",\n    \"userType\": \"Customer\",\n    \"x509Certificates\": [],\n    \"meta\": {\n        \"created\": \"2018-11-29T21:17:05.939Z\",\n        \"lastModified\": \"2018-11-29T21:17:05.939Z\"\n    }\n}"
+									"body": "{\n    \"active\": true,\n    \"addresses\": [],\n    \"emails\": [\n        {\n            \"value\": \"test@test.com\"\n        }\n    ],\n    \"id\": \"231b18cb-34f7-4c6e-a477-fefb898d40dd\",\n    \"name\": {\n        \"familyName\": \"User\",\n        \"givenName\": \"Demo\"\n    },\n    \"phoneNumbers\": [],\n    \"userName\": \"demouser\"\n}"
 								}
 							]
 						},
@@ -3139,19 +3122,19 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"phoneNumbers\": [\n\t   {\n\t     \"value\":\"123-456-7890\" \n       }\n\t ]\t\n}"
+									"raw": ""
 								},
 								"url": {
-									"raw": "{{tenantApiV1Url}}/users/{{userId}}",
+									"raw": "{{tenantApiV1Url}}/users/{{id}}",
 									"host": [
 										"{{tenantApiV1Url}}"
 									],
 									"path": [
 										"users",
-										"{{userId}}"
+										"{{id}}"
 									]
 								},
-								"description": "Updates sepecified properties of the user.  Returns the updated user profile."
+								"description": "Updates sepecified properties of the user. Returns the updated user profile."
 							},
 							"response": [
 								{
@@ -3179,7 +3162,7 @@
 											],
 											"path": [
 												"users",
-												"{{userId}}"
+												"{{id}}"
 											]
 										}
 									},
@@ -3243,7 +3226,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{accessToken}}",
+											"value": "{{userAccessToken}}",
 											"type": "string"
 										}
 									]
@@ -3252,20 +3235,16 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtNDUxNDEiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazIwLmZvcmdlYmxvY2tzLmNvbS9vcGVuYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoicWt6WUZfejBoZXU3TEZzZ2pGYkpWVE9nREZZIiwiYXVkIjoiMzFkMGFmNTIwYjk2MTY5ZGVlODE5MDcwMWE1ZjE3NTQiLCJuYmYiOjE1Mzg3NDY5NDYsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJzY29wZSI6WyJhcGkuZm9yZ2VjbG91ZC5jb206YXBwLnJlYWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kud3JpdGUiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci5yZWFkIiwiYXBpLmZvcmdlY2xvdWQuY29tOmFwcC53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kucmVhZCJdLCJhdXRoX3RpbWUiOjE1Mzg3NDY5NDYsInJlYWxtIjoiLyIsImV4cCI6MTUzODc1MDU0NiwiaWF0IjoxNTM4NzQ2OTQ2LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJBaDdLOUJqV1FTWm5saEpzcE4tYTFWTU1JYVEifQ.VyaXVHDcBtTEdIYAVaCsAbeWQ7oOThUmNRrnPnj5LEo"
+										"value": "Bearer {{userAccessToken}}"
 									},
 									{
 										"key": "Content-Type",
 										"value": "application/json"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer {{accessToken}}"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "  {\n    \"externalId\": \"701985\",\n    \"accountVerified\": true,\n    \"name\": {\n      \"formatted\": \"Ms. Barbara J Jensen, III\",\n      \"familyName\": \"Jensen-updated\",\n      \"givenName\": \"Barbara-updated\",\n      \"middleName\": \"Jane-updated\",\n      \"honorificPrefix\": \"Ms.\",\n      \"honorificSuffix\": \"III\"\n    },\n    \"displayName\": \"Babs Jensen\",\n    \"nickName\": \"Babs\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"emails\": [\n      {\n        \"value\": \"bjensen@example.com\",\n        \"type\": \"work\",\n        \"primary\": true,\n        \"verified\": true\n      },\n      {\n        \"value\": \"babs@jensen.org\",\n        \"type\": \"home\",\n        \"verified\": false\n      }\n    ],\n    \"addresses\": [\n      {\n        \"type\": \"work\",\n        \"streetAddress\": \"6925 Hollywood Blvd\",\n        \"locality\": \"Hollywood\",\n        \"region\": \"CA\",\n        \"postalCode\": \"90028\",\n        \"country\": \"USA\",\n        \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n        \"primary\": true\n      },\n      {\n        \"type\": \"home\",\n        \"streetAddress\": \"2800 E Observatory Rd\",\n        \"locality\": \"Los Angeles\",\n        \"region\": \"CA\",\n        \"postalCode\": \"90027\",\n        \"country\": \"USA\",\n        \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n      }\n    ],\n    \"phoneNumbers\": [\n      {\n        \"value\": \"555-555-5555\",\n        \"type\": \"work\"\n      },\n      {\n        \"value\": \"555-555-4444\",\n        \"type\": \"mobile\"\n      }\n    ],\n    \"userType\": \"Customer\",\n    \"title\": \"Master Carpenter\",\n    \"preferredLanguage\": \"en-US\",\n    \"locale\": \"en-US\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"active\": true,\n    \"password\": \"Passwordy1!\"\n  }\n"
+									"raw": ""
 								},
 								"url": {
 									"raw": "{{tenantApiV1Url}}/users/{id}",
@@ -3277,7 +3256,7 @@
 										"{id}"
 									]
 								},
-								"description": "Updates specified properties for the specified user.\n"
+								"description": "Updates properties for the specified user.\n"
 							},
 							"response": [
 								{
@@ -3287,29 +3266,25 @@
 										"header": [
 											{
 												"key": "Authorization",
-												"value": "Bearer eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiIzMWQwYWY1MjBiOTYxNjlkZWU4MTkwNzAxYTVmMTc1NCIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiI3NDk2MzhmYS0zYWEyLTRjZGUtODgxNC1kMTViZDZkZjYwMDAtNDUxNDEiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazIwLmZvcmdlYmxvY2tzLmNvbS9vcGVuYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoicWt6WUZfejBoZXU3TEZzZ2pGYkpWVE9nREZZIiwiYXVkIjoiMzFkMGFmNTIwYjk2MTY5ZGVlODE5MDcwMWE1ZjE3NTQiLCJuYmYiOjE1Mzg3NDY5NDYsImdyYW50X3R5cGUiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJzY29wZSI6WyJhcGkuZm9yZ2VjbG91ZC5jb206YXBwLnJlYWQiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kud3JpdGUiLCJhcGkuZm9yZ2VjbG91ZC5jb206dXNlci5yZWFkIiwiYXBpLmZvcmdlY2xvdWQuY29tOmFwcC53cml0ZSIsImFwaS5mb3JnZWNsb3VkLmNvbTpwYXNzd29yZC1wb2xpY3kucmVhZCJdLCJhdXRoX3RpbWUiOjE1Mzg3NDY5NDYsInJlYWxtIjoiLyIsImV4cCI6MTUzODc1MDU0NiwiaWF0IjoxNTM4NzQ2OTQ2LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJBaDdLOUJqV1FTWm5saEpzcE4tYTFWTU1JYVEifQ.VyaXVHDcBtTEdIYAVaCsAbeWQ7oOThUmNRrnPnj5LEo"
+												"value": "Bearer {{userAccessToken}} "
 											},
 											{
 												"key": "Content-Type",
 												"value": "application/json"
-											},
-											{
-												"key": "Authorization",
-												"value": "Bearer {{accessToken}}"
 											}
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"emails\": [\n    {\n      \"value\": \"test1@test.com\"\n    }\n  ],\n  \"name\": {\n    \"givenName\": \"test1\",\n    \"familyName\": \"test1\"\n  },\n  \"password\": \"1!!!Password!!!1\",\n  \"userName\": \"demouser\"\n}"
+											"raw": ""
 										},
 										"url": {
-											"raw": "{{tenantApiV1Url}}/users/50c52e21-f720-4c4c-9cd3-13682900a10f",
+											"raw": "{{tenantApiV1Url}}/users/{{id}}",
 											"host": [
 												"{{tenantApiV1Url}}"
 											],
 											"path": [
 												"users",
-												"50c52e21-f720-4c4c-9cd3-13682900a10f"
+												"{{id}}"
 											]
 										}
 									},
@@ -3376,7 +3351,7 @@
 							]
 						},
 						{
-							"name": "Update self",
+							"name": "Update Self",
 							"request": {
 								"auth": {
 									"type": "noauth"
@@ -3532,7 +3507,7 @@
 										"{id}"
 									]
 								},
-								"description": "Deleted the user specified by userId.  Returns the profile of the deleted user."
+								"description": "Deletes the user as specified {{id}}.  Returns the profile of the deleted user."
 							},
 							"response": [
 								{
@@ -3811,12 +3786,12 @@
 									"raw": "{\n\t\"destinationUrl\": \"http://your-password-reset.com\",\n\t\"email\": \"{{userEmail}}\",\n\t\"userName\": \"{{userName}}\"\n}"
 								},
 								"url": {
-									"raw": "{{tenantApiV1Url}}/auth/reset-password",
+									"raw": "{{tenantApiV1Url}}/users/reset-password",
 									"host": [
 										"{{tenantApiV1Url}}"
 									],
 									"path": [
-										"auth",
+										"users",
 										"reset-password"
 									]
 								},
@@ -3838,12 +3813,12 @@
 											"raw": "{\n\t\"destinationUrl\": \"http://your-password-reset.com\",\n\t\"email\": \"{{userEmail}}\",\n\t\"lifetimeSeconds\": 3600,\n\t\"userName\": \"{{userName}}\"\n}"
 										},
 										"url": {
-											"raw": "{{tenantApiV1Url}}/auth/reset-password",
+											"raw": "{{tenantApiV1Url}}/users/reset-password",
 											"host": [
 												"{{tenantApiV1Url}}"
 											],
 											"path": [
-												"auth",
+												"users",
 												"reset-password"
 											]
 										}
@@ -3935,12 +3910,12 @@
 									"raw": "{\n\t\"password\": \"UsersResetPassw0rd!\"\n}"
 								},
 								"url": {
-									"raw": "{{tenantApiV1Url}}/auth/reset-password/{{passwordResetToken}}",
+									"raw": "{{tenantApiV1Url}}/users/reset-password/{{passwordResetToken}}",
 									"host": [
 										"{{tenantApiV1Url}}"
 									],
 									"path": [
-										"auth",
+										"users",
 										"reset-password",
 										"{{passwordResetToken}}"
 									]
@@ -3963,12 +3938,12 @@
 											"raw": "{\n\t\"password\": \"UsersResetPassw0rd!\"\n}"
 										},
 										"url": {
-											"raw": "{{tenantApiV1Url}}/auth/reset-password/{{passwordResetToken}}",
+											"raw": "{{tenantApiV1Url}}/users/reset-password/{{passwordResetToken}}",
 											"host": [
 												"{{tenantApiV1Url}}"
 											],
 											"path": [
-												"auth",
+												"users",
 												"reset-password",
 												"{{passwordResetToken}}"
 											]
@@ -4077,7 +4052,7 @@
 							"response": []
 						}
 					],
-					"description": "Manage and configure users in the tenant. Use the `/me` (self) endpoint to manage the user logging into the current application.",
+					"description": "Manage and configure users in the tenant. Use the `/me` endpoint to manage the user who is logged into the current application.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -4103,7 +4078,7 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Password Management",
+					"name": "Password Policies",
 					"item": [
 						{
 							"name": "Get Password Policy",
@@ -4138,7 +4113,7 @@
 										"password-policy"
 									]
 								},
-								"description": "Retreives the current password policy configuration"
+								"description": "Retreives the current password policy."
 							},
 							"response": [
 								{
@@ -4340,7 +4315,7 @@
 							]
 						}
 					],
-					"description": "Set the global password policy for users of the tenant.\n\n- `days` for password age\n- `seconds` for user lock duration",
+					"description": "Set the global password policy for users of the tenant.\n\n- The password age is set in `days`.\n- The password lock duration is set in `seconds`.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -4366,7 +4341,7 @@
 					"_postman_isSubFolder": true
 				}
 			],
-			"description": "The Management API allows you to manage users and other objects in the system. To call this API you need to create a Machine 2 Machine application under ‘applications’  and assign it to the API. You can then exchange a client ID and secret for an access token and call the API using the token.  ",
+			"description": "The Management API allows you to manage objects (including users).With your apps, you can exchange a client ID and secret for an access token and call the API using the token.  ",
 			"event": [
 				{
 					"listen": "prerequest",
