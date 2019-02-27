@@ -4339,6 +4339,386 @@
 						}
 					],
 					"_postman_isSubFolder": true
+				},
+		 		{
+					"name": "Email Templates",
+					"item": [
+						{
+							"name": "Retrieve Existing Email Templates",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer (({{accessToken}})"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/email-templates",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"email-templates"
+									]
+								},
+								"description": "Retreives a list of available email templates."
+							},
+							"response": [
+								{
+									"name": "Retrieve Email Templates",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{accessToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/email-templates",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"email-templates"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*",
+											"name": "Access-Control-Allow-Origin",
+											"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+										},
+										{
+											"key": "Content-Length",
+											"value": "359",
+											"name": "Content-Length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8",
+											"name": "Content-Type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Oct 2018 02:48:21 GMT",
+											"name": "Date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"167-/xPYOXaXt8nyxaF0D9FWWFuf4ZY\"",
+											"name": "ETag",
+											"description": "An identifier for a specific version of a resource, often a message digest"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google",
+											"name": "Via",
+											"description": "Informs the client of proxies through which the response was sent."
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express",
+											"name": "X-Powered-By",
+											"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"disallowFirstNamePart\": true,\n    \"disallowLastNamePart\": true,\n    \"lockoutPasswordAttempts\": 0,\n    \"maxPasswordAge\": 0,\n    \"minPasswordLength\": 8,\n    \"requireEmailVerification\": false,\n    \"requireLowerCaseLetter\": true,\n    \"requireNumber\": true,\n    \"requireSymbol\": true,\n    \"requireUpperCaseLetter\": true,\n    \"selfServeUnlockDuration\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "Retrieve A Specific Email Template",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer (({{accessToken}})"
+									},
+									{
+										"key": "Template ID",
+										"value": "{{id}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/email-templates",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"email-templates"
+									]
+								},
+								"description": "Retreives a list of available email templates."
+							},
+							"response": [
+								{
+									"name": "Retrieve Email Templates",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{accessToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/email-templates",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"email-templates"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*",
+											"name": "Access-Control-Allow-Origin",
+											"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+										},
+										{
+											"key": "Content-Length",
+											"value": "359",
+											"name": "Content-Length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8",
+											"name": "Content-Type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Oct 2018 02:48:21 GMT",
+											"name": "Date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"167-/xPYOXaXt8nyxaF0D9FWWFuf4ZY\"",
+											"name": "ETag",
+											"description": "An identifier for a specific version of a resource, often a message digest"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google",
+											"name": "Via",
+											"description": "Informs the client of proxies through which the response was sent."
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express",
+											"name": "X-Powered-By",
+											"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"disallowFirstNamePart\": true,\n    \"disallowLastNamePart\": true,\n    \"lockoutPasswordAttempts\": 0,\n    \"maxPasswordAge\": 0,\n    \"minPasswordLength\": 8,\n    \"requireEmailVerification\": false,\n    \"requireLowerCaseLetter\": true,\n    \"requireNumber\": true,\n    \"requireSymbol\": true,\n    \"requireUpperCaseLetter\": true,\n    \"selfServeUnlockDuration\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "Send Test Email via Template",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"disallowFirstNamePart\": true,\n    \"disallowLastNamePart\": true,\n    \"lockoutPasswordAttempts\": 0,\n    \"maxPasswordAge\": 0,\n    \"minPasswordLength\": 8,\n    \"requireEmailVerification\": false,\n    \"requireLowerCaseLetter\": true,\n    \"requireNumber\": true,\n    \"requireSymbol\": true,\n    \"requireUpperCaseLetter\": true,\n    \"selfServeUnlockDuration\": 0\n}"
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/password-policy",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"password-policy"
+									]
+								},
+								"description": "Sets the password policy. Returns the configured password policy upon success.\n\n"
+							},
+							"response": [
+								{
+									"name": "Set Password Policy",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{accessToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/password-policy",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"password-policy"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*",
+											"name": "Access-Control-Allow-Origin",
+											"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+										},
+										{
+											"key": "Content-Length",
+											"value": "359",
+											"name": "Content-Length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8",
+											"name": "Content-Type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 05 Oct 2018 02:50:30 GMT",
+											"name": "Date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"167-xu6dR5rGGVlIfOn5zvJmjFaSDEM\"",
+											"name": "ETag",
+											"description": "An identifier for a specific version of a resource, often a message digest"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google",
+											"name": "Via",
+											"description": "Informs the client of proxies through which the response was sent."
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express",
+											"name": "X-Powered-By",
+											"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"disallowFirstNamePart\": true,\n    \"disallowLastNamePart\": true,\n    \"lockoutPasswordAttempts\": 0,\n    \"maxPasswordAge\": 0,\n    \"minPasswordLength\": 8,\n    \"requireEmailVerification\": false,\n    \"requireLowerCaseLetter\": true,\n    \"requireNumber\": true,\n    \"requireSymbol\": true,\n    \"requireUpperCaseLetter\": true,\n    \"selfServeUnlockDuration\": 0\n}"
+								}
+							]
+						}
+					],
+					"description": "Collects endpoints with user self-service functionality, including\n\n* Password Policies / Resets\n\n* Username Recovery\n\n* Email Templates",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "ada8cd49-54e4-4cb8-bfcb-8734cf0dce62",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "af7f3d28-e84d-45a7-a007-37dcd52ef276",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
 				}
 			],
 			"description": "The Management API allows you to manage objects (including users).With your apps, you can exchange a client ID and secret for an access token and call the API using the token.  ",
