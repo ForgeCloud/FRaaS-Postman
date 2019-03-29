@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "dd9abdaa-40bd-4a1d-bc06-6a83750f304d",
-		"name": "ForgeRock Cloud APIs (Mar 2019)",
+		"_postman_id": "243df834-bc03-42f0-b9ff-cfa47b455a6a",
+		"name": "ForgeRock Cloud APIs (Apr 2019)",
 		"description": "The ForgeRock Identity Cloud includes two sets of APIs:\n\n* Authentication APIs: Allows you to authenticate users into your apps.\n\n* Management APIs: Supports management of objects such as users.\n\nNote: Many of the REST calls in this collection require that you have set up a web app, using the steps described in our documentation on <a href=\"https://developer-cloud.forgerock.com/sdks/nodejs/\" target=\"_blank\">SDKs: Web App (Node.js SDK)</a>.\n\nSome of these REST calls include scopes, which specify access rights as described in our documentation on <a href=\"https://developer-cloud.forgerock.com/reference/scopes/\" target=\"_blank\">scopes</a>. Use that guidance to set up the scopes property in your Postman collection.\n\nThe scopes that you specify in REST calls should be included in relevant apps. When you create an app in the UI, you can identify and update these scopes under the \"API Scopes\" tab. \n\n<p>\n\nThis collecition is set up with the following environment: ForgeRock Environment Vars 0.3. You can use the environment to pre-populate your REST calls. For more information, see the following section on <a href=\"https://developer-cloud.forgerock.com/apis/apis/\" target=\"_blank\">REST APIs</a>.\n\nSome REST calls are configured to \"pre-populate\" others; for example, when you run the POST Get Web App Token - Password Grant call, the output pre-populates values for userAccessToken, refreshToken, and userIdToken.\n\nAll example responses are based on cURL.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -195,19 +195,19 @@
 				},
 				{
 					"name": "UserInfo",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{userAccessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [
-							{
-								"key": "Authorization",
-								"value": "Bearer {{userAccessToken}}"
-							},
 							{
 								"key": "Content-Type",
 								"name": "Content-Type",
@@ -215,7 +215,10 @@
 								"value": "application/x-www-form-urlencoded"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{oauth2Url}}/userinfo",
 							"host": [
@@ -244,7 +247,10 @@
 										"type": "text"
 									}
 								],
-								"body": {},
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
 								"url": {
 									"raw": "{{oauth2Url}}/userinfo",
 									"host": [
@@ -457,7 +463,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "html",
+							"_postman_previewlanguage": "json",
 							"header": [
 								{
 									"key": "Accept-Ranges",
@@ -509,7 +515,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n  \"at_hash\": \"UF3q_638GcngsEh6B5lglA\",\n  \"sub\": \"demouser\",\n  \"auditTrackingId\": \"a0deb639-832d-4c97-a4d2-4440c2727b02-7851\",\n  \"iss\": \"https://openam-{{tenantName}}.forgeblocks.com/oauth2\",\n  \"tokenName\": \"id_token\",\n  \"aud\": \"18c0d0bf98973a2660364198d45f927d\",\n  \"c_hash\": \"gQkCnvaICC0kT4A1wXyukA\",\n  \"acr\": \"0\",\n  \"org.forgerock.openidconnect.ops\": \"MYRjCWkJ0G4gBWDPEIfiVjtrLp4\",\n  \"azp\": \"18c0d0bf98973a2660364198d45f927d\",\n  \"auth_time\": 1551712897,\n  \"realm\": \"/\",\n  \"exp\": 1551716498,\n  \"tokenType\": \"JWTToken\",\n  \"iat\": 1551712898,\n  \"forgerock\": {\n    \"sig\": \"2+fDlj)0>F2y?aL9m5h:S@&]!T[=)KE#LA}.ik.c\"\n  }\n}"
+							"body": "{\n    \"at_hash\": \"UF3q_638GcngsEh6B5lglA\",\n    \"sub\": \"demouser\",\n    \"auditTrackingId\": \"a0deb639-832d-4c97-a4d2-4440c2727b02-7851\",\n    \"iss\": \"https://openam-{{tenantName}}.forgeblocks.com/oauth2\",\n    \"tokenName\": \"id_token\",\n    \"aud\": \"18c0d0bf98973a2660364198d45f927d\",\n    \"c_hash\": \"gQkCnvaICC0kT4A1wXyukA\",\n    \"acr\": \"0\",\n    \"org.forgerock.openidconnect.ops\": \"MYRjCWkJ0G4gBWDPEIfiVjtrLp4\",\n    \"azp\": \"18c0d0bf98973a2660364198d45f927d\",\n    \"auth_time\": 1551712897,\n    \"realm\": \"/\",\n    \"exp\": 1551716498,\n    \"tokenType\": \"JWTToken\",\n    \"iat\": 1551712898,\n    \"forgerock\": {\n        \"sig\": \"2+fDlj)0>F2y?aL9m5h:S@&]!T[=)KE#LA}.ik.c\"\n    }\n}"
 						}
 					]
 				},
@@ -1378,7 +1384,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJkMmY5ODExMmYzYzljNzg2Y2JkMDkzMGRkZTIxMmI0YyIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiI0NmFhN2JjNS1iMmQ1LTRkNjEtOWM0ZS0yNWU0YTZiYmI0MGQtMTcyIiwiaXNzIjoiaHR0cHM6Ly9vcGVuYW0tZG9jczQzLmZvcmdlYmxvY2tzLmNvbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJhX3VrS001SHVyR2NyS2tLeXd5VG42UWFkdU0iLCJhdWQiOiJkMmY5ODExMmYzYzljNzg2Y2JkMDkzMGRkZTIxMmI0YyIsIm5iZiI6MTU1MjA2NTg0OCwiZ3JhbnRfdHlwZSI6ImNsaWVudF9jcmVkZW50aWFscyIsInNjb3BlIjpbIm9wZW5pZCJdLCJhdXRoX3RpbWUiOjE1NTIwNjU4NDgsInJlYWxtIjoiLyIsImV4cCI6MTU1MjA2OTQ0OCwiaWF0IjoxNTUyMDY1ODQ4LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJrbDZ5QVp4UDNQVmgyOTJTZk54ajQyVVBieUUifQ.OYGJi5J0yUIBd5Mu5YSPqahmePsNobr-IP_KXJjWKelBAWpKGsHAnPnIpuZsP3VgCsBNwtkgOrwuI96W25kbB_FZPAbLU1_wtJ2o_-RvEp8sOS3cNIQ_g2JMBYTHD3VmN-hzzmwNtALB7qqzndpIYTc6_P5hyr5n2stIcXECHL7UWOaIOUntmiMkWOwZmwLCWhy7abSLfLQOjopk2WcMNLt-oMZb9o4K0oEFnFAbTuK6LA5HY5AAoN-64t9bQa1LcYwREWaBxEAWr0LD13CiS3Pdsd2Wn6pENxZBKir5usD71QYiuMi6fkyFTpgdhFEYmzBtbCoTpS2FXDFkOaoDRw\",\n    \"scope\": \"openid\",\n    \"id_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdF9oYXNoIjoiNWhrOHk5YjhVMDMxUUJidDUxTXBrdyIsInN1YiI6ImQyZjk4MTEyZjNjOWM3ODZjYmQwOTMwZGRlMjEyYjRjIiwiYXVkaXRUcmFja2luZ0lkIjoiNDZhYTdiYzUtYjJkNS00ZDYxLTljNGUtMjVlNGE2YmJiNDBkLTE3NCIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLWRvY3M0My5mb3JnZWJsb2Nrcy5jb20vb2F1dGgyIiwidG9rZW5OYW1lIjoiaWRfdG9rZW4iLCJhdWQiOiJkMmY5ODExMmYzYzljNzg2Y2JkMDkzMGRkZTIxMmI0YyIsImF6cCI6ImQyZjk4MTEyZjNjOWM3ODZjYmQwOTMwZGRlMjEyYjRjIiwiYXV0aF90aW1lIjoxNTUyMDY1ODQ4LCJyZWFsbSI6Ii8iLCJleHAiOjE1NTIwNjk0NDksInRva2VuVHlwZSI6IkpXVFRva2VuIiwiaWF0IjoxNTUyMDY1ODQ5LCJmb3JnZXJvY2siOnsic2lnIjoiMz5BaX1ZLk5xRnNUe2Q8R0EzTnVGczRuQ3dISmRQQHdXaz4-d0psdSJ9fQ.SnMBOWFrBhXFWPhOqT2rJjTnESW2DR9PtBf4E-ENWM4\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3598\n}"
+							"body": "{\n    \"access_token\": \"{{accessToken}}\",\n    \"scope\": \"openid\",\n    \"id_token\": \"{{idToken}}\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3598\n}"
 						}
 					]
 				},
@@ -1540,7 +1546,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJkMmY5ODExMmYzYzljNzg2Y2JkMDkzMGRkZTIxMmI0YyIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiI0NmFhN2JjNS1iMmQ1LTRkNjEtOWM0ZS0yNWU0YTZiYmI0MGQtMzI2IiwiaXNzIjoiaHR0cHM6Ly9vcGVuYW0tZG9jczQzLmZvcmdlYmxvY2tzLmNvbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJleVhUX09pTktzR3BLY2s1ZkNQcWJ5WjBBdkkiLCJhdWQiOiJkMmY5ODExMmYzYzljNzg2Y2JkMDkzMGRkZTIxMmI0YyIsIm5iZiI6MTU1MjA2NjEzNCwiZ3JhbnRfdHlwZSI6ImNsaWVudF9jcmVkZW50aWFscyIsInNjb3BlIjpbIm9wZW5pZCJdLCJhdXRoX3RpbWUiOjE1NTIwNjYxMzQsInJlYWxtIjoiLyIsImV4cCI6MTU1MjA2OTczNCwiaWF0IjoxNTUyMDY2MTM0LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiIteUswMU5QRkNvcFp3VEhFVzZvNThERkxvazgifQ.N9ITYiYgtJwfx-2rSHOg1Lct2gcQkn_1BJ-v2iMKCAmnki1CjTJIV5UClW0mwulf6G7mkpyi232WbOj-fTVqEPEJvR9qDB4A6tY8SeEkfahhaj--ZN4N3V7rMnjJXCHkWSc49L7aUq31PQLB2gAs4FE4Z53n8kLf6lSLBycn02uLQS8_3SrJyb5HDYCrkdm_bFPsMw3fHv2BNpVgFzBej3DwAWDdPeU31-uTEZdL_r8OKa3U38JU0s1RFcgpltz81_CV5xdwubb1DqCfJiEDxb_GSE8EWatdF7_s0z-Y3w8VQlNHOofUS9Sf7sGU0PfgtQ8_dRj7mtRRQh1CSaGwnA\",\n    \"scope\": \"openid\",\n    \"id_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdF9oYXNoIjoiZTdYWnAwRWRwc2ZzVmIwaUdhOTBMZyIsInN1YiI6ImQyZjk4MTEyZjNjOWM3ODZjYmQwOTMwZGRlMjEyYjRjIiwiYXVkaXRUcmFja2luZ0lkIjoiNDZhYTdiYzUtYjJkNS00ZDYxLTljNGUtMjVlNGE2YmJiNDBkLTMyNyIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLWRvY3M0My5mb3JnZWJsb2Nrcy5jb20vb2F1dGgyIiwidG9rZW5OYW1lIjoiaWRfdG9rZW4iLCJhdWQiOiJkMmY5ODExMmYzYzljNzg2Y2JkMDkzMGRkZTIxMmI0YyIsImF6cCI6ImQyZjk4MTEyZjNjOWM3ODZjYmQwOTMwZGRlMjEyYjRjIiwiYXV0aF90aW1lIjoxNTUyMDY2MTM0LCJyZWFsbSI6Ii8iLCJleHAiOjE1NTIwNjk3MzQsInRva2VuVHlwZSI6IkpXVFRva2VuIiwiaWF0IjoxNTUyMDY2MTM0LCJmb3JnZXJvY2siOnsic2lnIjoiXUBRIWpxPXBeKXBJWT4lWnNGIyNvMnZXTl1aVUd0ano5bnFLd0R2cyJ9fQ.Oz0MKLboa7qSJ9sXRzFmSHwiSYsmZNEsWn0g5Hp7HnM\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599\n}"
+							"body": "{\n    \"access_token\": \"{{accessToken}}\",\n    \"scope\": \"openid\",\n    \"id_token\": \"{{idToken}}\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599\n}"
 						}
 					]
 				},
@@ -1787,7 +1793,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"request_parameter_supported\": true,\n    \"claims_parameter_supported\": false,\n    \"introspection_endpoint\": \"https://openam-docs42.forgeblocks.com/oauth2/introspect\",\n    \"check_session_iframe\": \"https://openam-docs42.forgeblocks.com/oauth2/connect/checkSession\",\n    \"scopes_supported\": [\n        \"address\",\n        \"phone\",\n        \"openid\",\n        \"profile\",\n        \"email\"\n    ],\n    \"issuer\": \"https://openam-docs42.forgeblocks.com/oauth2\",\n    \"id_token_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"acr_values_supported\": [],\n    \"userinfo_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"authorization_endpoint\": \"https://openam-docs42.forgeblocks.com/oauth2/authorize\",\n    \"request_object_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"rcs_request_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"A128KW\",\n        \"RSA1_5\",\n        \"A256KW\",\n        \"dir\",\n        \"A192KW\"\n    ],\n    \"claims_supported\": [\n        \"zoneinfo\",\n        \"address\",\n        \"profile\",\n        \"name\",\n        \"phone_number\",\n        \"given_name\",\n        \"locale\",\n        \"family_name\",\n        \"email\"\n    ],\n    \"userinfo_signing_alg_values_supported\": [\n        \"ES384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\"\n    ],\n    \"rcs_request_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"token_endpoint_auth_methods_supported\": [\n        \"client_secret_post\",\n        \"private_key_jwt\",\n        \"client_secret_basic\"\n    ],\n    \"token_endpoint\": \"https://openam-docs42.forgeblocks.com/oauth2/access_token\",\n    \"response_types_supported\": [\n        \"code token id_token\",\n        \"code\",\n        \"code id_token\",\n        \"device_code\",\n        \"id_token\",\n        \"code token\",\n        \"token\",\n        \"token id_token\"\n    ],\n    \"request_uri_parameter_supported\": true,\n    \"rcs_response_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"userinfo_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"A128KW\",\n        \"A256KW\",\n        \"RSA1_5\",\n        \"dir\",\n        \"A192KW\"\n    ],\n    \"grant_types_supported\": [\n        \"implicit\",\n        \"refresh_token\",\n        \"urn:ietf:params:oauth:grant-type:saml2-bearer\",\n        \"password\",\n        \"client_credentials\",\n        \"urn:ietf:params:oauth:grant-type:device_code\",\n        \"authorization_code\",\n        \"urn:ietf:params:oauth:grant-type:uma-ticket\"\n    ],\n    \"end_session_endpoint\": \"https://openam-docs42.forgeblocks.com/oauth2/connect/endSession\",\n    \"rcs_request_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"version\": \"3.0\",\n    \"rcs_response_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"A128KW\",\n        \"A256KW\",\n        \"RSA1_5\",\n        \"dir\",\n        \"A192KW\"\n    ],\n    \"userinfo_endpoint\": \"https://openam-docs42.forgeblocks.com/oauth2/userinfo\",\n    \"token_endpoint_auth_signing_alg_values_supported\": [\n        \"PS384\",\n        \"RS384\",\n        \"ES384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"id_token_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"A128KW\",\n        \"A256KW\",\n        \"RSA1_5\",\n        \"dir\",\n        \"A192KW\"\n    ],\n    \"jwks_uri\": \"https://openam-docs42.forgeblocks.com/oauth2/connect/jwk_uri\",\n    \"subject_types_supported\": [\n        \"public\"\n    ],\n    \"id_token_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"registration_endpoint\": \"https://openam-docs42.forgeblocks.com/oauth2/register\",\n    \"request_object_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"request_object_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"A128KW\",\n        \"RSA1_5\",\n        \"A256KW\",\n        \"dir\",\n        \"A192KW\"\n    ],\n    \"rcs_response_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ]\n}"
+							"body": "{\n    \"request_parameter_supported\": true,\n    \"claims_parameter_supported\": false,\n    \"introspection_endpoint\": \"https://openam-{{tenantName}}.forgeblocks.com/oauth2/introspect\",\n    \"check_session_iframe\": \"https://openam-{{tenantName}}.forgeblocks.com/oauth2/connect/checkSession\",\n    \"scopes_supported\": [\n        \"address\",\n        \"phone\",\n        \"openid\",\n        \"profile\",\n        \"email\"\n    ],\n    \"issuer\": \"https://openam-{{tenantName}}.forgeblocks.com/oauth2\",\n    \"id_token_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"acr_values_supported\": [],\n    \"userinfo_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"authorization_endpoint\": \"https://openam-{{tenantName}}.forgeblocks.com/oauth2/authorize\",\n    \"request_object_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"rcs_request_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"A128KW\",\n        \"RSA1_5\",\n        \"A256KW\",\n        \"dir\",\n        \"A192KW\"\n    ],\n    \"claims_supported\": [\n        \"zoneinfo\",\n        \"address\",\n        \"profile\",\n        \"name\",\n        \"phone_number\",\n        \"given_name\",\n        \"locale\",\n        \"family_name\",\n        \"email\"\n    ],\n    \"userinfo_signing_alg_values_supported\": [\n        \"ES384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\"\n    ],\n    \"rcs_request_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"token_endpoint_auth_methods_supported\": [\n        \"client_secret_post\",\n        \"private_key_jwt\",\n        \"client_secret_basic\"\n    ],\n    \"token_endpoint\": \"https://openam-{{tenantName}}.forgeblocks.com/oauth2/access_token\",\n    \"response_types_supported\": [\n        \"code token id_token\",\n        \"code\",\n        \"code id_token\",\n        \"device_code\",\n        \"id_token\",\n        \"code token\",\n        \"token\",\n        \"token id_token\"\n    ],\n    \"request_uri_parameter_supported\": true,\n    \"rcs_response_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"userinfo_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"A128KW\",\n        \"A256KW\",\n        \"RSA1_5\",\n        \"dir\",\n        \"A192KW\"\n    ],\n    \"grant_types_supported\": [\n        \"implicit\",\n        \"refresh_token\",\n        \"urn:ietf:params:oauth:grant-type:saml2-bearer\",\n        \"password\",\n        \"client_credentials\",\n        \"urn:ietf:params:oauth:grant-type:device_code\",\n        \"authorization_code\",\n        \"urn:ietf:params:oauth:grant-type:uma-ticket\"\n    ],\n    \"end_session_endpoint\": \"https://openam-{{tenantName}}.forgeblocks.com/oauth2/connect/endSession\",\n    \"rcs_request_encryption_enc_values_supported\": [\n        \"A256GCM\",\n        \"A192GCM\",\n        \"A128GCM\",\n        \"A128CBC-HS256\",\n        \"A192CBC-HS384\",\n        \"A256CBC-HS512\"\n    ],\n    \"version\": \"3.0\",\n    \"rcs_response_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"A128KW\",\n        \"A256KW\",\n        \"RSA1_5\",\n        \"dir\",\n        \"A192KW\"\n    ],\n    \"userinfo_endpoint\": \"https://openam-{{tenantName}}.forgeblocks.com/oauth2/userinfo\",\n    \"token_endpoint_auth_signing_alg_values_supported\": [\n        \"PS384\",\n        \"RS384\",\n        \"ES384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"id_token_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"A128KW\",\n        \"A256KW\",\n        \"RSA1_5\",\n        \"dir\",\n        \"A192KW\"\n    ],\n    \"jwks_uri\": \"https://openam-{{tenantName}}.forgeblocks.com/oauth2/connect/jwk_uri\",\n    \"subject_types_supported\": [\n        \"public\"\n    ],\n    \"id_token_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"registration_endpoint\": \"https://openam-{{tenantName}}.forgeblocks.com/oauth2/register\",\n    \"request_object_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ],\n    \"request_object_encryption_alg_values_supported\": [\n        \"RSA-OAEP\",\n        \"RSA-OAEP-256\",\n        \"A128KW\",\n        \"RSA1_5\",\n        \"A256KW\",\n        \"dir\",\n        \"A192KW\"\n    ],\n    \"rcs_response_signing_alg_values_supported\": [\n        \"PS384\",\n        \"ES384\",\n        \"RS384\",\n        \"HS256\",\n        \"HS512\",\n        \"ES256\",\n        \"RS256\",\n        \"HS384\",\n        \"ES512\",\n        \"PS256\",\n        \"PS512\",\n        \"RS512\"\n    ]\n}"
 						}
 					]
 				}
@@ -1830,7 +1836,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{appAccessToken}}",
+											"value": "{{accessToken}}",
 											"type": "string"
 										}
 									]
@@ -1924,7 +1930,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{appAccessToken}}",
+											"value": "{{accessToken}}",
 											"type": "string"
 										}
 									]
@@ -2020,7 +2026,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{appAccessToken}}",
+											"value": "{{accessToken}}",
 											"type": "string"
 										}
 									]
@@ -2100,7 +2106,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n        \"me.read\",\n        \"me.update\",\n        \"me.update-password\",\n        \"password-policy.read\",\n        \"user.reset-password\",\n        \"user.recover-username\",\n        \"user.create\",\n        \"user.read\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"a974430b2d66967b34c937b892f4a63e\",\n    \"customClaims\": {},\n    \"description\": \"Your Web App\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"password\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"HS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"http://localhost:9080/callback\",\n        \"http://localhost:9080/callback/non-hosted\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"http://localhost:9080/\"\n    ],\n    \"name\": \"{{tenantName}}\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": \"Uj7NkmBgmb33eoeL1jB4iySv5WRKuavV4qAiD3tdSvw=\",\n    \"type\": \"web\"\n}"
+									"body": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n        \"me.read\",\n        \"me.update\",\n        \"me.update-password\",\n        \"password-policy.read\",\n        \"user.reset-password\",\n        \"user.recover-username\",\n        \"user.create\",\n        \"user.read\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"{{appClientId}}\",\n    \"customClaims\": {},\n    \"description\": \"Your Web App\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"password\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"HS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"http://localhost:9080/callback\",\n        \"http://localhost:9080/callback/non-hosted\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"http://localhost:9080/\"\n    ],\n    \"name\": \"{{tenantName}}\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": \"{{appClientSecret}}\",\n    \"type\": \"web\"\n}"
 								}
 							]
 						},
@@ -2235,7 +2241,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n        \"app.read\",\n        \"app.write\",\n        \"hosted-page-config.read\",\n        \"hosted-page-config.write\",\n        \"password-policy.read\",\n        \"password-policy.write\",\n        \"team-member.read\",\n        \"team-member.write\",\n        \"user.read\",\n        \"user.write\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"4718082d880be9f5c1c1e18b5fe87036\",\n    \"customClaims\": {},\n    \"description\": \"My great food app\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"HS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"http://localhost:9080/callback\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"http://localhost:9080/\"\n    ],\n    \"name\": \"Top Foods\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": \"ODVbJ8P7GbYYXzyh4XHC62GllCP9N/HYMlo0aNT/YHM=\",\n    \"type\": \"web\"\n}"
+									"body": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n        \"app.read\",\n        \"app.write\",\n        \"hosted-page-config.read\",\n        \"hosted-page-config.write\",\n        \"password-policy.read\",\n        \"password-policy.write\",\n        \"team-member.read\",\n        \"team-member.write\",\n        \"user.read\",\n        \"user.write\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"{{appClientId}}\",\n    \"customClaims\": {},\n    \"description\": \"My great food app\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"HS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"http://localhost:9080/callback\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"http://localhost:9080/\"\n    ],\n    \"name\": \"Top Foods\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": \"{{appClientSecret}}\",\n    \"type\": \"web\"\n}"
 								}
 							]
 						},
@@ -2353,7 +2359,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n        \"app.read\",\n        \"app.update\",\n        \"hosted-page-config.read\",\n        \"hosted-page-config.update\",\n        \"password-policy.read\",\n        \"password-policy.update\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"3be90289359b8e5b43dbc70c3d401959\",\n    \"customClaims\": {},\n    \"description\": \"M2Mx\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": false,\n        \"clientCredentials\": true,\n        \"password\": false,\n        \"refreshToken\": false\n    },\n    \"jwtSigningAlgorithm\": \"HS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [],\n    \"name\": \"M2M\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": \"ZrYjtxaeSHBa226nDtk9OqDAKPeU9hixqtewdwnTkDk=\",\n    \"type\": \"m2m\"\n}"
+									"body": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n        \"app.read\",\n        \"app.update\",\n        \"hosted-page-config.read\",\n        \"hosted-page-config.update\",\n        \"password-policy.read\",\n        \"password-policy.update\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"{{serviceAppClientId}}\",\n    \"customClaims\": {},\n    \"description\": \"M2Mx\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": false,\n        \"clientCredentials\": true,\n        \"password\": false,\n        \"refreshToken\": false\n    },\n    \"jwtSigningAlgorithm\": \"HS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [],\n    \"name\": \"M2M\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": \"{{serviceAppClientSecret}}\",\n    \"type\": \"m2m\"\n}"
 								}
 							]
 						},
@@ -2381,7 +2387,7 @@
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{appAccessToken}}",
+											"value": "{{accessToken}}",
 											"type": "string"
 										}
 									]
@@ -2504,7 +2510,7 @@
 											"key": "iPlanetDirectoryPro"
 										}
 									],
-									"body": "{\n  \"accessTokenLifetime\": 3600,\n  \"apiScopes\": [\n    \"app.read\",\n    \"app.update\",\n    \"hosted-page-config.read\",\n    \"hosted-page-config.update\",\n    \"password-policy.read\",\n    \"password-policy.update\",\n    \"user.read\",\n    \"user.update\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"070462ae12ec98a1e05e65e8c2148802\",\n  \"customClaims\": {},\n  \"description\": \"My great food app\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"clientCredentials\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"HS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\n    \"http://localhost:9080/callback\"\n  ],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [\n    \"http://localhost:9080/\"\n  ],\n  \"name\": \"New Top Foods\",\n  \"refreshTokenLifetime\": 604800,\n  \"secret\": null,\n  \"type\": \"web\"\n}"
+									"body": "{\n  \"accessTokenLifetime\": 3600,\n  \"apiScopes\": [\n    \"app.read\",\n    \"app.update\",\n    \"hosted-page-config.read\",\n    \"hosted-page-config.update\",\n    \"password-policy.read\",\n    \"password-policy.update\",\n    \"user.read\",\n    \"user.update\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"{{appClientId}}\",\n  \"customClaims\": {},\n  \"description\": \"My great food app\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"clientCredentials\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"HS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\n    \"http://localhost:9080/callback\"\n  ],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [\n    \"http://localhost:9080/\"\n  ],\n  \"name\": \"New Top Foods\",\n  \"refreshTokenLifetime\": 604800,\n  \"secret\": null,\n  \"type\": \"web\"\n}"
 								}
 							]
 						},
@@ -2597,7 +2603,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"_id\": \"2812f57636316207510ce730a48ecf42\",\n    \"_rev\": \"-626963567\",\n    \"advancedOAuth2ClientConfig\": {\n        \"descriptions\": {\n            \"inherited\": false,\n            \"value\": [\n                \"App Descroption\"\n            ]\n        },\n        \"requestUris\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"logoUri\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"subjectType\": {\n            \"inherited\": false,\n            \"value\": \"Public\"\n        },\n        \"clientUri\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"name\": {\n            \"inherited\": false,\n            \"value\": [\n                \"\"\n            ]\n        },\n        \"contacts\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"responseTypes\": {\n            \"inherited\": false,\n            \"value\": [\n                \"token\"\n            ]\n        },\n        \"updateAccessToken\": {\n            \"inherited\": false\n        },\n        \"mixUpMitigation\": {\n            \"inherited\": false,\n            \"value\": false\n        },\n        \"policyUri\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"sectorIdentifierUri\": {\n            \"inherited\": false\n        },\n        \"tokenEndpointAuthMethod\": {\n            \"inherited\": false,\n            \"value\": \"client_secret_basic\"\n        },\n        \"isConsentImplied\": {\n            \"inherited\": false,\n            \"value\": true\n        },\n        \"grantTypes\": {\n            \"inherited\": false,\n            \"value\": [\n                \"client_credentials\"\n            ]\n        }\n    },\n    \"signEncOAuth2ClientConfig\": {\n        \"tokenEndpointAuthSigningAlgorithm\": {\n            \"inherited\": false,\n            \"value\": \"RS256\"\n        },\n        \"idTokenEncryptionEnabled\": {\n            \"inherited\": false,\n            \"value\": false\n        },\n        \"requestParameterSignedAlg\": {\n            \"inherited\": false\n        },\n        \"clientJwtPublicKey\": {\n            \"inherited\": false\n        },\n        \"idTokenPublicEncryptionKey\": {\n            \"inherited\": false\n        },\n        \"userinfoResponseFormat\": {\n            \"inherited\": false,\n            \"value\": \"JSON\"\n        },\n        \"publicKeyLocation\": {\n            \"inherited\": false,\n            \"value\": \"jwks_uri\"\n        },\n        \"jwkStoreCacheMissCacheTime\": {\n            \"inherited\": false,\n            \"value\": 60000\n        },\n        \"requestParameterEncryptedEncryptionAlgorithm\": {\n            \"inherited\": false,\n            \"value\": \"A128CBC-HS256\"\n        },\n        \"userinfoSignedResponseAlg\": {\n            \"inherited\": false\n        },\n        \"idTokenEncryptionAlgorithm\": {\n            \"inherited\": false,\n            \"value\": \"RSA-OAEP-256\"\n        },\n        \"requestParameterEncryptedAlg\": {\n            \"inherited\": false\n        },\n        \"jwkSet\": {\n            \"inherited\": false\n        },\n        \"idTokenEncryptionMethod\": {\n            \"inherited\": false,\n            \"value\": \"A128CBC-HS256\"\n        },\n        \"jwksCacheTimeout\": {\n            \"inherited\": false,\n            \"value\": 3600000\n        },\n        \"userinfoEncryptedResponseAlg\": {\n            \"inherited\": false\n        },\n        \"idTokenSignedResponseAlg\": {\n            \"inherited\": false,\n            \"value\": \"HS256\"\n        },\n        \"jwksUri\": {\n            \"inherited\": false,\n            \"value\": \"http://openam:80/oauth2/connect/jwk_uri\"\n        },\n        \"userinfoEncryptedResponseEncryptionAlgorithm\": {\n            \"inherited\": false,\n            \"value\": \"A128CBC-HS256\"\n        }\n    },\n    \"coreOpenIDClientConfig\": {\n        \"claims\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"clientSessionUri\": {\n            \"inherited\": false\n        },\n        \"defaultAcrValues\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"jwtTokenLifetime\": {\n            \"inherited\": false,\n            \"value\": 3600\n        },\n        \"defaultMaxAgeEnabled\": {\n            \"inherited\": false,\n            \"value\": false\n        },\n        \"defaultMaxAge\": {\n            \"inherited\": false,\n            \"value\": 600\n        },\n        \"postLogoutRedirectUri\": {\n            \"inherited\": false,\n            \"value\": []\n        }\n    },\n    \"coreOAuth2ClientConfig\": {\n        \"userpassword\": null,\n        \"userpassword-encrypted\": \"AAAAA0FFUwIQNSI/XGoYSYwyVQHt/SIbuzWl9FAWsy5IWGSRioyhPaQYzPDG3qV63DAdkFUigKkJICkAkZ4ZNFrrI5WNPSTlZPIgDhG7yXd+\",\n        \"defaultScopes\": {\n            \"inherited\": false,\n            \"value\": [\n                \"openid\"\n            ]\n        },\n        \"refreshTokenLifetime\": {\n            \"inherited\": false,\n            \"value\": 604800\n        },\n        \"scopes\": {\n            \"inherited\": false,\n            \"value\": [\n                \"address\",\n                \"phone\",\n                \"profile\",\n                \"email\",\n                \"app.read\",\n                \"email-template.read\",\n                \"password-policy.read\",\n                \"user.reset-password\",\n                \"user.recover-username\",\n                \"user.create\",\n                \"user.read\",\n                \"user.update\"\n            ]\n        },\n        \"status\": {\n            \"inherited\": false,\n            \"value\": \"Active\"\n        },\n        \"accessTokenLifetime\": {\n            \"inherited\": false,\n            \"value\": 3600\n        },\n        \"redirectionUris\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"clientName\": {\n            \"inherited\": false,\n            \"value\": [\n                \"App name\"\n            ]\n        },\n        \"clientType\": {\n            \"inherited\": false,\n            \"value\": \"Confidential\"\n        },\n        \"authorizationCodeLifetime\": {\n            \"inherited\": false,\n            \"value\": 120\n        }\n    },\n    \"coreUmaClientConfig\": {\n        \"claimsRedirectionUris\": {\n            \"inherited\": false,\n            \"value\": []\n        }\n    },\n    \"_type\": {\n        \"_id\": \"OAuth2Client\",\n        \"name\": \"OAuth2 Clients\",\n        \"collection\": true\n    }\n}"
+									"body": "{\n    \"_id\": \"{{appClientId}}\",\n    \"_rev\": \"-626963567\",\n    \"advancedOAuth2ClientConfig\": {\n        \"descriptions\": {\n            \"inherited\": false,\n            \"value\": [\n                \"App Descroption\"\n            ]\n        },\n        \"requestUris\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"logoUri\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"subjectType\": {\n            \"inherited\": false,\n            \"value\": \"Public\"\n        },\n        \"clientUri\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"name\": {\n            \"inherited\": false,\n            \"value\": [\n                \"\"\n            ]\n        },\n        \"contacts\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"responseTypes\": {\n            \"inherited\": false,\n            \"value\": [\n                \"token\"\n            ]\n        },\n        \"updateAccessToken\": {\n            \"inherited\": false\n        },\n        \"mixUpMitigation\": {\n            \"inherited\": false,\n            \"value\": false\n        },\n        \"policyUri\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"sectorIdentifierUri\": {\n            \"inherited\": false\n        },\n        \"tokenEndpointAuthMethod\": {\n            \"inherited\": false,\n            \"value\": \"client_secret_basic\"\n        },\n        \"isConsentImplied\": {\n            \"inherited\": false,\n            \"value\": true\n        },\n        \"grantTypes\": {\n            \"inherited\": false,\n            \"value\": [\n                \"client_credentials\"\n            ]\n        }\n    },\n    \"signEncOAuth2ClientConfig\": {\n        \"tokenEndpointAuthSigningAlgorithm\": {\n            \"inherited\": false,\n            \"value\": \"RS256\"\n        },\n        \"idTokenEncryptionEnabled\": {\n            \"inherited\": false,\n            \"value\": false\n        },\n        \"requestParameterSignedAlg\": {\n            \"inherited\": false\n        },\n        \"clientJwtPublicKey\": {\n            \"inherited\": false\n        },\n        \"idTokenPublicEncryptionKey\": {\n            \"inherited\": false\n        },\n        \"userinfoResponseFormat\": {\n            \"inherited\": false,\n            \"value\": \"JSON\"\n        },\n        \"publicKeyLocation\": {\n            \"inherited\": false,\n            \"value\": \"jwks_uri\"\n        },\n        \"jwkStoreCacheMissCacheTime\": {\n            \"inherited\": false,\n            \"value\": 60000\n        },\n        \"requestParameterEncryptedEncryptionAlgorithm\": {\n            \"inherited\": false,\n            \"value\": \"A128CBC-HS256\"\n        },\n        \"userinfoSignedResponseAlg\": {\n            \"inherited\": false\n        },\n        \"idTokenEncryptionAlgorithm\": {\n            \"inherited\": false,\n            \"value\": \"RSA-OAEP-256\"\n        },\n        \"requestParameterEncryptedAlg\": {\n            \"inherited\": false\n        },\n        \"jwkSet\": {\n            \"inherited\": false\n        },\n        \"idTokenEncryptionMethod\": {\n            \"inherited\": false,\n            \"value\": \"A128CBC-HS256\"\n        },\n        \"jwksCacheTimeout\": {\n            \"inherited\": false,\n            \"value\": 3600000\n        },\n        \"userinfoEncryptedResponseAlg\": {\n            \"inherited\": false\n        },\n        \"idTokenSignedResponseAlg\": {\n            \"inherited\": false,\n            \"value\": \"HS256\"\n        },\n        \"jwksUri\": {\n            \"inherited\": false,\n            \"value\": \"http://openam:80/oauth2/connect/jwk_uri\"\n        },\n        \"userinfoEncryptedResponseEncryptionAlgorithm\": {\n            \"inherited\": false,\n            \"value\": \"A128CBC-HS256\"\n        }\n    },\n    \"coreOpenIDClientConfig\": {\n        \"claims\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"clientSessionUri\": {\n            \"inherited\": false\n        },\n        \"defaultAcrValues\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"jwtTokenLifetime\": {\n            \"inherited\": false,\n            \"value\": 3600\n        },\n        \"defaultMaxAgeEnabled\": {\n            \"inherited\": false,\n            \"value\": false\n        },\n        \"defaultMaxAge\": {\n            \"inherited\": false,\n            \"value\": 600\n        },\n        \"postLogoutRedirectUri\": {\n            \"inherited\": false,\n            \"value\": []\n        }\n    },\n    \"coreOAuth2ClientConfig\": {\n        \"userpassword\": null,\n        \"userpassword-encrypted\": \"{{userPasswordEncrypted}}\",\n        \"defaultScopes\": {\n            \"inherited\": false,\n            \"value\": [\n                \"openid\"\n            ]\n        },\n        \"refreshTokenLifetime\": {\n            \"inherited\": false,\n            \"value\": 604800\n        },\n        \"scopes\": {\n            \"inherited\": false,\n            \"value\": [\n                \"address\",\n                \"phone\",\n                \"profile\",\n                \"email\",\n                \"app.read\",\n                \"email-template.read\",\n                \"password-policy.read\",\n                \"user.reset-password\",\n                \"user.recover-username\",\n                \"user.create\",\n                \"user.read\",\n                \"user.update\"\n            ]\n        },\n        \"status\": {\n            \"inherited\": false,\n            \"value\": \"Active\"\n        },\n        \"accessTokenLifetime\": {\n            \"inherited\": false,\n            \"value\": 3600\n        },\n        \"redirectionUris\": {\n            \"inherited\": false,\n            \"value\": []\n        },\n        \"clientName\": {\n            \"inherited\": false,\n            \"value\": [\n                \"App name\"\n            ]\n        },\n        \"clientType\": {\n            \"inherited\": false,\n            \"value\": \"Confidential\"\n        },\n        \"authorizationCodeLifetime\": {\n            \"inherited\": false,\n            \"value\": 120\n        }\n    },\n    \"coreUmaClientConfig\": {\n        \"claimsRedirectionUris\": {\n            \"inherited\": false,\n            \"value\": []\n        }\n    },\n    \"_type\": {\n        \"_id\": \"OAuth2Client\",\n        \"name\": \"OAuth2 Clients\",\n        \"collection\": true\n    }\n}"
 								}
 							]
 						}
@@ -2660,13 +2666,13 @@
 									{
 										"key": "Content-Type",
 										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"externalId\": \"701985\",\n    \"userName\": \"bjensen@example.com\",\n    \"accountVerified\": true,\n    \"name\": {\n        \"formatted\": \"Ms. Barbara J Jensen, III\",\n        \"familyName\": \"Jensen\",\n        \"givenName\": \"Barbara\",\n        \"middleName\": \"Jane\",\n        \"honorificPrefix\": \"Ms.\",\n        \"honorificSuffix\": \"III\"\n    },\n    \"displayName\": \"Babs Jensen\",\n    \"nickName\": \"Babs\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"emails\": [\n        {\n            \"value\": \"bjensen@example.com\",\n            \"type\": \"work\",\n            \"primary\": true,\n            \"verified\": true\n        },\n        {\n            \"value\": \"babs@jensen.org\",\n            \"type\": \"home\",\n            \"verified\": false\n        }\n    ],\n    \"addresses\": [\n        {\n            \"type\": \"work\",\n            \"streetAddress\": \"6925 Hollywood Blvd\",\n            \"locality\": \"Hollywood\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90028\",\n            \"country\": \"US\",\n            \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n            \"primary\": true\n        },\n        {\n            \"type\": \"home\",\n            \"streetAddress\": \"2800 E Observatory Rd\",\n            \"locality\": \"Los Angeles\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90027\",\n            \"country\": \"US\",\n            \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n        }\n    ],\n    \"phoneNumbers\": [\n        {\n            \"value\": \"555-555-5555\",\n            \"type\": \"work\"\n        },\n        {\n            \"value\": \"555-555-4444\",\n            \"type\": \"mobile\"\n        }\n    ],\n    \"userType\": \"Customer\",\n    \"title\": \"Master Carpenter\",\n    \"preferredLanguage\": \"en-US\",\n    \"locale\": \"en-US\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"active\": true,\n    \"password\": \"Passwordy1!\"\n}"
+									"raw": "  {\n    \"externalId\": \"701985\",\n    \"userName\": \"bjensen@example.com\",\n    \"accountVerified\": true,\n    \"name\": {\n      \"formatted\": \"Ms. Barbara J Jensen, III\",\n      \"familyName\": \"Jensen\",\n      \"givenName\": \"Barbara\",\n      \"middleName\": \"Jane\",\n      \"honorificPrefix\": \"Ms.\",\n      \"honorificSuffix\": \"III\"\n    },\n    \"displayName\": \"Babs Jensen\",\n    \"nickName\": \"Babs\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"emails\": [\n      {\n        \"value\": \"bjensen@example.com\",\n        \"type\": \"work\",\n        \"primary\": true,\n        \"verified\": true\n      },\n      {\n        \"value\": \"babs@jensen.org\",\n        \"type\": \"home\",\n        \"verified\": false\n      }\n    ],\n    \"addresses\": [\n      {\n        \"type\": \"work\",\n        \"streetAddress\": \"6925 Hollywood Blvd\",\n        \"locality\": \"Hollywood\",\n        \"region\": \"CA\",\n        \"postalCode\": \"90028\",\n        \"country\": \"US\",\n        \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n        \"primary\": true\n      },\n      {\n        \"type\": \"home\",\n        \"streetAddress\": \"2800 E Observatory Rd\",\n        \"locality\": \"Los Angeles\",\n        \"region\": \"CA\",\n        \"postalCode\": \"90027\",\n        \"country\": \"US\",\n        \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n      }\n    ],\n    \"phoneNumbers\": [\n      {\n        \"value\": \"555-555-5555\",\n        \"type\": \"work\"\n      },\n      {\n        \"value\": \"555-555-4444\",\n        \"type\": \"mobile\"\n      }\n    ],\n    \"userType\": \"Customer\",\n    \"title\": \"Master Carpenter\",\n    \"preferredLanguage\": \"en-US\",\n    \"locale\": \"en-US\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"active\": true,\n    \"password\": \"Passwordy1#\"\n  }\n"
 								},
 								"url": {
 									"raw": "{{tenantApiV1Url}}/users",
@@ -2757,15 +2763,25 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"active\": true,\n    \"addresses\": [\n        {\n            \"type\": \"work\",\n            \"streetAddress\": \"6925 Hollywood Blvd\",\n            \"locality\": \"Hollywood\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90028\",\n            \"country\": \"US\",\n            \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n            \"primary\": true\n        },\n        {\n            \"type\": \"home\",\n            \"streetAddress\": \"2800 E Observatory Rd\",\n            \"locality\": \"Los Angeles\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90027\",\n            \"country\": \"US\",\n            \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n        }\n    ],\n    \"displayName\": \"Babs Jensen\",\n    \"emails\": [\n        {\n            \"value\": \"bjensen@example.com\",\n            \"type\": \"work\",\n            \"primary\": true,\n            \"verified\": true\n        },\n        {\n            \"value\": \"babs@jensen.org\",\n            \"type\": \"home\",\n            \"verified\": false\n        }\n    ],\n    \"id\": \"8f2c51aa-a494-4c3b-b985-29b2a2589a8f\",\n    \"ims\": [],\n    \"locale\": \"en-US\",\n    \"name\": {\n        \"formatted\": \"Ms. Barbara J Jensen, III\",\n        \"familyName\": \"Jensen\",\n        \"givenName\": \"Barbara\",\n        \"middleName\": \"Jane\",\n        \"honorificPrefix\": \"Ms.\",\n        \"honorificSuffix\": \"III\"\n    },\n    \"nickName\": \"Babs\",\n    \"phoneNumbers\": [\n        {\n            \"value\": \"555-555-5555\",\n            \"type\": \"work\"\n        },\n        {\n            \"value\": \"555-555-4444\",\n            \"type\": \"mobile\"\n        }\n    ],\n    \"preferences\": {},\n    \"preferredLanguage\": \"en-US\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"title\": \"Master Carpenter\",\n    \"userName\": \"bjensen@example.com\",\n    \"userType\": \"Customer\",\n    \"x509Certificates\": [],\n    \"meta\": {\n        \"created\": \"2018-11-29T21:17:05.939Z\",\n        \"lastModified\": \"2018-11-29T21:17:05.939Z\"\n    }\n}"
+									"body": "{\n    \"active\": true,\n    \"addresses\": [\n        {\n            \"type\": \"work\",\n            \"streetAddress\": \"6925 Hollywood Blvd\",\n            \"locality\": \"Hollywood\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90028\",\n            \"country\": \"US\",\n            \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n            \"primary\": true\n        },\n        {\n            \"type\": \"home\",\n            \"streetAddress\": \"2800 E Observatory Rd\",\n            \"locality\": \"Los Angeles\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90027\",\n            \"country\": \"US\",\n            \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n        }\n    ],\n    \"displayName\": \"Babs Jensen\",\n    \"emails\": [\n        {\n            \"value\": \"bjensen@example.com\",\n            \"type\": \"work\",\n            \"primary\": true,\n            \"verified\": true\n        },\n        {\n            \"value\": \"babs@jensen.org\",\n            \"type\": \"home\",\n            \"verified\": false\n        }\n    ],\n    \"id\": \"{{userId}}\",\n    \"ims\": [],\n    \"locale\": \"en-US\",\n    \"name\": {\n        \"formatted\": \"Ms. Barbara J Jensen, III\",\n        \"familyName\": \"Jensen\",\n        \"givenName\": \"Barbara\",\n        \"middleName\": \"Jane\",\n        \"honorificPrefix\": \"Ms.\",\n        \"honorificSuffix\": \"III\"\n    },\n    \"nickName\": \"Babs\",\n    \"phoneNumbers\": [\n        {\n            \"value\": \"555-555-5555\",\n            \"type\": \"work\"\n        },\n        {\n            \"value\": \"555-555-4444\",\n            \"type\": \"mobile\"\n        }\n    ],\n    \"preferences\": {},\n    \"preferredLanguage\": \"en-US\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"title\": \"Master Carpenter\",\n    \"userName\": \"bjensen@example.com\",\n    \"userType\": \"Customer\",\n    \"x509Certificates\": [],\n    \"meta\": {\n        \"created\": \"2018-11-29T21:17:05.939Z\",\n        \"lastModified\": \"2018-11-29T21:17:05.939Z\"\n    }\n}"
 								}
 							]
 						},
 						{
 							"name": "Get users",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "570678be-7344-4365-83fa-236eeff8b588",
+										"exec": [
+											"var jsonData = JSON.parse(responseBody);",
+											"postman.setEnvironmentVariable(\"userId\", jsonData.id);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -2786,7 +2802,10 @@
 										"value": "application/x-www-form-urlencoded"
 									}
 								],
-								"body": {},
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
 								"url": {
 									"raw": "{{tenantApiV1Url}}/users",
 									"host": [
@@ -2852,7 +2871,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"schemas\": [\n        \"urn:ietf:params:scim:api:messages:2.0:ListResponse\"\n    ],\n    \"resources\": [\n        {\n            \"accountStatus\": \"Active\",\n            \"addresses\": [],\n            \"displayName\": \"\",\n            \"emails\": [\n                {\n                    \"value\": \"someone@forgerock.com\",\n                    \"verified\": false\n                }\n            ],\n            \"id\": \"bc146dc5-6ff1-485c-8443-a6f8959e35f7\",\n            \"ims\": [],\n            \"locale\": \"\",\n            \"name\": {\n                \"familyName\": \"user\",\n                \"givenName\": \"demo\"\n            },\n            \"nickName\": \"\",\n            \"phoneNumbers\": [],\n            \"preferences\": {},\n            \"preferredLanguage\": \"\",\n            \"profileUrl\": \"\",\n            \"timezone\": \"\",\n            \"title\": \"\",\n            \"userName\": \"demouser\",\n            \"userType\": \"\",\n            \"x509Certificates\": [],\n            \"meta\": {\n                \"created\": \"2019-02-27T23:53:08.099Z\",\n                \"lastModified\": \"2019-02-27T23:53:08.099Z\"\n            }\n        },\n        {\n            \"accountStatus\": \"Active\",\n            \"addresses\": [\n                {\n                    \"streetAddress\": \"4 SE 2nd AVe\",\n                    \"locality\": \"Anytown\",\n                    \"postalCode\": \"99999\",\n                    \"region\": \"Alaska\"\n                }\n            ],\n            \"displayName\": \"\",\n            \"emails\": [\n                {\n                    \"value\": \"michael@example.com\",\n                    \"verified\": false\n                }\n            ],\n            \"id\": \"28981410-2041-405c-ae68-e17d9d2fd312\",\n            \"ims\": [],\n            \"locale\": \"\",\n            \"name\": {\n                \"familyName\": \"Doe\",\n                \"givenName\": \"John\"\n            },\n            \"nickName\": \"\",\n            \"phoneNumbers\": [\n                {\n                    \"value\": \"5555555555\"\n                }\n            ],\n            \"preferences\": {},\n            \"preferredLanguage\": \"\",\n            \"profileUrl\": \"\",\n            \"timezone\": \"\",\n            \"title\": \"\",\n            \"userName\": \"demouser@example.com\",\n            \"userType\": \"\",\n            \"x509Certificates\": [],\n            \"meta\": {\n                \"created\": \"2019-02-28T21:19:26.721Z\",\n                \"lastModified\": \"2019-02-28T21:19:26.725Z\"\n            }\n        },\n        {\n            \"accountStatus\": \"Active\",\n            \"addresses\": [\n                {\n                    \"type\": \"work\",\n                    \"streetAddress\": \"6925 Hollywood Blvd\",\n                    \"locality\": \"Hollywood\",\n                    \"region\": \"CA\",\n                    \"postalCode\": \"90028\",\n                    \"country\": \"US\",\n                    \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n                    \"primary\": true\n                },\n                {\n                    \"type\": \"home\",\n                    \"streetAddress\": \"2800 E Observatory Rd\",\n                    \"locality\": \"Los Angeles\",\n                    \"region\": \"CA\",\n                    \"postalCode\": \"90027\",\n                    \"country\": \"US\",\n                    \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n                }\n            ],\n            \"displayName\": \"Babs Jensen\",\n            \"emails\": [\n                {\n                    \"value\": \"bjensen@example.com\",\n                    \"type\": \"work\",\n                    \"primary\": true,\n                    \"verified\": false\n                },\n                {\n                    \"value\": \"babs@example.org\",\n                    \"type\": \"home\",\n                    \"verified\": false\n                }\n            ],\n            \"id\": \"98c7999b-8c26-47eb-8f5c-a03651dc4072\",\n            \"ims\": [],\n            \"locale\": \"en-US\",\n            \"name\": {\n                \"formatted\": \"Ms. Barbara J Jensen, III\",\n                \"familyName\": \"Jensen\",\n                \"givenName\": \"Barbara\",\n                \"middleName\": \"Jane\",\n                \"honorificPrefix\": \"Ms.\",\n                \"honorificSuffix\": \"III\"\n            },\n            \"nickName\": \"Babs\",\n            \"phoneNumbers\": [\n                {\n                    \"value\": \"555-555-5555\",\n                    \"type\": \"work\"\n                },\n                {\n                    \"value\": \"555-555-4444\",\n                    \"type\": \"mobile\"\n                }\n            ],\n            \"preferences\": {},\n            \"preferredLanguage\": \"en-US\",\n            \"profileUrl\": \"https://login.example.com/bjensen\",\n            \"timezone\": \"America/Los_Angeles\",\n            \"title\": \"Master Carpenter\",\n            \"userName\": \"bjensen@example.com\",\n            \"userType\": \"Customer\",\n            \"x509Certificates\": [],\n            \"meta\": {\n                \"created\": \"2019-02-28T21:26:12.024Z\",\n                \"lastModified\": \"2019-02-28T21:26:12.024Z\"\n            }\n        }\n    ],\n    \"totalResults\": 3,\n    \"itemsPerPage\": 3,\n    \"startIndex\": 0\n}"
+									"body": "{\n    \"schemas\": [\n        \"urn:ietf:params:scim:api:messages:2.0:ListResponse\"\n    ],\n    \"resources\": [\n        {\n            \"accountStatus\": \"Active\",\n            \"addresses\": [],\n            \"displayName\": \"\",\n            \"emails\": [\n                {\n                    \"value\": \"someone@forgerock.com\",\n                    \"verified\": false\n                }\n            ],\n            \"id\": \"{{userId}}\",\n            \"ims\": [],\n            \"locale\": \"\",\n            \"name\": {\n                \"familyName\": \"user\",\n                \"givenName\": \"demo\"\n            },\n            \"nickName\": \"\",\n            \"phoneNumbers\": [],\n            \"preferences\": {},\n            \"preferredLanguage\": \"\",\n            \"profileUrl\": \"\",\n            \"timezone\": \"\",\n            \"title\": \"\",\n            \"userName\": \"demouser\",\n            \"userType\": \"\",\n            \"x509Certificates\": [],\n            \"meta\": {\n                \"created\": \"2019-02-27T23:53:08.099Z\",\n                \"lastModified\": \"2019-02-27T23:53:08.099Z\"\n            }\n        },\n        {\n            \"accountStatus\": \"Active\",\n            \"addresses\": [\n                {\n                    \"streetAddress\": \"4 SE 2nd AVe\",\n                    \"locality\": \"Anytown\",\n                    \"postalCode\": \"99999\",\n                    \"region\": \"Alaska\"\n                }\n            ],\n            \"displayName\": \"\",\n            \"emails\": [\n                {\n                    \"value\": \"michael@example.com\",\n                    \"verified\": false\n                }\n            ],\n            \"id\": \"{{userId2}}\",\n            \"ims\": [],\n            \"locale\": \"\",\n            \"name\": {\n                \"familyName\": \"Doe\",\n                \"givenName\": \"John\"\n            },\n            \"nickName\": \"\",\n            \"phoneNumbers\": [\n                {\n                    \"value\": \"5555555555\"\n                }\n            ],\n            \"preferences\": {},\n            \"preferredLanguage\": \"\",\n            \"profileUrl\": \"\",\n            \"timezone\": \"\",\n            \"title\": \"\",\n            \"userName\": \"demouser@example.com\",\n            \"userType\": \"\",\n            \"x509Certificates\": [],\n            \"meta\": {\n                \"created\": \"2019-02-28T21:19:26.721Z\",\n                \"lastModified\": \"2019-02-28T21:19:26.725Z\"\n            }\n        },\n        {\n            \"accountStatus\": \"Active\",\n            \"addresses\": [\n                {\n                    \"type\": \"work\",\n                    \"streetAddress\": \"6925 Hollywood Blvd\",\n                    \"locality\": \"Hollywood\",\n                    \"region\": \"CA\",\n                    \"postalCode\": \"90028\",\n                    \"country\": \"US\",\n                    \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n                    \"primary\": true\n                },\n                {\n                    \"type\": \"home\",\n                    \"streetAddress\": \"2800 E Observatory Rd\",\n                    \"locality\": \"Los Angeles\",\n                    \"region\": \"CA\",\n                    \"postalCode\": \"90027\",\n                    \"country\": \"US\",\n                    \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n                }\n            ],\n            \"displayName\": \"Babs Jensen\",\n            \"emails\": [\n                {\n                    \"value\": \"bjensen@example.com\",\n                    \"type\": \"work\",\n                    \"primary\": true,\n                    \"verified\": false\n                },\n                {\n                    \"value\": \"babs@example.org\",\n                    \"type\": \"home\",\n                    \"verified\": false\n                }\n            ],\n            \"id\": \"{{userId3}}\",\n            \"ims\": [],\n            \"locale\": \"en-US\",\n            \"name\": {\n                \"formatted\": \"Ms. Barbara J Jensen, III\",\n                \"familyName\": \"Jensen\",\n                \"givenName\": \"Barbara\",\n                \"middleName\": \"Jane\",\n                \"honorificPrefix\": \"Ms.\",\n                \"honorificSuffix\": \"III\"\n            },\n            \"nickName\": \"Babs\",\n            \"phoneNumbers\": [\n                {\n                    \"value\": \"555-555-5555\",\n                    \"type\": \"work\"\n                },\n                {\n                    \"value\": \"555-555-4444\",\n                    \"type\": \"mobile\"\n                }\n            ],\n            \"preferences\": {},\n            \"preferredLanguage\": \"en-US\",\n            \"profileUrl\": \"https://login.example.com/bjensen\",\n            \"timezone\": \"America/Los_Angeles\",\n            \"title\": \"Master Carpenter\",\n            \"userName\": \"bjensen@example.com\",\n            \"userType\": \"Customer\",\n            \"x509Certificates\": [],\n            \"meta\": {\n                \"created\": \"2019-02-28T21:26:12.024Z\",\n                \"lastModified\": \"2019-02-28T21:26:12.024Z\"\n            }\n        }\n    ],\n    \"totalResults\": 3,\n    \"itemsPerPage\": 3,\n    \"startIndex\": 0\n}"
 								}
 							]
 						},
@@ -2966,16 +2985,13 @@
 									}
 								}
 							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"auth": {
 									"type": "bearer",
 									"bearer": [
 										{
 											"key": "token",
-											"value": "{{userAccessToken}}",
+											"value": "{{accessToken}}",
 											"type": "string"
 										}
 									]
@@ -3057,7 +3073,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"accountStatus\": \"Active\",\n    \"addresses\": [\n        {\n            \"type\": \"work\",\n            \"streetAddress\": \"6925 Hollywood Blvd\",\n            \"locality\": \"Hollywood\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90028\",\n            \"country\": \"US\",\n            \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n            \"primary\": true\n        },\n        {\n            \"type\": \"home\",\n            \"streetAddress\": \"2800 E Observatory Rd\",\n            \"locality\": \"Los Angeles\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90027\",\n            \"country\": \"US\",\n            \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n        }\n    ],\n    \"displayName\": \"Babs Jensen\",\n    \"emails\": [\n        {\n            \"value\": \"bjensen@example.com\",\n            \"type\": \"work\",\n            \"primary\": true,\n            \"verified\": false\n        },\n        {\n            \"value\": \"babs@jensen.org\",\n            \"type\": \"home\",\n            \"verified\": false\n        }\n    ],\n    \"id\": \"1e3d1823-5fa1-4341-a02b-d4d0171793fb\",\n    \"ims\": [],\n    \"locale\": \"en-US\",\n    \"name\": {\n        \"formatted\": \"Ms. Barbara J Jensen, III\",\n        \"familyName\": \"Jensen\",\n        \"givenName\": \"Barbara\",\n        \"middleName\": \"Jane\",\n        \"honorificPrefix\": \"Ms.\",\n        \"honorificSuffix\": \"III\"\n    },\n    \"nickName\": \"Babs\",\n    \"phoneNumbers\": [\n        {\n            \"value\": \"555-555-5555\",\n            \"type\": \"work\"\n        },\n        {\n            \"value\": \"555-555-4444\",\n            \"type\": \"mobile\"\n        }\n    ],\n    \"preferences\": {},\n    \"preferredLanguage\": \"en-US\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"title\": \"Master Carpenter\",\n    \"userName\": \"bjensen@example.com\",\n    \"userType\": \"Customer\",\n    \"x509Certificates\": [],\n    \"meta\": {\n        \"created\": \"2019-03-06T20:59:49.510Z\",\n        \"lastModified\": \"2019-03-06T20:59:49.510Z\"\n    }\n}"
+									"body": "{\n    \"accountStatus\": \"Active\",\n    \"addresses\": [\n        {\n            \"type\": \"work\",\n            \"streetAddress\": \"6925 Hollywood Blvd\",\n            \"locality\": \"Hollywood\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90028\",\n            \"country\": \"US\",\n            \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n            \"primary\": true\n        },\n        {\n            \"type\": \"home\",\n            \"streetAddress\": \"2800 E Observatory Rd\",\n            \"locality\": \"Los Angeles\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90027\",\n            \"country\": \"US\",\n            \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n        }\n    ],\n    \"displayName\": \"Babs Jensen\",\n    \"emails\": [\n        {\n            \"value\": \"bjensen@example.com\",\n            \"type\": \"work\",\n            \"primary\": true,\n            \"verified\": false\n        },\n        {\n            \"value\": \"babs@jensen.org\",\n            \"type\": \"home\",\n            \"verified\": false\n        }\n    ],\n    \"id\": \"{{userId}}\",\n    \"ims\": [],\n    \"locale\": \"en-US\",\n    \"name\": {\n        \"formatted\": \"Ms. Barbara J Jensen, III\",\n        \"familyName\": \"Jensen\",\n        \"givenName\": \"Barbara\",\n        \"middleName\": \"Jane\",\n        \"honorificPrefix\": \"Ms.\",\n        \"honorificSuffix\": \"III\"\n    },\n    \"nickName\": \"Babs\",\n    \"phoneNumbers\": [\n        {\n            \"value\": \"555-555-5555\",\n            \"type\": \"work\"\n        },\n        {\n            \"value\": \"555-555-4444\",\n            \"type\": \"mobile\"\n        }\n    ],\n    \"preferences\": {},\n    \"preferredLanguage\": \"en-US\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"title\": \"Master Carpenter\",\n    \"userName\": \"bjensen@example.com\",\n    \"userType\": \"Customer\",\n    \"x509Certificates\": [],\n    \"meta\": {\n        \"created\": \"2019-03-06T20:59:49.510Z\",\n        \"lastModified\": \"2019-03-06T20:59:49.510Z\"\n    }\n}"
 								}
 							]
 						},
@@ -3078,7 +3094,9 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json"
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
 									}
 								],
 								"body": {
@@ -3183,7 +3201,7 @@
 											"key": "iPlanetDirectoryPro"
 										}
 									],
-									"body": "{\n    \"active\": true,\n    \"addresses\": [],\n    \"emails\": [\n        {\n            \"value\": \"test1@test.com\"\n        }\n    ],\n    \"id\": \"dbe5464a-95a1-438f-97da-fdc8e536a018\",\n    \"name\": {\n        \"familyName\": \"New LastName\",\n        \"givenName\": \"test1\"\n    },\n    \"phoneNumbers\": [\n        {\n            \"value\": \"123-456-7890\"\n        }\n    ],\n    \"userName\": \"demouser\"\n}"
+									"body": "{\n    \"active\": true,\n    \"addresses\": [],\n    \"emails\": [\n        {\n            \"value\": \"test1@test.com\"\n        }\n    ],\n    \"id\": \"{{userId}}\",\n    \"name\": {\n        \"familyName\": \"New LastName\",\n        \"givenName\": \"test1\"\n    },\n    \"phoneNumbers\": [\n        {\n            \"value\": \"123-456-7890\"\n        }\n    ],\n    \"userName\": \"demouser\"\n}"
 								}
 							]
 						},
@@ -3287,7 +3305,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"accountStatus\": \"Active\",\n    \"addresses\": [\n        {\n            \"type\": \"work\",\n            \"streetAddress\": \"6925 Hollywood Blvd\",\n            \"locality\": \"Hollywood\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90028\",\n            \"country\": \"US\",\n            \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n            \"primary\": true\n        },\n        {\n            \"type\": \"home\",\n            \"streetAddress\": \"2800 E Observatory Rd\",\n            \"locality\": \"Los Angeles\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90027\",\n            \"country\": \"US\",\n            \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n        }\n    ],\n    \"displayName\": \"Babs Jensen\",\n    \"emails\": [\n        {\n            \"value\": \"bjensen@example.com\",\n            \"type\": \"work\",\n            \"primary\": true,\n            \"verified\": false\n        },\n        {\n            \"value\": \"babs@jensen.org\",\n            \"type\": \"home\",\n            \"verified\": false\n        }\n    ],\n    \"id\": \"1e3d1823-5fa1-4341-a02b-d4d0171793fb\",\n    \"ims\": [],\n    \"locale\": \"en-US\",\n    \"name\": {\n        \"formatted\": \"Ms. Barbara J Jensen, III\",\n        \"familyName\": \"Jensen\",\n        \"givenName\": \"Barbara\",\n        \"middleName\": \"Jane\",\n        \"honorificPrefix\": \"Ms.\",\n        \"honorificSuffix\": \"III\"\n    },\n    \"nickName\": \"Babs\",\n    \"phoneNumbers\": [\n        {\n            \"value\": \"555-555-5555\",\n            \"type\": \"work\"\n        },\n        {\n            \"value\": \"555-555-4444\",\n            \"type\": \"mobile\"\n        }\n    ],\n    \"preferences\": {},\n    \"preferredLanguage\": \"en-US\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"title\": \"Master Carpenter\",\n    \"userName\": \"bjensen@example.com\",\n    \"userType\": \"Customer\",\n    \"x509Certificates\": [],\n    \"meta\": {\n        \"created\": \"2019-03-06T20:59:49.510Z\",\n        \"lastModified\": \"2019-03-07T17:23:11.235Z\"\n    }\n}"
+									"body": "{\n    \"accountStatus\": \"Active\",\n    \"addresses\": [\n        {\n            \"type\": \"work\",\n            \"streetAddress\": \"6925 Hollywood Blvd\",\n            \"locality\": \"Hollywood\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90028\",\n            \"country\": \"US\",\n            \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n            \"primary\": true\n        },\n        {\n            \"type\": \"home\",\n            \"streetAddress\": \"2800 E Observatory Rd\",\n            \"locality\": \"Los Angeles\",\n            \"region\": \"CA\",\n            \"postalCode\": \"90027\",\n            \"country\": \"US\",\n            \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n        }\n    ],\n    \"displayName\": \"Babs Jensen\",\n    \"emails\": [\n        {\n            \"value\": \"bjensen@example.com\",\n            \"type\": \"work\",\n            \"primary\": true,\n            \"verified\": false\n        },\n        {\n            \"value\": \"babs@jensen.org\",\n            \"type\": \"home\",\n            \"verified\": false\n        }\n    ],\n    \"id\": \"{{userId}}\",\n    \"ims\": [],\n    \"locale\": \"en-US\",\n    \"name\": {\n        \"formatted\": \"Ms. Barbara J Jensen, III\",\n        \"familyName\": \"Jensen\",\n        \"givenName\": \"Barbara\",\n        \"middleName\": \"Jane\",\n        \"honorificPrefix\": \"Ms.\",\n        \"honorificSuffix\": \"III\"\n    },\n    \"nickName\": \"Babs\",\n    \"phoneNumbers\": [\n        {\n            \"value\": \"555-555-5555\",\n            \"type\": \"work\"\n        },\n        {\n            \"value\": \"555-555-4444\",\n            \"type\": \"mobile\"\n        }\n    ],\n    \"preferences\": {},\n    \"preferredLanguage\": \"en-US\",\n    \"profileUrl\": \"https://login.example.com/bjensen\",\n    \"timezone\": \"America/Los_Angeles\",\n    \"title\": \"Master Carpenter\",\n    \"userName\": \"bjensen@example.com\",\n    \"userType\": \"Customer\",\n    \"x509Certificates\": [],\n    \"meta\": {\n        \"created\": \"2019-03-06T20:59:49.510Z\",\n        \"lastModified\": \"2019-03-07T17:23:11.235Z\"\n    }\n}"
 								}
 							]
 						},
@@ -3405,7 +3423,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"active\": true,\n    \"addresses\": [],\n    \"emails\": [\n        {\n            \"value\": \"test@test.com\"\n        }\n    ],\n    \"id\": \"dbe5464a-95a1-438f-97da-fdc8e536a018\",\n    \"name\": {\n        \"familyName\": \"User\",\n        \"givenName\": \"Demo\"\n    },\n    \"phoneNumbers\": [\n        {\n            \"value\": \"123-456-7890\"\n        }\n    ],\n    \"userName\": \"demouser\"\n}"
+									"body": "{\n    \"active\": true,\n    \"addresses\": [],\n    \"emails\": [\n        {\n            \"value\": \"test@test.com\"\n        }\n    ],\n    \"id\": \"{{userId}}\",\n    \"name\": {\n        \"familyName\": \"User\",\n        \"givenName\": \"Demo\"\n    },\n    \"phoneNumbers\": [\n        {\n            \"value\": \"123-456-7890\"\n        }\n    ],\n    \"userName\": \"demouser\"\n}"
 								}
 							]
 						},
@@ -3533,7 +3551,7 @@
 											"key": "iPlanetDirectoryPro"
 										}
 									],
-									"body": "{\n  \"active\": true,\n  \"addresses\": [],\n  \"emails\": [\n    {\n      \"value\": \"test1@test.com\"\n    }\n  ],\n  \"id\": \"dbe5464a-95a1-438f-97da-fdc8e536a018\",\n  \"name\": {\n    \"familyName\": \"test1\",\n    \"givenName\": \"test1\"\n  },\n  \"phoneNumbers\": [\n    {\n      \"value\": \"123-456-7890\"\n    }\n  ],\n  \"userName\": \"demouser\"\n}"
+									"body": "{\n  \"active\": true,\n  \"addresses\": [],\n  \"emails\": [\n    {\n      \"value\": \"test1@test.com\"\n    }\n  ],\n  \"id\": \"{{userId}}\",\n  \"name\": {\n    \"familyName\": \"test1\",\n    \"givenName\": \"test1\"\n  },\n  \"phoneNumbers\": [\n    {\n      \"value\": \"123-456-7890\"\n    }\n  ],\n  \"userName\": \"demouser\"\n}"
 								}
 							]
 						},
@@ -3628,7 +3646,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"accountStatus\": \"Active\",\n    \"addresses\": [],\n    \"displayName\": \"\",\n    \"emails\": [\n        {\n            \"value\": \"ea.cloud@forgerock.com\",\n            \"verified\": false\n        }\n    ],\n    \"id\": \"bc146dc5-6ff1-485c-8443-a6f8959e35f7\",\n    \"ims\": [],\n    \"locale\": \"\",\n    \"name\": {\n        \"familyName\": \"user\",\n        \"givenName\": \"demo\"\n    },\n    \"nickName\": \"\",\n    \"phoneNumbers\": [],\n    \"preferences\": {},\n    \"preferredLanguage\": \"\",\n    \"profileUrl\": \"\",\n    \"timezone\": \"\",\n    \"title\": \"\",\n    \"userName\": \"demouser\",\n    \"userType\": \"\",\n    \"x509Certificates\": []\n}"
+									"body": "{\n    \"accountStatus\": \"Active\",\n    \"addresses\": [],\n    \"displayName\": \"\",\n    \"emails\": [\n        {\n            \"value\": \"ea.cloud@forgerock.com\",\n            \"verified\": false\n        }\n    ],\n    \"id\": \"{{userId}}\",\n    \"ims\": [],\n    \"locale\": \"\",\n    \"name\": {\n        \"familyName\": \"user\",\n        \"givenName\": \"demo\"\n    },\n    \"nickName\": \"\",\n    \"phoneNumbers\": [],\n    \"preferences\": {},\n    \"preferredLanguage\": \"\",\n    \"profileUrl\": \"\",\n    \"timezone\": \"\",\n    \"title\": \"\",\n    \"userName\": \"demouser\",\n    \"userType\": \"\",\n    \"x509Certificates\": []\n}"
 								}
 							]
 						},
@@ -4031,7 +4049,14 @@
 							"name": "Get Password Policy",
 							"request": {
 								"auth": {
-									"type": "noauth"
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "GET",
 								"header": [
@@ -4056,15 +4081,9 @@
 									],
 									"path": [
 										"password-policy"
-									],
-									"query": [
-										{
-											"key": "",
-											"value": ""
-										}
 									]
 								},
-								"description": "Retreives the current password policy."
+								"description": "Retreives the current password policy.\n\nFor a discussion of the output, see our documentation on [Password Policies](https://developer-cloud.forgerock.com/quickstarts/password-policies/)."
 							},
 							"response": [
 								{
@@ -4087,12 +4106,18 @@
 											"raw": ""
 										},
 										"url": {
-											"raw": "{{tenantApiV1Url}}/password-policy",
+											"raw": "{{tenantApiV1Url}}/password-policy?=",
 											"host": [
 												"{{tenantApiV1Url}}"
 											],
 											"path": [
 												"password-policy"
+											],
+											"query": [
+												{
+													"key": "",
+													"value": ""
+												}
 											]
 										}
 									},
@@ -4122,7 +4147,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Fri, 01 Mar 2019 19:55:42 GMT"
+											"value": "Fri, 29 Mar 2019 15:46:41 GMT"
 										},
 										{
 											"key": "Via",
@@ -4138,7 +4163,14 @@
 							"name": "Set Password Policy",
 							"request": {
 								"auth": {
-									"type": "noauth"
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "PUT",
 								"header": [
@@ -4164,7 +4196,7 @@
 										"password-policy"
 									]
 								},
-								"description": "Sets the password policy. Returns the configured password policy upon success.\n\n"
+								"description": "Sets the password policy. Returns the configured password policy upon success.\n\nWhen configuring this REST call, include all options shown from the GET Password Policy call.\n\nFor details on each option, see our documentation on [Password Policies](https://developer-cloud.forgerock.com/quickstarts/password-policies/)."
 							},
 							"response": [
 								{
@@ -4234,7 +4266,7 @@
 							]
 						}
 					],
-					"description": "Set the global password policy for users of the tenant.\n\n- The password age is set in `days`.\n- The password lock duration is set in `seconds`.",
+					"description": "Manage the global password policy for users of the tenant. Use the GET Password Policy call to review the current password policy, in JSON format. You can then use the output to format your desired password policy, through the Set Password Policy call.\n\n- The password age is set in `days`.\n- The password lock duration is set in `minutes`.\n- You can disable numeric options such as `maxPasswordAge` by setting them to 0.\n\nFor a more complete discussion, see our documentation on [Password Policies](https://developer-cloud.forgerock.com/quickstarts/password-policies/).",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -4250,6 +4282,504 @@
 							"listen": "test",
 							"script": {
 								"id": "af7f3d28-e84d-45a7-a007-37dcd52ef276",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Email",
+					"item": [
+						{
+							"name": "Get Email Templates",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"description": "Requires the `access_token` for the hosting environment."
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/email-templates",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"email-templates"
+									]
+								},
+								"description": "Gets a list of available email templates. You'll see output:\n\n* In JSON Format\n* Classified by template `type` and `id`\n\n\nFor more information, see our documentation on [Email Templates](https://developer-cloud.forgerock.com/quickstarts/email-templates/).\n\nTo send a test email via REST, review the output for the desired template `type` or `id`. Include that information in the POST Send Test Email REST call."
+							},
+							"response": [
+								{
+									"name": "Get Email Templates",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{accessToken}}"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/email-templates",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"email-templates"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "11637"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"2d75-zLzujHAKNnQuGRGiGp+okGU5mqc\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 28 Mar 2019 20:22:46 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICAr8iACg\",\n        \"body\": \"\\n# Welcome\\n\\nIf you have any questions or issues with your account please contact us.\\n\\nThanks!\\n\\n{{organization.name}}\\n\\nIf you did not make this request, please contact us.\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><h1 style=\\\"color: #455369; font-weight: 300;\\\">Welcome</h1>\\n<p>If you have any questions or issues with your account please contact us.</p>\\n<p>Thanks!</p>\\n<p>{{organization.name}}</p>\\n<p>If you did not make this request, please contact us.</p>\\n</div>\",\n        \"description\": \"Sent once the user verifies their email address or when they register\",\n        \"enabled\": false,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Welcome\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"Welcome to {{{organization.name}}}\",\n        \"type\": \"welcome\",\n        \"urlLifetime\": 0\n    },\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICA3pCBCg\",\n        \"body\": \"\\nHi {{user.name.givenName}},\\n\\nSomeone recently requested a password change for your {{organization.name}} account. If this was you, you can set a new password here:\\n\\n[Reset password]({{{url}}}){.btn}\\n\\nThis link will expire in {{urlExpiry}}.\\n\\nIf you don't want to change your password or didn't request this, just ignore and delete this message.\\n\\nThanks,\\n\\n{{organization.name}}\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><p>Hi {{user.name.givenName}},</p>\\n<p>Someone recently requested a password change for your {{organization.name}} account. If this was you, you can set a new password here:</p>\\n<p><a href=\\\"%7B%7B%7Burl%7D%7D%7D\\\" style=\\\"background-color: #2d9ee0; border-radius: 4px; color: #fff; display: inline-block; font-size: 14px; font-weight: 500; letter-spacing: 1px; margin: 20px; padding: 16px; text-decoration: none; text-transform: uppercase;\\\">Reset password</a></p>\\n<p>This link will expire in {{urlExpiry}}.</p>\\n<p>If you don't want to change your password or didn't request this, just ignore and delete this message.</p>\\n<p>Thanks,</p>\\n<p>{{organization.name}}</p>\\n</div>\",\n        \"description\": \"Provides a link allowing users to change their password\",\n        \"enabled\": true,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Forgot Password\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"Reset your {{{organization.name}}} password\",\n        \"type\": \"forgot-password\",\n        \"urlLifetime\": 2880\n    },\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICAvKGCCg\",\n        \"body\": \"\\n# Verify your Account\\n\\nThanks for signing up for {{organization.name}}. Verify your account by clicking on the link below.\\n\\n[Verify my account]({{{url}}}){.btn}\\n\\nThis link will expire in {{urlExpiry}}.\\n\\nThanks!\\n\\n{{organization.name}}\\n\\nIf you did not make this request, please contact us\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><h1 style=\\\"color: #455369; font-weight: 300;\\\">Verify your Account</h1>\\n<p>Thanks for signing up for {{organization.name}}. Verify your account by clicking on the link below.</p>\\n<p><a href=\\\"%7B%7B%7Burl%7D%7D%7D\\\" style=\\\"background-color: #2d9ee0; border-radius: 4px; color: #fff; display: inline-block; font-size: 14px; font-weight: 500; letter-spacing: 1px; margin: 20px; padding: 16px; text-decoration: none; text-transform: uppercase;\\\">Verify my account</a></p>\\n<p>This link will expire in {{urlExpiry}}.</p>\\n<p>Thanks!</p>\\n<p>{{organization.name}}</p>\\n<p>If you did not make this request, please contact us</p>\\n</div>\",\n        \"description\": \"Sent once after the user registers their account\",\n        \"enabled\": true,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Registration\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"Verify your {{{organization.name}}} account\",\n        \"type\": \"registration\",\n        \"urlLifetime\": 2880\n    },\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgIDAjOmCCg\",\n        \"body\": \"\\nYour username, {{user.userName}}, was retrieved.\\n\\nIf you did not recently look up your username, or you need help accessing your account, please contact us.\\n\\nFor your security, keep your username and password confidential—they’re the keys to accessing your account.\\n\\nThanks,\\n\\n{{organization.name}}\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><p>Your username, {{user.userName}}, was retrieved.</p>\\n<p>If you did not recently look up your username, or you need help accessing your account, please contact us.</p>\\n<p>For your security, keep your username and password confidential—they’re the keys to accessing your account.</p>\\n<p>Thanks,</p>\\n<p>{{organization.name}}</p>\\n</div>\",\n        \"description\": \"Sent to confirm that the user requested a username recovery email\",\n        \"enabled\": false,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Username Recovered\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"Your username for {{{organization.name}}} was recovered\",\n        \"type\": \"username-recovered\",\n        \"urlLifetime\": 0\n    },\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICA7bGDCg\",\n        \"body\": \"\\nHi {{user.name.givenName}},\\n\\nThe password for your {{organization.name}} account was recently changed.\\n\\nIf you did not make this request, please contact us.\\n\\nThanks,\\n\\n{{organization.name}}\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><p>Hi {{user.name.givenName}},</p>\\n<p>The password for your {{organization.name}} account was recently changed.</p>\\n<p>If you did not make this request, please contact us.</p>\\n<p>Thanks,</p>\\n<p>{{organization.name}}</p>\\n</div>\",\n        \"description\": \"Sent to confirm that the user requested a password change\",\n        \"enabled\": true,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Reset Password Successful\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"You have successfully reset your {{{organization.name}}} password\",\n        \"type\": \"reset-password\",\n        \"urlLifetime\": 0\n    },\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICAgOSRCg\",\n        \"body\": \"\\nHi {{user.name.givenName}},\\n\\nThe email for your {{organization.name}} email was recently changed to a new address. This notification has been sent to both old and new addresses.\\n\\nIf you did not make this request, please contact us.\\n\\nThanks,\\n\\n{{organization.name}}\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><p>Hi {{user.name.givenName}},</p>\\n<p>The email for your {{organization.name}} email was recently changed to a new address. This notification has been sent to both old and new addresses.</p>\\n<p>If you did not make this request, please contact us.</p>\\n<p>Thanks,</p>\\n<p>{{organization.name}}</p>\\n</div>\",\n        \"description\": \"Sent when the users email has changed\",\n        \"enabled\": false,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Email Update Successful\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"You have updated your {{{organization.name}}} email\",\n        \"type\": \"email-update-successful\",\n        \"urlLifetime\": 0\n    },\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgIDAjL2TCg\",\n        \"body\": \"\\nHi {{user.name.givenName}},\\n\\nYou have received this email because you have forgotten your {{organization.name}} username.\\n\\nYour username is {{user.userName}}\\n\\nThanks,\\n\\n{{organization.name}}\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><p>Hi {{user.name.givenName}},</p>\\n<p>You have received this email because you have forgotten your {{organization.name}} username.</p>\\n<p>Your username is {{user.userName}}</p>\\n<p>Thanks,</p>\\n<p>{{organization.name}}</p>\\n</div>\",\n        \"description\": \"Displays the user's username\",\n        \"enabled\": true,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Recover Username\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"Your username for {{{organization.name}}}\",\n        \"type\": \"recover-username\",\n        \"urlLifetime\": 2880\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Send Test Email",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"description": "Requires the `access_token` for the hosting environment.",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"templateType\": \"forgot-password\",\n    \"userId\": \"{{userId}}\"\n}"
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/email",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"email"
+									]
+								},
+								"description": "Send a test email. If you have the template `type` from the GET Email Templates REST call, use that as the value for `templateType`. \n\nIf desired, you can use the value of `id` from the GET Email Templates REST call and use it as the value of `templateId` here."
+							},
+							"response": [
+								{
+									"name": "Send Test Email",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{accessToken}}"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"templateType\": \"forgot-password\",\n    \"userId\": \"{{userId}}\"\n}"
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/email",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"email"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "31"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1f-t81IbH+1iTzTFHM76fDJ02MDVi4\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 29 Mar 2019 15:47:40 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"messageId\": \"484076706833412\"\n}"
+								}
+							]
+						}
+					],
+					"description": "Use these REST calls to:\n\n* Review available email templates. \n* Send a test email.\n\nEndpoints:\n\n* /email-templates\n* /email",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f35a7fbf-32d1-4209-81fa-8cd45677f194",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "c8a5d82f-68df-4ef7-9885-ed8bdaf10bce",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Hosted Pages",
+					"item": [
+						{
+							"name": "Get Hosted Page",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									},
+									{
+										"description": "Requires the `access_token` for the hosting environment.",
+										"key": "Authorization",
+										"type": "text",
+										"value": "Bearer {{accessToken}}",
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman."
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/hosted-pages",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"hosted-pages"
+									]
+								},
+								"description": "Returns the current hosted page configuration. \n\n\nTo modify the settings for your hosted page, use the output here as input in the body of the PUT Modify Existing Hosted Page REST call.\n\nRequires the `access_token` for the hosting environment."
+							},
+							"response": [
+								{
+									"name": "Get Hosted Page",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{accessToken}}"
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/hosted-pages",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"hosted-pages"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "307"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"133-YlpGUJfUlWemDBqNwzG2KZRxqmA\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 28 Mar 2019 22:33:31 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"cssUrl\": \"https://ui-{{tenantName}}.forgeblocks.com/css/hosted.css\",\n    \"forgotPasswordTitle\": \"Reset Password\",\n    \"logoUrl\": \"https://ui-{{tenantName}}.forgeblocks.com/img/logo-forgerock.png\",\n    \"recoverUsernameTitle\": \"Recover Your Username\",\n    \"resetPasswordTitle\": \"Reset Your Password\",\n    \"signInTitle\": \"Sign In\",\n    \"signUpTitle\": \"Sign Up\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Modify Existing Hosted Page",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"cssUrl\": \"https://ui-docs51.forgeblocks.com/css/hosted.css\",\n    \"forgotPasswordTitle\": \"Reset Your Password\",\n    \"logoUrl\": \"https://ui-docs51.forgeblocks.com/img/logo-forgerock.png\",\n    \"recoverUsernameTitle\": \"Recover Your Username\",\n    \"resetPasswordTitle\": \"Reset Password\",\n    \"signInTitle\": \"Sign In\",\n    \"signUpTitle\": \"Sign Up\"\n}"
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/hosted-pages",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"hosted-pages"
+									]
+								},
+								"description": "Take the output of the GET Hosted Page REST call. Modify as desired, and use it as data (-d) input to this REST call.\n\nRequires the `access_token` for the hosting environment.\n\nAll properties are required to avoid an error message."
+							},
+							"response": [
+								{
+									"name": "Modify Existing Hosted Page",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"cssUrl\": \"https://ui-docs51.forgeblocks.com/css/hosted.css\",\n    \"forgotPasswordTitle\": \"Reset Your Password\",\n    \"logoUrl\": \"https://ui-docs51.forgeblocks.com/img/logo-forgerock.png\",\n    \"recoverUsernameTitle\": \"Recover Your Username\",\n    \"resetPasswordTitle\": \"Reset Your Password\",\n    \"signInTitle\": \"Sign In\",\n    \"signUpTitle\": \"Sign Up\"\n}"
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/hosted-pages",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"hosted-pages"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "312"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"138-U0U9MGObb8BQdzzCN8B7rfi3qNM\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 28 Mar 2019 22:33:53 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"cssUrl\": \"https://ui-{{tenantName}}.forgeblocks.com/css/hosted.css\",\n    \"forgotPasswordTitle\": \"Reset Your Password\",\n    \"logoUrl\": \"https://ui-{{tenantName}}.forgeblocks.com/img/logo-forgerock.png\",\n    \"recoverUsernameTitle\": \"Recover Your Username\",\n    \"resetPasswordTitle\": \"Reset Your Password\",\n    \"signInTitle\": \"Sign In\",\n    \"signUpTitle\": \"Sign Up\"\n}"
+								}
+							]
+						}
+					],
+					"description": "The /hosted-pages endpoint allows you to list and add/modify pages to host on your app.",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "af2ca384-ea60-496a-b536-a9f1a953d465",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "d7c3f62a-84a7-4634-9d31-9fa292b1a0fe",
 								"type": "text/javascript",
 								"exec": [
 									""
