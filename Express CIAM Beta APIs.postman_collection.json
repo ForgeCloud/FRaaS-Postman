@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a21b1812-36ea-43b5-a58d-12c78d1dd4a4",
+		"_postman_id": "6f2d3ccf-5aee-488a-87ee-c71043f1b8ec",
 		"name": "Express CIAM Beta APIs",
 		"description": "The ForgeRock Identity Cloud includes two sets of APIs:\n\n* Management APIs: To manage configuration of Express CIAM \n\n* Authentication APIs: To authenticate users and obtain and manage `access_token`, `id_token` and `refresh_token`\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -2740,7 +2740,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"destinationUrl\": \"http://your-password-reset.com\",\n\t\"email\": \"bjensen@example.com\",\n\t\"userName\": \"bjensen@example.com\"\n}"
+									"raw": "{\n\t\"password\": \"Password2##\"\n\n}"
 								},
 								"url": {
 									"raw": "{{tenantApiV1Url}}/users/reset-password/{{resetPasswordToken}}",
@@ -3638,6 +3638,146 @@
 									],
 									"cookie": [],
 									"body": "[\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICAr8iACg\",\n        \"body\": \"\\n# Welcome\\n\\nIf you have any questions or issues with your account please contact us.\\n\\nThanks!\\n\\n{{organization.name}}\\n\\nIf you did not make this request, please contact us.\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><h1 style=\\\"color: #455369; font-weight: 300;\\\">Welcome</h1>\\n<p>If you have any questions or issues with your account please contact us.</p>\\n<p>Thanks!</p>\\n<p>{{organization.name}}</p>\\n<p>If you did not make this request, please contact us.</p>\\n</div>\",\n        \"description\": \"Sent once the user verifies their email address or when they register\",\n        \"enabled\": false,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Welcome\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"Welcome to {{{organization.name}}}\",\n        \"type\": \"welcome\",\n        \"urlLifetime\": 0\n    },\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICA3pCBCg\",\n        \"body\": \"\\nHi {{user.name.givenName}},\\n\\nSomeone recently requested a password change for your {{organization.name}} account. If this was you, you can set a new password here:\\n\\n[Reset password]({{{url}}}){.btn}\\n\\nThis link will expire in {{urlExpiry}}.\\n\\nIf you don't want to change your password or didn't request this, just ignore and delete this message.\\n\\nThanks,\\n\\n{{organization.name}}\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><p>Hi {{user.name.givenName}},</p>\\n<p>Someone recently requested a password change for your {{organization.name}} account. If this was you, you can set a new password here:</p>\\n<p><a href=\\\"%7B%7B%7Burl%7D%7D%7D\\\" style=\\\"background-color: #2d9ee0; border-radius: 4px; color: #fff; display: inline-block; font-size: 14px; font-weight: 500; letter-spacing: 1px; margin: 20px; padding: 16px; text-decoration: none; text-transform: uppercase;\\\">Reset password</a></p>\\n<p>This link will expire in {{urlExpiry}}.</p>\\n<p>If you don't want to change your password or didn't request this, just ignore and delete this message.</p>\\n<p>Thanks,</p>\\n<p>{{organization.name}}</p>\\n</div>\",\n        \"description\": \"Provides a link allowing users to change their password\",\n        \"enabled\": true,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Forgot Password\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"Reset your {{{organization.name}}} password\",\n        \"type\": \"forgot-password\",\n        \"urlLifetime\": 2880\n    },\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICAvKGCCg\",\n        \"body\": \"\\n# Verify your Account\\n\\nThanks for signing up for {{organization.name}}. Verify your account by clicking on the link below.\\n\\n[Verify my account]({{{url}}}){.btn}\\n\\nThis link will expire in {{urlExpiry}}.\\n\\nThanks!\\n\\n{{organization.name}}\\n\\nIf you did not make this request, please contact us\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><h1 style=\\\"color: #455369; font-weight: 300;\\\">Verify your Account</h1>\\n<p>Thanks for signing up for {{organization.name}}. Verify your account by clicking on the link below.</p>\\n<p><a href=\\\"%7B%7B%7Burl%7D%7D%7D\\\" style=\\\"background-color: #2d9ee0; border-radius: 4px; color: #fff; display: inline-block; font-size: 14px; font-weight: 500; letter-spacing: 1px; margin: 20px; padding: 16px; text-decoration: none; text-transform: uppercase;\\\">Verify my account</a></p>\\n<p>This link will expire in {{urlExpiry}}.</p>\\n<p>Thanks!</p>\\n<p>{{organization.name}}</p>\\n<p>If you did not make this request, please contact us</p>\\n</div>\",\n        \"description\": \"Sent once after the user registers their account\",\n        \"enabled\": true,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Registration\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"Verify your {{{organization.name}}} account\",\n        \"type\": \"registration\",\n        \"urlLifetime\": 2880\n    },\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgIDAjOmCCg\",\n        \"body\": \"\\nYour username, {{user.userName}}, was retrieved.\\n\\nIf you did not recently look up your username, or you need help accessing your account, please contact us.\\n\\nFor your security, keep your username and password confidential—they’re the keys to accessing your account.\\n\\nThanks,\\n\\n{{organization.name}}\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><p>Your username, {{user.userName}}, was retrieved.</p>\\n<p>If you did not recently look up your username, or you need help accessing your account, please contact us.</p>\\n<p>For your security, keep your username and password confidential—they’re the keys to accessing your account.</p>\\n<p>Thanks,</p>\\n<p>{{organization.name}}</p>\\n</div>\",\n        \"description\": \"Sent to confirm that the user requested a username recovery email\",\n        \"enabled\": false,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Username Recovered\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"Your username for {{{organization.name}}} was recovered\",\n        \"type\": \"username-recovered\",\n        \"urlLifetime\": 0\n    },\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICA7bGDCg\",\n        \"body\": \"\\nHi {{user.name.givenName}},\\n\\nThe password for your {{organization.name}} account was recently changed.\\n\\nIf you did not make this request, please contact us.\\n\\nThanks,\\n\\n{{organization.name}}\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><p>Hi {{user.name.givenName}},</p>\\n<p>The password for your {{organization.name}} account was recently changed.</p>\\n<p>If you did not make this request, please contact us.</p>\\n<p>Thanks,</p>\\n<p>{{organization.name}}</p>\\n</div>\",\n        \"description\": \"Sent to confirm that the user requested a password change\",\n        \"enabled\": true,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Reset Password Successful\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"You have successfully reset your {{{organization.name}}} password\",\n        \"type\": \"reset-password\",\n        \"urlLifetime\": 0\n    },\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICAgOSRCg\",\n        \"body\": \"\\nHi {{user.name.givenName}},\\n\\nThe email for your {{organization.name}} email was recently changed to a new address. This notification has been sent to both old and new addresses.\\n\\nIf you did not make this request, please contact us.\\n\\nThanks,\\n\\n{{organization.name}}\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><p>Hi {{user.name.givenName}},</p>\\n<p>The email for your {{organization.name}} email was recently changed to a new address. This notification has been sent to both old and new addresses.</p>\\n<p>If you did not make this request, please contact us.</p>\\n<p>Thanks,</p>\\n<p>{{organization.name}}</p>\\n</div>\",\n        \"description\": \"Sent when the users email has changed\",\n        \"enabled\": false,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Email Update Successful\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"You have updated your {{{organization.name}}} email\",\n        \"type\": \"email-update-successful\",\n        \"urlLifetime\": 0\n    },\n    {\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgIDAjL2TCg\",\n        \"body\": \"\\nHi {{user.name.givenName}},\\n\\nYou have received this email because you have forgotten your {{organization.name}} username.\\n\\nYour username is {{user.userName}}\\n\\nThanks,\\n\\n{{organization.name}}\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><p>Hi {{user.name.givenName}},</p>\\n<p>You have received this email because you have forgotten your {{organization.name}} username.</p>\\n<p>Your username is {{user.userName}}</p>\\n<p>Thanks,</p>\\n<p>{{organization.name}}</p>\\n</div>\",\n        \"description\": \"Displays the user's username\",\n        \"enabled\": true,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@{{{organization.name}}}.com\",\n        \"name\": \"Recover Username\",\n        \"redirectUrl\": \"\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"Your username for {{{organization.name}}}\",\n        \"type\": \"recover-username\",\n        \"urlLifetime\": 2880\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Modify Email Templates",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"description": "Requires the `access_token` for the hosting environment."
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICAr8iACg\",\n        \"body\": \"\\n# Welcome Modified \\n\\nIf you have any questions or issues with your account please contact us.\\n\\nThanks!\\n\\n{{organization.name}}\\n\\nIf you did not make this request, please contact us.\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><h1 style=\\\"color: #455369; font-weight: 300;\\\">Welcome</h1>\\n<p>If you have any questions or issues with your account please contact us.</p>\\n<p>Thanks!</p>\\n<p>{{organization.name}}</p>\\n<p>If you did not make this request, please contact us.</p>\\n</div>\",\n        \"description\": \"Confirms the user has verified their email address or registered the app\",\n        \"enabled\": false,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@sample-org.com\",\n        \"name\": \"Welcome\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"Welcome to {{{organization.name}}}\",\n        \"type\": \"welcome\",\n        \"urlLifetime\": 0\n}"
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/email-templates/{{emailTemplateId}}",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"email-templates",
+										"{{emailTemplateId}}"
+									]
+								},
+								"description": "Modifies the specified email template"
+							},
+							"response": [
+								{
+									"name": "Modify Email Template",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"key": "Authorization",
+												"value": "Bearer {{accessToken}}",
+												"description": "Requires the `access_token` for the hosting environment."
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n        \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICAr8iACg\",\n        \"body\": \"\\n# Welcome Modified \\n\\nIf you have any questions or issues with your account please contact us.\\n\\nThanks!\\n\\n{{organization.name}}\\n\\nIf you did not make this request, please contact us.\",\n        \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><h1 style=\\\"color: #455369; font-weight: 300;\\\">Welcome</h1>\\n<p>If you have any questions or issues with your account please contact us.</p>\\n<p>Thanks!</p>\\n<p>{{organization.name}}</p>\\n<p>If you did not make this request, please contact us.</p>\\n</div>\",\n        \"description\": \"Confirms the user has verified their email address or registered the app\",\n        \"enabled\": false,\n        \"from\": \"{{{organization.name}}}\",\n        \"fromAddress\": \"noreply@sample-org.com\",\n        \"name\": \"Welcome\",\n        \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n        \"subject\": \"Welcome to {{{organization.name}}}\",\n        \"type\": \"welcome\",\n        \"urlLifetime\": 0\n}"
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/email-templates/{{emailTemplateId}}",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"email-templates",
+												"{{emailTemplateId}}"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1426"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"592-nRbYA14DYfHgE8mlBnx8z0lcXjc\""
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 31 Jul 2019 15:27:48 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "clear"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICAr8iACg\",\n    \"body\": \"\\n# Welcome Modified \\n\\nIf you have any questions or issues with your account please contact us.\\n\\nThanks!\\n\\n{{organization.name}}\\n\\nIf you did not make this request, please contact us.\",\n    \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><h1 style=\\\"color: #455369; font-weight: 300;\\\">Welcome Modified</h1>\\n<p>If you have any questions or issues with your account please contact us.</p>\\n<p>Thanks!</p>\\n<p>{{organization.name}}</p>\\n<p>If you did not make this request, please contact us.</p>\\n</div>\",\n    \"description\": \"Confirms the user has verified their email address or registered the app\",\n    \"enabled\": false,\n    \"from\": \"{{{organization.name}}}\",\n    \"fromAddress\": \"noreply@sample-org.com\",\n    \"name\": \"Welcome\",\n    \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n    \"subject\": \"Welcome to {{{organization.name}}}\",\n    \"type\": \"welcome\",\n    \"urlLifetime\": 0\n}"
 								}
 							]
 						}
@@ -6130,7 +6270,7 @@
 											"urlencoded": [
 												{
 													"key": "scope",
-													"value": "{{allscopes}}",
+													"value": "{{defaultAppScopes}}",
 													"type": "text"
 												},
 												{
