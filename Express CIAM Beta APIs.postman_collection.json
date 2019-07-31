@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "6f2d3ccf-5aee-488a-87ee-c71043f1b8ec",
+		"_postman_id": "8d0a7f0d-d40c-4d41-8e8f-c482a93b8aef",
 		"name": "Express CIAM Beta APIs",
 		"description": "The ForgeRock Identity Cloud includes two sets of APIs:\n\n* Management APIs: To manage configuration of Express CIAM \n\n* Authentication APIs: To authenticate users and obtain and manage `access_token`, `id_token` and `refresh_token`\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -625,7 +625,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n      \"me.read\",\n      \"me.update\",\n      \"password-policy.read\",\n      \"password-policy.update\",\n      \"user.reset-password\",\n      \"user.recover-username\",\n      \"user.create\",\n      \"user.read\",\n      \"openid\",\n      \"profile\",\n      \"email\",\n      \"address\",\n      \"phone\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"{{webClientId}}\",\n    \"customClaims\": {},\n    \"description\": \"My great web service app, modfied\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"password\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"https://exmaple.com/homeLogout/\"\n    ],\n    \"name\": \"Top Foods\",\n    \"refreshTokenLifetime\": 604800,\n    \"type\": \"web\"\n}"
+											"raw": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n      \"me.read\",\n      \"me.update\",\n      \"password-policy.read\",\n      \"password-policy.update\",\n      \"user.reset-password\",\n      \"user.recover-username\",\n      \"user.create\",\n      \"user.read\",\n      \"openid\",\n      \"profile\",\n      \"email\",\n      \"address\",\n      \"phone\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"{{webClientId}}\",\n    \"customClaims\": {},\n    \"description\": \"My great web service app, modfied\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"password\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"https://exmaple.com/homeLogout/\"\n    ],\n    \"name\": \"Sample Web App\",\n    \"refreshTokenLifetime\": 604800,\n    \"type\": \"web\"\n}"
 										},
 										"url": {
 											"raw": "{{tenantApiV1Url}}/apps/{{webClientId}}",
@@ -652,7 +652,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n      \"me.read\",\n      \"me.update\",\n      \"password-policy.read\",\n      \"password-policy.update\",\n      \"user.reset-password\",\n      \"user.recover-username\",\n      \"user.create\",\n      \"user.read\",\n      \"openid\",\n      \"profile\",\n      \"email\",\n      \"address\",\n      \"phone\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"{{webClientId}}\",\n    \"customClaims\": {},\n    \"description\": \"My great web service app, modfied\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"password\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"https://exmaple.com/homeLogout/\"\n    ],\n    \"name\": \"Top Foods\",\n    \"refreshTokenLifetime\": 604800,\n    \"type\": \"web\"\n}"
+													"raw": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n      \"me.read\",\n      \"me.update\",\n      \"password-policy.read\",\n      \"password-policy.update\",\n      \"user.reset-password\",\n      \"user.recover-username\",\n      \"user.create\",\n      \"user.read\",\n      \"openid\",\n      \"profile\",\n      \"email\",\n      \"address\",\n      \"phone\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"{{webClientId}}\",\n    \"customClaims\": {},\n    \"description\": \"My great web service app, modfied\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"password\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"https://exmaple.com/homeLogout/\"\n    ],\n    \"name\": \"Sample Web App\",\n    \"refreshTokenLifetime\": 604800,\n    \"type\": \"web\"\n}"
 												},
 												"url": {
 													"raw": "{{tenantApiV1Url}}/apps/{{webClientId}}",
@@ -703,15 +703,15 @@
 												},
 												{
 													"key": "Content-Length",
-													"value": "758"
+													"value": "763"
 												},
 												{
 													"key": "ETag",
-													"value": "W/\"2f6-LK56EAJrw9bOzinKTT4W233/taA\""
+													"value": "W/\"2fb-MAmVbBlI34dHUSvTCUiuSz6rsDc\""
 												},
 												{
 													"key": "Date",
-													"value": "Wed, 24 Jul 2019 14:58:23 GMT"
+													"value": "Wed, 31 Jul 2019 20:39:27 GMT"
 												},
 												{
 													"key": "Via",
@@ -723,7 +723,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n        \"me.read\",\n        \"me.update\",\n        \"password-policy.read\",\n        \"password-policy.update\",\n        \"user.reset-password\",\n        \"user.recover-username\",\n        \"user.create\",\n        \"user.read\",\n        \"openid\",\n        \"profile\",\n        \"email\",\n        \"address\",\n        \"phone\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"0df4ae802cd048ed1bafef2ba84be79f\",\n    \"customClaims\": {},\n    \"description\": \"My great web service app, modfied\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"password\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"https://exmaple.com/homeLogout/\"\n    ],\n    \"name\": \"Top Foods\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": null,\n    \"type\": \"web\"\n}"
+											"body": "{\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n        \"me.read\",\n        \"me.update\",\n        \"password-policy.read\",\n        \"password-policy.update\",\n        \"user.reset-password\",\n        \"user.recover-username\",\n        \"user.create\",\n        \"user.read\",\n        \"openid\",\n        \"profile\",\n        \"email\",\n        \"address\",\n        \"phone\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"c267d5eb2006729a21f74ddb37655986\",\n    \"customClaims\": {},\n    \"description\": \"My great web service app, modfied\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"password\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"https://exmaple.com/homeLogout/\"\n    ],\n    \"name\": \"Sample Web App\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": null,\n    \"type\": \"web\"\n}"
 										}
 									]
 								},
@@ -4136,11 +4136,12 @@
 											"raw": ""
 										},
 										"url": {
-											"raw": "{{amUrl}}json/realms/root/authenticate?authIndexType=service&authIndexValue=UsernamePassword",
+											"raw": "{{amUrl}}/json/realms/root/authenticate?authIndexType=service&authIndexValue=UsernamePassword",
 											"host": [
-												"{{amUrl}}json"
+												"{{amUrl}}"
 											],
 											"path": [
+												"json",
 												"realms",
 												"root",
 												"authenticate"
@@ -4179,11 +4180,12 @@
 													"raw": ""
 												},
 												"url": {
-													"raw": "{{amUrl}}json/realms/root/authenticate?authIndexType=service&authIndexValue=UsernamePassword",
+													"raw": "{{amUrl}}/json/realms/root/authenticate?authIndexType=service&authIndexValue=UsernamePassword",
 													"host": [
-														"{{amUrl}}json"
+														"{{amUrl}}"
 													],
 													"path": [
+														"json",
 														"realms",
 														"root",
 														"authenticate"
@@ -4246,7 +4248,7 @@
 												},
 												{
 													"key": "Date",
-													"value": "Mon, 29 Jul 2019 20:45:50 GMT"
+													"value": "Wed, 31 Jul 2019 20:51:06 GMT"
 												},
 												{
 													"key": "Via",
@@ -4258,7 +4260,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"authId\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoSW5kZXhWYWx1ZSI6IlVzZXJuYW1lUGFzc3dvcmQiLCJvdGsiOiJyOHI0cWs4NmZvdjZsOW5sczJ0OW80OXNjNyIsImF1dGhJbmRleFR5cGUiOiJzZXJ2aWNlIiwicmVhbG0iOiIvIiwic2Vzc2lvbklkIjoiKkFBSlRTUUFDTURJQUJIUjVjR1VBQ0VwWFZGOUJWVlJJQUFKVE1RQUNNREUuKmV5SjBlWEFpT2lKS1YxUWlMQ0pqZEhraU9pSktWMVFpTENKaGJHY2lPaUpJVXpJMU5pSjkuWlhsS01HVllRV2xQYVVwTFZqRlJhVXhEU2paaFdFRnBUMmxLVDFRd05VWkphWGRwV2xjMWFrbHFiMmxSVkVWNVQwVk9RMUY1TVVsVmVra3hUbWxKYzBsdFJuTmFlVWsyU1cxU2NHTnBTamt1TG5OTmJWTnpkblk0TlhoMWRGOUpYemhuY1ZKeUxXY3ViVlZrY0hWbVJYQjNVakJFT0ZOZmJXNWxUVUpVTVUxbGFrNDBUMDVxZVZoMlNIQnpXa1ZCUjBOU1RVOTFMVzlFYVhVeVQydHhhbTFwTkZGWVNFZFpZbFp5VGpaM1dYSjVZbXA2VjNsNVV6SnNlbU41ZUV0VFlYRnpiakkzYlRJMlZHMXFhVk42UTJoVFJYRlVMVVZaUkhCYWFEUklaV3REVlhoMGVsSm9kMmQ1VkU5cldWY3pWa1E0WW1WR1kyeERNbVpuTkU4M1EzSkRaakk0ZFU5S1pITktXWHBIWkU1M1gwMHdOamM1ZDJaTmMySmFWRkJQYkhJNWVsbG1aR3d0VWxCUlEyTmxUbVpNVFVwcWNUaHNXSGhmUVhJdFMyZFBVMlJ3WlhKMVpqUjVPV1oxVUc5blZ6TkhURFp4ZVhaTlV6ZElaSFJETmxWZmRXUTFUMFE1VVZOR1JtSldURzVaWVZsa1NVY3lVV1poYUhsa1JXczBUM3BNTVRZMVdqTkNTVkJaTlZWdlJXc3hibEpGZEVwSk9YcHRiVWR4YjNWNlJYVk9kRFZIYzJobVYwOTNNakZzWkVGZkxUUlRaWEkzVEMxUFlYZG5ZWEJXYkZSRWRDMWFTV1JSV1Y5V2FGY3RiR2RCZUVONFVrOXpWek54U2xaQ2EybFRWbUZLYVRNd1ZGTXRaMEpLU3kxM2NsRkNkRlkyU20xdVZFSlZUblF5WjBWeGVEQTRWa1V3VTBvNGNEbG5ZV3hITnpsRk1qQlpia2hyWTNkRGQzTkhialUwV0VaMGMyOXVWREEzTkd4eFNGUTBSbWxmUkhkWFFXbFJRakE0WjBsTlR6bDNVWHBSTldwdGVrVnVkRlJZWDNKT1MxOWhObEIxTUdoV2ExOXJObGx6WkZseFUxRnBRMWhaUlVkcFZ6QlNlQzFZUkVkRk5GVTVaR2MyWm5nNVVXOTRlbHBuZUdGaldsTjNUSFpOWjJnMmEyWXdaelZ6V2tSS2FXODNObGt0WHpCdmNHZFZka1JSU0cxdFRXNW5ZbEpKYURKWmNEUTFaa05rUWxGV1kwTXhWVkJzVDFWUGIzVXRSRTlvT0ZnMFVERTViekF3Tms1QlNucENXa1pyYkZkbFgzQnJVaTVQT0dwWVVFRjNWRXQxU205bVozaEhPRXRZYmxCMy41SlFDUWd2VnNKekR3NFR4RU5YRW5GYlF1RGs0M0VVMnltZzdtT01qQUVJIiwiZXhwIjoxNTY0NDMzNDUwLCJpYXQiOjE1NjQ0MzMxNTB9.GDGdgchMWmaDIYFl4yM9VZUe003ZCyte-c26tQ4prh4\",\n    \"callbacks\": [\n        {\n            \"type\": \"NameCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"User Name\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": \"\"\n                }\n            ],\n            \"_id\": 0\n        },\n        {\n            \"type\": \"PasswordCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"Password\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken2\",\n                    \"value\": \"\"\n                }\n            ],\n            \"_id\": 1\n        }\n    ],\n    \"stage\": \"UsernamePassword\"\n}"
+											"body": "{\n    \"authId\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoSW5kZXhWYWx1ZSI6IlVzZXJuYW1lUGFzc3dvcmQiLCJvdGsiOiJscDZuY3R1dWFqM2Y2MDZzc3ZsbnBuNzZldiIsImF1dGhJbmRleFR5cGUiOiJzZXJ2aWNlIiwicmVhbG0iOiIvIiwic2Vzc2lvbklkIjoiKkFBSlRTUUFDTURJQUJIUjVjR1VBQ0VwWFZGOUJWVlJJQUFKVE1RQUNNREUuKmV5SjBlWEFpT2lKS1YxUWlMQ0pqZEhraU9pSktWMVFpTENKaGJHY2lPaUpJVXpJMU5pSjkuWlhsS01HVllRV2xQYVVwTFZqRlJhVXhEU2paaFdFRnBUMmxLVDFRd05VWkphWGRwV2xjMWFrbHFiMmxSVkVWNVQwVk9RMUY1TVVsVmVra3hUbWxKYzBsdFJuTmFlVWsyU1cxU2NHTnBTamt1TG1WM2VtUTFWWEZvYzJSclkzYzJPSHBHWlROSFZHY3VPV3BDU2tkV2VGOHhObEpTVUVGb1NFUjVOalJSUVMwd1FuVndXVXRXY2xCdFdsbzVSakF4YkVsNVprYzNTemhaVHpWcGIyWlFjMmxDVkcxc2IzSnpNRjlEYWs5UWNGRllMWGh1ZWtWbk1UaFFYelptZVdGek1IQm5kblpRTmsxNWRtZFJhSFpWVVhSYU5ucEVNRXg0WTI5d1dERlJSSE5tVUVOVGNGcEhlRkZLTkVsVWNEUXRORlV6VUdaaWNEbHVjMVpyTWpWMmVFcGFOMEpJUnkxSVlVdEZkblJvTUdWQlJtNXdUamh2ZG1OTmFtUjVhbmhQTldWblNGUlhUV1IwYlZsWFNUaGhObUZ0UTNkQlNqRk9aQzFCZFhKRmRuZHJZbVZ1VWtwR1JVOW5TV2xQTkRoVlVtOXpPRmhGZVY5elgwMXZXVEV3V2xRMGIyeE1TMjlrYmpBdFpraHdTMEZsZUROd1ZUbG9kWGRxTFZCUU9FdG1VbWwwVEdadVpWVlpTREpDTjNKblNsWkRZa3g1TUZKalpESkNXVGhYVFZOSWEyVkdTVFJJT1ZnMmRVbzFja3BaUjFWb1l6azVTbTA1T1ZCM01IUTFOVEpHZUVKUVJFSk9TVVEzWjJGMVowbFJRVGN5VTNGdk1WOXhVRlZXVWxaMldWcFFNbUZZWmxsWVMyMWtVWFozYVc5T1pXOWtiMXBTU25aRFoxUXRVRzh6VXpCVE5sbEpOVWhHTVdGaWExRm1jM1pDVGxWaVV6WmlZa2RMVW1oNFNXNVFiMGRvT1hKVlpGYzJlbXMxWmxWVU1sZGZXVjlRYUZCSlRUWnhNalZyYmpoa2JHbFpjVWswYkVadVkwd3dkbXc0VDJaTlNYVlJOREZrZDFaaU5rb3lUMVZIZFhkdlEwcFRhemRwVlhob1VqTlFUa1p2YTNKUVQzZGZhRTkxY3pSeVgybzJVMjlUVUhnNVJYSkphVkpGVVVJNGFIUnZaSFUxYjJsT00xRXpPV3BsZDBFMFptTnNiRFJtUWpKeU9HUnVNekppVFdWeVJVeHBWMEZNVjNSMWQzbzRTVXBqY1dwZmREUTRUelJGTTBaeFpuSnFVa0pOVG1kNVluTnBhQzF0WXkxbk9FVnJjaTVrZEZCMlZqVk5OaTFuVmtoVFFpMTVOVkZ0YjE5Qi5aUDNsMUhOek5pZGRnMHpqazNNWktkNFZtdmp4Y1FQcHZKemhNbHN2X0lzIiwiZXhwIjoxNTY0NjA2NTY2LCJpYXQiOjE1NjQ2MDYyNjZ9.hg7_tleZsLSJsCP4pTB0o8cCgYzHnUnAm4HddZborqk\",\n    \"callbacks\": [\n        {\n            \"type\": \"NameCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"User Name\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": \"\"\n                }\n            ],\n            \"_id\": 0\n        },\n        {\n            \"type\": \"PasswordCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"Password\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken2\",\n                    \"value\": \"\"\n                }\n            ],\n            \"_id\": 1\n        }\n    ],\n    \"stage\": \"UsernamePassword\"\n}"
 										}
 									]
 								},
@@ -4303,11 +4305,12 @@
 											"raw": "{\n    \"authId\": \"{{authId}}\",\n    \"callbacks\": [\n        {\n            \"type\": \"NameCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"User Name\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": \"{{userName}}\"\n                }\n            ],\n            \"_id\": 0\n        },\n        {\n            \"type\": \"PasswordCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"Password\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken2\",\n                    \"value\": \"{{userPassword}}\"\n                }\n            ],\n            \"_id\": 1\n        }\n    ],\n    \"stage\": \"UsernamePassword\"\n}"
 										},
 										"url": {
-											"raw": "{{amUrl}}json/realms/root/authenticate?authIndexType=service&authIndexValue=UsernamePassword",
+											"raw": "{{amUrl}}/json/realms/root/authenticate?authIndexType=service&authIndexValue=UsernamePassword",
 											"host": [
-												"{{amUrl}}json"
+												"{{amUrl}}"
 											],
 											"path": [
+												"json",
 												"realms",
 												"root",
 												"authenticate"
@@ -4352,11 +4355,12 @@
 													"raw": "{\n    \"authId\": \"{{authId}}\",\n    \"callbacks\": [\n        {\n            \"type\": \"NameCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"User Name\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": \"{{userName}}\"\n                }\n            ],\n            \"_id\": 0\n        },\n        {\n            \"type\": \"PasswordCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"Password\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken2\",\n                    \"value\": \"{{userPassword}}\"\n                }\n            ],\n            \"_id\": 1\n        }\n    ],\n    \"stage\": \"UsernamePassword\"\n}"
 												},
 												"url": {
-													"raw": "{{amUrl}}json/realms/root/authenticate?authIndexType=service&authIndexValue=UsernamePassword",
+													"raw": "{{amUrl}}/json/realms/root/authenticate?authIndexType=service&authIndexValue=UsernamePassword",
 													"host": [
-														"{{amUrl}}json"
+														"{{amUrl}}"
 													],
 													"path": [
+														"json",
 														"realms",
 														"root",
 														"authenticate"
@@ -4395,7 +4399,7 @@
 												},
 												{
 													"key": "Set-Cookie",
-													"value": "iPlanetDirectoryPro=gqu_OhbmV_29QbkEi-XWJkGz2rY.*AAJTSQACMDIAAlNLABxJUTB2RnoxK3dXT2poMDVCcTNCWWN2SVgvUkk9AAR0eXBlAANDVFMAAlMxAAIwMQ..*; Path=/"
+													"value": "iPlanetDirectoryPro=bxv6PG8v6P42o3Rnfs0d-NqCwEo.*AAJTSQACMDIAAlNLABxjWWJJQ3R3SjhIYTlkUWcyNzVmNHBJL05oaW89AAR0eXBlAANDVFMAAlMxAAIwMQ..*; Path=/"
 												},
 												{
 													"key": "Set-Cookie",
@@ -4423,7 +4427,7 @@
 												},
 												{
 													"key": "Date",
-													"value": "Mon, 29 Jul 2019 20:46:09 GMT"
+													"value": "Wed, 31 Jul 2019 20:51:18 GMT"
 												},
 												{
 													"key": "Via",
@@ -4435,7 +4439,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"tokenId\": \"gqu_OhbmV_29QbkEi-XWJkGz2rY.*AAJTSQACMDIAAlNLABxJUTB2RnoxK3dXT2poMDVCcTNCWWN2SVgvUkk9AAR0eXBlAANDVFMAAlMxAAIwMQ..*\",\n    \"successUrl\": \"/console\",\n    \"realm\": \"/\"\n}"
+											"body": "{\n    \"tokenId\": \"bxv6PG8v6P42o3Rnfs0d-NqCwEo.*AAJTSQACMDIAAlNLABxjWWJJQ3R3SjhIYTlkUWcyNzVmNHBJL05oaW89AAR0eXBlAANDVFMAAlMxAAIwMQ..*\",\n    \"successUrl\": \"/console\",\n    \"realm\": \"/\"\n}"
 										}
 									]
 								}
@@ -4503,11 +4507,12 @@
 											"raw": ""
 										},
 										"url": {
-											"raw": "{{amUrl}}json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
+											"raw": "{{amUrl}}/json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
 											"host": [
-												"{{amUrl}}json"
+												"{{amUrl}}"
 											],
 											"path": [
+												"json",
 												"realms",
 												"root",
 												"authenticate"
@@ -4546,11 +4551,12 @@
 													"raw": ""
 												},
 												"url": {
-													"raw": "{{amUrl}}json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
+													"raw": "{{amUrl}}/json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
 													"host": [
-														"{{amUrl}}json"
+														"{{amUrl}}"
 													],
 													"path": [
+														"json",
 														"realms",
 														"root",
 														"authenticate"
@@ -4613,7 +4619,7 @@
 												},
 												{
 													"key": "Date",
-													"value": "Mon, 29 Jul 2019 21:11:24 GMT"
+													"value": "Wed, 31 Jul 2019 22:20:33 GMT"
 												},
 												{
 													"key": "Via",
@@ -4625,7 +4631,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"authId\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoSW5kZXhWYWx1ZSI6IlNlY29uZEZhY3RvciIsIm90ayI6ImptbHFzMDVrb2N1YmNscnNsdmw5OTdhdHI0IiwiYXV0aEluZGV4VHlwZSI6InNlcnZpY2UiLCJyZWFsbSI6Ii8iLCJzZXNzaW9uSWQiOiIqQUFKVFNRQUNNRElBQkhSNWNHVUFDRXBYVkY5QlZWUklBQUpUTVFBQ01ERS4qZXlKMGVYQWlPaUpLVjFRaUxDSmpkSGtpT2lKS1YxUWlMQ0poYkdjaU9pSklVekkxTmlKOS5aWGxLTUdWWVFXbFBhVXBMVmpGUmFVeERTalpoV0VGcFQybEtUMVF3TlVaSmFYZHBXbGMxYWtscWIybFJWRVY1VDBWT1ExRjVNVWxWZWtreFRtbEpjMGx0Um5OYWVVazJTVzFTY0dOcFNqa3VMbm96UVV4Qk9XZHZXSFpJUWpaQlFVTXRWRlJ4UWxFdVRtMHdVRXBzV0hkUWQxZEhiM0UyY0RONFFWOXFhV2xGUzI1YWNGUm9TbTVGY1ZRMGVWUk9TMWxQYzBKUFMxOVVObWxWUm0xSmRtVmFiRlozYTJGYWJYWkJhMVZCVERFM1ZsWXdiWFpmZEVwQ1drbGZVRTgyTFZoeWRXbHFjMUl4ZEhsUlRqWjNWREZ4V2s5eGJrVTRSMnRJY1ZjM1dYRkViMjlKYzNJd1NVcERTa0pVV2prME1HYzBkbXRDYTB0V1ZXczBhRUpKVlZsR2ExUjJaVVZHV1dGd2RsQkljbWxUYTA5SFMzSlRYMEpVYTJwbVdUaElkVGh5TVVOS1kwZ3pNa3BqU1ZwUWVVdzFUekowVGtveFVXeFhaMUprTkZoYWJEQlFSMDFaUkZwVFRWRkpNWFl3TmxOeE9VVnpZVWsyVFZGSGNuTlBXbTEwZUZwQlNEaEdVMm93WnpSWVdVVmhlV2d5ZEhoWVFXNDJSMGt5UW14b2NUSllVbWwxVFZSalZ6aHFPVXBpU1ZKalV6UmxPSGN0ZEZOdFVqZHljMHhSWWpCeFJGaDZOVlJwUkdOcVNWVkhVSGgzZVhCRGJGWk1aSEJ0T0hjelVuQkZiR3Q2VVU1QlgwcDRXR0ppWkY5WVkwSllaRzQzY21WeVJrZFRNR3MyUjJGSWF6SmtabWh2U25wdFFrcExWVXd3UzFoa1FtRTVRalozVDA1c2RXeEZOR0Y0YlZwc01FMTZkMUp4Y21vMVVGVTJSbEV0V21OYWNtNWhTVEJPWjFaQ1prVm1XVXBIZW5sU1ZuTlNTVWhNWDNka1luazViVUoyU25keVdqTldVVFJyZFVkTGJuUmhPRVJYYTJ4UWFVVTJOVGxMU0dKNVdqQkplbmhEUm5keVkwMUJlbVZDZEdJd1RXWllYMnBTYlRsTU5UUjNiRlZSWjFBeFEwOTBXblZyVTFneVJFSTNVV3RUZFZNeU9Wa3haVTk1Unpoak1sTlJSalF4UnpreU5uVnpSRnBtZUc5eGJuZzVRMWR6YWpoQ2JVVXRkR3h2TURSeWEzaDJWMmx0YVc5aVkwVk9XRmRyVlRSM2JsODRTbUp3V0hJeFZHNUllbWhEVWpFd1N6azFNMU5SYTBoMmVDNVJYM2QyU0VOTVNrcHNhV3h6VjJoS2R6WnRZa3QzLkZFT1dlS3ozVVlKaXd1SF9IODlQd2NmUE5ZbmhnOVVXSjgxa1lkdTVoQmciLCJleHAiOjE1NjQ0MzQ5ODQsImlhdCI6MTU2NDQzNDY4NH0.aUrscLN58obD-co2SoXpKAwnbPn5TDVU2CUe56ybXw4\",\n    \"callbacks\": [\n        {\n            \"type\": \"NameCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"User Name\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": \"\"\n                }\n            ],\n            \"_id\": 0\n        },\n        {\n            \"type\": \"PasswordCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"Password\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken2\",\n                    \"value\": \"\"\n                }\n            ],\n            \"_id\": 1\n        }\n    ],\n    \"stage\": \"UsernamePassword\"\n}"
+											"body": "{\n    \"authId\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoSW5kZXhWYWx1ZSI6IlNlY29uZEZhY3RvciIsIm90ayI6ImVvMzdicW5taGJvczB0cGtlbm03czduZjRkIiwiYXV0aEluZGV4VHlwZSI6InNlcnZpY2UiLCJyZWFsbSI6Ii8iLCJzZXNzaW9uSWQiOiIqQUFKVFNRQUNNRElBQkhSNWNHVUFDRXBYVkY5QlZWUklBQUpUTVFBQ01ERS4qZXlKMGVYQWlPaUpLVjFRaUxDSmpkSGtpT2lKS1YxUWlMQ0poYkdjaU9pSklVekkxTmlKOS5aWGxLTUdWWVFXbFBhVXBMVmpGUmFVeERTalpoV0VGcFQybEtUMVF3TlVaSmFYZHBXbGMxYWtscWIybFJWRVY1VDBWT1ExRjVNVWxWZWtreFRtbEpjMGx0Um5OYWVVazJTVzFTY0dOcFNqa3VMbVozWjJsS04wZDBRWEJ2WTNOMFgzRXpSR3hHVjJjdVFVOVRiVTFNV2xCWlMxWktXRjltTjBsMlZsOXRTalZzVkZBNU5HUnNTV1l0VEc1c1NEWnNTMjluV1RWV2NsWkplWGR1Y0RWYUxWTXhSVmRTTkVseGFtWk5RazFOTmxkUFEyZDZSa3BMVlhWYUxVODRSa1JZUkdObVpXTlVRMlJJYlhSdVpqVlhUMk0wZVRnek4yUk9iM3AxYzJJeGRFRlBObkUyTmpGU1ozQlVUUzFMZG1SdlJXMWtRVFZKTlY5eVEwUlpSMUJMTUZGME9HUk1kbXhKZG1aeVFUWmtUa1ZFU25sQ2RHRXRTMU5rTVhaSFUxQjJhR1p2TTNOV1pXOTFURUZyUlRobU5WaGtUR1JoWjJGMFR6UkROM28wWkVwVVdGRkNXSHAwYkZGRmJuaGZRMG93YmxkeFMxWnJNVVZCYlRGelREVnFZV3RrYkhjeE5HUjVaVWhyYkdkRU4zSnVVV2hvUTFRM1FVWTFaRTFUVDNaT1QyeFhNbTFPTUdvNU1GVm5TMGhaY0V0NmRqSlpZbk5tYzBnd2FtZE9lR05TZVRSc2VXeHVhWGRPYVhZeGVpMXlOVkpqVTB3eVJtbDJiREpwYURWbWRFODVjUzFhZURSWE0ydENiRWhTTTNsQldtOVRRaTFmVW5kblNtcDBWbXRIVDBrM2NIb3hMVlI1UjNSaWMyczBkVE5pVUVGTmJEQmhUM0JmVldWMkxWQldObGxuVXpkeVF6aE1NWHA2UXkxNVREQndNMWRpY0hKc1NWQlBWa0pVWmtScE1GVlJOREJ3VkRRMGEwWnNWVzltV2t4NFF6ZFplREpEUkhOaFJGZFRRMUZIZW5wVk9YZHRZMHR0UXpkWmEzcE1WR1ZVUm5CRWJVaDBjbkZQVG1oSlZsRnpPVzh5UmpJMWJqTnJjSGw1UW1WVlJURkViMVJTUVhNMFYxUXpZMHQzTFRCMllqZ3hkV0pyUTNoMmJWZ3hiV2RrYnpGdmF6UTBaWHBRVm5CeWRYcG5hRlJQUkZKT1lUaEhkV1JQYzA1ak0wTnZRamt5YkRoc1EwaDFjbHA2UkY5U01VVkNiVU5pUldJNFVEQnNjVlE0YlVOM1VVUTJTVXh3VVRaVFIwMVlibWh1VDJGaVNpNXZPRVI0YVRkRmJsZERjV1ZVV0c1aFRtSTBhbnBSLkZwVnZZa1hsMENSaEVlMzVPT2ppQUl5aFJuRkxNdTN1SnJDUmFNVGxHcWciLCJleHAiOjE1NjQ2MTE5MzMsImlhdCI6MTU2NDYxMTYzM30.f3sdppQkmWVfP2OqlVzJwFsqzpHBuf9h-WsGGcJrgUY\",\n    \"callbacks\": [\n        {\n            \"type\": \"NameCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"User Name\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": \"\"\n                }\n            ],\n            \"_id\": 0\n        },\n        {\n            \"type\": \"PasswordCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"Password\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken2\",\n                    \"value\": \"\"\n                }\n            ],\n            \"_id\": 1\n        }\n    ],\n    \"stage\": \"UsernamePassword\"\n}"
 										}
 									]
 								},
@@ -4670,11 +4676,12 @@
 											"raw": "{\n    \"authId\": \"{{authId}}\",\n    \"callbacks\": [\n        {\n            \"type\": \"NameCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"User Name\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": \"{{userName}}\"\n                }\n            ],\n            \"_id\": 0\n        },\n        {\n            \"type\": \"PasswordCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"Password\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken2\",\n                    \"value\": \"{{userPassword}}\"\n                }\n            ],\n            \"_id\": 1\n        }\n    ],\n    \"stage\": \"UsernamePassword\"\n}"
 										},
 										"url": {
-											"raw": "{{amUrl}}json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
+											"raw": "{{amUrl}}/json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
 											"host": [
-												"{{amUrl}}json"
+												"{{amUrl}}"
 											],
 											"path": [
+												"json",
 												"realms",
 												"root",
 												"authenticate"
@@ -4719,11 +4726,12 @@
 													"raw": "{\n    \"authId\": \"{{authId}}\",\n    \"callbacks\": [\n        {\n            \"type\": \"NameCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"User Name\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": \"{{userName}}\"\n                }\n            ],\n            \"_id\": 0\n        },\n        {\n            \"type\": \"PasswordCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"Password\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken2\",\n                    \"value\": \"{{userPassword}}\"\n                }\n            ],\n            \"_id\": 1\n        }\n    ],\n    \"stage\": \"UsernamePassword\"\n}"
 												},
 												"url": {
-													"raw": "{{amUrl}}json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
+													"raw": "{{amUrl}}/json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
 													"host": [
-														"{{amUrl}}json"
+														"{{amUrl}}"
 													],
 													"path": [
+														"json",
 														"realms",
 														"root",
 														"authenticate"
@@ -4786,7 +4794,7 @@
 												},
 												{
 													"key": "Date",
-													"value": "Mon, 29 Jul 2019 21:11:36 GMT"
+													"value": "Wed, 31 Jul 2019 22:20:51 GMT"
 												},
 												{
 													"key": "Via",
@@ -4798,7 +4806,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"authId\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoSW5kZXhWYWx1ZSI6IlNlY29uZEZhY3RvciIsIm90ayI6Im4xbzdqczNyMWdnc2ZnbzMybTFwYXA2MjA1IiwiYXV0aEluZGV4VHlwZSI6InNlcnZpY2UiLCJyZWFsbSI6Ii8iLCJzZXNzaW9uSWQiOiIqQUFKVFNRQUNNRElBQkhSNWNHVUFDRXBYVkY5QlZWUklBQUpUTVFBQ01ERS4qZXlKMGVYQWlPaUpLVjFRaUxDSmpkSGtpT2lKS1YxUWlMQ0poYkdjaU9pSklVekkxTmlKOS5aWGxLTUdWWVFXbFBhVXBMVmpGUmFVeERTalpoV0VGcFQybEtUMVF3TlVaSmFYZHBXbGMxYWtscWIybFJWRVY1VDBWT1ExRjVNVWxWZWtreFRtbEpjMGx0Um5OYWVVazJTVzFTY0dOcFNqa3VMa1JKY0ZsSWNTMDROMUpwY2sxcWJtbDVSa2htZVVFdWRteHBUVEJWUzJGT1pXcDBSbTh3VEVWNGJWSkVkeTFaVlc1SWR6azFVbEJoTUZwbWNERkNabkZYYkRoSVQzRTVTREprVlRjNGJsUm1TMTl6WlVSS1RGVk9SMDVxUms5SGMzWm1WbGhvYTNsS1IwRjFlR2xLTlhOUFZWOUxTV1p6Tms5d2FYUnliSHBNY2poamVrMTVVMGt0VjB0NlZIcHJkM1ZRWlhkTGFVOTNkV3RPY25CaUxWVkZRalZ4VVhaeFYxODBNbUYyUkZGQ1dUZEdRa3RRTFhKUmVHMXVPV1JKY1hNMlNHUkNUQzF2VUVOVVIyOTJZVEo0VERVd1ptcHdjRzVRTXpWRFlrSlhZVWRzYXpWamREQlVibk5WWjFkclVsWXdVMEZUZVVoS1RFTmpSekJDTUd0YU1WRkVWbmhRWW0xNFQyVTFkeTEwV0V0T01VZFdlVmhwWmtSdWFVeEZhRzB4VUdsNVpXdFBjM1ZFUWxWMFVVazJjVTFhWjBsbVQxZGlVbW96YURsWGVsVjVYM1ZNTVdNdGRFdENjRmQxZUVrd1RHeDRWRlpmYVdaUmEybFFXV3RrU0dKWGJrZFVNR1JPVkdSWFMyaFBja0ZWWDJkaWMyVlBMVGREU1U4NVpUaFhlVll0YldkQldWOHpPWEZrWjFKcFNEWlhVbk50TTJKbmRsbHZkRVpPZEU1Q1ZUZGxiMG81UzNwTVlteFJiR0p4Y0daR1pUbE1jREI0UjFKRGMwRmxjbmR3WVd4MmFUUnVkWE42VmtnMU5EWm9jbkpIYURONVgxaFRZalJqZUVGRVltTktaWGxaTTNOR04wZzJhME5oVUZOQ00xRnRVMVF3YWpoeWJWY3hSVkk1WjFkR2JEbFZNamxTZW5Kd2NEVklOakZIVDFweVduQk1VSE5aY1dOSFVVUjVibFpXZVdSMFEzaFBhMlJpTlhaUFZqY3hXRVpLTlVoMVgycG1kbVZNTjNKYU9VWnlaVWw0ZG1WS04xSkxNMlpxVm5kSWJFRlhaakJuTlZCcGFHa3lURlZSWmpWWFJqTnVNRUZTTmxGalNqZGlabFJMWDFJeWVUTlZVR3BtTlU1eGJWbFFlVlJOZDFCaFdXTnpYemxvYTFSWmVEUXdZbHBTTkU5dFVDMUJWWGx5ZDBwMWEwNHpRMEpHZVdSWlMxRlZRek5wVGtsM0xXUTVXbmhUVUZwT2RWWnFTbnBDUzNWWlpsQlZlakZxVW5FNGRFUXVXa0ZCYVVad2NWWjFUSEJyWlVKbFRFMWpkRXBDUVEuc2xBTzlUM2I5YVUzbkJZLS1Da3VBb3FpZjhZaXpDcUFsWVNEcHlnbTR2QSIsImV4cCI6MTU2NDQzNDk4NCwiaWF0IjoxNTY0NDM0Njg0fQ.hI_j_5IRoIgk9ert35D9vMiBrmrx87cMnAeavWrrA6M\",\n    \"callbacks\": [\n        {\n            \"type\": \"ChoiceCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"SecondFactorChoice\"\n                },\n                {\n                    \"name\": \"choices\",\n                    \"value\": [\n                        \"Email\",\n                        \"SMS\"\n                    ]\n                },\n                {\n                    \"name\": \"defaultChoice\",\n                    \"value\": 0\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": 0\n                }\n            ],\n            \"_id\": 2\n        }\n    ],\n    \"stage\": \"SecondFactorChoice\"\n}"
+											"body": "{\n    \"authId\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoSW5kZXhWYWx1ZSI6IlNlY29uZEZhY3RvciIsIm90ayI6ImdhcDRudHJoMG5scnZiYThwMW42b2JhbGk5IiwiYXV0aEluZGV4VHlwZSI6InNlcnZpY2UiLCJyZWFsbSI6Ii8iLCJzZXNzaW9uSWQiOiIqQUFKVFNRQUNNRElBQkhSNWNHVUFDRXBYVkY5QlZWUklBQUpUTVFBQ01ERS4qZXlKMGVYQWlPaUpLVjFRaUxDSmpkSGtpT2lKS1YxUWlMQ0poYkdjaU9pSklVekkxTmlKOS5aWGxLTUdWWVFXbFBhVXBMVmpGUmFVeERTalpoV0VGcFQybEtUMVF3TlVaSmFYZHBXbGMxYWtscWIybFJWRVY1VDBWT1ExRjVNVWxWZWtreFRtbEpjMGx0Um5OYWVVazJTVzFTY0dOcFNqa3VMa0YzV0VkQ1NXWllSM0Z4WkU5bFYxVk5kbXAzUmtFdU16QnFTMGhRUVZZd00wMXlRMmR6YXpGS1JqRnFablEyWlRGck1XbHpVR3RMUVU5M2FIZDZRalpuT1RWSFN6UnJUMjVTY2kxcE1WOHlUR3M1ZDNKM1RGaGtMVWRIWm5GR1VFbDZNbFF4VGxaV2QwUkNZamN4ZDJsb1EwdHdaRXc1U2psblVVZFFRamRSTUhKMU5XOU9SakZRYkZSdFgyd3RVMmRYYzFoMU5YVlliMFp6Y2xWd2RsQlRaa3RqZW5rd04xRkZVV1IxVWs4MmR5MXhVREpZVUdkUk9XWnBlbVpuUzNsYVFuQTNaSG8yVldKaGVEWmllVmgyZERGWE9IbFJOVlJqVjJ4MFRVdFRZaTEyV2t4bFJsVk9WSGxET1ZwWVYweGtNR2R0YUUxUVZqaHFOMmhvWkZkT2RubElObUUxYURkcWVGSlBSM1JmWmw5bGQycHJTV0YyY3pkeldGazJOQzExU0RKVE9WTXRhMU15TUZFNE5VUXdlWGhCZW1nd1dGZDRUbnBFU2pCNlpGUkRTVE4zWTBaT1ZYWXpiVlJJVDA4elJIaGpUVU40UTFwcFZsOW9VSFY2VlZsWmNESlNaakp6Y21WdlduSjBTQzF6ZVZOcWVWSk1UM2xMUlVWelpHcE9hVFp2WmxCUlUzaDRiazR4U1VoMmVWOVNiRFJMVVU5NFNYWkVOWHBCTVd3d00zVXRZVGxhYVVWNlRYbFhWRUZtYWpob2FtTkZZM0JmUzNWclIyVlFaRmRXUkROTVowSkpiWEJMYW5wSmJtUmZYM1ZhYkZCMldVZEdhR3h4YldkQ1JIZFBZWE5vWVV4dFJtNW1NbkZ5ZUVsQmEwOXVVWFJoWm0xNWJVdHNjek16VjFGM2NrRkpPVVJRU2kxNFdIZ3pVbTQ1VUVwRVZHVTNWV0V3WTJKaE4zVktVRXBZY0d4YVFqTnJZbGhrZWpaNFVscGpNVWRmUlVKMlNXcHJRV0ZEVkhCcWNFOHpNWGhyVGtReGRqTnNNVU4xUmxkS1J6QndSV2hXWkd4RE5FMHdUbVJNVlVWaFpEbDFNa05LUkMxQ01uRktYMGhEWW5aalJubEZNbEZoZUhGeVduZGZkMDV0VGxnM2RWa3pSMlJXVjA5ZlNrRjJZMFo0YVRCNlRWUlZUR3B4UTFKWVZYVnFUMlZJWldGUlJrcG1XRXhrTmpOdGVtOW1WVWhaUmpKSmR6ZGtjV0YwU1VGaFgxbHdSRVIyV20wM1ZUUXVlVzh3VWxWcGNWODNjakp2ZUVWdlMwczFVWE10UVEuQ3VnYkViV2QwRURTRkxXZ3M3aXRRbWo5dUdVOXdpWnRhODhIbTNhLW5qUSIsImV4cCI6MTU2NDYxMTkzMywiaWF0IjoxNTY0NjExNjMzfQ.-jhw-daCgreI2k4MtXgZbiKKROGEfiW4NZHPbdktBdE\",\n    \"callbacks\": [\n        {\n            \"type\": \"ChoiceCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"SecondFactorChoice\"\n                },\n                {\n                    \"name\": \"choices\",\n                    \"value\": [\n                        \"Email\",\n                        \"SMS\"\n                    ]\n                },\n                {\n                    \"name\": \"defaultChoice\",\n                    \"value\": 0\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": 0\n                }\n            ],\n            \"_id\": 2\n        }\n    ],\n    \"stage\": \"SecondFactorChoice\"\n}"
 										}
 									]
 								},
@@ -4843,11 +4851,12 @@
 											"raw": "{\n    \"authId\": \"{{authId}}\",\n    \"callbacks\": [\n        {\n            \"type\": \"ChoiceCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"SecondFactorChoice\"\n                },\n                {\n                    \"name\": \"choices\",\n                    \"value\": [\n                        \"Email\",\n                        \"SMS\"\n                    ]\n                },\n                {\n                    \"name\": \"defaultChoice\",\n                    \"value\": 0\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": 0\n                }\n            ],\n            \"_id\": 2\n        }\n    ],\n    \"stage\": \"SecondFactorChoice\"\n}"
 										},
 										"url": {
-											"raw": "{{amUrl}}json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
+											"raw": "{{amUrl}}/json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
 											"host": [
-												"{{amUrl}}json"
+												"{{amUrl}}"
 											],
 											"path": [
+												"json",
 												"realms",
 												"root",
 												"authenticate"
@@ -4892,11 +4901,12 @@
 													"raw": "{\n    \"authId\": \"{{authId}}\",\n    \"callbacks\": [\n        {\n            \"type\": \"ChoiceCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"SecondFactorChoice\"\n                },\n                {\n                    \"name\": \"choices\",\n                    \"value\": [\n                        \"Email\",\n                        \"SMS\"\n                    ]\n                },\n                {\n                    \"name\": \"defaultChoice\",\n                    \"value\": 0\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": 0\n                }\n            ],\n            \"_id\": 2\n        }\n    ],\n    \"stage\": \"SecondFactorChoice\"\n}"
 												},
 												"url": {
-													"raw": "{{amUrl}}json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
+													"raw": "{{amUrl}}/json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
 													"host": [
-														"{{amUrl}}json"
+														"{{amUrl}}"
 													],
 													"path": [
+														"json",
 														"realms",
 														"root",
 														"authenticate"
@@ -4959,7 +4969,7 @@
 												},
 												{
 													"key": "Date",
-													"value": "Mon, 29 Jul 2019 21:11:49 GMT"
+													"value": "Wed, 31 Jul 2019 22:21:01 GMT"
 												},
 												{
 													"key": "Via",
@@ -4971,7 +4981,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"authId\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoSW5kZXhWYWx1ZSI6IlNlY29uZEZhY3RvciIsIm90ayI6ImNkcHZxbTk1ZWpubjJpNGo0bTIxZ2RqdjRlIiwiYXV0aEluZGV4VHlwZSI6InNlcnZpY2UiLCJyZWFsbSI6Ii8iLCJzZXNzaW9uSWQiOiIqQUFKVFNRQUNNRElBQkhSNWNHVUFDRXBYVkY5QlZWUklBQUpUTVFBQ01ERS4qZXlKMGVYQWlPaUpLVjFRaUxDSmpkSGtpT2lKS1YxUWlMQ0poYkdjaU9pSklVekkxTmlKOS5aWGxLTUdWWVFXbFBhVXBMVmpGUmFVeERTalpoV0VGcFQybEtUMVF3TlVaSmFYZHBXbGMxYWtscWIybFJWRVY1VDBWT1ExRjVNVWxWZWtreFRtbEpjMGx0Um5OYWVVazJTVzFTY0dOcFNqa3VMa1kyZW05TVdFMXdiM0I0VlRKM2MwWndiV1pDWjBFdWEzRk5Nek5UZUhjMFZEQlpiWFEzWHpGMFJrSmhURVZEZUV0b01ISmxMVVZGWTNob1IzUTNSV2RTU3paMGIxbEdSa0ZyUkhsMVNIZHRhV0pMVms5ZlVraDJRalZyVldGdmNFbFBhSFpxWVRSSlJUQm5OMjQzZEhvd2EwNVViRkV3YnpOUk9IUmtTbVpFV0RCd1RHRXRNbk15Wldwc1ZsTm5ibFE0WnpKV2RHWnJlVU5HV0ZNd1oxTmxhbU5VWldOVE4xTlVOMmRGV1Vrd0xUUlhia1UzZVV4V1FrOWtTR3B0T0doTU1USXlkMHBWY3pKSWNXSmtjVVJDWVVGU1VtaEdVQzFxT1ZCM09GVk1Vblo0ZVdkdlNXSkplVEkzVVhCS1VHRXllWEpIU0dsZlNYQnVRMVZZTms1SFpERlJZbnBaYTB0TGEzcENPWGxuZUhKMk9YWlRRMGwwT1dOQ1pXcGpXVFZKT0RabGFYWTVRVjluZVY4d1RVVTBhMnh6U0Mxb1NWbFJVR3RHVVVaWlJWaGtWbkpDV1VWc2FUQklOazVhY1RobFltZEVYelI2Tm1SRVgyZGZhV3BsT1RSYVJVSTNiRTFHZEZKamJYbDJWVlUwT0dSZlVHSk9UVmRrZFc1dWRHTmtla0UxVWpSWFRGbFJRWGRuWm1GNVNUVlZPVm8xYWt0dldURmlRMloxYW00MmVHdDVWSEZsZFhWRlltSXdlRTF4VTFaTFZrRnhTblV4WVRseVRGODBZak4yYzFNM2NGVnNVbnBuTm5KTVVtWTRZVFJWT0RNMlZsSkxSV2d3UWpOZllVWXlVMGR6T1VRd2JIQlpSMHRzUm05elEwOUpMVmhZY3kxcVRUbGpaak5aVjNOa05FbHpNSGxmYUhVeVJFeFpjSFJ4VkRORGFUZFlXbDltWTNGeFgwcHBjek5HWTBOb1QwMWpTVEoyTkdNeVJ6aE1jakowYzJwTmFETnljRTVMVGpneGJuWm1VMDFxUldSQ1kxUnBZMDkwWWtSRmFIUk1kSEpaZDJsaWNWYzBhMDFPUlZGMmQyZDVkelZWVld3eUxUQjVPVFZ1Y0d4T1ZuSmFPVGN4Uld4UVJqbERhREZoT0MxWlprbFhkVmt0TkRWcVIyMTVaVVZ6T0dsdVpWTXRRVk5HTjNaTWFWRnZhakZLUTJ4eGNXcGFhMWhuUTE5Zk4wYzJhR2RmYW01UWJIRkJhbXQxTVd0a1JqTlhkRjl4WWt0TFJURlBXazV3TmxvdFJsbDBYMlptT0hSWFFXVlJYMk5qWTBoU1lXcDNabmc1TmtGNldEQTFVMnhZV0hwMFUxVTVjbHBYV1hkbGJuZHZOMnMyVEhoRVJsbDRURmxPTW01WGNUTTJjR3B0YmpGYVYzaHlWWHA0ZHk1a1dqRmxhSEJIUWpkNGVtTnJRMVpMWmxoUVUyVm4ubVNiQ25sQUw4QnVOaDIxblNaeGFrbUVWcUVzSjRILUcwUW1IUDhtVEk3RSIsImV4cCI6MTU2NDQzNDk4NCwiaWF0IjoxNTY0NDM0Njg0fQ.vJ8QxdabKkttHidQRUBqTvTWvXwSpS9zITnTNpGVnr4\",\n    \"callbacks\": [\n        {\n            \"type\": \"PasswordCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"One Time Password\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": \"\"\n                }\n            ],\n            \"_id\": 0\n        }\n    ],\n    \"stage\": \"OneTimePasswordEmail\"\n}"
+											"body": "{\n    \"authId\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdXRoSW5kZXhWYWx1ZSI6IlNlY29uZEZhY3RvciIsIm90ayI6IjJ2aTl1Nm05ZjViM2d0OGQ3ZXBnM3NnODE4IiwiYXV0aEluZGV4VHlwZSI6InNlcnZpY2UiLCJyZWFsbSI6Ii8iLCJzZXNzaW9uSWQiOiIqQUFKVFNRQUNNRElBQkhSNWNHVUFDRXBYVkY5QlZWUklBQUpUTVFBQ01ERS4qZXlKMGVYQWlPaUpLVjFRaUxDSmpkSGtpT2lKS1YxUWlMQ0poYkdjaU9pSklVekkxTmlKOS5aWGxLTUdWWVFXbFBhVXBMVmpGUmFVeERTalpoV0VGcFQybEtUMVF3TlVaSmFYZHBXbGMxYWtscWIybFJWRVY1VDBWT1ExRjVNVWxWZWtreFRtbEpjMGx0Um5OYWVVazJTVzFTY0dOcFNqa3VMbEUzY0VGSlFVRnVWMEZQTm1keE5Vc3hUakJNWDNjdVp6SnRiMHBhWVd0Q1psaFNjVXN0VkdaRVRrVmZWRWx1WTJJM1EzQTJPRk5LZG5jNFdGcGlVRGh5VFZsb05EaGZjakpXYzNkb1NrcFlSbFpYWlRGVFYyRnpaa1pvYlZreFp6ZFNjVzFVY2tGbFJIZDVVMHh4UlRoalV6RktWRVpLU1dnMFgyTndMWGQxYnpOMVozY3lWbVY1VVhablltOXJRbHBqTVVGWFkwWnhRbUZPZFU5MVRWQndURFEwZW1aalpWWXlWa1JYY0c1WlRGbHpZbkl6VW1SV1ZIZFFTSHBVYVVWNk1UVjFMWGxWZWtZMU9UaFFiM0kwWWxoVmNEQm9jMmR0TkRaMlNXbFhUa2d4TjI1Q1RtaEZTbHBqYmtsWFYyeFlUbkZuVjJveU9ITlZWMFZQVjA5TU1FcGFjbVJ0VEROUVFsRjBkVzlUVkZaNWFIQk9aR04yVkdkQlRFOTZhSFZPZW5Gb1MxbHBaWFExWldSRkxUUklWR2hCWm14T1puSjVRbkk1Y1dsMFVVeG5VMUJPTWpkWFZVTjRaRk14YTBkVVpGWkVjemQ0WVVKNlIxQldVRXgwVXpWd2EwTkpaemRVWmtZMmJXNW9iVUpwU0ZOb1VVWkVSeTFsUTJac1dFbEhURkJzV0RORk4zTlFObWxDVlRGS2JWRkpWR294WkY5Wk1rUkZNbkZIWVdaclZXdFdNVTVoZERnNGNtdGxSR3RWVFhGUE4xQkZNa1JDYms0MVNuSTNORTB0ZW1sSmVWQmFNV05PUTNwWU1uRnliM1EwUTFaSVNVRlZkMDFHYlhwRVJUTXpWbFY2TmxKbk1qQndNRVUzYVhOR1JYRkRTMUZ2TlhkWVYxOUROazltV2pCRlZYUlRjek5uV1c5MmVXbExhVEptT1VOMldpMXJhbWxTYzB0dFgwbzBaV1ZhZVRCRGMyOWhPVEpXTVROVVowMW9UbGgyV1hORmF6bExUR0Y0T0dKeFV6ZzVObEI0VVhnelduaGlZVmR3WXpNeVZFcGlXVWxWUW5kRFIxQXRibXd4ZUY5dlpUZHFSRFY1WVZVM2NEWjRRM28zWnpKZmVuZ3RWRUZ1Um1WdGVHVmFaMlp1WmxwclZWRlhiVGMzZVdkUlZ6WjFkMU5HTUZOSVJsZHRVbWhyUzNoM00zWmZUa2hUWW14NllUQkdVRzltUkdzd2EzQXpRakJrTUdnNU1HbEZMVTl6V2tOVlRrazFOVFpoZUdObVZXTjVhMUprVlU5eE5IUjRibUp0WnpGaWJsbGlRa2xRTURCWVYzSkhWMDl4U25nMGNGUXRaRE5CY1ZSTVJVSTNTMFYxTW1kelJ6bHNWbkpFVTNSalRITlRWbkUzV0V0aWVtRnlOSEZ1UTFScFRGZE9iSGRTWnk1aGFXdHpRMnc0TkRsTVNUWlJXaTB0ZVdOUGVIRlIuc19jSjdLWDN0eXg4YVg4eEJoXzB5Y0xnMVo3Q25Xd2pfYXFnbFc5X0xrSSIsImV4cCI6MTU2NDYxMTkzMywiaWF0IjoxNTY0NjExNjMzfQ.1R5C6knc-S8avY8fVbSjEFBloq39pJn1boh5VNNz-e4\",\n    \"callbacks\": [\n        {\n            \"type\": \"PasswordCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"One Time Password\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": \"\"\n                }\n            ],\n            \"_id\": 0\n        }\n    ],\n    \"stage\": \"OneTimePasswordEmail\"\n}"
 										}
 									]
 								},
@@ -5016,11 +5026,12 @@
 											"raw": "{\n    \"authId\": \"{{authId}}\",\n    \"callbacks\": [\n        {\n            \"type\": \"PasswordCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"One Time Password\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": \"{{OneTimePasscode}}\"\n                }\n            ],\n            \"_id\": 0\n        }\n    ],\n    \"stage\": \"OneTimePasswordEmail\"\n}"
 										},
 										"url": {
-											"raw": "{{amUrl}}json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
+											"raw": "{{amUrl}}/json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
 											"host": [
-												"{{amUrl}}json"
+												"{{amUrl}}"
 											],
 											"path": [
+												"json",
 												"realms",
 												"root",
 												"authenticate"
@@ -5065,11 +5076,12 @@
 													"raw": "{\n    \"authId\": \"{{authId}}\",\n    \"callbacks\": [\n        {\n            \"type\": \"PasswordCallback\",\n            \"output\": [\n                {\n                    \"name\": \"prompt\",\n                    \"value\": \"One Time Password\"\n                }\n            ],\n            \"input\": [\n                {\n                    \"name\": \"IDToken1\",\n                    \"value\": \"{{OneTimePasscode}}\"\n                }\n            ],\n            \"_id\": 0\n        }\n    ],\n    \"stage\": \"OneTimePasswordEmail\"\n}"
 												},
 												"url": {
-													"raw": "{{amUrl}}json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
+													"raw": "{{amUrl}}/json/realms/root/authenticate?authIndexType=service&authIndexValue=SecondFactor",
 													"host": [
-														"{{amUrl}}json"
+														"{{amUrl}}"
 													],
 													"path": [
+														"json",
 														"realms",
 														"root",
 														"authenticate"
@@ -5108,7 +5120,7 @@
 												},
 												{
 													"key": "Set-Cookie",
-													"value": "iPlanetDirectoryPro=lZIdbOnHpyze2XPHBdTRvL2rccU.*AAJTSQACMDIAAlNLABx4dmpOeWRuVGhjTGp0cjBXM3BaVWtJdXZndmc9AAR0eXBlAANDVFMAAlMxAAIwMQ..*; Path=/"
+													"value": "iPlanetDirectoryPro=2witApVgJdv77T_yCV2t4pE9eUw.*AAJTSQACMDIAAlNLABw4NGhkaVJKcUpiMWNLcnRsZU9oUzFrZ0FzVVk9AAR0eXBlAANDVFMAAlMxAAIwMQ..*; Path=/"
 												},
 												{
 													"key": "Set-Cookie",
@@ -5136,7 +5148,7 @@
 												},
 												{
 													"key": "Date",
-													"value": "Mon, 29 Jul 2019 21:12:34 GMT"
+													"value": "Wed, 31 Jul 2019 22:22:06 GMT"
 												},
 												{
 													"key": "Via",
@@ -5148,7 +5160,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n    \"tokenId\": \"lZIdbOnHpyze2XPHBdTRvL2rccU.*AAJTSQACMDIAAlNLABx4dmpOeWRuVGhjTGp0cjBXM3BaVWtJdXZndmc9AAR0eXBlAANDVFMAAlMxAAIwMQ..*\",\n    \"successUrl\": \"/console\",\n    \"realm\": \"/\"\n}"
+											"body": "{\n    \"tokenId\": \"2witApVgJdv77T_yCV2t4pE9eUw.*AAJTSQACMDIAAlNLABw4NGhkaVJKcUpiMWNLcnRsZU9oUzFrZ0FzVVk9AAR0eXBlAANDVFMAAlMxAAIwMQ..*\",\n    \"successUrl\": \"/console\",\n    \"realm\": \"/\"\n}"
 										}
 									]
 								}
@@ -5258,13 +5270,11 @@
 									}
 								],
 								"url": {
-									"raw": "{{amUrl}}oauth2/realms/root/authorize?grant_type=authorization_code&client_id={{natspaClientId}}&response_type=code&scope={{natspaScopes}}&redirect_uri=https://example.com/homeLogin/&code_challenge=j3wKnK2Fa_mc2tgdqa6GtUfCYjdWSA5S23JKTTtPF8Y&code_challenge_method=S256&state=abc123",
+									"raw": "{{oauth2Url}}/authorize?grant_type=authorization_code&client_id={{natspaClientId}}&response_type=code&scope={{natspaScopes}}&redirect_uri=https://example.com/homeLogin/&code_challenge=j3wKnK2Fa_mc2tgdqa6GtUfCYjdWSA5S23JKTTtPF8Y&code_challenge_method=S256&state=abc123",
 									"host": [
-										"{{amUrl}}oauth2"
+										"{{oauth2Url}}"
 									],
 									"path": [
-										"realms",
-										"root",
 										"authorize"
 									],
 									"query": [
@@ -5317,13 +5327,11 @@
 											}
 										],
 										"url": {
-											"raw": "{{amUrl}}oauth2/realms/root/authorize?grant_type=authorization_code&client_id={{natspaClientId}}&response_type=code&scope={{natspaScopes}}&redirect_uri=https://example.com/homeLogin/&code_challenge=j3wKnK2Fa_mc2tgdqa6GtUfCYjdWSA5S23JKTTtPF8Y&code_challenge_method=S256&state=abc123",
+											"raw": "{{oauth2Url}}/authorize?grant_type=authorization_code&client_id={{natspaClientId}}&response_type=code&scope={{natspaScopes}}&redirect_uri=https://example.com/homeLogin/&code_challenge=j3wKnK2Fa_mc2tgdqa6GtUfCYjdWSA5S23JKTTtPF8Y&code_challenge_method=S256&state=abc123",
 											"host": [
-												"{{amUrl}}oauth2"
+												"{{oauth2Url}}"
 											],
 											"path": [
-												"realms",
-												"root",
 												"authorize"
 											],
 											"query": [
@@ -5380,7 +5388,7 @@
 										},
 										{
 											"key": "Location",
-											"value": "https://example.com/homeLogin/?error_description=Unknown/invalid%20scope(s):%20%5Buser.user.read,%20opened%5D&state=abc123&error=invalid_scope"
+											"value": "https://example.com/homeLogin/?code=CNSo0MmVgFixISR4mbuRpXsmflk&iss=https://openam-spark0730.forgeblocks.com/am/oauth2&state=abc123&client_id=ce96880e4516809005e583972f690874"
 										},
 										{
 											"key": "Pragma",
@@ -5392,7 +5400,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Thu, 25 Jul 2019 20:40:41 GMT"
+											"value": "Wed, 31 Jul 2019 20:42:57 GMT"
 										},
 										{
 											"key": "Via",
@@ -5404,7 +5412,7 @@
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": null
 								}
 							]
 						},
@@ -5482,13 +5490,11 @@
 									]
 								},
 								"url": {
-									"raw": "{{amUrl}}oauth2/realms/root/access_token",
+									"raw": "{{oauth2Url}}/access_token",
 									"host": [
-										"{{amUrl}}oauth2"
+										"{{oauth2Url}}"
 									],
 									"path": [
-										"realms",
-										"root",
 										"access_token"
 									]
 								},
@@ -5538,13 +5544,11 @@
 											]
 										},
 										"url": {
-											"raw": "{{amUrl}}oauth2/realms/root/access_token",
+											"raw": "{{oauth2Url}}/access_token",
 											"host": [
-												"{{amUrl}}oauth2"
+												"{{oauth2Url}}"
 											],
 											"path": [
-												"realms",
-												"root",
 												"access_token"
 											]
 										}
@@ -5575,11 +5579,11 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "4566"
+											"value": "4530"
 										},
 										{
 											"key": "Date",
-											"value": "Thu, 25 Jul 2019 21:42:28 GMT"
+											"value": "Wed, 31 Jul 2019 20:43:13 GMT"
 										},
 										{
 											"key": "Via",
@@ -5591,7 +5595,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjYxMjg3OThjLWJlZDMtNDM5OS1hM2IwLTVjYTI0ZWU1ODM3ZC0yNTk1MTQiLCJpc3MiOiJodHRwczovL29wZW5hbS1rYXRlMDcxMHMuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6ImtRQUdwbTBiRHJaa25wc2xYX1VyRDlHZFhsTSIsImF1ZCI6IjFjZTVkNzI1NDljMmUzM2RhNTFhNjVhYzJjMmE4YjdjIiwibmJmIjoxNTY0MDkwOTQ4LCJncmFudF90eXBlIjoiYXV0aG9yaXphdGlvbl9jb2RlIiwic2NvcGUiOlsidXNlci5yZWFkIiwibWUucmVhZCIsInVzZXIuY3JlYXRlIiwicGFzc3dvcmQtcG9saWN5LnJlYWQiLCJvcGVuaWQiLCJtZS51cGRhdGUiLCJwcm9maWxlIiwibWUudXBkYXRlLXBhc3N3b3JkIiwiZW1haWwiLCJ1c2VyLnJlY292ZXItdXNlcm5hbWUiLCJ1c2VyLnJlc2V0LXBhc3N3b3JkIl0sImF1dGhfdGltZSI6MTU2NDA4OTkxMSwicmVhbG0iOiIvIiwiZXhwIjoxNTY0MDk0NTQ4LCJpYXQiOjE1NjQwOTA5NDgsImV4cGlyZXNfaW4iOjM2MDAsImp0aSI6IlZhT1k5NkdSWVZ4cFpiTk43S0hZZV92N2EzUSJ9.tf332T8BPf4R7iijX504IVKisnXZfsKpxnd2_Hk5bya6SLtz9YseI4f6gH_cWKMHv0bDW1mRnIK8mCd9Ey-Yh_QU-B2vFtPYNmi0DF7v1fL6ODZ3YCaNl_w7AVOEGv7zo60wIsJNfCNFJdjY8BgrXZXlT3ezGGLaqt8wztF9p6ZHQP5VmDxx_xuyYvVosg2AsqTNu8WUZxLZAlffYJKTUbuCchBumUkx0COl9XlbqCClQTzUYCdgPvBRZgjQvqL1HRfWDyEsmOJz1hpqXTQFwuYvwwDxmG_mfX4KJZqMHbRriS3VacovHmZhIpUeeZPKyHF8hO-ZHOcACAbzKmIpng\",\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjYxMjg3OThjLWJlZDMtNDM5OS1hM2IwLTVjYTI0ZWU1ODM3ZC0yNTk1MTMiLCJpc3MiOiJodHRwczovL29wZW5hbS1rYXRlMDcxMHMuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6InJlZnJlc2hfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJrUUFHcG0wYkRyWmtucHNsWF9VckQ5R2RYbE0iLCJhdWQiOiIxY2U1ZDcyNTQ5YzJlMzNkYTUxYTY1YWMyYzJhOGI3YyIsImFjciI6IjAiLCJuYmYiOjE1NjQwOTA5NDgsIm9wcyI6InRiOFVXTXJjRGUxc2tmbGIzOEtxdW1KekhDNCIsImdyYW50X3R5cGUiOiJhdXRob3JpemF0aW9uX2NvZGUiLCJzY29wZSI6WyJ1c2VyLnJlYWQiLCJtZS5yZWFkIiwidXNlci5jcmVhdGUiLCJwYXNzd29yZC1wb2xpY3kucmVhZCIsIm9wZW5pZCIsIm1lLnVwZGF0ZSIsInByb2ZpbGUiLCJtZS51cGRhdGUtcGFzc3dvcmQiLCJlbWFpbCIsInVzZXIucmVjb3Zlci11c2VybmFtZSIsInVzZXIucmVzZXQtcGFzc3dvcmQiXSwiYXV0aF90aW1lIjoxNTY0MDg5OTExLCJyZWFsbSI6Ii8iLCJleHAiOjE1NjQ2OTU3NDgsImlhdCI6MTU2NDA5MDk0OCwiZXhwaXJlc19pbiI6NjA0ODAwLCJqdGkiOiJnZU5Ga2dHa0NQMEkyUF9fMGU3WFZyWVB4cG8ifQ.e-MgD6JUooKDd8ApHid9SCiTTjnarstjd-StMpYyH0evxYAYlE9QxA89Iy2NeBd0UkjDUQC0boiofp_yleVo570oHHzeYhWCNVNGLCzpGzjgyM83gt7Rxz6_n7UVwqivdsXDlFy3GuHW3JHjC3TzQt009rQTwtUeH8Sszp8eVN2BBOgNjwSKn70UPWKA3iF-4C9OljLF80Y8AWncxIOK09mmMFZ9bn2c64BVh-Kzn4l1TO2Wjckp2KEzewdYDeBLgFmvWHBYpQfOOm_6z2014h8NUMk2_Qj7dh-DPPj_KWgswcLBXr678TYn6fcAFdpdpjY_xAG1jLDAFTHq5qR3hQ\",\n    \"scope\": \"user.read me.read user.create password-policy.read openid me.update profile me.update-password email user.recover-username user.reset-password\",\n    \"id_token\": \"eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoidVhwR3M0cXI2d1F2SHFNX0sxOWQ2ZyIsInN1YiI6ImJqZW5zZW5AZXhhbXBsZS5jb20iLCJ6b25laW5mbyI6IkFtZXJpY2EvTG9zX0FuZ2VsZXMiLCJhdWRpdFRyYWNraW5nSWQiOiI2MTI4Nzk4Yy1iZWQzLTQzOTktYTNiMC01Y2EyNGVlNTgzN2QtMjU5NTE1IiwiaXNzIjoiaHR0cHM6Ly9vcGVuYW0ta2F0ZTA3MTBzLmZvcmdlYmxvY2tzLmNvbS9hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImxvY2FsZSI6ImVuLVVTIiwidGl0bGUiOiJNYXN0ZXIgQ2FycGVudGVyIiwiYWNyIjoiMCIsInVwZGF0ZWRfYXQiOjE1NjQwODUwNzQsImF6cCI6IjFjZTVkNzI1NDljMmUzM2RhNTFhNjVhYzJjMmE4YjdjIiwiYXV0aF90aW1lIjoxNTY0MDg5OTExLCJuaWNrbmFtZSI6IkJhYnMiLCJleHAiOjE1NjQwOTQ1NDgsImlhdCI6MTU2NDA5MDk0OCwiZW1haWwiOiJiYWJzQGplbnNlbi5vcmciLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByb2ZpbGUiOiJodHRwczovL2xvZ2luLmV4YW1wbGUuY29tL2JqZW5zZW4iLCJnaXZlbl9uYW1lIjoiQmFyYmFyYSIsIm1pZGRsZV9uYW1lIjoiSmFuZSIsImF1ZCI6IjFjZTVkNzI1NDljMmUzM2RhNTFhNjVhYzJjMmE4YjdjIiwiY19oYXNoIjoiTmhadFQwQndaNHRoWnZRNUFWSGJMQSIsIm9yZy5mb3JnZXJvY2sub3BlbmlkY29ubmVjdC5vcHMiOiJ0YjhVV01yY0RlMXNrZmxiMzhLcXVtSnpIQzQiLCJzX2hhc2giOiJiS0U5VXNwd3lJUGc4THNRSGtKYWlRIiwibmFtZSI6IkJhcmJhcmEgSmFuZSBKZW5zZW4iLCJyZWFsbSI6Ii8iLCJ0b2tlblR5cGUiOiJKV1RUb2tlbiIsImZhbWlseV9uYW1lIjoiSmVuc2VuIn0.S--QAGZxbnp4UMZ9dAAxJwTJFN-mlN9CkUrEG4anF-pjRty68pinj3He9vPVkE2DIdYFMQjEgDsymrGro7KsrfMNcZ6Sdhlvbs5ZTf7iJhNVJQZMPc2fFhkvfULjBvkzOEjI3M9SAi3nGDNVpdIrCFoXmta4auNaUhgZNkD658Q68esyAA46G1djS-8Ayp5eitVjiNPKaGny_fTu_ZNNjR92N6eMWP0CirUdvWyNMIFqJSyTBezjNnqGdfa6iy7xDCjVC8lO6rrmZ417I0bkbpI59PdFwLMMeHnxpmSHJOITOup81FLidz0rJ-VxS6fTqz9cmvAcoSalwKm2CEWT3Q\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599\n}"
+									"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjBlYjI4MTMwLWM3ZWQtNDA1Yy1hM2YzLTIwYWJiZWQ3NDZkYy0yMDIyOSIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMDczMC5mb3JnZWJsb2Nrcy5jb20vYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoid05wTllMQ3BvVm1qUVlaLTNmczIyUFNIMFVrIiwiYXVkIjoiY2U5Njg4MGU0NTE2ODA5MDA1ZTU4Mzk3MmY2OTA4NzQiLCJuYmYiOjE1NjQ2MDU3OTMsImdyYW50X3R5cGUiOiJhdXRob3JpemF0aW9uX2NvZGUiLCJzY29wZSI6WyJ1c2VyLnJlYWQiLCJtZS5yZWFkIiwidXNlci5jcmVhdGUiLCJwYXNzd29yZC1wb2xpY3kucmVhZCIsIm9wZW5pZCIsIm1lLnVwZGF0ZSIsInByb2ZpbGUiLCJtZS51cGRhdGUtcGFzc3dvcmQiLCJlbWFpbCIsInVzZXIucmVjb3Zlci11c2VybmFtZSIsInVzZXIucmVzZXQtcGFzc3dvcmQiXSwiYXV0aF90aW1lIjoxNTY0NjA1NTA2LCJyZWFsbSI6Ii8iLCJleHAiOjE1NjQ2MDkzOTMsImlhdCI6MTU2NDYwNTc5MywiZXhwaXJlc19pbiI6MzYwMCwianRpIjoiaHdFc051WG1WMEJpQWwzMDNteUtUNzJ1dXIwIn0.uMvs8dfkIuxbCN9Lkjx4w0QH_caTGHApBPxZFUu8_sQmu1OoPrGr6FhY2Jf1roX0Uw5VGJAbNEz-Oi4pCrSuR49uRtTjtLRs5SMHeXsX4Bm4uFwSYFCI1JOjutbmii91LY_DazZ2eYcp6yRaWAW_u2mtonfIRMHXjTdZ9O6JXVG0uv4SNFeJ8T9fUMt03B6jKwBfexcg90ppdz8kVJ8OQ1_5ux_WnSpsrCRe5a_xP3pTqkw3h4bzt9-8AV2nd3sGNmI2tEHE1KxHHlenD73HCs5YVPtozo00f-M2HMvIAbgphnmagtQAmZ9b3PRSPScj6s9bYkJvL21OrjUcOG0zWA\",\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjBlYjI4MTMwLWM3ZWQtNDA1Yy1hM2YzLTIwYWJiZWQ3NDZkYy0yMDIyOCIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMDczMC5mb3JnZWJsb2Nrcy5jb20vYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoicmVmcmVzaF90b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IndOcE5ZTENwb1ZtalFZWi0zZnMyMlBTSDBVayIsImF1ZCI6ImNlOTY4ODBlNDUxNjgwOTAwNWU1ODM5NzJmNjkwODc0IiwiYWNyIjoiMCIsIm5iZiI6MTU2NDYwNTc5Mywib3BzIjoiMWV0ZkFrdjhNU2QwclFLRzR3akNQTUpBa3NNIiwiZ3JhbnRfdHlwZSI6ImF1dGhvcml6YXRpb25fY29kZSIsInNjb3BlIjpbInVzZXIucmVhZCIsIm1lLnJlYWQiLCJ1c2VyLmNyZWF0ZSIsInBhc3N3b3JkLXBvbGljeS5yZWFkIiwib3BlbmlkIiwibWUudXBkYXRlIiwicHJvZmlsZSIsIm1lLnVwZGF0ZS1wYXNzd29yZCIsImVtYWlsIiwidXNlci5yZWNvdmVyLXVzZXJuYW1lIiwidXNlci5yZXNldC1wYXNzd29yZCJdLCJhdXRoX3RpbWUiOjE1NjQ2MDU1MDYsInJlYWxtIjoiLyIsImV4cCI6MTU2NTIxMDU5MywiaWF0IjoxNTY0NjA1NzkzLCJleHBpcmVzX2luIjo2MDQ4MDAsImp0aSI6IlNWSUN1a2UxcFpaMnpHa2loWV81UFlLYjdLbyJ9.w_6GddPtzOcyOn9EzYo0Uuhh6TqyfCK0ni0kzn0XT1fwUko-gmOwj2GkF8wKkKqlwBkBj-vai9pDWo1UCQEK4cnpx3W-aiBgh2NrRflCxmWxyhz05kHwtLDfkOVBaAxIK-whMfLSxure3g6pNveVRzCRrEIcGunzaq6451MCNhAlf-oF8PrQZoNnoKQx3pAjPbbh1XNqRwF4LpTDa3gbkqJDNhnzMmnCPFrtjUErI1DtlPb8nd71vKKe8sI_RFX8-7zOWsvi3wpkm5ht2ka-OI-O-0GjtGc3vsumF3jfosfbybtVy1xHfiC1eQwVDS9RfgCRknJxa6XLYbi0lXza8g\",\n    \"scope\": \"user.read me.read user.create password-policy.read openid me.update profile me.update-password email user.recover-username user.reset-password\",\n    \"id_token\": \"eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoiTG5kY19wQmpRRWtvbUc3bFdNOGYtZyIsInN1YiI6ImJqZW5zZW5AZXhhbXBsZS5jb20iLCJ6b25laW5mbyI6IkFtZXJpY2EvTG9zX0FuZ2VsZXMiLCJhdWRpdFRyYWNraW5nSWQiOiIwZWIyODEzMC1jN2VkLTQwNWMtYTNmMy0yMGFiYmVkNzQ2ZGMtMjAyMzEiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazA3MzAuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6ImlkX3Rva2VuIiwibG9jYWxlIjoiZW4tVVMiLCJ0aXRsZSI6Ik1hc3RlciBDYXJwZW50ZXIiLCJhY3IiOiIwIiwiYXpwIjoiY2U5Njg4MGU0NTE2ODA5MDA1ZTU4Mzk3MmY2OTA4NzQiLCJhdXRoX3RpbWUiOjE1NjQ2MDU1MDYsIm5pY2tuYW1lIjoiQmFicyIsImV4cCI6MTU2NDYwOTM5MywiaWF0IjoxNTY0NjA1NzkzLCJlbWFpbCI6ImJhYnNAamVuc2VuLm9yZyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJvZmlsZSI6Imh0dHBzOi8vbG9naW4uZXhhbXBsZS5jb20vYmplbnNlbiIsImdpdmVuX25hbWUiOiJCYXJiYXJhIiwibWlkZGxlX25hbWUiOiJKYW5lIiwiYXVkIjoiY2U5Njg4MGU0NTE2ODA5MDA1ZTU4Mzk3MmY2OTA4NzQiLCJjX2hhc2giOiJ1NW9XWW9qdFJXZUNFMWx6eV9laE9RIiwib3JnLmZvcmdlcm9jay5vcGVuaWRjb25uZWN0Lm9wcyI6IjFldGZBa3Y4TVNkMHJRS0c0d2pDUE1KQWtzTSIsInNfaGFzaCI6ImJLRTlVc3B3eUlQZzhMc1FIa0phaVEiLCJuYW1lIjoiQmFyYmFyYSBKYW5lIEplbnNlbiIsInJlYWxtIjoiLyIsInRva2VuVHlwZSI6IkpXVFRva2VuIiwiZmFtaWx5X25hbWUiOiJKZW5zZW4ifQ.MVegZSIhlu92uFZGiegGN0WNeW_6o3HvnV6bKDE_MmA-FcZH_SfIqIqL1WmohizIGzXhGZ29X6WxYvfMdSmMUt1dLesf7nEH3kq9yZmKJaIjxJrqjb2-yh8un3fRHFQBw-DCOXcF1ygYFcVUndwkUnuFDg9JqWMCU-I-Yvp93k_fSENzmcYcx72OZI9zUNoWIikvNs3XN-QoFi7kRXmJa9OXuWJbkVTyPd8RCxCuWu15Nqam_DI4-0Z-krpLf53obTHJ8wl3JfaQpeg1jutVaZw8B94IVyF6ZuCWwefxXDGNkFBW9wHhV1qSIDrYf3Hg_6ksPRiAABQbK7auTGeEFQ\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599\n}"
 								}
 							]
 						}
@@ -5667,13 +5671,11 @@
 									}
 								],
 								"url": {
-									"raw": "{{amUrl}}oauth2/realms/root/authorize?grant_type=authorization_code&client_id={{webClientId}}&response_type=code&scope={{webScopes}}&redirect_uri=https://example.com/homeLogin/&code_challenge=j3wKnK2Fa_mc2tgdqa6GtUfCYjdWSA5S23JKTTtPF8Y&code_challenge_method=S256&state=abc123",
+									"raw": "{{oauth2Url}}/authorize?grant_type=authorization_code&client_id={{webClientId}}&response_type=code&scope={{webScopes}}&redirect_uri=https://example.com/homeLogin/&code_challenge=j3wKnK2Fa_mc2tgdqa6GtUfCYjdWSA5S23JKTTtPF8Y&code_challenge_method=S256&state=abc123",
 									"host": [
-										"{{amUrl}}oauth2"
+										"{{oauth2Url}}"
 									],
 									"path": [
-										"realms",
-										"root",
 										"authorize"
 									],
 									"query": [
@@ -5727,13 +5729,11 @@
 											}
 										],
 										"url": {
-											"raw": "{{amUrl}}oauth2/realms/root/authorize?grant_type=authorization_code&client_id={{webClientId}}&response_type=code&scope={{webScopes}}&redirect_uri=https://example.com/homeLogin/&code_challenge=j3wKnK2Fa_mc2tgdqa6GtUfCYjdWSA5S23JKTTtPF8Y&code_challenge_method=S256&state=abc123",
+											"raw": "{{oauth2Url}}/authorize?grant_type=authorization_code&client_id={{webClientId}}&response_type=code&scope={{webScopes}}&redirect_uri=https://example.com/homeLogin/&code_challenge=j3wKnK2Fa_mc2tgdqa6GtUfCYjdWSA5S23JKTTtPF8Y&code_challenge_method=S256&state=abc123",
 											"host": [
-												"{{amUrl}}oauth2"
+												"{{oauth2Url}}"
 											],
 											"path": [
-												"realms",
-												"root",
 												"authorize"
 											],
 											"query": [
@@ -5790,7 +5790,7 @@
 										},
 										{
 											"key": "Location",
-											"value": "https://example.com/homeLogin/?code=10VNzc-BPxJpQny99pr4Kf5-x1I&iss=https://openam-sampletenant.forgeblocks.com/am/oauth2&state=abc123&client_id=4c208861c2027de1b7c51320329c0d92"
+											"value": "https://example.com/homeLogin/?code=K5E3V5OgcVrZu-gHaQKXecGMvoo&iss=https://openam-spark0730.forgeblocks.com/am/oauth2&state=abc123&client_id=c267d5eb2006729a21f74ddb37655986"
 										},
 										{
 											"key": "Pragma",
@@ -5802,7 +5802,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Thu, 25 Jul 2019 21:46:55 GMT"
+											"value": "Wed, 31 Jul 2019 20:40:44 GMT"
 										},
 										{
 											"key": "Via",
@@ -5814,7 +5814,7 @@
 										}
 									],
 									"cookie": [],
-									"body": ""
+									"body": null
 								}
 							]
 						},
@@ -5904,13 +5904,11 @@
 									]
 								},
 								"url": {
-									"raw": "{{amUrl}}oauth2/realms/root/access_token",
+									"raw": "{{oauth2Url}}/access_token",
 									"host": [
-										"{{amUrl}}oauth2"
+										"{{oauth2Url}}"
 									],
 									"path": [
-										"realms",
-										"root",
 										"access_token"
 									]
 								},
@@ -5960,13 +5958,11 @@
 											]
 										},
 										"url": {
-											"raw": "{{amUrl}}oauth2/realms/root/access_token",
+											"raw": "{{oauth2Url}}/access_token",
 											"host": [
-												"{{amUrl}}oauth2"
+												"{{oauth2Url}}"
 											],
 											"path": [
-												"realms",
-												"root",
 												"access_token"
 											]
 										}
@@ -5997,11 +5993,11 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "4566"
+											"value": "4530"
 										},
 										{
 											"key": "Date",
-											"value": "Thu, 25 Jul 2019 21:47:08 GMT"
+											"value": "Wed, 31 Jul 2019 20:41:04 GMT"
 										},
 										{
 											"key": "Via",
@@ -6013,7 +6009,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjYxMjg3OThjLWJlZDMtNDM5OS1hM2IwLTVjYTI0ZWU1ODM3ZC0yNTk2NTUiLCJpc3MiOiJodHRwczovL29wZW5hbS1rYXRlMDcxMHMuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6ImY0aTFlcnd6ZXNUOEpNZEEzT0N1MFpUTjlEbyIsImF1ZCI6IjRjMjA4ODYxYzIwMjdkZTFiN2M1MTMyMDMyOWMwZDkyIiwibmJmIjoxNTY0MDkxMjI4LCJncmFudF90eXBlIjoiYXV0aG9yaXphdGlvbl9jb2RlIiwic2NvcGUiOlsib3BlbmlkIiwibWUudXBkYXRlIiwicHJvZmlsZSIsInVzZXIucmVjb3Zlci11c2VybmFtZSIsInVzZXIucmVhZCIsIm1lLnJlYWQiLCJ1c2VyLmNyZWF0ZSIsInBhc3N3b3JkLXBvbGljeS5yZWFkIiwibWUudXBkYXRlLXBhc3N3b3JkIiwiZW1haWwiLCJ1c2VyLnJlc2V0LXBhc3N3b3JkIl0sImF1dGhfdGltZSI6MTU2NDA4OTkxMSwicmVhbG0iOiIvIiwiZXhwIjoxNTY0MDk0ODI4LCJpYXQiOjE1NjQwOTEyMjgsImV4cGlyZXNfaW4iOjM2MDAsImp0aSI6Ik83SnBkVm4zSFJBcHRXMlhnbG44UUluZTAtSSJ9.YIqTrBNvMiCrxydocuSBUxvYkQZph-FPiZ6qEjt1uPGi10XS5Cg2VTPDPPhVciWMOfwFPt0LGUvTxVPQ9mVlp5G3R8Tj-fbe5lHyUqCiQxWgsy-oZNUO64nw5XeOBeEIFvpOg8SIoq-d58qn5xyGeQnnbWBWvfYsAjzEPvnPGdOb7Tjuhg-qvR8wo0gDTCwTKwfxIQFR610iKoRvt08B9JFtTl33bYoYYn6mQdvH7GHYsFs7lCKNIkF2F_SsbGTwlVeMkk_KC3wwlOmW1rd-GZ3pCVnzP5M8JBMX3Qg2mbe_iMrNNxABHE2EKZAw7MhYAKUnLElmysE-A50F4WkeLw\",\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjYxMjg3OThjLWJlZDMtNDM5OS1hM2IwLTVjYTI0ZWU1ODM3ZC0yNTk2NTQiLCJpc3MiOiJodHRwczovL29wZW5hbS1rYXRlMDcxMHMuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6InJlZnJlc2hfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJmNGkxZXJ3emVzVDhKTWRBM09DdTBaVE45RG8iLCJhdWQiOiI0YzIwODg2MWMyMDI3ZGUxYjdjNTEzMjAzMjljMGQ5MiIsImFjciI6IjAiLCJuYmYiOjE1NjQwOTEyMjgsIm9wcyI6IjlmdDFBMHFYRzlSclBCQ1BacjMyLVBPcEVObyIsImdyYW50X3R5cGUiOiJhdXRob3JpemF0aW9uX2NvZGUiLCJzY29wZSI6WyJvcGVuaWQiLCJtZS51cGRhdGUiLCJwcm9maWxlIiwidXNlci5yZWNvdmVyLXVzZXJuYW1lIiwidXNlci5yZWFkIiwibWUucmVhZCIsInVzZXIuY3JlYXRlIiwicGFzc3dvcmQtcG9saWN5LnJlYWQiLCJtZS51cGRhdGUtcGFzc3dvcmQiLCJlbWFpbCIsInVzZXIucmVzZXQtcGFzc3dvcmQiXSwiYXV0aF90aW1lIjoxNTY0MDg5OTExLCJyZWFsbSI6Ii8iLCJleHAiOjE1NjQ2OTYwMjgsImlhdCI6MTU2NDA5MTIyOCwiZXhwaXJlc19pbiI6NjA0ODAwLCJqdGkiOiJ4ZmlfR3c0bl90U09KYW81V0JOaWVnTVBYUWsifQ.oOrL_-_NlL--Ps4v4PnudVtIcNlNryTAKWvqDxCK1mJOFOM0cAPMHCF4sjJfXr0IFeZusyo4sEfiAwNkXXANQr7lmdz_xlUf1tKAm8FffS8g0tcBQGQJEH3UtikRLNq4FPpjJ2nf9OX9omJDEJUhmfwjCfbgOWRf9L9zjNs6eFCJ_X5g0LEajOtmmJjZ65p2e_f4f2JouM2UgHfHjBEMdBYZCmJgGDZ0Kb5_JQgTLT8_urky2Vj84EGdwWbxt5b1tcUJxqZZUffvBGX9FjAIrP1YN4QNHpp97aTwOwmUjJ4W1aGRvDYjjQ-m7tiYQLtUktBkPB8wYfIdJeSlgBLtYQ\",\n    \"scope\": \"openid me.update profile user.recover-username user.read me.read user.create password-policy.read me.update-password email user.reset-password\",\n    \"id_token\": \"eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoidWZmYjJ0UlU1NE9YaDI5VmlBVTh1dyIsInN1YiI6ImJqZW5zZW5AZXhhbXBsZS5jb20iLCJ6b25laW5mbyI6IkFtZXJpY2EvTG9zX0FuZ2VsZXMiLCJhdWRpdFRyYWNraW5nSWQiOiI2MTI4Nzk4Yy1iZWQzLTQzOTktYTNiMC01Y2EyNGVlNTgzN2QtMjU5NjU2IiwiaXNzIjoiaHR0cHM6Ly9vcGVuYW0ta2F0ZTA3MTBzLmZvcmdlYmxvY2tzLmNvbS9hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImxvY2FsZSI6ImVuLVVTIiwidGl0bGUiOiJNYXN0ZXIgQ2FycGVudGVyIiwiYWNyIjoiMCIsInVwZGF0ZWRfYXQiOjE1NjQwODUwNzQsImF6cCI6IjRjMjA4ODYxYzIwMjdkZTFiN2M1MTMyMDMyOWMwZDkyIiwiYXV0aF90aW1lIjoxNTY0MDg5OTExLCJuaWNrbmFtZSI6IkJhYnMiLCJleHAiOjE1NjQwOTQ4MjgsImlhdCI6MTU2NDA5MTIyOCwiZW1haWwiOiJiYWJzQGplbnNlbi5vcmciLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByb2ZpbGUiOiJodHRwczovL2xvZ2luLmV4YW1wbGUuY29tL2JqZW5zZW4iLCJnaXZlbl9uYW1lIjoiQmFyYmFyYSIsIm1pZGRsZV9uYW1lIjoiSmFuZSIsImF1ZCI6IjRjMjA4ODYxYzIwMjdkZTFiN2M1MTMyMDMyOWMwZDkyIiwiY19oYXNoIjoiTk5WaFNVSkdTaW5qV2ZvTEc5eVBQZyIsIm9yZy5mb3JnZXJvY2sub3BlbmlkY29ubmVjdC5vcHMiOiI5ZnQxQTBxWEc5UnJQQkNQWnIzMi1QT3BFTm8iLCJzX2hhc2giOiJiS0U5VXNwd3lJUGc4THNRSGtKYWlRIiwibmFtZSI6IkJhcmJhcmEgSmFuZSBKZW5zZW4iLCJyZWFsbSI6Ii8iLCJ0b2tlblR5cGUiOiJKV1RUb2tlbiIsImZhbWlseV9uYW1lIjoiSmVuc2VuIn0.iuzGUPbaIe4hXxUedZvFpHZrwnG7dJVf4lnBE3oDxRD990b1HPFJAsTj6q7-Z7aFYyuQ7qmsY1l-Z54lmT6fWsmVfKyc8ZOEWU0OgnYDVimqHSbpk_KcYOEM_qRMH0x5AUZCTR-5SDs5i7qe93Mf_d0Ngbv6ddCBRt8XFRbXkLgQXgP84YbqctbVKFsGfJFJjhwdefwSEa39kaSf0fjbWaq8bX1TiEdrTfAN5ukfAMeW8CTyIx61RgoB1GF8rLQPqVvpWTfxXo-5aXOdyKepwnM2UQTP1YD7xnSz0i_rK-kI0s_YxKp9U0vYmzLoLgrduUhIZeet_YNCKGgQjGoO-w\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599\n}"
+									"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjBlYjI4MTMwLWM3ZWQtNDA1Yy1hM2YzLTIwYWJiZWQ3NDZkYy0yMDAwMyIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMDczMC5mb3JnZWJsb2Nrcy5jb20vYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoiR0FYQjh3WXJwdU5aM3dfSER3YUxkMnRRSjdzIiwiYXVkIjoiYzI2N2Q1ZWIyMDA2NzI5YTIxZjc0ZGRiMzc2NTU5ODYiLCJuYmYiOjE1NjQ2MDU2NjQsImdyYW50X3R5cGUiOiJhdXRob3JpemF0aW9uX2NvZGUiLCJzY29wZSI6WyJvcGVuaWQiLCJtZS51cGRhdGUiLCJwcm9maWxlIiwidXNlci5yZWNvdmVyLXVzZXJuYW1lIiwidXNlci5yZWFkIiwibWUucmVhZCIsInVzZXIuY3JlYXRlIiwicGFzc3dvcmQtcG9saWN5LnJlYWQiLCJtZS51cGRhdGUtcGFzc3dvcmQiLCJlbWFpbCIsInVzZXIucmVzZXQtcGFzc3dvcmQiXSwiYXV0aF90aW1lIjoxNTY0NjA1NTA2LCJyZWFsbSI6Ii8iLCJleHAiOjE1NjQ2MDkyNjQsImlhdCI6MTU2NDYwNTY2NCwiZXhwaXJlc19pbiI6MzYwMCwianRpIjoiaUNzaU1MM2UwQWdMMnlqUGFMZTVja2ZPMUpVIn0.zn92RKz6yrsVjlnxE47_2CoUVvFvH1OsGLJry9vVD_3heLSlzHVGfQuFpS86r8pB6mhDgZkiTMVP1JAXlcTIOHkz2Ctt2k0aMj1Zp2K0Z72EQYceDuj6oGH1Y6jnxJKLM5uuGvDPHuWdvdStvQWmJh9wyOh7Ti3KDQ9uEtIfjgTSqr7oqXfK015JNF7UVAAxXZOKotAUuMMyMp9muNBiyYo8a1zYFSMNk-T6SAyIh63YUWBfWnLbw8XhwS9TYwDQDZ6vXAPzbYrDK85aavcHDLTRVl3t1jyM1nb7y1hA8cRc3-Y4i2rWEJK1eGFTfq2zAJaLcnTX6Z_qxoU2Oq61GA\",\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjBlYjI4MTMwLWM3ZWQtNDA1Yy1hM2YzLTIwYWJiZWQ3NDZkYy0yMDAwMiIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMDczMC5mb3JnZWJsb2Nrcy5jb20vYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoicmVmcmVzaF90b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IkdBWEI4d1lycHVOWjN3X0hEd2FMZDJ0UUo3cyIsImF1ZCI6ImMyNjdkNWViMjAwNjcyOWEyMWY3NGRkYjM3NjU1OTg2IiwiYWNyIjoiMCIsIm5iZiI6MTU2NDYwNTY2NCwib3BzIjoialdwQnotdHB5SFFBdjJKRmZIVzlJeTRXVEswIiwiZ3JhbnRfdHlwZSI6ImF1dGhvcml6YXRpb25fY29kZSIsInNjb3BlIjpbIm9wZW5pZCIsIm1lLnVwZGF0ZSIsInByb2ZpbGUiLCJ1c2VyLnJlY292ZXItdXNlcm5hbWUiLCJ1c2VyLnJlYWQiLCJtZS5yZWFkIiwidXNlci5jcmVhdGUiLCJwYXNzd29yZC1wb2xpY3kucmVhZCIsIm1lLnVwZGF0ZS1wYXNzd29yZCIsImVtYWlsIiwidXNlci5yZXNldC1wYXNzd29yZCJdLCJhdXRoX3RpbWUiOjE1NjQ2MDU1MDYsInJlYWxtIjoiLyIsImV4cCI6MTU2NTIxMDQ2NCwiaWF0IjoxNTY0NjA1NjY0LCJleHBpcmVzX2luIjo2MDQ4MDAsImp0aSI6IjY0QmNyVzNDVklJakl6OUxDYjdBeXIwSmNOYyJ9.lR5ChgkVhKUKZEuwZlKscGEs8QJqqN9AU0X82U7rNOPWzNGixRpp6MiKDP1YjtYzXRSru2lYaJ3-ImvnMqT1s9MhGVyRr9bcB-4mVCJLXBw2k9rkX8dbRpMSpkSVojLn11eWf85lYJ2PB7JLoDLwPOXNfYbMmWCsyxowoqRPJCn1xZp49N-PJ0sDfPKEydweIGCkpMjCbIcmYXDg66_NKtk6HgkGaJZ0mGlfWWoUdFWACNEtebWdkwmxB2RbGVGxW_gXoGaAeoOHNMk-Um9qS9LgvyRrJDno61L0iDDVOqkj7Yo-dmaw6Wh_2szuQisiTUT-nJj3KW6os5s1SFQM8w\",\n    \"scope\": \"openid me.update profile user.recover-username user.read me.read user.create password-policy.read me.update-password email user.reset-password\",\n    \"id_token\": \"eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoiMWNBYnNnaDlEVEhCQmJzQ25JbGJoZyIsInN1YiI6ImJqZW5zZW5AZXhhbXBsZS5jb20iLCJ6b25laW5mbyI6IkFtZXJpY2EvTG9zX0FuZ2VsZXMiLCJhdWRpdFRyYWNraW5nSWQiOiIwZWIyODEzMC1jN2VkLTQwNWMtYTNmMy0yMGFiYmVkNzQ2ZGMtMjAwMDYiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazA3MzAuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6ImlkX3Rva2VuIiwibG9jYWxlIjoiZW4tVVMiLCJ0aXRsZSI6Ik1hc3RlciBDYXJwZW50ZXIiLCJhY3IiOiIwIiwiYXpwIjoiYzI2N2Q1ZWIyMDA2NzI5YTIxZjc0ZGRiMzc2NTU5ODYiLCJhdXRoX3RpbWUiOjE1NjQ2MDU1MDYsIm5pY2tuYW1lIjoiQmFicyIsImV4cCI6MTU2NDYwOTI2NCwiaWF0IjoxNTY0NjA1NjY0LCJlbWFpbCI6ImJhYnNAamVuc2VuLm9yZyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJvZmlsZSI6Imh0dHBzOi8vbG9naW4uZXhhbXBsZS5jb20vYmplbnNlbiIsImdpdmVuX25hbWUiOiJCYXJiYXJhIiwibWlkZGxlX25hbWUiOiJKYW5lIiwiYXVkIjoiYzI2N2Q1ZWIyMDA2NzI5YTIxZjc0ZGRiMzc2NTU5ODYiLCJjX2hhc2giOiJpOEdZRzRJb0xCcWE4QldNZUItVnNnIiwib3JnLmZvcmdlcm9jay5vcGVuaWRjb25uZWN0Lm9wcyI6ImpXcEJ6LXRweUhRQXYySkZmSFc5SXk0V1RLMCIsInNfaGFzaCI6ImJLRTlVc3B3eUlQZzhMc1FIa0phaVEiLCJuYW1lIjoiQmFyYmFyYSBKYW5lIEplbnNlbiIsInJlYWxtIjoiLyIsInRva2VuVHlwZSI6IkpXVFRva2VuIiwiZmFtaWx5X25hbWUiOiJKZW5zZW4ifQ.KPVl6VUTi0do5YzU5fXfDbSVGpzmQCEylamWbiKYaghaunckNuYnwR2e9GhTgXZ-6dB-j9SIcL-CZfc8R0JgG-NbVhwQhADSC4zn5_bVTCQrUF0C6m_N7mA4ghjgmUZCDhIdElGp8o6VuFNRqWIVETMNXo8DXTVO3XHEq4H4GV3OtpTR84BKuiK344cCtbp9_FGkvf37YPRrsLv5z7JUlikJONTqCN-4r-MKfjM0ypzqnkuWpfEZW6XLxbt2WGF2f8Vf8Vad6K1F_sijxwJ4Kd-QqGvi4OA8Mc6OEdasg51DBlRRmdNi1jACM8k7Eowco_E3c4pojIGzrtgGQjyyZA\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599\n}"
 								}
 							]
 						}
@@ -6171,11 +6167,11 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "1519"
+											"value": "1516"
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 24 Jul 2019 14:51:10 GMT"
+											"value": "Wed, 31 Jul 2019 22:23:37 GMT"
 										},
 										{
 											"key": "Via",
@@ -6187,7 +6183,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiYmRhYzI4NGIyYjBjN2QwZDFiYTBlZDBkNzQ0ODExNyIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiI2MTI4Nzk4Yy1iZWQzLTQzOTktYTNiMC01Y2EyNGVlNTgzN2QtMjMzMDA2IiwiaXNzIjoiaHR0cHM6Ly9vcGVuYW0ta2F0ZTA3MTBzLmZvcmdlYmxvY2tzLmNvbS9hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJGOXlSTnQtbnNoMzRBOFJrd0UwaEx0T0V6MmciLCJhdWQiOiJiYmRhYzI4NGIyYjBjN2QwZDFiYTBlZDBkNzQ0ODExNyIsIm5iZiI6MTU2Mzk3OTg3MCwiZ3JhbnRfdHlwZSI6ImNsaWVudF9jcmVkZW50aWFscyIsInNjb3BlIjpbInVzZXIucmVhZCIsInVzZXIuY3JlYXRlIiwicGFzc3dvcmQtcG9saWN5LnJlYWQiLCJ1c2VyLnVwZGF0ZSIsImFwcC5yZWFkIiwiZW1haWwtdGVtcGxhdGUucmVhZCIsInVzZXIucmVjb3Zlci11c2VybmFtZSIsInVzZXIucmVzZXQtcGFzc3dvcmQiXSwiYXV0aF90aW1lIjoxNTYzOTc5ODcwLCJyZWFsbSI6Ii8iLCJleHAiOjE1NjQwMTU4NzAsImlhdCI6MTU2Mzk3OTg3MCwiZXhwaXJlc19pbiI6MzYwMDAsImp0aSI6IjE4OUdOTnc1MjVVN09aM1E2ZzJsZUljZFZVbyJ9.RI0UckKFVaz224f6Fzkh1xxPUZSrzETakZl274jADF3cerfuyc9mVtwSdI5jMq8_Ev-Q6l5aXe3o8ay2o8qCbQdUbE90pGNEpxBEcnDpLFaR7pzWYGvszlSOwQcsYEixDlscn9OGfDm-5AvUQNSt1GkLRT6Xv0q1or_MawXZq9Cs7FuyYqrT_3Qid3tkem-3-1swNt6lJtovXt9eH50zrRH74s-1XcuxypiB3MAzjaWihQC4EtOLLzpPSffebh4nfO8H1mdUWCQfef3yqPyq9yjsMXRw-xYjn_-akVfnXO9-qRowVqD00dWTUHX6aRSSkJhsbJUyvukLHjtDLpnzGA\",\n    \"scope\": \"user.read user.create password-policy.read user.update app.read email-template.read user.recover-username user.reset-password\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 35999\n}"
+									"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIyOTllNGMyOGJmMTZmMmQ5ZDg3NDEzYTJhMmQwN2I2YiIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiIwZWIyODEzMC1jN2VkLTQwNWMtYTNmMy0yMGFiYmVkNzQ2ZGMtMjMwOTgiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazA3MzAuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IkJhd0ZzSkZCcEtGS2o0RXVCVi0xRjhxbVZabyIsImF1ZCI6IjI5OWU0YzI4YmYxNmYyZDlkODc0MTNhMmEyZDA3YjZiIiwibmJmIjoxNTY0NjExODE3LCJncmFudF90eXBlIjoiY2xpZW50X2NyZWRlbnRpYWxzIiwic2NvcGUiOlsidXNlci51cGRhdGUiLCJhcHAucmVhZCIsInVzZXIucmVjb3Zlci11c2VybmFtZSIsInVzZXIucmVhZCIsInVzZXIuY3JlYXRlIiwicGFzc3dvcmQtcG9saWN5LnJlYWQiLCJlbWFpbC10ZW1wbGF0ZS5yZWFkIiwidXNlci5yZXNldC1wYXNzd29yZCJdLCJhdXRoX3RpbWUiOjE1NjQ2MTE4MTcsInJlYWxtIjoiLyIsImV4cCI6MTU2NDYxNTQxNywiaWF0IjoxNTY0NjExODE3LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJyWkU2dXRNWWhyQVBwdHJWYzRjMFNtbVE4bXcifQ.IW1eJzmZsUEafiCPMfoJpvcssBgvcez8UlMA4BzRG5eiBlclTu2Wli5lG8mZtq3of44s666YIxmAF6Oad8fCSaLwMngtFi42sz1dK_TU6soxQfTUQLjuP_8ysy981WV2JZELA6rC2SfU5VcgShwgLfF8PegP4SdcT_I53NO5uZOJxKDXAXT-Pr8vVWeRu3NKfOFSH3-5f-0L2pzZJPB7Tw5MbGmDDerRAiSIkLO3H1JuI9X2yqapRpeyaKl-IjeuSR8xbk1n_jQt-ixcF5Gh2cBqbcA-QdMF-5-WmWud1iRzzmQSMNquGOEu1nQeMEBgPKgidiJN-PLWFe3WbjbfSA\",\n    \"scope\": \"user.update app.read user.recover-username user.read user.create password-policy.read email-template.read user.reset-password\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599\n}"
 								}
 							]
 						},
@@ -6316,11 +6312,11 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "1912"
+											"value": "1913"
 										},
 										{
 											"key": "Date",
-											"value": "Wed, 24 Jul 2019 14:23:07 GMT"
+											"value": "Wed, 31 Jul 2019 20:38:05 GMT"
 										},
 										{
 											"key": "Via",
@@ -6332,7 +6328,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiI2MDhlN2JjZjM4ODE3YmY1MWJhMWJjYjcyOGIwYjNlMSIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiI2MTI4Nzk4Yy1iZWQzLTQzOTktYTNiMC01Y2EyNGVlNTgzN2QtMjMyMjUzIiwiaXNzIjoiaHR0cHM6Ly9vcGVuYW0ta2F0ZTA3MTBzLmZvcmdlYmxvY2tzLmNvbS9hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJSR3U3aHROWm1IcE1PYkNsVGxEVXloTnJVNzAiLCJhdWQiOiI2MDhlN2JjZjM4ODE3YmY1MWJhMWJjYjcyOGIwYjNlMSIsIm5iZiI6MTU2Mzk3ODE4NywiZ3JhbnRfdHlwZSI6ImNsaWVudF9jcmVkZW50aWFscyIsInNjb3BlIjpbInVzZXIuZGVsZXRlIiwidXNlci51cGRhdGUiLCJhcHAuY3JlYXRlIiwiZW1haWwtdGVtcGxhdGUudXBkYXRlIiwiYXBwLnJlYWQiLCJ1c2VyLnJlY292ZXItdXNlcm5hbWUiLCJhcHAudXBkYXRlIiwidXNlci5yZWFkIiwidXNlci5jcmVhdGUiLCJwYXNzd29yZC1wb2xpY3kucmVhZCIsImFwcC5kZWxldGUiLCJob3N0ZWQtcGFnZS1jb25maWcucmVhZCIsInBhc3N3b3JkLXBvbGljeS51cGRhdGUiLCJlbWFpbC10ZW1wbGF0ZS5yZWFkIiwiaG9zdGVkLXBhZ2UtY29uZmlnLnVwZGF0ZSIsImFwcC5yZWZyZXNoLXNlY3JldCIsInVzZXIucmVzZXQtcGFzc3dvcmQiXSwiYXV0aF90aW1lIjoxNTYzOTc4MTg3LCJyZWFsbSI6Ii8iLCJleHAiOjE1NjM5ODE3ODcsImlhdCI6MTU2Mzk3ODE4NywiZXhwaXJlc19pbiI6MzYwMCwianRpIjoiQUdNeW5NODdxb3BBYTZMa04yZ2dDaEZaUW40In0.yHdBgheLfSh9oHsDAGpbKSntA20RgELpoC3_7bfHaLwyLR9MH7csPVXdxkM3A9DsdLT-PjUV4QkWfLfizkBXauNCwyCK2mc2kOahj5C6kv0ab0yRwcsglCJOXrwuFsxhqloELNwBk2TNeSd4kiQcSEHt6MFXp3q62IOtGoTb0APjT0HEH6c-26ePqcSNREaDNwCXIcjVS2XM73a05o-9QiagtETzaAH92nLtU5kITbkS7s19UabMrSqyTv5hVURCdp4pEglfu8-CU2PmI9m4--5jDmhbWY5GLTjDExSwkWRrnQss5kmb4Y64wtmWIeIhjJCBe2FtPHMRyh9jml-AsQ\",\n    \"scope\": \"user.delete user.update app.create email-template.update app.read user.recover-username app.update user.read user.create password-policy.read app.delete hosted-page-config.read password-policy.update email-template.read hosted-page-config.update app.refresh-secret user.reset-password\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599\n}"
+									"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiIwNmFkZGJhMzM4MmE2NWU5NDg0YWNlYmE1NjlmOTYxMiIsImN0cyI6Ik9BVVRIMl9TVEFURUxFU1NfR1JBTlQiLCJhdWRpdFRyYWNraW5nSWQiOiIwZWIyODEzMC1jN2VkLTQwNWMtYTNmMy0yMGFiYmVkNzQ2ZGMtMTk2MzYiLCJpc3MiOiJodHRwczovL29wZW5hbS1zcGFyazA3MzAuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IlNkcjhKUXZMTWRxNjMwSFUzWjFxeUZrT3k4TSIsImF1ZCI6IjA2YWRkYmEzMzgyYTY1ZTk0ODRhY2ViYTU2OWY5NjEyIiwibmJmIjoxNTY0NjA1NDg1LCJncmFudF90eXBlIjoiY2xpZW50X2NyZWRlbnRpYWxzIiwic2NvcGUiOlsidXNlci5kZWxldGUiLCJ1c2VyLnVwZGF0ZSIsImFwcC5jcmVhdGUiLCJlbWFpbC10ZW1wbGF0ZS51cGRhdGUiLCJhcHAucmVhZCIsInVzZXIucmVjb3Zlci11c2VybmFtZSIsImFwcC51cGRhdGUiLCJ1c2VyLnJlYWQiLCJ1c2VyLmNyZWF0ZSIsInBhc3N3b3JkLXBvbGljeS5yZWFkIiwiYXBwLmRlbGV0ZSIsImhvc3RlZC1wYWdlLWNvbmZpZy5yZWFkIiwicGFzc3dvcmQtcG9saWN5LnVwZGF0ZSIsImVtYWlsLXRlbXBsYXRlLnJlYWQiLCJob3N0ZWQtcGFnZS1jb25maWcudXBkYXRlIiwiYXBwLnJlZnJlc2gtc2VjcmV0IiwidXNlci5yZXNldC1wYXNzd29yZCJdLCJhdXRoX3RpbWUiOjE1NjQ2MDU0ODUsInJlYWxtIjoiLyIsImV4cCI6MTU2NDY0MTQ4NSwiaWF0IjoxNTY0NjA1NDg1LCJleHBpcmVzX2luIjozNjAwMCwianRpIjoiWGxkOC1ZRW1lYWYwSHNOR25GQlotYlZyVkdrIn0.UbTI1EU_d13cpVFWrxH7ZIJrhrioMkemtxZRABOmc5he82F0y0WoOIworDnN9xp9U3Q_0ZbzRYi1VLdXHDHEyOhAg8fjCVe6WzEyN_mCt_gVPinYwacbKZlqVABY_pxyBzJt7itpgc9-AuXI6tNDyfGEDh9tuJ8xbOc7G70IVxUE5JuRTsxBX8QhTVIdbUGLz-gG8uSWdrz72wnbw0XUdhBu3IWhbE3kd0Yxa1fnUL-unOIAg5VKs9QKlgDf9Zminrt1Rb-Mq_W_7q5qWn1cN7anTKJ2QNN3Bd3b3me5FsN2VwHY-b9JzROjH2fqTg-RsHqMuzw4YCAJ5Ax5JIHRoA\",\n    \"scope\": \"user.delete user.update app.create email-template.update app.read user.recover-username app.update user.read user.create password-policy.read app.delete hosted-page-config.read password-policy.update email-template.read hosted-page-config.update app.refresh-secret user.reset-password\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 35999\n}"
 								}
 							]
 						}
@@ -6542,11 +6538,11 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "4289"
+											"value": "4232"
 										},
 										{
 											"key": "Date",
-											"value": "Thu, 25 Jul 2019 21:54:09 GMT"
+											"value": "Wed, 31 Jul 2019 22:22:50 GMT"
 										},
 										{
 											"key": "Via",
@@ -6558,7 +6554,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjYxMjg3OThjLWJlZDMtNDM5OS1hM2IwLTVjYTI0ZWU1ODM3ZC0yNTk5NTAiLCJpc3MiOiJodHRwczovL29wZW5hbS1rYXRlMDcxMHMuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6InZaOXNQUmlyd3J0QTJvbjRiOU5lRnpHVzhxTSIsImF1ZCI6IjRjMjA4ODYxYzIwMjdkZTFiN2M1MTMyMDMyOWMwZDkyIiwibmJmIjoxNTY0MDkxNjQ5LCJncmFudF90eXBlIjoicGFzc3dvcmQiLCJzY29wZSI6WyJvcGVuaWQiLCJtZS51cGRhdGUiLCJwcm9maWxlIiwidXNlci5yZWNvdmVyLXVzZXJuYW1lIiwidXNlci5yZWFkIiwibWUucmVhZCIsInVzZXIuY3JlYXRlIiwicGFzc3dvcmQtcG9saWN5LnJlYWQiLCJtZS51cGRhdGUtcGFzc3dvcmQiLCJlbWFpbCIsInVzZXIucmVzZXQtcGFzc3dvcmQiXSwiYXV0aF90aW1lIjoxNTY0MDkxNjQ5LCJyZWFsbSI6Ii8iLCJleHAiOjE1NjQwOTUyNDksImlhdCI6MTU2NDA5MTY0OSwiZXhwaXJlc19pbiI6MzYwMCwianRpIjoiTFlJY3ZLb1BPb0dhME4tQ3RqT2tLeldJVDJNIn0.cH6zAsB-XvE4LE3MkzxyCIQFHvsD0VIvT-ZxFP_qM1n_gc2slWEXzTOaHAkbqbbfV5nIBu6p7YVhtI1yyXxJLvsi2wb07zwd9NjqNx25WNFy6auS9fz0BSMkuLmNzeFOociCqaZwl3j8VwsiMRYpB-S3D2GqEG8Sk4rACM9hZE63nkS0AKyfRPt8OAYspJtYE9Ramqj03HqE1TVrznexAFKLarMZlr0PgivRtbB5kP7Gb08z8GvCPxXEGMnZ1Lz4TEjB9wT-GMzrmOaodoES8dUNLmWcnF0jmudg2OcK06i6Ip1ol_2Tcym-CZgvrlLId0COl7r2hdqePqSxnmLhWw\",\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjYxMjg3OThjLWJlZDMtNDM5OS1hM2IwLTVjYTI0ZWU1ODM3ZC0yNTk5NDkiLCJpc3MiOiJodHRwczovL29wZW5hbS1rYXRlMDcxMHMuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6InJlZnJlc2hfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJ2WjlzUFJpcndydEEyb240YjlOZUZ6R1c4cU0iLCJhdWQiOiI0YzIwODg2MWMyMDI3ZGUxYjdjNTEzMjAzMjljMGQ5MiIsIm5iZiI6MTU2NDA5MTY0OSwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIiwic2NvcGUiOlsib3BlbmlkIiwibWUudXBkYXRlIiwicHJvZmlsZSIsInVzZXIucmVjb3Zlci11c2VybmFtZSIsInVzZXIucmVhZCIsIm1lLnJlYWQiLCJ1c2VyLmNyZWF0ZSIsInBhc3N3b3JkLXBvbGljeS5yZWFkIiwibWUudXBkYXRlLXBhc3N3b3JkIiwiZW1haWwiLCJ1c2VyLnJlc2V0LXBhc3N3b3JkIl0sImF1dGhfdGltZSI6MTU2NDA5MTY0OSwicmVhbG0iOiIvIiwiZXhwIjoxNTY0Njk2NDQ5LCJpYXQiOjE1NjQwOTE2NDksImV4cGlyZXNfaW4iOjYwNDgwMCwianRpIjoiM0lfS0k0VW9aR1NZa01TdGFfNE5tV1FqbWJ3In0.g_GOwHMp0X4PpzizA3OAs301G6ROXENpFXEb_1Ieam9d-_iQMpsZ6gruyXoEuptNskXyJlMJiwZV12kAXZqtPBMNyjMCKDmwUJGFpnjfHW_olGO3e-ph6slmyZtI3NtXQcWcmZV_wWXdQYqE9i-q_0I55N1WxU46IPO7nhiyUeT7VzUtqmgWRExlOjK9-4LfF6pzxBI_nDsJl_XTZO5z_JiiBtf7McfyLD5HvmtOcDI1lVmmvPM8WaSTRwQFqvTYlBuoepDCDZimT__9uMVhT2UmMySiCCUtVo3qfWyzv6PUq2H9Z7B6hyAC4u-4gF3zrBFwOyTuEmj6x2Xs0zq-5A\",\n    \"scope\": \"openid me.update profile user.recover-username user.read me.read user.create password-policy.read me.update-password email user.reset-password\",\n    \"id_token\": \"eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoickFMQlppTGtxcjFPNi1NU1BsekV3QSIsInN1YiI6ImJqZW5zZW5AZXhhbXBsZS5jb20iLCJ6b25laW5mbyI6IkFtZXJpY2EvTG9zX0FuZ2VsZXMiLCJhdWRpdFRyYWNraW5nSWQiOiI2MTI4Nzk4Yy1iZWQzLTQzOTktYTNiMC01Y2EyNGVlNTgzN2QtMjU5OTUxIiwiaXNzIjoiaHR0cHM6Ly9vcGVuYW0ta2F0ZTA3MTBzLmZvcmdlYmxvY2tzLmNvbS9hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImxvY2FsZSI6ImVuLVVTIiwidGl0bGUiOiJNYXN0ZXIgQ2FycGVudGVyIiwidXBkYXRlZF9hdCI6MTU2NDA4NTA3NCwiYXpwIjoiNGMyMDg4NjFjMjAyN2RlMWI3YzUxMzIwMzI5YzBkOTIiLCJhdXRoX3RpbWUiOjE1NjQwOTE2NDksIm5pY2tuYW1lIjoiQmFicyIsImV4cCI6MTU2NDA5NTI0OSwiaWF0IjoxNTY0MDkxNjQ5LCJlbWFpbCI6ImJhYnNAamVuc2VuLm9yZyIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwicHJvZmlsZSI6Imh0dHBzOi8vbG9naW4uZXhhbXBsZS5jb20vYmplbnNlbiIsImdpdmVuX25hbWUiOiJCYXJiYXJhIiwibWlkZGxlX25hbWUiOiJKYW5lIiwiYXVkIjoiNGMyMDg4NjFjMjAyN2RlMWI3YzUxMzIwMzI5YzBkOTIiLCJuYW1lIjoiQmFyYmFyYSBKYW5lIEplbnNlbiIsInJlYWxtIjoiLyIsInRva2VuVHlwZSI6IkpXVFRva2VuIiwiZmFtaWx5X25hbWUiOiJKZW5zZW4ifQ.tCUxrMebpzgRCbWpD9teHzbwKfd1B9iu-w6XQUA8RHqnfqlhTlWy__ctw2ZJOpzHo853HjvVQ9Mq1s8GVDAbs8ZlakE6EBrUUog5MML4GPgEDmWzxzhkO1guq5e0QgfGg9amniSYZJbIrKEnzol0l8Prr21kSgI3NhnGmFCfrU0yHAGCyg1Esgx6SDKCIGoQe_5q8ObPGKG14dQGZDrzC-ZlrPHEZpXxPkoV8INkk-l2_lYkUAYyAOOaZl_jT1KA2v4VOUi4srhrTT3tlRsHb9vkg4_NreObZleU4ZYNMjJDHH_Pf7TLqFtqED3tS1Wk9zyN8TQ9SCJ5oe07oNxwCw\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599\n}"
+									"body": "{\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjBlYjI4MTMwLWM3ZWQtNDA1Yy1hM2YzLTIwYWJiZWQ3NDZkYy0yMjkyNCIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMDczMC5mb3JnZWJsb2Nrcy5jb20vYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoiYWNjZXNzX3Rva2VuIiwidG9rZW5fdHlwZSI6IkJlYXJlciIsImF1dGhHcmFudElkIjoicXhzQU5XcVN2TlpieWVlVkk1WUtubFJrU3NvIiwiYXVkIjoiYzI2N2Q1ZWIyMDA2NzI5YTIxZjc0ZGRiMzc2NTU5ODYiLCJuYmYiOjE1NjQ2MTE3NzEsImdyYW50X3R5cGUiOiJwYXNzd29yZCIsInNjb3BlIjpbIm9wZW5pZCIsIm1lLnVwZGF0ZSIsInByb2ZpbGUiLCJ1c2VyLnJlY292ZXItdXNlcm5hbWUiLCJ1c2VyLnJlYWQiLCJtZS5yZWFkIiwidXNlci5jcmVhdGUiLCJwYXNzd29yZC1wb2xpY3kucmVhZCIsIm1lLnVwZGF0ZS1wYXNzd29yZCIsImVtYWlsIiwidXNlci5yZXNldC1wYXNzd29yZCJdLCJhdXRoX3RpbWUiOjE1NjQ2MTE3NzEsInJlYWxtIjoiLyIsImV4cCI6MTU2NDYxNTM3MSwiaWF0IjoxNTY0NjExNzcxLCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJ0aWNxZGFINnJmNFBHbnVqbWd5cExMbVN2c3MifQ.Mvc7IZqA35dEFx-3lTzCJl6XSwO4qeyc0fD8S50MO19o0E7xXNW5TJpgeeIj_M7L7eCQxGbdMn1lpr-XV-QOl3S7lC9pjZEOCbEnwXQaDE7URB_V0GheCx62DzrgkANt_0fVQS3OoM5PqK5thr5Pw3ncBIeylF42d7gZ50pCwQKK9sGQcADZuAj8y0muEDMYzup_bBpO22URnBqeXEAmMvD4O09QonTuAtJSh8KD5Dj1cIcuH7u8IEhHiHuutEPSA9MRLilrZ4STa6rpTUeAc-srUmhEOqva1RgXb25-s13Xb7vTnWA6tXN_CE0_smM2Saih4q2e6ejOPvghk0nj7g\",\n    \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjBlYjI4MTMwLWM3ZWQtNDA1Yy1hM2YzLTIwYWJiZWQ3NDZkYy0yMjkyMyIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXNwYXJrMDczMC5mb3JnZWJsb2Nrcy5jb20vYW0vb2F1dGgyIiwidG9rZW5OYW1lIjoicmVmcmVzaF90b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6InF4c0FOV3FTdk5aYnllZVZJNVlLbmxSa1NzbyIsImF1ZCI6ImMyNjdkNWViMjAwNjcyOWEyMWY3NGRkYjM3NjU1OTg2IiwibmJmIjoxNTY0NjExNzcxLCJncmFudF90eXBlIjoicGFzc3dvcmQiLCJzY29wZSI6WyJvcGVuaWQiLCJtZS51cGRhdGUiLCJwcm9maWxlIiwidXNlci5yZWNvdmVyLXVzZXJuYW1lIiwidXNlci5yZWFkIiwibWUucmVhZCIsInVzZXIuY3JlYXRlIiwicGFzc3dvcmQtcG9saWN5LnJlYWQiLCJtZS51cGRhdGUtcGFzc3dvcmQiLCJlbWFpbCIsInVzZXIucmVzZXQtcGFzc3dvcmQiXSwiYXV0aF90aW1lIjoxNTY0NjExNzcxLCJyZWFsbSI6Ii8iLCJleHAiOjE1NjUyMTY1NzEsImlhdCI6MTU2NDYxMTc3MSwiZXhwaXJlc19pbiI6NjA0ODAwLCJqdGkiOiJ1V2d4ZW42MGY1QmZLcWtLR3lQdDFqNFFsczQifQ.QGlAlrVbAY_nk10zmJ4999iK1--dhH1nj7fPxNoAx7IvIDp-A1vg-TckHNtvoPr7ZEaeqN2iX4ccbtj4LE4LRpbb772L41exVfJzCqZT5F3AddFXgllLYE66ydoLd0Grslry5N6Pk2IoLnt1jjuysAPJ9m8ACPxuGuoQ3rHktujgaZcRzFDRv98T1GdS4Da6WmgEN-SQ5skKbfARYiTwTmrHG5s9SGQQ5nnoNZjRYv0XZ7SgSKMMx1-5gAcY8QhpFqUQIdhc2Sqq9_4S9-syqggZBO5dadILAf-YcEYhVh1AqDXVYH4xLaLoUCkMN8d8rIOjZK36--Qug0dLYbi67w\",\n    \"scope\": \"openid me.update profile user.recover-username user.read me.read user.create password-policy.read me.update-password email user.reset-password\",\n    \"id_token\": \"eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoidC1UNlNLU2l5blJIQlktMU9Ucm9uZyIsInN1YiI6ImJqZW5zZW5AZXhhbXBsZS5jb20iLCJ6b25laW5mbyI6IkFtZXJpY2EvTG9zX0FuZ2VsZXMiLCJhdWRpdFRyYWNraW5nSWQiOiIwZWIyODEzMC1jN2VkLTQwNWMtYTNmMy0yMGFiYmVkNzQ2ZGMtMjI5MjYiLCJwcm9maWxlIjoiaHR0cHM6Ly9sb2dpbi5leGFtcGxlLmNvbS9iamVuc2VuIiwiaXNzIjoiaHR0cHM6Ly9vcGVuYW0tc3BhcmswNzMwLmZvcmdlYmxvY2tzLmNvbS9hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImxvY2FsZSI6ImVuLVVTIiwiZ2l2ZW5fbmFtZSI6IkJhcmJhcmEiLCJ0aXRsZSI6Ik1hc3RlciBDYXJwZW50ZXIiLCJhdWQiOiJjMjY3ZDVlYjIwMDY3MjlhMjFmNzRkZGIzNzY1NTk4NiIsInVwZGF0ZWRfYXQiOjE1NjQ2MTE1NTIsImF6cCI6ImMyNjdkNWViMjAwNjcyOWEyMWY3NGRkYjM3NjU1OTg2IiwiYXV0aF90aW1lIjoxNTY0NjExNzcxLCJuYW1lIjoiQmFyYmFyYSBKZW5zZW4iLCJuaWNrbmFtZSI6IkJhYnMiLCJyZWFsbSI6Ii8iLCJleHAiOjE1NjQ2MTUzNzEsInRva2VuVHlwZSI6IkpXVFRva2VuIiwiZmFtaWx5X25hbWUiOiJKZW5zZW4iLCJpYXQiOjE1NjQ2MTE3NzEsImVtYWlsIjoiamFsbGVuQHNwYXJraWRlbnRpdHkuY29tIn0.FsDh7sfm59708MCn29CxhSsX3IAYS0CG3SdxvsMmXqQm19m2xpR2m5ntdxsCAfJZUceg2VtD69_7lNqs1tEmn6M9wDv1DtnDl0oZT1hGnV11DqS0gwuZ1wdr48OpTvUAs-u_MLngcTGSLGqWegiZhAMzM3AbtVYVqc4a_5qloGcx3WaVUiyekRE2JS-AEzVcCuwROsNgQBobphZ7DF0NFjyOVZ4y4T9jF4K23TngwsfDKcWIRXoLmT_Cfxy_BjpB9UGJHJOmEl-Wzefl2gM313V3f6w8RuTuuXkJZaF3I2Nb5zzhsYRQxpKOwmt47kkE2y-UjnTNDIKsHlWN4kp_Ag\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 3599\n}"
 								}
 							]
 						}
