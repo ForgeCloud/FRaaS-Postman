@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8d0a7f0d-d40c-4d41-8e8f-c482a93b8aef",
+		"_postman_id": "5330778f-aaca-485c-b834-c09df8eb88ba",
 		"name": "Express CIAM Beta APIs",
 		"description": "The ForgeRock Identity Cloud includes two sets of APIs:\n\n* Management APIs: To manage configuration of Express CIAM \n\n* Authentication APIs: To authenticate users and obtain and manage `access_token`, `id_token` and `refresh_token`\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -5412,7 +5412,7 @@
 										}
 									],
 									"cookie": [],
-									"body": null
+									"body": ""
 								}
 							]
 						},
@@ -5814,7 +5814,7 @@
 										}
 									],
 									"cookie": [],
-									"body": null
+									"body": ""
 								}
 							]
 						},
@@ -6974,7 +6974,7 @@
 									"urlencoded": [
 										{
 											"key": "token",
-											"value": "{{userAccessToken}}",
+											"value": "{{accessToken}}",
 											"type": "text"
 										},
 										{
@@ -7022,12 +7022,12 @@
 												},
 												{
 													"key": "client_id",
-													"value": "{{clientId}}",
+													"value": "{{webClientId}}",
 													"type": "text"
 												},
 												{
 													"key": "client_secret",
-													"value": "{{clientSecret}}",
+													"value": "{{webSecret}}",
 													"type": "text"
 												}
 											]
@@ -7043,12 +7043,41 @@
 											]
 										}
 									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "Text",
-									"header": [],
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1464"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 07 Aug 2019 13:32:06 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "clear"
+										}
+									],
 									"cookie": [],
-									"body": "{}"
+									"body": "{\n    \"error_description\": \"The provided token id : eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6ImFkZTZiMmI2LTZkN2EtNGRlMi05N2RkLTliMGE1NGQzZTNkNi04NTUzNCIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXBlYmJsZS1iYW5rLmZvcmdlYmxvY2tzLmNvbS9hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJpa2tPcGNlV3lQMS1fNW9PNXFlbDJuSnZqdnciLCJhdWQiOiJmMzcyYzRlNmQwZjI4MmM3ZTY2MDAxOGVlZjBjMjI3NSIsIm5iZiI6MTU2NTE4NDcyMCwiZ3JhbnRfdHlwZSI6ImF1dGhvcml6YXRpb25fY29kZSIsInNjb3BlIjpbInVzZXIucmVhZCIsIm1lLnJlYWQiLCJ1c2VyLmNyZWF0ZSIsInBhc3N3b3JkLXBvbGljeS5yZWFkIiwib3BlbmlkIiwibWUudXBkYXRlIiwicHJvZmlsZSIsIm1lLnVwZGF0ZS1wYXNzd29yZCIsImVtYWlsIiwidXNlci5yZWNvdmVyLXVzZXJuYW1lIiwidXNlci5yZXNldC1wYXNzd29yZCJdLCJhdXRoX3RpbWUiOjE1NjUxODQ1OTMsInJlYWxtIjoiLyIsImV4cCI6MTU2NTE4ODMyMCwiaWF0IjoxNTY1MTg0NzIwLCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJfUW54UmtRWVZ3ckdqVzhwT3FLNlFoR2tPeU0ifQ.gWhK73vM0EcD2CvpvT81XfHXwFcvc6okkEn465LEnS5Mml9p_jC3Re1OAvI4OHFY5DZQuh7IzO7sgsOXLmHX1gyA0VZPWyfLPBrV1wWintFgC_qKluMLhANQnq9WvkUA0i7-cV4SDp_72ZrewfUTNDQvekWO0bqx7L0V2VBqH-PowUVrzMLWHwmOA9qV4O_NuxdiANDFlZY7-tYIDI3PCHx34WzdMlxtzPFJ3EAVwT-_oy1slO6UEcBk36cxvA52iNsNpDbNKexFH-kd36JSwG1TbvZGtwmjZnuZGjNrQyAyA7xpnpiKUBh83T7nvfCfOwzl470bDKjc6hnb437y2Q belongs to different access grant.\",\n    \"error\": \"invalid_grant\"\n}"
 								}
 							]
 						}
