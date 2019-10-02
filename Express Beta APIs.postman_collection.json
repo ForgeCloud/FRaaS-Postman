@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "782ce4ec-adb9-4890-8c74-f4dd3587de6d",
+		"_postman_id": "845921cb-7275-4223-827f-c98b3335c86f",
 		"name": "Express Beta APIs",
-		"description": "The ForgeRock Identity Cloud includes two sets of APIs:\n\n* Management APIs: To manage configuration of Express \n\n* Authentication APIs: To authenticate users and obtain and manage `access_token`, `id_token` and `refresh_token`\n",
+		"description": "The ForgeRock Identity Cloud includes two sets of APIs:\n\n* Management APIs: To manage configuration of Express \n\n* Authentication APIs: To authenticate users and obtain and manage `access_token`, `id_token` and `refresh_token`\n\n(Git commit 8ae35679)\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -12,6 +12,357 @@
 				{
 					"name": "Apps",
 					"item": [
+						{
+							"name": "Apps and Tokens",
+							"item": [
+								{
+									"name": "Get Access Token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "446df8ac-6ada-41a3-81b5-1bfd7e092068",
+												"exec": [
+													"var json = JSON.parse(responseBody);",
+													"",
+													"if (json.token) { ",
+													"  pm.environment.set(\"accessToken\",json.token);",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"email\":\"{{teamMemberName}}\",\n  \"password\":\"{{teamMemberPassword}}\"\n}"
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/auth/signin",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"auth",
+												"signin"
+											]
+										},
+										"description": "Get the access_token for your tenant. Used in subsequent REST calls."
+									},
+									"response": [
+										{
+											"name": "Get Access Token",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"email\":\"{{teamMemberName}}\",\n  \"password\":\"{{teamMemberPassword}}\"\n}"
+												},
+												"url": {
+													"raw": "{{tenantApiV1Url}}/auth/signin",
+													"host": [
+														"{{tenantApiV1Url}}"
+													],
+													"path": [
+														"auth",
+														"signin"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "526"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"20e-Lp03K81+ujCr3lPKGsT93pO6yNk\""
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 09 Sep 2019 22:31:35 GMT"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "clear"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"expires\": \"2019-09-09T23:31:35+00:00\",\n    \"token\": \"<accessToken>\",\n    \"user\": {\n        \"email\": \"team.member@example.com\",\n        \"firstName\": \"Team\",\n        \"lastName\": \"Member\",\n        \"session\": \"129d5eee-300d-49c9-b80d-06bacecb79db\"\n    }\n}"
+										}
+									]
+								},
+								{
+									"name": "Get Apps",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{tenantApiV1Url}}/apps",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"apps"
+											]
+										},
+										"description": "Retreives details for all configured apps in Express "
+									},
+									"response": [
+										{
+											"name": "Get Apps",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{tenantApiV1Url}}/apps",
+													"host": [
+														"{{tenantApiV1Url}}"
+													],
+													"path": [
+														"apps"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "2802"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"af2-nEhgAva65TnIezVMDEPM41R/O5M\""
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 25 Jul 2019 14:45:52 GMT"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "clear"
+												}
+											],
+											"cookie": [],
+											"body": "[\n  {\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n      \"app.read\",\n      \"password-policy.read\",\n      \"user.reset-password\",\n      \"user.recover-username\",\n      \"user.create\",\n      \"user.read\",\n      \"user.update\",\n      \"app.delete\",\n      \"app.update\",\n      \"app.create\",\n      \"app.refresh-secret\",\n      \"email-template.update\",\n      \"hosted-page-config.update\",\n      \"email-template.read\",\n      \"hosted-page-config.read\",\n      \"user.delete\",\n      \"password-policy.update\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"608e7bcf38817bf51ba1bcb728b0b3e1\",\n    \"customClaims\": {},\n    \"description\": \"An updated M2M app\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n      \"clientCredentials\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [],\n    \"name\": \"Express Default App\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": null,\n    \"type\": \"m2m\"\n  },\n  {\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n      \"me.read\",\n      \"me.update\",\n      \"me.update-password\",\n      \"password-policy.read\",\n      \"user.reset-password\",\n      \"user.recover-username\",\n      \"user.create\",\n      \"user.read\",\n      \"openid\",\n      \"profile\",\n      \"email\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"d476a3d687d6e875f967ac15ca17a04c\",\n    \"customClaims\": {},\n    \"description\": \"My super awesome app\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n      \"authorizationCode\": true,\n      \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n      \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n      \"https://example.com/homeLogout/\"\n    ],\n    \"name\": \"Sample Native/Spa App\",\n    \"refreshTokenLifetime\": 604800,\n    \"type\": \"spa\"\n  },\n  {\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n      \"app.read\",\n      \"app.update\",\n      \"hosted-page-config.read\",\n      \"hosted-page-config.update\",\n      \"password-policy.read\",\n      \"password-policy.update\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"04a02654cc28e661e3fea3e42d9af20e\",\n    \"customClaims\": {},\n    \"description\": \"My super sample service app, modified\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n      \"clientCredentials\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [],\n    \"name\": \"Sample Service App\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": null,\n    \"type\": \"m2m\"\n  },\n  {\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n      \"me.read\",\n      \"me.update\",\n      \"me.update-password\",\n      \"password-policy.read\",\n      \"password-policy.update\",\n      \"user.reset-password\",\n      \"user.recover-username\",\n      \"user.create\",\n      \"user.read\",\n      \"openid\",\n      \"profile\",\n      \"email\",\n      \"address\",\n      \"phone\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"4c208861c2027de1b7c51320329c0d92\",\n    \"customClaims\": {},\n    \"description\": \"My great sample web app\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n      \"authorizationCode\": true,\n      \"clientCredentials\": true,\n      \"password\": true,\n      \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n      \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n      \"https://example.com/homeLogout/\"\n    ],\n    \"name\": \"Sample Web App\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": null,\n    \"type\": \"web\"\n  }\n]"
+										}
+									]
+								},
+								{
+									"name": "Get App",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{tenantApiV1Url}}/apps/{{clientId}}",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"apps",
+												"{{clientId}}"
+											]
+										},
+										"description": "Retreives configuration details of of a specific applicatiion. Set the `clientId` parameter to the clientId of the app configuration you want to retrieve."
+									},
+									"response": [
+										{
+											"name": "Get App",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{tenantApiV1Url}}/apps/{{clientId}}",
+													"host": [
+														"{{tenantApiV1Url}}"
+													],
+													"path": [
+														"apps",
+														"{{clientId}}"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "574"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"23e-Hj/WRqt8lCmAUFC8UzL8CgvDdyg\""
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 24 Jul 2019 15:21:18 GMT"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "clear"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"accessTokenLifetime\": 3600,\n  \"apiScopes\": [\n    \"app.read\",\n    \"app.update\",\n    \"hosted-page-config.read\",\n    \"hosted-page-config.update\",\n    \"password-policy.read\",\n    \"password-policy.update\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"dad2bb835aa7d9d768c469964ef5679e\",\n  \"customClaims\": {},\n  \"description\": \"My super sample service app\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"clientCredentials\": true\n  },\n  \"jwtSigningAlgorithm\": \"RS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [],\n  \"name\": \"Sample Service App\",\n  \"refreshTokenLifetime\": 604800,\n  \"secret\": null,\n  \"type\": \"m2m\"\n}"
+										}
+									]
+								}
+							],
+							"_postman_isSubFolder": true
+						},
 						{
 							"name": "Native/Spa Apps",
 							"item": [
@@ -1556,216 +1907,6 @@
 								}
 							],
 							"_postman_isSubFolder": true
-						},
-						{
-							"name": "Get Apps",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{tenantApiV1Url}}/apps",
-									"host": [
-										"{{tenantApiV1Url}}"
-									],
-									"path": [
-										"apps"
-									]
-								},
-								"description": "Retreives details for all configured apps in Express "
-							},
-							"response": [
-								{
-									"name": "Get Apps",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{tenantApiV1Url}}/apps",
-											"host": [
-												"{{tenantApiV1Url}}"
-											],
-											"path": [
-												"apps"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-DNS-Prefetch-Control",
-											"value": "off"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=15552000; includeSubDomains"
-										},
-										{
-											"key": "X-Download-Options",
-											"value": "noopen"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "2802"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"af2-nEhgAva65TnIezVMDEPM41R/O5M\""
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 25 Jul 2019 14:45:52 GMT"
-										},
-										{
-											"key": "Via",
-											"value": "1.1 google"
-										},
-										{
-											"key": "Alt-Svc",
-											"value": "clear"
-										}
-									],
-									"cookie": [],
-									"body": "[\n  {\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n      \"app.read\",\n      \"password-policy.read\",\n      \"user.reset-password\",\n      \"user.recover-username\",\n      \"user.create\",\n      \"user.read\",\n      \"user.update\",\n      \"app.delete\",\n      \"app.update\",\n      \"app.create\",\n      \"app.refresh-secret\",\n      \"email-template.update\",\n      \"hosted-page-config.update\",\n      \"email-template.read\",\n      \"hosted-page-config.read\",\n      \"user.delete\",\n      \"password-policy.update\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"608e7bcf38817bf51ba1bcb728b0b3e1\",\n    \"customClaims\": {},\n    \"description\": \"An updated M2M app\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n      \"clientCredentials\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [],\n    \"name\": \"Express Default App\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": null,\n    \"type\": \"m2m\"\n  },\n  {\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n      \"me.read\",\n      \"me.update\",\n      \"me.update-password\",\n      \"password-policy.read\",\n      \"user.reset-password\",\n      \"user.recover-username\",\n      \"user.create\",\n      \"user.read\",\n      \"openid\",\n      \"profile\",\n      \"email\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"d476a3d687d6e875f967ac15ca17a04c\",\n    \"customClaims\": {},\n    \"description\": \"My super awesome app\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n      \"authorizationCode\": true,\n      \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n      \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n      \"https://example.com/homeLogout/\"\n    ],\n    \"name\": \"Sample Native/Spa App\",\n    \"refreshTokenLifetime\": 604800,\n    \"type\": \"spa\"\n  },\n  {\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n      \"app.read\",\n      \"app.update\",\n      \"hosted-page-config.read\",\n      \"hosted-page-config.update\",\n      \"password-policy.read\",\n      \"password-policy.update\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"04a02654cc28e661e3fea3e42d9af20e\",\n    \"customClaims\": {},\n    \"description\": \"My super sample service app, modified\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n      \"clientCredentials\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [],\n    \"name\": \"Sample Service App\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": null,\n    \"type\": \"m2m\"\n  },\n  {\n    \"accessTokenLifetime\": 3600,\n    \"apiScopes\": [\n      \"me.read\",\n      \"me.update\",\n      \"me.update-password\",\n      \"password-policy.read\",\n      \"password-policy.update\",\n      \"user.reset-password\",\n      \"user.recover-username\",\n      \"user.create\",\n      \"user.read\",\n      \"openid\",\n      \"profile\",\n      \"email\",\n      \"address\",\n      \"phone\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"4c208861c2027de1b7c51320329c0d92\",\n    \"customClaims\": {},\n    \"description\": \"My great sample web app\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n      \"authorizationCode\": true,\n      \"clientCredentials\": true,\n      \"password\": true,\n      \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n      \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n      \"https://example.com/homeLogout/\"\n    ],\n    \"name\": \"Sample Web App\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": null,\n    \"type\": \"web\"\n  }\n]"
-								}
-							]
-						},
-						{
-							"name": "Get App",
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{tenantApiV1Url}}/apps/{{clientId}}",
-									"host": [
-										"{{tenantApiV1Url}}"
-									],
-									"path": [
-										"apps",
-										"{{clientId}}"
-									]
-								},
-								"description": "Retreives configuration details of of a specific applicatiion. Set the `clientId` parameter to the clientId of the app configuration you want to retrieve."
-							},
-							"response": [
-								{
-									"name": "Get App",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{tenantApiV1Url}}/apps/{{clientId}}",
-											"host": [
-												"{{tenantApiV1Url}}"
-											],
-											"path": [
-												"apps",
-												"{{clientId}}"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-DNS-Prefetch-Control",
-											"value": "off"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=15552000; includeSubDomains"
-										},
-										{
-											"key": "X-Download-Options",
-											"value": "noopen"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block"
-										},
-										{
-											"key": "Access-Control-Allow-Origin",
-											"value": "*"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json; charset=utf-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "574"
-										},
-										{
-											"key": "ETag",
-											"value": "W/\"23e-Hj/WRqt8lCmAUFC8UzL8CgvDdyg\""
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 24 Jul 2019 15:21:18 GMT"
-										},
-										{
-											"key": "Via",
-											"value": "1.1 google"
-										},
-										{
-											"key": "Alt-Svc",
-											"value": "clear"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"accessTokenLifetime\": 3600,\n  \"apiScopes\": [\n    \"app.read\",\n    \"app.update\",\n    \"hosted-page-config.read\",\n    \"hosted-page-config.update\",\n    \"password-policy.read\",\n    \"password-policy.update\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"dad2bb835aa7d9d768c469964ef5679e\",\n  \"customClaims\": {},\n  \"description\": \"My super sample service app\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"clientCredentials\": true\n  },\n  \"jwtSigningAlgorithm\": \"RS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [],\n  \"name\": \"Sample Service App\",\n  \"refreshTokenLifetime\": 604800,\n  \"secret\": null,\n  \"type\": \"m2m\"\n}"
-								}
-							]
 						}
 					],
 					"description": "Configure, create, and manage applications profiles in Express . Using the `client id` and in the case of confidentiial clients the `secret`, you will be able to generate an `access token` for these apps using the Authentication APIs.",
@@ -3535,7 +3676,7 @@
 					"_postman_isSubFolder": true
 				},
 				{
-					"name": "Email",
+					"name": "Email Templates",
 					"item": [
 						{
 							"name": "Get Email Templates",
@@ -3808,10 +3949,343 @@
 					"_postman_isSubFolder": true
 				},
 				{
+					"name": "Outgoing Email Server (SMTP)",
+					"item": [
+						{
+							"name": "Get SMTP Configuration",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"description": "Requires the `access_token` for the hosting environment.",
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}",
+										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman."
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{tenantApiV1Url}}/email-server",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"email-server"
+									]
+								},
+								"description": "Returns details for the currently configured outgoing email server, including:\n\n* `host`: Hostname or IP address\n* `mandatoryTLS`: Whether TLS is required for the server (true/false)\n* `port`: Port number\n* `username`: User for authenticating on the SMTP server\n\nIf no SMTP server has been configured, you'll see a \"404 Not Found\" message in the output."
+							},
+							"response": [
+								{
+									"name": "Get SMTP Configuration",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"description": "Requires the `access_token` for the hosting environment.",
+												"key": "Authorization",
+												"value": "Bearer {{accessToken}}",
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman."
+											},
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{tenantApiV1Url}}/email-server",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"email-server"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "98"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"62-FvfdGRiaLjf6dA5FeC4OmKruY3U\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Sep 2019 22:36:23 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "clear"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"host\": \"<smtpHostname>\",\n    \"mandatoryTLS\": true,\n    \"port\": <smtpPort>,\n    \"username\": \"<smtpUsername>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Configure/Modify SMTP Server",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"host\":\"{{smtpHost}}\",\n  \"mandatoryTLS\": true,\n  \"port\": {{smtpPort}},\n  \"username\": \"{{smtpUsername}}\",\n  \"password\": \"{{smtpPassword}}\"\n}"
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/email-server",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"email-server"
+									]
+								},
+								"description": "Allows you to set up or modify an SMTP server. You can include the following parameters in the request data:\n\n* `host`: Hostname or IP address\n* `mandatoryTLS`: Whether TLS is required for the server (true/false)\n* `port`: Port number\n* `username`: User for authenticating on the SMTP server\n* `password`: Password for the noted user"
+							},
+							"response": [
+								{
+									"name": "Configure/Modify SMTP Server",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{accessToken}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"host\":\"{{smtpHost}}\",\n  \"mandatoryTLS\": true,\n  \"port\": {{smtpPort}},\n  \"username\": \"{{smtpUsername}}\",\n  \"password\": \"{{smtpPassword}}\"\n}"
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/email-server",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"email-server"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "98"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"62-FvfdGRiaLjf6dA5FeC4OmKruY3U\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Sep 2019 22:35:27 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "clear"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"host\": \"<smtpHostname>\",\n    \"mandatoryTLS\": true,\n    \"port\": 587,\n    \"username\": \"<smtpUsername>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete Configured SMTP Server",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/email-server",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"email-server"
+									]
+								},
+								"description": "Deletes any configured SMTP server. If successful, you'll see no output and a \"204 No Content\" message."
+							},
+							"response": []
+						}
+					],
+					"description": "Use these REST calls to:\n\n* Configure/modify an SMTP server\n* Get the current configuration\n\nEndpoint:\n\n* /email-server\n\nPrerequisite: \n\nActivate the following API Scopes for each of your relevant apps. \n\n* email-server-config.read\n* email-server-config.update\n* email-server-config.delete\n\nFor more information, see our documentation on [SMTP Email Services](https://developer-cloud.forgerock.com/configuration/smtp-config/).",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f35a7fbf-32d1-4209-81fa-8cd45677f194",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "c8a5d82f-68df-4ef7-9885-ed8bdaf10bce",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
 					"name": "Hosted Pages",
 					"item": [
 						{
 							"name": "Get Hosted Page",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -3828,8 +4302,8 @@
 									{
 										"key": "Content-Type",
 										"name": "Content-Type",
-										"type": "text",
-										"value": "application/json"
+										"value": "application/x-www-form-urlencoded",
+										"type": "text"
 									},
 									{
 										"description": "Requires the `access_token` for the hosting environment.",
@@ -3839,6 +4313,10 @@
 										"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman."
 									}
 								],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
 								"url": {
 									"raw": "{{tenantApiV1Url}}/hosted-pages",
 									"host": [
@@ -3857,14 +4335,17 @@
 										"method": "GET",
 										"header": [
 											{
-												"key": "Authorization",
-												"value": "Bearer {{accessToken}}"
-											},
-											{
 												"key": "Content-Type",
 												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											},
+											{
+												"description": "Requires the `access_token` for the hosting environment.",
+												"key": "Authorization",
 												"type": "text",
-												"value": "application/json"
+												"value": "Bearer {{accessToken}}",
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman."
 											}
 										],
 										"url": {
@@ -3882,8 +4363,28 @@
 									"_postman_previewlanguage": "json",
 									"header": [
 										{
-											"key": "X-Powered-By",
-											"value": "Express"
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
 										},
 										{
 											"key": "Access-Control-Allow-Origin",
@@ -3895,23 +4396,27 @@
 										},
 										{
 											"key": "Content-Length",
-											"value": "307"
+											"value": "297"
 										},
 										{
 											"key": "ETag",
-											"value": "W/\"133-YlpGUJfUlWemDBqNwzG2KZRxqmA\""
+											"value": "W/\"129-iy63LKrlYgMYUVeBQmAA/hsrWJs\""
 										},
 										{
 											"key": "Date",
-											"value": "Thu, 28 Mar 2019 22:33:31 GMT"
+											"value": "Thu, 05 Sep 2019 21:01:00 GMT"
 										},
 										{
 											"key": "Via",
 											"value": "1.1 google"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "clear"
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"cssUrl\": \"https://ui-{{tenantName}}.forgeblocks.com/css/hosted.css\",\n  \"forgotPasswordTitle\": \"Reset Password\",\n  \"logoUrl\": \"https://ui-{{tenantName}}.forgeblocks.com/img/logo-forgerock.png\",\n  \"recoverUsernameTitle\": \"Recover Your Username\",\n  \"resetPasswordTitle\": \"Reset Your Password\",\n  \"signInTitle\": \"Sign In\",\n  \"signUpTitle\": \"Sign Up\"\n}"
+									"body": "{\n    \"cssUrl\": \"https://ui-docs98.forgeblocks.com/css/hosted.css\",\n    \"forgotPasswordTitle\": \"Reset Password\",\n    \"logoUrl\": \"https://ui-docs98.forgeblocks.com/img/logo-forgerock.png\",\n    \"recoverUsernameTitle\": \"Recover Username\",\n    \"resetPasswordTitle\": \"Reset Password\",\n    \"signInTitle\": \"Sign In\",\n    \"signUpTitle\": \"Sign Up\"\n}"
 								}
 							]
 						},
@@ -6370,6 +6875,529 @@
 					"name": "Get Access Token - Password Grant",
 					"item": [
 						{
+							"name": "Access Token Mgmt",
+							"item": [
+								{
+									"name": "Tokeninfo",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{oauth2Url}}/tokeninfo?access_token={{accessToken}}",
+											"host": [
+												"{{oauth2Url}}"
+											],
+											"path": [
+												"tokeninfo"
+											],
+											"query": [
+												{
+													"key": "access_token",
+													"value": "{{accessToken}}"
+												}
+											]
+										},
+										"description": "Validates a user ID token for debugging. Requires an access_token created for the specific user, set as the *Bearer* token. You can acquire a user access_token from the Get Web App Token - Password Grant REST call."
+									},
+									"response": [
+										{
+											"name": "Tokeninfo",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{oauth2Url}}/tokeninfo?access_token={{accessToken}}",
+													"host": [
+														"{{oauth2Url}}"
+													],
+													"path": [
+														"tokeninfo"
+													],
+													"query": [
+														{
+															"key": "access_token",
+															"value": "{{accessToken}}"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-store"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json;charset=UTF-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "2273"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 22 Jul 2019 16:18:39 GMT"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "clear"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"sub\": \"bjensen@example.com\",\n  \"auth_level\": 0,\n  \"auditTrackingId\": \"6128798c-bed3-4399-a3b0-5ca24ee5837d-200656\",\n  \"me.update\": \"\",\n  \"iss\": \"https://openam-sampletenant.forgeblocks.com/am/oauth2\",\n  \"tokenName\": \"access_token\",\n  \"token_type\": \"Bearer\",\n  \"user.recover-username\": \"\",\n  \"user.read\": \"\",\n  \"password-policy.read\": \"\",\n  \"grant_type\": \"authorization_code\",\n  \"scope\": [\n    \"openid\",\n    \"me.update\",\n    \"user.recover-username\",\n    \"user.read\",\n    \"me.read\",\n    \"user.create\",\n    \"password-policy.read\",\n    \"me.update-password\",\n    \"password-policy.update\",\n    \"user.reset-password\"\n  ],\n  \"auth_time\": 1563812252,\n  \"me.update-password\": \"\",\n  \"password-policy.update\": \"\",\n  \"exp\": 1563815874,\n  \"iat\": 1563812274,\n  \"expires_in\": 3600,\n  \"jti\": \"CZFUQbiKw7zsowgYEkucB48Sgc0\",\n  \"cts\": \"OAUTH2_STATELESS_GRANT\",\n  \"openid\": \"\",\n  \"authGrantId\": \"JvvemYNSx71kXg7gamnIzD8750c\",\n  \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjYxMjg3OThjLWJlZDMtNDM5OS1hM2IwLTVjYTI0ZWU1ODM3ZC0yMDA2NTYiLCJpc3MiOiJodHRwczovL29wZW5hbS1rYXRlMDcxMHMuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6Ikp2dmVtWU5TeDcxa1hnN2dhbW5JekQ4NzUwYyIsImF1ZCI6IjJmZjViMDdiNTNhNzM2OWIwYjU3OTUyYjJiYjhhMTQ0IiwibmJmIjoxNTYzODEyMjc0LCJncmFudF90eXBlIjoiYXV0aG9yaXphdGlvbl9jb2RlIiwic2NvcGUiOlsib3BlbmlkIiwibWUudXBkYXRlIiwidXNlci5yZWNvdmVyLXVzZXJuYW1lIiwidXNlci5yZWFkIiwibWUucmVhZCIsInVzZXIuY3JlYXRlIiwicGFzc3dvcmQtcG9saWN5LnJlYWQiLCJtZS51cGRhdGUtcGFzc3dvcmQiLCJwYXNzd29yZC1wb2xpY3kudXBkYXRlIiwidXNlci5yZXNldC1wYXNzd29yZCJdLCJhdXRoX3RpbWUiOjE1NjM4MTIyNTIsInJlYWxtIjoiLyIsImV4cCI6MTU2MzgxNTg3NCwiaWF0IjoxNTYzODEyMjc0LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJDWkZVUWJpS3c3enNvd2dZRWt1Y0I0OFNnYzAifQ.dDiuqMmieO7VSX4QOYG0EBzzkhh2YXpAtC8wuhBGtnjcNTrov-5qOpI8fHAW0binovh_gi3CqlYcEm2tjSYb2Z6Iq3g-rj5HxZsYXDsIhEtfs0j8sC_DlgU3dkqxTL2jJFVLjrtgU2oT2AQmlxIpTYDMlNe5UdQ4nkf1vhZtsAL0Wi2BOpbr-4Y4FzcWxeWIp9Lrjvh1Hu7WU1dm1zMRQMdlKvMtcJPm-pWoMiyFkPJE7O-S9geoJMZVUAUPbT08BTZgycgh_sga8vPQDinnq2P30wCPPhXUpq1zHOvRqGMK1rznqyllew6YG3Mw4E8AMYp-Ic_OV2zT8JYD0Yty1g\",\n  \"aud\": \"2ff5b07b53a7369b0b57952b2bb8a144\",\n  \"me.read\": \"\",\n  \"user.create\": \"\",\n  \"nbf\": 1563812274,\n  \"realm\": \"/\",\n  \"user.reset-password\": \"\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Introspect",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{webSecret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{webClientId}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{oauth2Url}}/introspect?token={{accessToken}}",
+											"host": [
+												"{{oauth2Url}}"
+											],
+											"path": [
+												"introspect"
+											],
+											"query": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}"
+												}
+											]
+										},
+										"description": "Returns the content of an access token, including scopes. Requires the Client ID and Client Secret for an existing web app."
+									},
+									"response": [
+										{
+											"name": "Introspect",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "{{oauth2Url}}/introspect?token={{accessToken}}",
+													"host": [
+														"{{oauth2Url}}"
+													],
+													"path": [
+														"introspect"
+													],
+													"query": [
+														{
+															"key": "token",
+															"value": "{{accessToken}}"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json;charset=UTF-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "510"
+												},
+												{
+													"key": "Date",
+													"value": "Mon, 22 Jul 2019 16:19:24 GMT"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "clear"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"active\": true,\n  \"scope\": \"user.read me.read user.create password-policy.read openid me.update me.update-password password-policy.update user.recover-username user.reset-password\",\n  \"client_id\": \"2ff5b07b53a7369b0b57952b2bb8a144\",\n  \"user_id\": \"bjensen@example.com\",\n  \"token_type\": \"Bearer\",\n  \"exp\": 1563815874,\n  \"sub\": \"bjensen@example.com\",\n  \"iss\": \"https://openam-sampletenant.forgeblocks.com/am/oauth2\",\n  \"auth_level\": 0,\n  \"auditTrackingId\": \"6128798c-bed3-4399-a3b0-5ca24ee5837d-200656\",\n  \"cts\": \"OAUTH2_STATELESS_GRANT\",\n  \"expires_in\": 3600\n}"
+										}
+									]
+								},
+								{
+									"name": "Get Refresh Token",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "87002a5c-5df5-42a2-ac89-6a717f7a3c16",
+												"exec": [
+													"var json = JSON.parse(responseBody);",
+													"",
+													"if (json.access_token) { ",
+													"  pm.environment.set(\"accessToken\",json.access_token);",
+													"  console.log(`set accessToken: ${json.access_token}`);",
+													"  console.log(`scope is: ${json.scope}`);",
+													"}",
+													"",
+													"if (json.id_token) { ",
+													"  pm.environment.set(\"idToken\",json.id_token);",
+													"  console.log(`set idToken: ${json.id_token}`);",
+													"}",
+													"",
+													"if (json.refresh_token) { ",
+													"  pm.environment.set(\"refreshToken\",json.refresh_token);",
+													"  console.log(`set refreshToken: ${json.refresh_token}`);",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "{{webSecret}}",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "{{webClientId}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "grant_type",
+													"value": "refresh_token",
+													"type": "text"
+												},
+												{
+													"key": "refresh_token",
+													"value": "{{refreshToken}}",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{oauth2Url}}/access_token",
+											"host": [
+												"{{oauth2Url}}"
+											],
+											"path": [
+												"access_token"
+											]
+										},
+										"description": "A refresh_token can be used to obtain a new access_token. The new access_token may include the same or a more narrow set of scopes."
+									},
+									"response": [
+										{
+											"name": "Get Refresh Token",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "grant_type",
+															"value": "refresh_token",
+															"type": "text"
+														},
+														{
+															"key": "refresh_token",
+															"value": "{{refreshToken}}",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{oauth2Url}}/access_token",
+													"host": [
+														"{{oauth2Url}}"
+													],
+													"path": [
+														"access_token"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "Cache-Control",
+													"value": "no-store"
+												},
+												{
+													"key": "Pragma",
+													"value": "no-cache"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json;charset=UTF-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "4430"
+												},
+												{
+													"key": "Date",
+													"value": "Thu, 25 Jul 2019 22:10:58 GMT"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "clear"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjYxMjg3OThjLWJlZDMtNDM5OS1hM2IwLTVjYTI0ZWU1ODM3ZC0yNjA3MTMiLCJpc3MiOiJodHRwczovL29wZW5hbS1rYXRlMDcxMHMuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IkNEbkctN0VxdjA0NlAtelpBNVVxVUdTQ3YtSSIsImF1ZCI6IjM0M2MxYjA5MDE1YmUwNjEyNDlmNDU1Yzc2NWIwYWVmIiwibmJmIjoxNTY0MDkyNjU4LCJncmFudF90eXBlIjoicmVmcmVzaF90b2tlbiIsInNjb3BlIjpbInVzZXIucmVhZCIsIm1lLnJlYWQiLCJ1c2VyLmNyZWF0ZSIsInBhc3N3b3JkLXBvbGljeS5yZWFkIiwib3BlbmlkIiwibWUudXBkYXRlIiwicHJvZmlsZSIsIm1lLnVwZGF0ZS1wYXNzd29yZCIsImVtYWlsIiwidXNlci5yZWNvdmVyLXVzZXJuYW1lIiwidXNlci5yZXNldC1wYXNzd29yZCJdLCJhdXRoX3RpbWUiOjE1NjQwOTI0NDgsInJlYWxtIjoiLyIsImV4cCI6MTU2NDA5NjI1OCwiaWF0IjoxNTY0MDkyNjU4LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJfMlZWV3FaZEtvbmZ4VzB1YXZ6WC1VYjNvckkifQ.EZU_DptkyiYGpYEk8pkb6Z520b4zSeIxQGyqLawiQySqO7vgRSruW04BiBdYQt050cMYDOtaw2Pk2OYKMvQ5FjH6fO1JNF9FklF9Mb58mgZTX3dXynW0QeyzWngNOGSdfYZkdNG9LB-v3pCsY74bKk4tDUeBM-9daL_3dbEPxsR995WE6hgTtW_g_incdBP2lQyMvXzFqyY28VD4QXH3RYlJWbdit_vaPF4NCKRZY2xbP-GiAeQgLZKt_HKUOD1OIsKccAs2bArHJwkkVAxsoJKzn0pO9JOhHh3BIJOSuzBfIBDFdQo3jvS0dmxdJSQ8K47M5ddtmVEwJ8IgtacgiQ\",\n  \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjYxMjg3OThjLWJlZDMtNDM5OS1hM2IwLTVjYTI0ZWU1ODM3ZC0yNjA3MTIiLCJpc3MiOiJodHRwczovL29wZW5hbS1rYXRlMDcxMHMuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6InJlZnJlc2hfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJDRG5HLTdFcXYwNDZQLXpaQTVVcVVHU0N2LUkiLCJhdWQiOiIzNDNjMWIwOTAxNWJlMDYxMjQ5ZjQ1NWM3NjViMGFlZiIsImFjciI6IjAiLCJuYmYiOjE1NjQwOTI2NTgsIm9wcyI6Imw1Wlcydzc1OUJNcW5CaHRXcTVzT1NSdjlpTSIsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsidXNlci5yZWFkIiwibWUucmVhZCIsInVzZXIuY3JlYXRlIiwicGFzc3dvcmQtcG9saWN5LnJlYWQiLCJvcGVuaWQiLCJtZS51cGRhdGUiLCJwcm9maWxlIiwibWUudXBkYXRlLXBhc3N3b3JkIiwiZW1haWwiLCJ1c2VyLnJlY292ZXItdXNlcm5hbWUiLCJ1c2VyLnJlc2V0LXBhc3N3b3JkIl0sImF1dGhfdGltZSI6MTU2NDA5MjQ0OCwicmVhbG0iOiIvIiwiZXhwIjoxNTY0Njk3NDU4LCJpYXQiOjE1NjQwOTI2NTgsImV4cGlyZXNfaW4iOjYwNDgwMCwianRpIjoiMzdWX2dQUFBueVBPbXkxOVlLcnpDaU1wWHNBIn0.Ii5sLuPXee9Wa4Xasklquk8iYStQTHh-ogHzbvi3oy3z3Z7aZO_nxtKLfOgCbuLogfrluRs2APLbV5WyWx8Ik-wQmW6KnpT5YPbGBbzxWdzBQBYh67gGE6cs-QUHAEorplq0ZCwNRAqhYQ0tFeh4ZQXJAmDx_zLO7Kcq99VNHYkziGpyxxLJEjPqfP8o3Tm-W859H8YxvRpDGw_tOJz4_nhEIoKu0da6OwfYzZoK8fvb_sJZUrR8UlWJ2sa77jK1XdBCYqilfu2xPqkgI2Rf632nkUSU-UjiyeqVpCkGwsES_yah22-EMQBK2gFQSDDFdG1AJvuV5GkNSRHJh-UMJg\",\n  \"scope\": \"user.read me.read user.create password-policy.read openid me.update profile me.update-password email user.recover-username user.reset-password\",\n  \"id_token\": \"eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoiY3JrMGVLaW9hcDdTamxyMHp6OS0zZyIsInN1YiI6ImJqZW5zZW5AZXhhbXBsZS5jb20iLCJ6b25laW5mbyI6IkFtZXJpY2EvTG9zX0FuZ2VsZXMiLCJhdWRpdFRyYWNraW5nSWQiOiI2MTI4Nzk4Yy1iZWQzLTQzOTktYTNiMC01Y2EyNGVlNTgzN2QtMjYwNzE0IiwiaXNzIjoiaHR0cHM6Ly9vcGVuYW0ta2F0ZTA3MTBzLmZvcmdlYmxvY2tzLmNvbS9hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImxvY2FsZSI6ImVuLVVTIiwidGl0bGUiOiJNYXN0ZXIgQ2FycGVudGVyIiwiYWNyIjoiMCIsImF6cCI6IjM0M2MxYjA5MDE1YmUwNjEyNDlmNDU1Yzc2NWIwYWVmIiwiYXV0aF90aW1lIjoxNTY0MDkyNDQ4LCJuaWNrbmFtZSI6IkJhYnMiLCJleHAiOjE1NjQwOTYyNTgsImlhdCI6MTU2NDA5MjY1OCwiZW1haWwiOiJiYWJzQGplbnNlbi5vcmciLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByb2ZpbGUiOiJodHRwczovL2xvZ2luLmV4YW1wbGUuY29tL2JqZW5zZW4iLCJnaXZlbl9uYW1lIjoiQmFyYmFyYSIsIm1pZGRsZV9uYW1lIjoiSmFuZSIsImF1ZCI6IjM0M2MxYjA5MDE1YmUwNjEyNDlmNDU1Yzc2NWIwYWVmIiwib3JnLmZvcmdlcm9jay5vcGVuaWRjb25uZWN0Lm9wcyI6Imw1Wlcydzc1OUJNcW5CaHRXcTVzT1NSdjlpTSIsIm5hbWUiOiJCYXJiYXJhIEphbmUgSmVuc2VuIiwicmVhbG0iOiIvIiwidG9rZW5UeXBlIjoiSldUVG9rZW4iLCJmYW1pbHlfbmFtZSI6IkplbnNlbiJ9.X2DjSSI32WWNd_TLGtJIzYYCSHGePoYtehOz5rUbagCw6EzsQymWBNkLnKNQZOLH09hcLt8-mTkOndKubw-LUJhzrERqUw_Boro5DxRV2rCzX0L_oLBGm5IoQ-m3gfKIEhNIBDQlXZaRyh7tab56wSGX7byh4t39QK3YjOs49HJxkm-A8mM3y70q0vzix1gkOARzz4aDVROlPVAc9CAIFii-cZbNyw9oi4tSU59S2V9ZjvcWhEVgcPHbQcc9dtpRy5j78vveGahkrpWyQcK-LZKP4LFlIYN2wy6qF4pD9iAeXWn57_goBVxZ-VKt-BSTEqBk7VIwrm6zY3HCZj5Dew\",\n  \"token_type\": \"Bearer\",\n  \"expires_in\": 3599\n}"
+										}
+									]
+								},
+								{
+									"name": "Revoke",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "text"
+												},
+												{
+													"key": "client_id",
+													"value": "{{webClientId}}",
+													"type": "text"
+												},
+												{
+													"key": "client_secret",
+													"value": "{{webSecret}}",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{oauth2Url}}/token/revoke",
+											"host": [
+												"{{oauth2Url}}"
+											],
+											"path": [
+												"token",
+												"revoke"
+											]
+										},
+										"description": "Revoke an access_token for an app. Requires an access_token created for the app, set as the *Bearer* token. You can acquire an app access_token from the Get Web App Token - Auth Code Grant REST call."
+									},
+									"response": [
+										{
+											"name": "Revoke",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/x-www-form-urlencoded"
+													}
+												],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "token",
+															"value": "{{accessToken}}",
+															"type": "text"
+														},
+														{
+															"key": "client_id",
+															"value": "{{webClientId}}",
+															"type": "text"
+														},
+														{
+															"key": "client_secret",
+															"value": "{{webSecret}}",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{oauth2Url}}/token/revoke",
+													"host": [
+														"{{oauth2Url}}"
+													],
+													"path": [
+														"token",
+														"revoke"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json;charset=UTF-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "1464"
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 07 Aug 2019 13:32:06 GMT"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "clear"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"error_description\": \"The provided token id : eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6ImFkZTZiMmI2LTZkN2EtNGRlMi05N2RkLTliMGE1NGQzZTNkNi04NTUzNCIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXBlYmJsZS1iYW5rLmZvcmdlYmxvY2tzLmNvbS9hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJpa2tPcGNlV3lQMS1fNW9PNXFlbDJuSnZqdnciLCJhdWQiOiJmMzcyYzRlNmQwZjI4MmM3ZTY2MDAxOGVlZjBjMjI3NSIsIm5iZiI6MTU2NTE4NDcyMCwiZ3JhbnRfdHlwZSI6ImF1dGhvcml6YXRpb25fY29kZSIsInNjb3BlIjpbInVzZXIucmVhZCIsIm1lLnJlYWQiLCJ1c2VyLmNyZWF0ZSIsInBhc3N3b3JkLXBvbGljeS5yZWFkIiwib3BlbmlkIiwibWUudXBkYXRlIiwicHJvZmlsZSIsIm1lLnVwZGF0ZS1wYXNzd29yZCIsImVtYWlsIiwidXNlci5yZWNvdmVyLXVzZXJuYW1lIiwidXNlci5yZXNldC1wYXNzd29yZCJdLCJhdXRoX3RpbWUiOjE1NjUxODQ1OTMsInJlYWxtIjoiLyIsImV4cCI6MTU2NTE4ODMyMCwiaWF0IjoxNTY1MTg0NzIwLCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJfUW54UmtRWVZ3ckdqVzhwT3FLNlFoR2tPeU0ifQ.gWhK73vM0EcD2CvpvT81XfHXwFcvc6okkEn465LEnS5Mml9p_jC3Re1OAvI4OHFY5DZQuh7IzO7sgsOXLmHX1gyA0VZPWyfLPBrV1wWintFgC_qKluMLhANQnq9WvkUA0i7-cV4SDp_72ZrewfUTNDQvekWO0bqx7L0V2VBqH-PowUVrzMLWHwmOA9qV4O_NuxdiANDFlZY7-tYIDI3PCHx34WzdMlxtzPFJ3EAVwT-_oy1slO6UEcBk36cxvA52iNsNpDbNKexFH-kd36JSwG1TbvZGtwmjZnuZGjNrQyAyA7xpnpiKUBh83T7nvfCfOwzl470bDKjc6hnb437y2Q belongs to different access grant.\",\n  \"error\": \"invalid_grant\"\n}"
+										}
+									]
+								}
+							],
+							"description": "APIs to manage your `access tokens`\n\n",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "61d36b4d-360f-4471-901c-1cdeeae082e8",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "7a196286-2c52-4131-865b-a488590fccc6",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
 							"name": "Get Web App Token - Password Grant",
 							"event": [
 								{
@@ -6575,529 +7603,6 @@
 							"listen": "test",
 							"script": {
 								"id": "7e3c180a-83bd-44ff-bdc2-a0b7588af66f",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						}
-					],
-					"_postman_isSubFolder": true
-				},
-				{
-					"name": "Access Token Mgmt",
-					"item": [
-						{
-							"name": "Tokeninfo",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{oauth2Url}}/tokeninfo?access_token={{accessToken}}",
-									"host": [
-										"{{oauth2Url}}"
-									],
-									"path": [
-										"tokeninfo"
-									],
-									"query": [
-										{
-											"key": "access_token",
-											"value": "{{accessToken}}"
-										}
-									]
-								},
-								"description": "Validates a user ID token for debugging. Requires an access_token created for the specific user, set as the *Bearer* token. You can acquire a user access_token from the Get Web App Token - Password Grant REST call."
-							},
-							"response": [
-								{
-									"name": "Tokeninfo",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{oauth2Url}}/tokeninfo?access_token={{accessToken}}",
-											"host": [
-												"{{oauth2Url}}"
-											],
-											"path": [
-												"tokeninfo"
-											],
-											"query": [
-												{
-													"key": "access_token",
-													"value": "{{accessToken}}"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-store"
-										},
-										{
-											"key": "Pragma",
-											"value": "no-cache"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json;charset=UTF-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "2273"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 22 Jul 2019 16:18:39 GMT"
-										},
-										{
-											"key": "Via",
-											"value": "1.1 google"
-										},
-										{
-											"key": "Alt-Svc",
-											"value": "clear"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"sub\": \"bjensen@example.com\",\n  \"auth_level\": 0,\n  \"auditTrackingId\": \"6128798c-bed3-4399-a3b0-5ca24ee5837d-200656\",\n  \"me.update\": \"\",\n  \"iss\": \"https://openam-sampletenant.forgeblocks.com/am/oauth2\",\n  \"tokenName\": \"access_token\",\n  \"token_type\": \"Bearer\",\n  \"user.recover-username\": \"\",\n  \"user.read\": \"\",\n  \"password-policy.read\": \"\",\n  \"grant_type\": \"authorization_code\",\n  \"scope\": [\n    \"openid\",\n    \"me.update\",\n    \"user.recover-username\",\n    \"user.read\",\n    \"me.read\",\n    \"user.create\",\n    \"password-policy.read\",\n    \"me.update-password\",\n    \"password-policy.update\",\n    \"user.reset-password\"\n  ],\n  \"auth_time\": 1563812252,\n  \"me.update-password\": \"\",\n  \"password-policy.update\": \"\",\n  \"exp\": 1563815874,\n  \"iat\": 1563812274,\n  \"expires_in\": 3600,\n  \"jti\": \"CZFUQbiKw7zsowgYEkucB48Sgc0\",\n  \"cts\": \"OAUTH2_STATELESS_GRANT\",\n  \"openid\": \"\",\n  \"authGrantId\": \"JvvemYNSx71kXg7gamnIzD8750c\",\n  \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjYxMjg3OThjLWJlZDMtNDM5OS1hM2IwLTVjYTI0ZWU1ODM3ZC0yMDA2NTYiLCJpc3MiOiJodHRwczovL29wZW5hbS1rYXRlMDcxMHMuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6Ikp2dmVtWU5TeDcxa1hnN2dhbW5JekQ4NzUwYyIsImF1ZCI6IjJmZjViMDdiNTNhNzM2OWIwYjU3OTUyYjJiYjhhMTQ0IiwibmJmIjoxNTYzODEyMjc0LCJncmFudF90eXBlIjoiYXV0aG9yaXphdGlvbl9jb2RlIiwic2NvcGUiOlsib3BlbmlkIiwibWUudXBkYXRlIiwidXNlci5yZWNvdmVyLXVzZXJuYW1lIiwidXNlci5yZWFkIiwibWUucmVhZCIsInVzZXIuY3JlYXRlIiwicGFzc3dvcmQtcG9saWN5LnJlYWQiLCJtZS51cGRhdGUtcGFzc3dvcmQiLCJwYXNzd29yZC1wb2xpY3kudXBkYXRlIiwidXNlci5yZXNldC1wYXNzd29yZCJdLCJhdXRoX3RpbWUiOjE1NjM4MTIyNTIsInJlYWxtIjoiLyIsImV4cCI6MTU2MzgxNTg3NCwiaWF0IjoxNTYzODEyMjc0LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJDWkZVUWJpS3c3enNvd2dZRWt1Y0I0OFNnYzAifQ.dDiuqMmieO7VSX4QOYG0EBzzkhh2YXpAtC8wuhBGtnjcNTrov-5qOpI8fHAW0binovh_gi3CqlYcEm2tjSYb2Z6Iq3g-rj5HxZsYXDsIhEtfs0j8sC_DlgU3dkqxTL2jJFVLjrtgU2oT2AQmlxIpTYDMlNe5UdQ4nkf1vhZtsAL0Wi2BOpbr-4Y4FzcWxeWIp9Lrjvh1Hu7WU1dm1zMRQMdlKvMtcJPm-pWoMiyFkPJE7O-S9geoJMZVUAUPbT08BTZgycgh_sga8vPQDinnq2P30wCPPhXUpq1zHOvRqGMK1rznqyllew6YG3Mw4E8AMYp-Ic_OV2zT8JYD0Yty1g\",\n  \"aud\": \"2ff5b07b53a7369b0b57952b2bb8a144\",\n  \"me.read\": \"\",\n  \"user.create\": \"\",\n  \"nbf\": 1563812274,\n  \"realm\": \"/\",\n  \"user.reset-password\": \"\"\n}"
-								}
-							]
-						},
-						{
-							"name": "Introspect",
-							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "{{webSecret}}",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "{{webClientId}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/x-www-form-urlencoded"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": ""
-								},
-								"url": {
-									"raw": "{{oauth2Url}}/introspect?token={{accessToken}}",
-									"host": [
-										"{{oauth2Url}}"
-									],
-									"path": [
-										"introspect"
-									],
-									"query": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}"
-										}
-									]
-								},
-								"description": "Returns the content of an access token, including scopes. Requires the Client ID and Client Secret for an existing web app."
-							},
-							"response": [
-								{
-									"name": "Introspect",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/x-www-form-urlencoded"
-											}
-										],
-										"body": {
-											"mode": "raw",
-											"raw": ""
-										},
-										"url": {
-											"raw": "{{oauth2Url}}/introspect?token={{accessToken}}",
-											"host": [
-												"{{oauth2Url}}"
-											],
-											"path": [
-												"introspect"
-											],
-											"query": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}"
-												}
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json;charset=UTF-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "510"
-										},
-										{
-											"key": "Date",
-											"value": "Mon, 22 Jul 2019 16:19:24 GMT"
-										},
-										{
-											"key": "Via",
-											"value": "1.1 google"
-										},
-										{
-											"key": "Alt-Svc",
-											"value": "clear"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"active\": true,\n  \"scope\": \"user.read me.read user.create password-policy.read openid me.update me.update-password password-policy.update user.recover-username user.reset-password\",\n  \"client_id\": \"2ff5b07b53a7369b0b57952b2bb8a144\",\n  \"user_id\": \"bjensen@example.com\",\n  \"token_type\": \"Bearer\",\n  \"exp\": 1563815874,\n  \"sub\": \"bjensen@example.com\",\n  \"iss\": \"https://openam-sampletenant.forgeblocks.com/am/oauth2\",\n  \"auth_level\": 0,\n  \"auditTrackingId\": \"6128798c-bed3-4399-a3b0-5ca24ee5837d-200656\",\n  \"cts\": \"OAUTH2_STATELESS_GRANT\",\n  \"expires_in\": 3600\n}"
-								}
-							]
-						},
-						{
-							"name": "Get Refresh Token",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "87002a5c-5df5-42a2-ac89-6a717f7a3c16",
-										"exec": [
-											"var json = JSON.parse(responseBody);",
-											"",
-											"if (json.access_token) { ",
-											"  pm.environment.set(\"accessToken\",json.access_token);",
-											"  console.log(`set accessToken: ${json.access_token}`);",
-											"  console.log(`scope is: ${json.scope}`);",
-											"}",
-											"",
-											"if (json.id_token) { ",
-											"  pm.environment.set(\"idToken\",json.id_token);",
-											"  console.log(`set idToken: ${json.id_token}`);",
-											"}",
-											"",
-											"if (json.refresh_token) { ",
-											"  pm.environment.set(\"refreshToken\",json.refresh_token);",
-											"  console.log(`set refreshToken: ${json.refresh_token}`);",
-											"}"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"auth": {
-									"type": "basic",
-									"basic": [
-										{
-											"key": "password",
-											"value": "{{webSecret}}",
-											"type": "string"
-										},
-										{
-											"key": "username",
-											"value": "{{webClientId}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/x-www-form-urlencoded"
-									}
-								],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "grant_type",
-											"value": "refresh_token",
-											"type": "text"
-										},
-										{
-											"key": "refresh_token",
-											"value": "{{refreshToken}}",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{oauth2Url}}/access_token",
-									"host": [
-										"{{oauth2Url}}"
-									],
-									"path": [
-										"access_token"
-									]
-								},
-								"description": "A refresh_token can be used to obtain a new access_token. The new access_token may include the same or a more narrow set of scopes."
-							},
-							"response": [
-								{
-									"name": "Get Refresh Token",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/x-www-form-urlencoded"
-											}
-										],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": [
-												{
-													"key": "grant_type",
-													"value": "refresh_token",
-													"type": "text"
-												},
-												{
-													"key": "refresh_token",
-													"value": "{{refreshToken}}",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{oauth2Url}}/access_token",
-											"host": [
-												"{{oauth2Url}}"
-											],
-											"path": [
-												"access_token"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Cache-Control",
-											"value": "no-store"
-										},
-										{
-											"key": "Pragma",
-											"value": "no-cache"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json;charset=UTF-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "4430"
-										},
-										{
-											"key": "Date",
-											"value": "Thu, 25 Jul 2019 22:10:58 GMT"
-										},
-										{
-											"key": "Via",
-											"value": "1.1 google"
-										},
-										{
-											"key": "Alt-Svc",
-											"value": "clear"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"access_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjYxMjg3OThjLWJlZDMtNDM5OS1hM2IwLTVjYTI0ZWU1ODM3ZC0yNjA3MTMiLCJpc3MiOiJodHRwczovL29wZW5hbS1rYXRlMDcxMHMuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6ImFjY2Vzc190b2tlbiIsInRva2VuX3R5cGUiOiJCZWFyZXIiLCJhdXRoR3JhbnRJZCI6IkNEbkctN0VxdjA0NlAtelpBNVVxVUdTQ3YtSSIsImF1ZCI6IjM0M2MxYjA5MDE1YmUwNjEyNDlmNDU1Yzc2NWIwYWVmIiwibmJmIjoxNTY0MDkyNjU4LCJncmFudF90eXBlIjoicmVmcmVzaF90b2tlbiIsInNjb3BlIjpbInVzZXIucmVhZCIsIm1lLnJlYWQiLCJ1c2VyLmNyZWF0ZSIsInBhc3N3b3JkLXBvbGljeS5yZWFkIiwib3BlbmlkIiwibWUudXBkYXRlIiwicHJvZmlsZSIsIm1lLnVwZGF0ZS1wYXNzd29yZCIsImVtYWlsIiwidXNlci5yZWNvdmVyLXVzZXJuYW1lIiwidXNlci5yZXNldC1wYXNzd29yZCJdLCJhdXRoX3RpbWUiOjE1NjQwOTI0NDgsInJlYWxtIjoiLyIsImV4cCI6MTU2NDA5NjI1OCwiaWF0IjoxNTY0MDkyNjU4LCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJfMlZWV3FaZEtvbmZ4VzB1YXZ6WC1VYjNvckkifQ.EZU_DptkyiYGpYEk8pkb6Z520b4zSeIxQGyqLawiQySqO7vgRSruW04BiBdYQt050cMYDOtaw2Pk2OYKMvQ5FjH6fO1JNF9FklF9Mb58mgZTX3dXynW0QeyzWngNOGSdfYZkdNG9LB-v3pCsY74bKk4tDUeBM-9daL_3dbEPxsR995WE6hgTtW_g_incdBP2lQyMvXzFqyY28VD4QXH3RYlJWbdit_vaPF4NCKRZY2xbP-GiAeQgLZKt_HKUOD1OIsKccAs2bArHJwkkVAxsoJKzn0pO9JOhHh3BIJOSuzBfIBDFdQo3jvS0dmxdJSQ8K47M5ddtmVEwJ8IgtacgiQ\",\n  \"refresh_token\": \"eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6IjYxMjg3OThjLWJlZDMtNDM5OS1hM2IwLTVjYTI0ZWU1ODM3ZC0yNjA3MTIiLCJpc3MiOiJodHRwczovL29wZW5hbS1rYXRlMDcxMHMuZm9yZ2VibG9ja3MuY29tL2FtL29hdXRoMiIsInRva2VuTmFtZSI6InJlZnJlc2hfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJDRG5HLTdFcXYwNDZQLXpaQTVVcVVHU0N2LUkiLCJhdWQiOiIzNDNjMWIwOTAxNWJlMDYxMjQ5ZjQ1NWM3NjViMGFlZiIsImFjciI6IjAiLCJuYmYiOjE1NjQwOTI2NTgsIm9wcyI6Imw1Wlcydzc1OUJNcW5CaHRXcTVzT1NSdjlpTSIsImdyYW50X3R5cGUiOiJyZWZyZXNoX3Rva2VuIiwic2NvcGUiOlsidXNlci5yZWFkIiwibWUucmVhZCIsInVzZXIuY3JlYXRlIiwicGFzc3dvcmQtcG9saWN5LnJlYWQiLCJvcGVuaWQiLCJtZS51cGRhdGUiLCJwcm9maWxlIiwibWUudXBkYXRlLXBhc3N3b3JkIiwiZW1haWwiLCJ1c2VyLnJlY292ZXItdXNlcm5hbWUiLCJ1c2VyLnJlc2V0LXBhc3N3b3JkIl0sImF1dGhfdGltZSI6MTU2NDA5MjQ0OCwicmVhbG0iOiIvIiwiZXhwIjoxNTY0Njk3NDU4LCJpYXQiOjE1NjQwOTI2NTgsImV4cGlyZXNfaW4iOjYwNDgwMCwianRpIjoiMzdWX2dQUFBueVBPbXkxOVlLcnpDaU1wWHNBIn0.Ii5sLuPXee9Wa4Xasklquk8iYStQTHh-ogHzbvi3oy3z3Z7aZO_nxtKLfOgCbuLogfrluRs2APLbV5WyWx8Ik-wQmW6KnpT5YPbGBbzxWdzBQBYh67gGE6cs-QUHAEorplq0ZCwNRAqhYQ0tFeh4ZQXJAmDx_zLO7Kcq99VNHYkziGpyxxLJEjPqfP8o3Tm-W859H8YxvRpDGw_tOJz4_nhEIoKu0da6OwfYzZoK8fvb_sJZUrR8UlWJ2sa77jK1XdBCYqilfu2xPqkgI2Rf632nkUSU-UjiyeqVpCkGwsES_yah22-EMQBK2gFQSDDFdG1AJvuV5GkNSRHJh-UMJg\",\n  \"scope\": \"user.read me.read user.create password-policy.read openid me.update profile me.update-password email user.recover-username user.reset-password\",\n  \"id_token\": \"eyJ0eXAiOiJKV1QiLCJraWQiOiJ3VTNpZklJYUxPVUFSZVJCL0ZHNmVNMVAxUU09IiwiYWxnIjoiUlMyNTYifQ.eyJhdF9oYXNoIjoiY3JrMGVLaW9hcDdTamxyMHp6OS0zZyIsInN1YiI6ImJqZW5zZW5AZXhhbXBsZS5jb20iLCJ6b25laW5mbyI6IkFtZXJpY2EvTG9zX0FuZ2VsZXMiLCJhdWRpdFRyYWNraW5nSWQiOiI2MTI4Nzk4Yy1iZWQzLTQzOTktYTNiMC01Y2EyNGVlNTgzN2QtMjYwNzE0IiwiaXNzIjoiaHR0cHM6Ly9vcGVuYW0ta2F0ZTA3MTBzLmZvcmdlYmxvY2tzLmNvbS9hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJpZF90b2tlbiIsImxvY2FsZSI6ImVuLVVTIiwidGl0bGUiOiJNYXN0ZXIgQ2FycGVudGVyIiwiYWNyIjoiMCIsImF6cCI6IjM0M2MxYjA5MDE1YmUwNjEyNDlmNDU1Yzc2NWIwYWVmIiwiYXV0aF90aW1lIjoxNTY0MDkyNDQ4LCJuaWNrbmFtZSI6IkJhYnMiLCJleHAiOjE1NjQwOTYyNTgsImlhdCI6MTU2NDA5MjY1OCwiZW1haWwiOiJiYWJzQGplbnNlbi5vcmciLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsInByb2ZpbGUiOiJodHRwczovL2xvZ2luLmV4YW1wbGUuY29tL2JqZW5zZW4iLCJnaXZlbl9uYW1lIjoiQmFyYmFyYSIsIm1pZGRsZV9uYW1lIjoiSmFuZSIsImF1ZCI6IjM0M2MxYjA5MDE1YmUwNjEyNDlmNDU1Yzc2NWIwYWVmIiwib3JnLmZvcmdlcm9jay5vcGVuaWRjb25uZWN0Lm9wcyI6Imw1Wlcydzc1OUJNcW5CaHRXcTVzT1NSdjlpTSIsIm5hbWUiOiJCYXJiYXJhIEphbmUgSmVuc2VuIiwicmVhbG0iOiIvIiwidG9rZW5UeXBlIjoiSldUVG9rZW4iLCJmYW1pbHlfbmFtZSI6IkplbnNlbiJ9.X2DjSSI32WWNd_TLGtJIzYYCSHGePoYtehOz5rUbagCw6EzsQymWBNkLnKNQZOLH09hcLt8-mTkOndKubw-LUJhzrERqUw_Boro5DxRV2rCzX0L_oLBGm5IoQ-m3gfKIEhNIBDQlXZaRyh7tab56wSGX7byh4t39QK3YjOs49HJxkm-A8mM3y70q0vzix1gkOARzz4aDVROlPVAc9CAIFii-cZbNyw9oi4tSU59S2V9ZjvcWhEVgcPHbQcc9dtpRy5j78vveGahkrpWyQcK-LZKP4LFlIYN2wy6qF4pD9iAeXWn57_goBVxZ-VKt-BSTEqBk7VIwrm6zY3HCZj5Dew\",\n  \"token_type\": \"Bearer\",\n  \"expires_in\": 3599\n}"
-								}
-							]
-						},
-						{
-							"name": "Revoke",
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/x-www-form-urlencoded"
-									}
-								],
-								"body": {
-									"mode": "urlencoded",
-									"urlencoded": [
-										{
-											"key": "token",
-											"value": "{{accessToken}}",
-											"type": "text"
-										},
-										{
-											"key": "client_id",
-											"value": "{{webClientId}}",
-											"type": "text"
-										},
-										{
-											"key": "client_secret",
-											"value": "{{webSecret}}",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{oauth2Url}}/token/revoke",
-									"host": [
-										"{{oauth2Url}}"
-									],
-									"path": [
-										"token",
-										"revoke"
-									]
-								},
-								"description": "Revoke an access_token for an app. Requires an access_token created for the app, set as the *Bearer* token. You can acquire an app access_token from the Get Web App Token - Auth Code Grant REST call."
-							},
-							"response": [
-								{
-									"name": "Revoke",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/x-www-form-urlencoded"
-											}
-										],
-										"body": {
-											"mode": "urlencoded",
-											"urlencoded": [
-												{
-													"key": "token",
-													"value": "{{accessToken}}",
-													"type": "text"
-												},
-												{
-													"key": "client_id",
-													"value": "{{webClientId}}",
-													"type": "text"
-												},
-												{
-													"key": "client_secret",
-													"value": "{{webSecret}}",
-													"type": "text"
-												}
-											]
-										},
-										"url": {
-											"raw": "{{oauth2Url}}/token/revoke",
-											"host": [
-												"{{oauth2Url}}"
-											],
-											"path": [
-												"token",
-												"revoke"
-											]
-										}
-									},
-									"status": "Bad Request",
-									"code": 400,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "X-Frame-Options",
-											"value": "SAMEORIGIN"
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json;charset=UTF-8"
-										},
-										{
-											"key": "Content-Length",
-											"value": "1464"
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 07 Aug 2019 13:32:06 GMT"
-										},
-										{
-											"key": "Via",
-											"value": "1.1 google"
-										},
-										{
-											"key": "Alt-Svc",
-											"value": "clear"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"error_description\": \"The provided token id : eyJ0eXAiOiJKV1QiLCJ6aXAiOiJOT05FIiwia2lkIjoid1UzaWZJSWFMT1VBUmVSQi9GRzZlTTFQMVFNPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJiamVuc2VuQGV4YW1wbGUuY29tIiwiY3RzIjoiT0FVVEgyX1NUQVRFTEVTU19HUkFOVCIsImF1dGhfbGV2ZWwiOjAsImF1ZGl0VHJhY2tpbmdJZCI6ImFkZTZiMmI2LTZkN2EtNGRlMi05N2RkLTliMGE1NGQzZTNkNi04NTUzNCIsImlzcyI6Imh0dHBzOi8vb3BlbmFtLXBlYmJsZS1iYW5rLmZvcmdlYmxvY2tzLmNvbS9hbS9vYXV0aDIiLCJ0b2tlbk5hbWUiOiJhY2Nlc3NfdG9rZW4iLCJ0b2tlbl90eXBlIjoiQmVhcmVyIiwiYXV0aEdyYW50SWQiOiJpa2tPcGNlV3lQMS1fNW9PNXFlbDJuSnZqdnciLCJhdWQiOiJmMzcyYzRlNmQwZjI4MmM3ZTY2MDAxOGVlZjBjMjI3NSIsIm5iZiI6MTU2NTE4NDcyMCwiZ3JhbnRfdHlwZSI6ImF1dGhvcml6YXRpb25fY29kZSIsInNjb3BlIjpbInVzZXIucmVhZCIsIm1lLnJlYWQiLCJ1c2VyLmNyZWF0ZSIsInBhc3N3b3JkLXBvbGljeS5yZWFkIiwib3BlbmlkIiwibWUudXBkYXRlIiwicHJvZmlsZSIsIm1lLnVwZGF0ZS1wYXNzd29yZCIsImVtYWlsIiwidXNlci5yZWNvdmVyLXVzZXJuYW1lIiwidXNlci5yZXNldC1wYXNzd29yZCJdLCJhdXRoX3RpbWUiOjE1NjUxODQ1OTMsInJlYWxtIjoiLyIsImV4cCI6MTU2NTE4ODMyMCwiaWF0IjoxNTY1MTg0NzIwLCJleHBpcmVzX2luIjozNjAwLCJqdGkiOiJfUW54UmtRWVZ3ckdqVzhwT3FLNlFoR2tPeU0ifQ.gWhK73vM0EcD2CvpvT81XfHXwFcvc6okkEn465LEnS5Mml9p_jC3Re1OAvI4OHFY5DZQuh7IzO7sgsOXLmHX1gyA0VZPWyfLPBrV1wWintFgC_qKluMLhANQnq9WvkUA0i7-cV4SDp_72ZrewfUTNDQvekWO0bqx7L0V2VBqH-PowUVrzMLWHwmOA9qV4O_NuxdiANDFlZY7-tYIDI3PCHx34WzdMlxtzPFJ3EAVwT-_oy1slO6UEcBk36cxvA52iNsNpDbNKexFH-kd36JSwG1TbvZGtwmjZnuZGjNrQyAyA7xpnpiKUBh83T7nvfCfOwzl470bDKjc6hnb437y2Q belongs to different access grant.\",\n  \"error\": \"invalid_grant\"\n}"
-								}
-							]
-						}
-					],
-					"description": "APIs to manage your `access tokens`\n\n",
-					"event": [
-						{
-							"listen": "prerequest",
-							"script": {
-								"id": "61d36b4d-360f-4471-901c-1cdeeae082e8",
-								"type": "text/javascript",
-								"exec": [
-									""
-								]
-							}
-						},
-						{
-							"listen": "test",
-							"script": {
-								"id": "7a196286-2c52-4131-865b-a488590fccc6",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -7563,5 +8068,6 @@
 				]
 			}
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
