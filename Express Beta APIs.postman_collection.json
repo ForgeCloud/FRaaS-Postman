@@ -2,7 +2,6 @@
 	"info": {
 		"_postman_id": "f2e569d7-ece8-4046-b029-657ed7f13d80",
 		"name": "Express Beta APIs",
-		"description": "The ForgeRock Identity Cloud includes two sets of APIs:\n\n* Management APIs: To manage configuration of ForgeRock Identity Cloud Express\n\n* Authentication APIs: To authenticate users and obtain and manage `access_token`, `id_token` and `refresh_token`.\n\nFor descriptions of environment variables, see our glossary of [Postman Variables](https://developer.forgerock.com/docs/identity-cloud/reference/postman-variables).",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -793,7 +792,7 @@
 							"_postman_isSubFolder": true
 						},
 						{
-							"name": "Web Apps",
+							"name": "Web Apps: Base64 Encoded Client ID and Secret",
 							"item": [
 								{
 									"name": "Create a New Web App ",
@@ -842,7 +841,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n \"accessTokenLifetime\": 3600,\n \"apiScopes\": [\n  \"me.read\",\n  \"me.update\",\n  \"me.update-password\",\n  \"password-policy.read\",\n  \"password-policy.update\",\n  \"user.reset-password\",\n  \"user.recover-username\",\n  \"user.create\",\n  \"user.read\",\n  \"openid\",\n  \"profile\",\n  \"email\",\n  \"address\",\n  \"phone\"\n ],\n \"authorizationCodeLifetime\": 120,\n \"customClaims\": {},\n \"description\": \"My great sample web app\",\n \"enabled\": true,\n \"grantTypes\": {\n  \"authorizationCode\": true,\n  \"refreshToken\": true,\n  \"clientCredentials\": true,\n  \"password\": true\n },\n \"jwtSigningAlgorithm\": \"RS256\",\n \"jwtTokenLifetime\": 3600,\n \"loginRedirectUris\": [\"https://example.com/homeLogin/\"],\n \"logoutRedirectUris\": [\"https://example.com/homeLogout/\"],\n \"name\": \"Sample Web App\",\n \"refreshTokenLifetime\": 604800,\n \"type\": \"web\"\n}"
+											"raw": "{\n \"accessTokenLifetime\": 3600,\n \"advancedOAuth\" : {\n \t\"tokenEndpointAuthMethod\": \"client_secret_basic\"\n },\n \"apiScopes\": [\n  \"me.read\",\n  \"me.update\",\n  \"me.update-password\",\n  \"password-policy.read\",\n  \"password-policy.update\",\n  \"user.reset-password\",\n  \"user.recover-username\",\n  \"user.create\",\n  \"user.read\",\n  \"openid\",\n  \"profile\",\n  \"email\",\n  \"address\",\n  \"phone\"\n ],\n \"authorizationCodeLifetime\": 120,\n \"customClaims\": {},\n \"description\": \"My great sample web app\",\n \"enabled\": true,\n \"grantTypes\": {\n  \"authorizationCode\": true,\n  \"refreshToken\": true,\n  \"clientCredentials\": true,\n  \"password\": true\n },\n \"jwtSigningAlgorithm\": \"RS256\",\n \"jwtTokenLifetime\": 3600,\n \"loginRedirectUris\": [\"https://example.com/homeLogin/\"],\n \"logoutRedirectUris\": [\"https://example.com/homeLogout/\"],\n \"name\": \"Sample Web App\",\n \"refreshTokenLifetime\": 604800,\n \"type\": \"web\"\n}"
 										},
 										"url": {
 											"raw": "{{tenantApiV1Url}}/apps",
@@ -870,7 +869,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n \"accessTokenLifetime\": 3600,\n \"apiScopes\": [\n  \"me.read\",\n  \"me.update\",\n  \"me.update-password\",\n  \"password-policy.read\",\n  \"password-policy.update\",\n  \"user.reset-password\",\n  \"user.recover-username\",\n  \"user.create\",\n  \"user.read\",\n  \"openid\",\n  \"profile\",\n  \"email\",\n  \"address\",\n  \"phone\"\n ],\n \"authorizationCodeLifetime\": 120,\n \"customClaims\": {},\n \"description\": \"My great sample web app\",\n \"enabled\": true,\n \"grantTypes\": {\n  \"authorizationCode\": true,\n  \"refreshToken\": true,\n  \"clientCredentials\": true,\n  \"password\": true\n },\n \"jwtSigningAlgorithm\": \"RS256\",\n \"jwtTokenLifetime\": 3600,\n \"loginRedirectUris\": [\"https://example.com/homeLogin/\"],\n \"logoutRedirectUris\": [\"https://example.com/homeLogout/\"],\n \"name\": \"Sample Web App\",\n \"refreshTokenLifetime\": 604800,\n \"type\": \"web\"\n}"
+													"raw": "{\n \"accessTokenLifetime\": 3600,\n \"advancedOAuth\" : {\n \t\"tokenEndpointAuthMethod\": \"client_secret_basic\"\n },\n \"apiScopes\": [\n  \"me.read\",\n  \"me.update\",\n  \"me.update-password\",\n  \"password-policy.read\",\n  \"password-policy.update\",\n  \"user.reset-password\",\n  \"user.recover-username\",\n  \"user.create\",\n  \"user.read\",\n  \"openid\",\n  \"profile\",\n  \"email\",\n  \"address\",\n  \"phone\"\n ],\n \"authorizationCodeLifetime\": 120,\n \"customClaims\": {},\n \"description\": \"My great sample web app\",\n \"enabled\": true,\n \"grantTypes\": {\n  \"authorizationCode\": true,\n  \"refreshToken\": true,\n  \"clientCredentials\": true,\n  \"password\": true\n },\n \"jwtSigningAlgorithm\": \"RS256\",\n \"jwtTokenLifetime\": 3600,\n \"loginRedirectUris\": [\"https://example.com/homeLogin/\"],\n \"logoutRedirectUris\": [\"https://example.com/homeLogout/\"],\n \"name\": \"Sample Web App\",\n \"refreshTokenLifetime\": 604800,\n \"type\": \"web\"\n}"
 												},
 												"url": {
 													"raw": "{{tenantApiV1Url}}/apps",
@@ -920,15 +919,15 @@
 												},
 												{
 													"key": "Content-Length",
-													"value": "816"
+													"value": "882"
 												},
 												{
 													"key": "ETag",
-													"value": "W/\"330-rGAmhHlc8FDU5cYPv9vpZ+gAHHE\""
+													"value": "W/\"372-YjwrSTeK4FaqwukwBFeP5KC6Tq0\""
 												},
 												{
 													"key": "Date",
-													"value": "Wed, 24 Jul 2019 14:56:52 GMT"
+													"value": "Tue, 08 Oct 2019 15:59:04 GMT"
 												},
 												{
 													"key": "Via",
@@ -940,12 +939,12 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n  \"accessTokenLifetime\": 3600,\n  \"apiScopes\": [\n    \"me.read\",\n    \"me.update\",\n    \"me.update-password\",\n    \"password-policy.read\",\n    \"password-policy.update\",\n    \"user.reset-password\",\n    \"user.recover-username\",\n    \"user.create\",\n    \"user.read\",\n    \"openid\",\n    \"profile\",\n    \"email\",\n    \"address\",\n    \"phone\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"0df4ae802cd048ed1bafef2ba84be79f\",\n  \"customClaims\": {},\n  \"description\": \"My great sample web app\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"clientCredentials\": true,\n    \"password\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"RS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\n    \"https://example.com/homeLogin/\"\n  ],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [\n    \"https://example.com/homeLogout/\"\n  ],\n  \"name\": \"Sample Web App\",\n  \"refreshTokenLifetime\": 604800,\n  \"secret\": \"W/xp0jdCQ5MMXG7F7AdcQUiU6iTSBmzUwXm7nwxGqT8=\",\n  \"type\": \"web\"\n}"
+											"body": "{\n    \"accessTokenLifetime\": 3600,\n    \"advancedOAuth\": {\n        \"tokenEndpointAuthMethod\": \"client_secret_basic\"\n    },\n    \"apiScopes\": [\n        \"me.read\",\n        \"me.update\",\n        \"me.update-password\",\n        \"password-policy.read\",\n        \"password-policy.update\",\n        \"user.reset-password\",\n        \"user.recover-username\",\n        \"user.create\",\n        \"user.read\",\n        \"openid\",\n        \"profile\",\n        \"email\",\n        \"address\",\n        \"phone\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"978a35beab66a40d5e59d964fef09f1f\",\n    \"customClaims\": {},\n    \"description\": \"My great sample web app\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"password\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"https://example.com/homeLogout/\"\n    ],\n    \"name\": \"Sample Web App\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": \"uYCx/9aGUgwTrPiM2hrsgI2zl71YNerz0TWVqhrNZ0c=\",\n    \"type\": \"web\"\n}"
 										}
 									]
 								},
 								{
-									"name": "Update Web App.",
+									"name": "Update Web App",
 									"event": [
 										{
 											"listen": "test",
@@ -978,7 +977,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"accessTokenLifetime\": 3600,\n  \"apiScopes\": [\n   \"me.read\",\n   \"me.update\",\n   \"password-policy.read\",\n   \"password-policy.update\",\n   \"user.reset-password\",\n   \"user.recover-username\",\n   \"user.create\",\n   \"user.read\",\n   \"openid\",\n   \"profile\",\n   \"email\",\n   \"address\",\n   \"phone\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"{{webClientId}}\",\n  \"customClaims\": {},\n  \"description\": \"My great web service app, modfied\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"clientCredentials\": true,\n    \"password\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"RS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\n    \"https://example.com/homeLogin/\"\n  ],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [\n    \"https://exmaple.com/homeLogout/\"\n  ],\n  \"name\": \"Sample Web App\",\n  \"refreshTokenLifetime\": 604800,\n  \"type\": \"web\"\n}"
+											"raw": "{\n  \"accessTokenLifetime\": 3600,\n  \"advancedOAuth\" : {\n \t\"tokenEndpointAuthMethod\": \"client_secret_basic\"\n  },\n  \"apiScopes\": [\n   \"me.read\",\n   \"me.update\",\n   \"password-policy.read\",\n   \"password-policy.update\",\n   \"user.reset-password\",\n   \"user.recover-username\",\n   \"user.create\",\n   \"user.read\",\n   \"openid\",\n   \"profile\",\n   \"email\",\n   \"address\",\n   \"phone\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"{{webClientId}}\",\n  \"customClaims\": {},\n  \"description\": \"My great web service app, modfied\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"clientCredentials\": true,\n    \"password\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"RS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\n    \"https://example.com/homeLogin/\"\n  ],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [\n    \"https://exmaple.com/homeLogout/\"\n  ],\n  \"name\": \"Sample Web App\",\n  \"refreshTokenLifetime\": 604800,\n  \"type\": \"web\"\n}"
 										},
 										"url": {
 											"raw": "{{tenantApiV1Url}}/apps/{{webClientId}}",
@@ -994,7 +993,7 @@
 									},
 									"response": [
 										{
-											"name": "Update Web App.",
+											"name": "Update Web App",
 											"originalRequest": {
 												"method": "PUT",
 												"header": [
@@ -1005,7 +1004,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"accessTokenLifetime\": 3600,\n  \"apiScopes\": [\n   \"me.read\",\n   \"me.update\",\n   \"password-policy.read\",\n   \"password-policy.update\",\n   \"user.reset-password\",\n   \"user.recover-username\",\n   \"user.create\",\n   \"user.read\",\n   \"openid\",\n   \"profile\",\n   \"email\",\n   \"address\",\n   \"phone\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"{{webClientId}}\",\n  \"customClaims\": {},\n  \"description\": \"My great web service app, modfied\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"clientCredentials\": true,\n    \"password\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"RS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\n    \"https://example.com/homeLogin/\"\n  ],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [\n    \"https://exmaple.com/homeLogout/\"\n  ],\n  \"name\": \"Sample Web App\",\n  \"refreshTokenLifetime\": 604800,\n  \"type\": \"web\"\n}"
+													"raw": "{\n  \"accessTokenLifetime\": 3600,\n  \"advancedOAuth\" : {\n \t\"tokenEndpointAuthMethod\": \"client_secret_basic\"\n  },\n  \"apiScopes\": [\n   \"me.read\",\n   \"me.update\",\n   \"password-policy.read\",\n   \"password-policy.update\",\n   \"user.reset-password\",\n   \"user.recover-username\",\n   \"user.create\",\n   \"user.read\",\n   \"openid\",\n   \"profile\",\n   \"email\",\n   \"address\",\n   \"phone\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"{{webClientId}}\",\n  \"customClaims\": {},\n  \"description\": \"My great web service app, modfied\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"clientCredentials\": true,\n    \"password\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"RS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\n    \"https://example.com/homeLogin/\"\n  ],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [\n    \"https://exmaple.com/homeLogout/\"\n  ],\n  \"name\": \"Sample Web App\",\n  \"refreshTokenLifetime\": 604800,\n  \"type\": \"web\"\n}"
 												},
 												"url": {
 													"raw": "{{tenantApiV1Url}}/apps/{{webClientId}}",
@@ -1056,15 +1055,15 @@
 												},
 												{
 													"key": "Content-Length",
-													"value": "763"
+													"value": "829"
 												},
 												{
 													"key": "ETag",
-													"value": "W/\"2fb-MAmVbBlI34dHUSvTCUiuSz6rsDc\""
+													"value": "W/\"33d-wu6DkI7cjjOtogEhk1j9nSk9lMo\""
 												},
 												{
 													"key": "Date",
-													"value": "Wed, 31 Jul 2019 20:39:27 GMT"
+													"value": "Tue, 08 Oct 2019 15:59:57 GMT"
 												},
 												{
 													"key": "Via",
@@ -1076,7 +1075,7 @@
 												}
 											],
 											"cookie": [],
-											"body": "{\n  \"accessTokenLifetime\": 3600,\n  \"apiScopes\": [\n    \"me.read\",\n    \"me.update\",\n    \"password-policy.read\",\n    \"password-policy.update\",\n    \"user.reset-password\",\n    \"user.recover-username\",\n    \"user.create\",\n    \"user.read\",\n    \"openid\",\n    \"profile\",\n    \"email\",\n    \"address\",\n    \"phone\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"c267d5eb2006729a21f74ddb37655986\",\n  \"customClaims\": {},\n  \"description\": \"My great web service app, modfied\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"clientCredentials\": true,\n    \"password\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"RS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\n    \"https://example.com/homeLogin/\"\n  ],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [\n    \"https://exmaple.com/homeLogout/\"\n  ],\n  \"name\": \"Sample Web App\",\n  \"refreshTokenLifetime\": 604800,\n  \"secret\": null,\n  \"type\": \"web\"\n}"
+											"body": "{\n    \"accessTokenLifetime\": 3600,\n    \"advancedOAuth\": {\n        \"tokenEndpointAuthMethod\": \"client_secret_basic\"\n    },\n    \"apiScopes\": [\n        \"me.read\",\n        \"me.update\",\n        \"password-policy.read\",\n        \"password-policy.update\",\n        \"user.reset-password\",\n        \"user.recover-username\",\n        \"user.create\",\n        \"user.read\",\n        \"openid\",\n        \"profile\",\n        \"email\",\n        \"address\",\n        \"phone\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"978a35beab66a40d5e59d964fef09f1f\",\n    \"customClaims\": {},\n    \"description\": \"My great web service app, modfied\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"password\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"https://exmaple.com/homeLogout/\"\n    ],\n    \"name\": \"Sample Web App\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": null,\n    \"type\": \"web\"\n}"
 										}
 									]
 								},
@@ -1326,7 +1325,567 @@
 									]
 								}
 							],
-							"description": "You can create, update, and delete, and regenerate a client secret Web apps. The OAuth 2.0 spec calls these apps as confidential apps because they are able to store their client secret. \n\nEach time you create a *new* Web app in Express, our test script will store the public client ID and secret in the postman variables `webClientId`,`webSecret`, and `cliendId` which are used by other API calles in the Web Apps collection.\n\n",
+							"description": "You can create, update, and delete, and regenerate a client secret Web apps. The OAuth 2.0 spec calls these apps as confidential apps because they are able to store their client secret. \n\nThese commands use the posted version of your client ID and client secret, based on the `client_secret_basic` [Token Endpoint Authentication Method](https://tools.ietf.org/html/rfc7591#section-2) listed in RFC7591.\n\nEach time you create a *new* Web app in Express, our test script will store the public client ID and secret in the postman variables `webClientId`,`webSecret`, and `cliendId` which are used by other API calles in the Web Apps collection.",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "dde5d636-2f65-436a-a0f4-a463ba19c747",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"id": "f0ea78d1-7fc8-47de-8529-ff999359c362",
+										"type": "text/javascript",
+										"exec": [
+											""
+										]
+									}
+								}
+							],
+							"protocolProfileBehavior": {},
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "Web Apps: Posted Client ID and Secret",
+							"item": [
+								{
+									"name": "Create a New Web App ",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "1fd2a55a-d732-4e0e-ba83-6f594d33b7df",
+												"exec": [
+													"var json = JSON.parse(responseBody);",
+													"if(json.clientId){",
+													"postman.setEnvironmentVariable(\"webClientId\", json.clientId);",
+													"postman.setEnvironmentVariable(\"clientId\", json.clientId);",
+													"console.log(`set clientId = ${json.clientId}`);",
+													"console.log(`set webClientId = ${json.clientId}`);",
+													"",
+													"}",
+													"if(json.secret){",
+													"postman.setEnvironmentVariable(\"webSecret\", json.secret);",
+													"console.log(`set webSecret = ${json.secret}`);",
+													"}"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n \"accessTokenLifetime\": 3600,\n \"advancedOAuth\" : {\n \t\"tokenEndpointAuthMethod\": \"client_secret_post\"\n },\n \"apiScopes\": [\n  \"me.read\",\n  \"me.update\",\n  \"me.update-password\",\n  \"password-policy.read\",\n  \"password-policy.update\",\n  \"user.reset-password\",\n  \"user.recover-username\",\n  \"user.create\",\n  \"user.read\",\n  \"openid\",\n  \"profile\",\n  \"email\",\n  \"address\",\n  \"phone\"\n ],\n \"authorizationCodeLifetime\": 120,\n \"customClaims\": {},\n \"description\": \"My great sample web app\",\n \"enabled\": true,\n \"grantTypes\": {\n  \"authorizationCode\": true,\n  \"refreshToken\": true,\n  \"clientCredentials\": true,\n  \"password\": true\n },\n \"jwtSigningAlgorithm\": \"RS256\",\n \"jwtTokenLifetime\": 3600,\n \"loginRedirectUris\": [\"https://example.com/homeLogin/\"],\n \"logoutRedirectUris\": [\"https://example.com/homeLogout/\"],\n \"name\": \"Sample Web App\",\n \"refreshTokenLifetime\": 604800,\n \"type\": \"web\"\n}"
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/apps",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"apps"
+											]
+										},
+										"description": "Creates a web app client in Express . \n\nInclude: `\"type\" : \"web\"` in the payload to specify the type of app to be created in Express \n\n*Note*: In this example call the `password` client grant type to true. Use `password` client grant for non-production environments and use authorization code or client crendial grants for production."
+									},
+									"response": [
+										{
+											"name": "Create a New Web App ",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"name": "Content-Type",
+														"type": "text",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n \"accessTokenLifetime\": 3600,\n \"advancedOAuth\" : {\n \t\"tokenEndpointAuthMethod\": \"client_secret_basic\"\n },\n \"apiScopes\": [\n  \"me.read\",\n  \"me.update\",\n  \"me.update-password\",\n  \"password-policy.read\",\n  \"password-policy.update\",\n  \"user.reset-password\",\n  \"user.recover-username\",\n  \"user.create\",\n  \"user.read\",\n  \"openid\",\n  \"profile\",\n  \"email\",\n  \"address\",\n  \"phone\"\n ],\n \"authorizationCodeLifetime\": 120,\n \"customClaims\": {},\n \"description\": \"My great sample web app\",\n \"enabled\": true,\n \"grantTypes\": {\n  \"authorizationCode\": true,\n  \"refreshToken\": true,\n  \"clientCredentials\": true,\n  \"password\": true\n },\n \"jwtSigningAlgorithm\": \"RS256\",\n \"jwtTokenLifetime\": 3600,\n \"loginRedirectUris\": [\"https://example.com/homeLogin/\"],\n \"logoutRedirectUris\": [\"https://example.com/homeLogout/\"],\n \"name\": \"Sample Web App\",\n \"refreshTokenLifetime\": 604800,\n \"type\": \"web\"\n}"
+												},
+												"url": {
+													"raw": "{{tenantApiV1Url}}/apps",
+													"host": [
+														"{{tenantApiV1Url}}"
+													],
+													"path": [
+														"apps"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "882"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"372-YjwrSTeK4FaqwukwBFeP5KC6Tq0\""
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 08 Oct 2019 15:59:04 GMT"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "clear"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"accessTokenLifetime\": 3600,\n    \"advancedOAuth\": {\n        \"tokenEndpointAuthMethod\": \"client_secret_basic\"\n    },\n    \"apiScopes\": [\n        \"me.read\",\n        \"me.update\",\n        \"me.update-password\",\n        \"password-policy.read\",\n        \"password-policy.update\",\n        \"user.reset-password\",\n        \"user.recover-username\",\n        \"user.create\",\n        \"user.read\",\n        \"openid\",\n        \"profile\",\n        \"email\",\n        \"address\",\n        \"phone\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"978a35beab66a40d5e59d964fef09f1f\",\n    \"customClaims\": {},\n    \"description\": \"My great sample web app\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"password\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"https://example.com/homeLogout/\"\n    ],\n    \"name\": \"Sample Web App\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": \"uYCx/9aGUgwTrPiM2hrsgI2zl71YNerz0TWVqhrNZ0c=\",\n    \"type\": \"web\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Update Web App",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "b8055a85-9dc6-4c97-abbb-3a3d7dd2febf",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"accessTokenLifetime\": 3600,\n  \"advancedOAuth\" : {\n \t\"tokenEndpointAuthMethod\": \"client_secret_basic\"\n  },\n  \"apiScopes\": [\n   \"me.read\",\n   \"me.update\",\n   \"password-policy.read\",\n   \"password-policy.update\",\n   \"user.reset-password\",\n   \"user.recover-username\",\n   \"user.create\",\n   \"user.read\",\n   \"openid\",\n   \"profile\",\n   \"email\",\n   \"address\",\n   \"phone\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"{{webClientId}}\",\n  \"customClaims\": {},\n  \"description\": \"My great web service app, modfied\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"clientCredentials\": true,\n    \"password\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"RS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\n    \"https://example.com/homeLogin/\"\n  ],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [\n    \"https://exmaple.com/homeLogout/\"\n  ],\n  \"name\": \"Sample Web App\",\n  \"refreshTokenLifetime\": 604800,\n  \"type\": \"web\"\n}"
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/apps/{{webClientId}}",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"apps",
+												"{{webClientId}}"
+											]
+										},
+										"description": "Updates the configuration of an existing web application client."
+									},
+									"response": [
+										{
+											"name": "Update Web App",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"accessTokenLifetime\": 3600,\n  \"advancedOAuth\" : {\n \t\"tokenEndpointAuthMethod\": \"client_secret_basic\"\n  },\n  \"apiScopes\": [\n   \"me.read\",\n   \"me.update\",\n   \"password-policy.read\",\n   \"password-policy.update\",\n   \"user.reset-password\",\n   \"user.recover-username\",\n   \"user.create\",\n   \"user.read\",\n   \"openid\",\n   \"profile\",\n   \"email\",\n   \"address\",\n   \"phone\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"{{webClientId}}\",\n  \"customClaims\": {},\n  \"description\": \"My great web service app, modfied\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"clientCredentials\": true,\n    \"password\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"RS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\n    \"https://example.com/homeLogin/\"\n  ],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [\n    \"https://exmaple.com/homeLogout/\"\n  ],\n  \"name\": \"Sample Web App\",\n  \"refreshTokenLifetime\": 604800,\n  \"type\": \"web\"\n}"
+												},
+												"url": {
+													"raw": "{{tenantApiV1Url}}/apps/{{webClientId}}",
+													"host": [
+														"{{tenantApiV1Url}}"
+													],
+													"path": [
+														"apps",
+														"{{webClientId}}"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "829"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"33d-wu6DkI7cjjOtogEhk1j9nSk9lMo\""
+												},
+												{
+													"key": "Date",
+													"value": "Tue, 08 Oct 2019 15:59:57 GMT"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "clear"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"accessTokenLifetime\": 3600,\n    \"advancedOAuth\": {\n        \"tokenEndpointAuthMethod\": \"client_secret_basic\"\n    },\n    \"apiScopes\": [\n        \"me.read\",\n        \"me.update\",\n        \"password-policy.read\",\n        \"password-policy.update\",\n        \"user.reset-password\",\n        \"user.recover-username\",\n        \"user.create\",\n        \"user.read\",\n        \"openid\",\n        \"profile\",\n        \"email\",\n        \"address\",\n        \"phone\"\n    ],\n    \"authorizationCodeLifetime\": 120,\n    \"clientId\": \"978a35beab66a40d5e59d964fef09f1f\",\n    \"customClaims\": {},\n    \"description\": \"My great web service app, modfied\",\n    \"domain\": \"\",\n    \"enabled\": true,\n    \"grantTypes\": {\n        \"authorizationCode\": true,\n        \"clientCredentials\": true,\n        \"password\": true,\n        \"refreshToken\": true\n    },\n    \"jwtSigningAlgorithm\": \"RS256\",\n    \"jwtTokenLifetime\": 3600,\n    \"loginRedirectUris\": [\n        \"https://example.com/homeLogin/\"\n    ],\n    \"logoUrl\": \"\",\n    \"logoutRedirectUris\": [\n        \"https://exmaple.com/homeLogout/\"\n    ],\n    \"name\": \"Sample Web App\",\n    \"refreshTokenLifetime\": 604800,\n    \"secret\": null,\n    \"type\": \"web\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Regenerate Web App Secret",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "0fe62f1e-348b-4353-bcb1-efa0a1cdce26",
+												"exec": [
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{accessToken}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/apps/refresh/{{webClientId}}",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"apps",
+												"refresh",
+												"{{webClientId}}"
+											]
+										},
+										"description": "Generates a new client secret for the app. To successfully refresh the app secret you must ensure the `access token` you use has the app.refresh-secret scope set."
+									},
+									"response": [
+										{
+											"name": "Regenerate Web App Secret",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "{{tenantApiV1Url}}/apps/refresh/{{webClientId}}",
+													"host": [
+														"{{tenantApiV1Url}}"
+													],
+													"path": [
+														"apps",
+														"refresh",
+														"{{webClientId}}"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "800"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"320-NwZqnRTOHWcffR/y97h38V4X6So\""
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 24 Jul 2019 14:58:54 GMT"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "clear"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"accessTokenLifetime\": 3600,\n  \"apiScopes\": [\n    \"me.read\",\n    \"me.update\",\n    \"password-policy.read\",\n    \"password-policy.update\",\n    \"user.reset-password\",\n    \"user.recover-username\",\n    \"user.create\",\n    \"user.read\",\n    \"openid\",\n    \"profile\",\n    \"email\",\n    \"address\",\n    \"phone\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"0df4ae802cd048ed1bafef2ba84be79f\",\n  \"customClaims\": {},\n  \"description\": \"My great web service app, modfied\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"clientCredentials\": true,\n    \"password\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"RS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\n    \"https://example.com/homeLogin/\"\n  ],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [\n    \"https://exmaple.com/homeLogout/\"\n  ],\n  \"name\": \"Top Foods\",\n  \"refreshTokenLifetime\": 604800,\n  \"secret\": \"ZIVij4RIbUnIiKFwtvZoG93rkTlRooXIkapzWzxexFI=\",\n  \"type\": \"web\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Delete Web App",
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "Bearer {{accessToken}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": ""
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/apps/{{webClientId}}",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"apps",
+												"{{webClientId}}"
+											]
+										},
+										"description": "Deletes an app as specified by its client ID.\n"
+									},
+									"response": [
+										{
+											"name": "Delete Web App",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer {{accessToken}}"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": ""
+												},
+												"url": {
+													"raw": "{{tenantApiV1Url}}/apps/{{webClientId}}",
+													"host": [
+														"{{tenantApiV1Url}}"
+													],
+													"path": [
+														"apps",
+														"{{webClientId}}"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-DNS-Prefetch-Control",
+													"value": "off"
+												},
+												{
+													"key": "X-Frame-Options",
+													"value": "SAMEORIGIN"
+												},
+												{
+													"key": "Strict-Transport-Security",
+													"value": "max-age=15552000; includeSubDomains"
+												},
+												{
+													"key": "X-Download-Options",
+													"value": "noopen"
+												},
+												{
+													"key": "X-Content-Type-Options",
+													"value": "nosniff"
+												},
+												{
+													"key": "X-XSS-Protection",
+													"value": "1; mode=block"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "758"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"2f6-LK56EAJrw9bOzinKTT4W233/taA\""
+												},
+												{
+													"key": "Date",
+													"value": "Wed, 24 Jul 2019 15:01:06 GMT"
+												},
+												{
+													"key": "Via",
+													"value": "1.1 google"
+												},
+												{
+													"key": "Alt-Svc",
+													"value": "clear"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"accessTokenLifetime\": 3600,\n  \"apiScopes\": [\n    \"me.read\",\n    \"me.update\",\n    \"password-policy.read\",\n    \"password-policy.update\",\n    \"user.reset-password\",\n    \"user.recover-username\",\n    \"user.create\",\n    \"user.read\",\n    \"openid\",\n    \"profile\",\n    \"email\",\n    \"address\",\n    \"phone\"\n  ],\n  \"authorizationCodeLifetime\": 120,\n  \"clientId\": \"0df4ae802cd048ed1bafef2ba84be79f\",\n  \"customClaims\": {},\n  \"description\": \"My great web service app, modfied\",\n  \"domain\": \"\",\n  \"enabled\": true,\n  \"grantTypes\": {\n    \"authorizationCode\": true,\n    \"clientCredentials\": true,\n    \"password\": true,\n    \"refreshToken\": true\n  },\n  \"jwtSigningAlgorithm\": \"RS256\",\n  \"jwtTokenLifetime\": 3600,\n  \"loginRedirectUris\": [\n    \"https://example.com/homeLogin/\"\n  ],\n  \"logoUrl\": \"\",\n  \"logoutRedirectUris\": [\n    \"https://exmaple.com/homeLogout/\"\n  ],\n  \"name\": \"Top Foods\",\n  \"refreshTokenLifetime\": 604800,\n  \"secret\": null,\n  \"type\": \"web\"\n}"
+										}
+									]
+								}
+							],
+							"description": "You can create, update, and delete, and regenerate a client secret Web apps. The OAuth 2.0 spec calls these apps as confidential apps because they are able to store their client secret. \n\nThese commands use the posted version of your client ID and client secret, based on the `client_secret_post` [Token Endpoint Authentication Method](https://tools.ietf.org/html/rfc7591#section-2) listed in RFC7591.\n\nEach time you create a *new* Web app in Express, our test script will store the public client ID and secret in the postman variables `webClientId`,`webSecret`, and `cliendId` which are used by other API calles in the Web Apps collection.",
 							"event": [
 								{
 									"listen": "prerequest",
