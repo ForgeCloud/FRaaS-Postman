@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "845921cb-7275-4223-827f-c98b3335c86f",
 		"name": "Express Beta APIs",
-		"description": "The ForgeRock Identity Cloud includes two sets of APIs:\n\n* Management APIs: To manage configuration of Express \n\n* Authentication APIs: To authenticate users and obtain and manage `access_token`, `id_token` and `refresh_token`\n\n(Git commit 8ae35679)\n",
+                "description": "The ForgeRock Identity Cloud includes two sets of APIs:\n\n* Management APIs: To manage configuration of ForgeRock Identity Cloud Express\n\n* Authentication APIs: To authenticate users and obtain and manage `access_token`, `id_token` and `refresh_token`.\n\nFor descriptions of environment variables, see our Glossary of [Postman Variables](https://developer.forgerock.com/docs/identity-cloud/reference/postman-variables).",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
