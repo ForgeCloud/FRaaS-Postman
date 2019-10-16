@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "327a8778-8d7c-443d-9827-76eb1ef62408",
-		"name": "Express Beta APIs ",
-		"description": "The ForgeRock Identity Cloud includes two sets of APIs:\n\n* Management APIs: To manage configuration of ForgeRock Identity Cloud Express\n\n* Authentication APIs: To authenticate users and obtain and manage `access_token`, `id_token` and `refresh_token`.\n\nFor descriptions of environment variables, see our Glossary of [Postman Variables](https://developer.forgerock.com/docs/identity-cloud/reference/postman-variables).",
+		"_postman_id": "f2e569d7-ece8-4046-b029-657ed7f13d80",
+		"name": "Express Beta APIs",
+		"description": "The ForgeRock Identity Cloud includes two sets of APIs:\n\n* Management APIs: To manage configuration of ForgeRock Identity Cloud Express\n\n* Authentication APIs: To authenticate users and obtain and manage `access_token`, `id_token` and `refresh_token`.\n\nFor descriptions of environment variables, see our glossary of [Postman Variables](https://developer.forgerock.com/docs/identity-cloud/reference/postman-variables).",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -3927,6 +3927,136 @@
 									],
 									"cookie": [],
 									"body": "{\n  \"id\": \"ChEiD3JvYm90LW5hbWVzcGFjZRIZCg5FbWFpbFRlbXBsYXRlcxCAgICAr8iACg\",\n  \"body\": \"\\n# Welcome Modified \\n\\nIf you have any questions or issues with your account please contact us.\\n\\nThanks!\\n\\n{{organization.name}}\\n\\nIf you did not make this request, please contact us.\",\n  \"bodyRendered\": \"<style data-embed>@import url(\\\"https://fonts.googleapis.com/css?family=Roboto:300,400,500\\\");</style><div style=\\\"font-family: 'Roboto',sans; text-align: center;\\\"><h1 style=\\\"color: #455369; font-weight: 300;\\\">Welcome Modified</h1>\\n<p>If you have any questions or issues with your account please contact us.</p>\\n<p>Thanks!</p>\\n<p>{{organization.name}}</p>\\n<p>If you did not make this request, please contact us.</p>\\n</div>\",\n  \"description\": \"Confirms the user has verified their email address or registered the app\",\n  \"enabled\": false,\n  \"from\": \"{{{organization.name}}}\",\n  \"fromAddress\": \"noreply@sample-org.com\",\n  \"name\": \"Welcome\",\n  \"styles\": \"#body{font-family:'Roboto',sans;text-align:center}a{color:#004b9b;text-decoration:none}a:hover{text-decoration:underline}h1{color:#455369;font-weight:300}.btn{background-color:#2d9ee0;border-radius:4px;color:#fff;display:inline-block;font-size:14px;font-weight:500;letter-spacing:1px;margin:20px;padding:16px;text-transform:uppercase;text-decoration:none}.btn:hover{background-color:#2192d4;text-decoration:none !important}\",\n  \"subject\": \"Welcome to {{{organization.name}}}\",\n  \"type\": \"welcome\",\n  \"urlLifetime\": 0\n}"
+								}
+							]
+						},
+						{
+							"name": "Send Test Email through SMTP",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer {{accessToken}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"templateId\":\"{{templateId}}\",\n  \"userId\": \"{{userId}}\"\n}"
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/email",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"email"
+									]
+								},
+								"description": "llows you to send a test email through one of the following SMTP servers:\n  \n* Your SMTP server, as configured in the Outgoing Email Server REST calls\n* The SMTP server embedded in Express\n\nYou'll need the following parameters in the request data:\n\n* `templateId`: You can get this information from the GET Email Templates REST call\n* `userId`: You can find this information from the GET Users REST call\n"
+							},
+							"response": [
+								{
+									"name": "Configure/Modify SMTP Server",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer {{accessToken}}"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"host\":\"{{smtpHost}}\",\n  \"mandatoryTLS\": true,\n  \"port\": {{smtpPort}},\n  \"username\": \"{{smtpUsername}}\",\n  \"password\": \"{{smtpPassword}}\"\n}"
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/email-server",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"email-server"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "98"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"62-FvfdGRiaLjf6dA5FeC4OmKruY3U\""
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 09 Sep 2019 22:35:27 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "clear"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"host\": \"<smtpHostname>\",\n    \"mandatoryTLS\": true,\n    \"port\": 587,\n    \"username\": \"<smtpUsername>\"\n}"
 								}
 							]
 						}
