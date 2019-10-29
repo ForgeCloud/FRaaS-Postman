@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "f2e569d7-ece8-4046-b029-657ed7f13d80",
-		"name": "Express Beta APIs",
+		"_postman_id": "40e894fd-e479-45aa-8a66-534d2f53296b",
+		"name": "Express APIs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -2557,6 +2557,152 @@
 									]
 								},
 								"description": "Creates a new end user. Returns the profile of the created user and generates the `id` of the user.\n\nWhen the password policy is required for email validation the `destinationUrl` must be specified in the payload of this request.\n\nEach time you create a *new* user in Express, our test script will store the userId and username in the postman variables `userId` and `userName`, which are used by other API calls in the Users collection as well as authentication collection\n"
+							},
+							"response": [
+								{
+									"name": "Create user",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": " {\n  \"externalId\": \"701985\",\n  \"userName\": \"bjensen@example.com\",\n  \"accountVerified\": true,\n  \"name\": {\n   \"formatted\": \"Ms. Barbara J Jensen, III\",\n   \"familyName\": \"Jensen\",\n   \"givenName\": \"Barbara\",\n   \"middleName\": \"Jane\",\n   \"honorificPrefix\": \"Ms.\",\n   \"honorificSuffix\": \"III\"\n  },\n  \"displayName\": \"Babs Jensen\",\n  \"nickName\": \"Babs\",\n  \"profileUrl\": \"https://login.example.com/bjensen\",\n  \"emails\": [\n   {\n    \"value\": \"bjensen@example.com\",\n    \"type\": \"work\",\n    \"primary\": true,\n    \"verified\": true\n   },\n   {\n    \"value\": \"babs@jensen.org\",\n    \"type\": \"home\",\n    \"verified\": false\n   }\n  ],\n  \"addresses\": [\n   {\n    \"type\": \"work\",\n    \"streetAddress\": \"6925 Hollywood Blvd\",\n    \"locality\": \"Hollywood\",\n    \"region\": \"CA\",\n    \"postalCode\": \"90028\",\n    \"country\": \"US\",\n    \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n    \"primary\": true\n   },\n   {\n    \"type\": \"home\",\n    \"streetAddress\": \"2800 E Observatory Rd\",\n    \"locality\": \"Los Angeles\",\n    \"region\": \"CA\",\n    \"postalCode\": \"90027\",\n    \"country\": \"US\",\n    \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n   }\n  ],\n  \"phoneNumbers\": [\n   {\n    \"value\": \"555-555-5555\",\n    \"type\": \"work\"\n   },\n   {\n    \"value\": \"555-555-4444\",\n    \"type\": \"mobile\"\n   }\n  ],\n  \"userType\": \"Customer\",\n  \"title\": \"Master Carpenter\",\n  \"preferredLanguage\": \"en-US\",\n  \"locale\": \"en-US\",\n  \"timezone\": \"America/Los_Angeles\",\n  \"active\": true,\n  \"password\": \"{{userPassword}}\",\n  \"destinationUrl\": \"http://destiantion-following-email-validation.com\"\n }\n"
+										},
+										"url": {
+											"raw": "{{tenantApiV1Url}}/users",
+											"host": [
+												"{{tenantApiV1Url}}"
+											],
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-DNS-Prefetch-Control",
+											"value": "off"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "X-Download-Options",
+											"value": "noopen"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "1282"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"502-1GMVTRc/QX8A2k4PWuyR0o6oVzU\""
+										},
+										{
+											"key": "Date",
+											"value": "Thu, 25 Jul 2019 14:48:21 GMT"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "clear"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"accountStatus\": \"Active\",\n  \"addresses\": [\n    {\n      \"type\": \"work\",\n      \"streetAddress\": \"6925 Hollywood Blvd\",\n      \"locality\": \"Hollywood\",\n      \"region\": \"CA\",\n      \"postalCode\": \"90028\",\n      \"country\": \"US\",\n      \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n      \"primary\": true\n    },\n    {\n      \"type\": \"home\",\n      \"streetAddress\": \"2800 E Observatory Rd\",\n      \"locality\": \"Los Angeles\",\n      \"region\": \"CA\",\n      \"postalCode\": \"90027\",\n      \"country\": \"US\",\n      \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n    }\n  ],\n  \"displayName\": \"Babs Jensen\",\n  \"emails\": [\n    {\n      \"value\": \"bjensen@example.com\",\n      \"type\": \"work\",\n      \"primary\": true,\n      \"verified\": false\n    },\n    {\n      \"value\": \"babs@jensen.org\",\n      \"type\": \"home\",\n      \"verified\": false\n    }\n  ],\n  \"id\": \"5962435d-6ad1-469b-8017-20141675fa3d\",\n  \"ims\": [],\n  \"locale\": \"en-US\",\n  \"name\": {\n    \"formatted\": \"Ms. Barbara J Jensen, III\",\n    \"familyName\": \"Jensen\",\n    \"givenName\": \"Barbara\",\n    \"middleName\": \"Jane\",\n    \"honorificPrefix\": \"Ms.\",\n    \"honorificSuffix\": \"III\"\n  },\n  \"nickName\": \"Babs\",\n  \"phoneNumbers\": [\n    {\n      \"value\": \"555-555-5555\",\n      \"type\": \"work\"\n    },\n    {\n      \"value\": \"555-555-4444\",\n      \"type\": \"mobile\"\n    }\n  ],\n  \"preferences\": {},\n  \"preferredLanguage\": \"en-US\",\n  \"profileUrl\": \"https://login.example.com/bjensen\",\n  \"timezone\": \"America/Los_Angeles\",\n  \"title\": \"Master Carpenter\",\n  \"userName\": \"bjensen@example.com\",\n  \"userType\": \"Customer\",\n  \"x509Certificates\": [],\n  \"meta\": {\n    \"created\": \"2019-07-25T14:48:19.427048Z\",\n    \"lastModified\": \"2019-07-25T14:48:19.427586Z\"\n  }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create user, with custom attributes",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4fd89a1d-1a41-4692-9c2a-a09ac9c2cbed",
+										"exec": [
+											"var json = JSON.parse(responseBody);",
+											"if(json.id){",
+											"postman.setEnvironmentVariable(\"userId\", json.id);",
+											"console.log(`set userId = ${json.id}`);",
+											"}",
+											"if(json.userName){",
+											"postman.setEnvironmentVariable(\"userName\", json.userName);",
+											"console.log(`set userName = ${json.userName}`);",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": " {\n  \"externalId\": \"701985\",\n  \"userName\": \"bjensen@example.com\",\n  \"accountVerified\": true,\n  \"name\": {\n   \"formatted\": \"Ms. Barbara J Jensen, III\",\n   \"familyName\": \"Jensen\",\n   \"givenName\": \"Barbara\",\n   \"middleName\": \"Jane\",\n   \"honorificPrefix\": \"Ms.\",\n   \"honorificSuffix\": \"III\"\n  },\n  \"displayName\": \"Babs Jensen\",\n  \"nickName\": \"Babs\",\n  \"profileUrl\": \"https://login.example.com/bjensen\",\n  \"emails\": [\n   {\n    \"value\": \"bjensen@example.com\",\n    \"type\": \"work\",\n    \"primary\": true,\n    \"verified\": true\n   },\n   {\n    \"value\": \"babs@jensen.org\",\n    \"type\": \"home\",\n    \"verified\": false\n   }\n  ],\n  \"addresses\": [\n   {\n    \"type\": \"work\",\n    \"streetAddress\": \"6925 Hollywood Blvd\",\n    \"locality\": \"Hollywood\",\n    \"region\": \"CA\",\n    \"postalCode\": \"90028\",\n    \"country\": \"US\",\n    \"formatted\": \"6925 Hollywood Blvd\\nHollywood, CA 90028 USA\",\n    \"primary\": true\n   },\n   {\n    \"type\": \"home\",\n    \"streetAddress\": \"2800 E Observatory Rd\",\n    \"locality\": \"Los Angeles\",\n    \"region\": \"CA\",\n    \"postalCode\": \"90027\",\n    \"country\": \"US\",\n    \"formatted\": \"2800 E Observatory Rd\\nLos Angeles, CA 90027 USA\"\n   }\n  ],\n  \"phoneNumbers\": [\n   {\n    \"value\": \"555-555-5555\",\n    \"type\": \"work\"\n   },\n   {\n    \"value\": \"555-555-4444\",\n    \"type\": \"mobile\"\n   }\n  ],\n  \"userType\": \"Customer\",\n  \"title\": \"Master Carpenter\",\n  \"preferredLanguage\": \"en-US\",\n  \"locale\": \"en-US\",\n  \"timezone\": \"America/Los_Angeles\",\n  \"active\": true,\n  \"password\": \"{{userPassword}}\",\n  \"destinationUrl\": \"http://destiantion-following-email-validation.com\",\n  \"custom\" : {\n  \t\"somethingOld\" : \"desiredValue\",\n  \t\"somethingNew\" : [\n  \t\t\"valueOne\",\n  \t\t\"valueTwo\"\n  \t\t],\n  \t\"somethingBorrowed\" : {\n  \t\t\"objectField\" : \"objectValue\"\n  \t},\n  \t\"somethingBlue\": true,\n  \t\"someNumber\": 1000\n  }\n }\n"
+								},
+								"url": {
+									"raw": "{{tenantApiV1Url}}/users",
+									"host": [
+										"{{tenantApiV1Url}}"
+									],
+									"path": [
+										"users"
+									]
+								},
+								"description": "Creates a new end user. Returns the profile of the created user and generates the `id` of the user.\n\nThis example includes custom attributes, in the following JSON Blob:\n\n```JSON\n    \"custom\": {\n        \"somethingOld\": \"desiredValue\",\n        \"somethingNew\": [\n            \"valueOne\",\n            \"valueTwo\"\n        ],\n        \"somethingBorrowed\": {\n            \"objectField\": \"objectValue\"\n        },\n        \"somethingBlue\": \"yourEntry\",\n        \"somethingMore\": \"oneFineDay\"\n    },\n\n```\n\nIf you choose to use custom attributes, the only required property in this JSON Blob is `custom`."
 							},
 							"response": [
 								{
